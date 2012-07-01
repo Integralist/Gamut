@@ -1,0 +1,7 @@
+Server engineers had to set read + execute permissions for the Plesk psacln user to the Java directory in C:\Program Files\Java
+
+They also enabled ASP.NET permissions for the inetpub directories.
+
+You would need to connect via remote desktop. once logged in its simple a case of
+navigating to the directory in windows explorer, right clicking on the directory in
+question, selecting properties then security and clicking on edit.

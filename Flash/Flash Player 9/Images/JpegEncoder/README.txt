@@ -1,0 +1,1 @@
+http://henryjones.us/articles/using-the-as3-jpeg-encoder

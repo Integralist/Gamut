@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript: The Bridge Pattern</title>
+</head>
+<body id="myBody">
+
+	<h1>The Bridge Pattern</h1>
+	
+	<p>In the world of API implementations, bridges are incredibly useful. In fact, they’re probably one of the most underused patterns. Of all patterns, this is the simplest to start putting into practice immediately. If you’re building aJavaScript API, this pattern can beused to ensure that the dependent classes and objects are coupled to it loosely.</p>
+	<p>Bridges are very beneficial when it comes to event-driven programming, which is astyle that is used often in JavaScript.</p>
+	
+	<h1>Benefits of the Bridge Pattern</h1>
+	<p>Implementing the bridge patterninto your software design repertoire helps not only you but those who have to maintain your work. Decoupling abstractions from their implementations allows pieces to be independently managed. Bugs are easier to locate, and software is less likely to be seriously broken. Bridges should essentially be the glue to every abstraction.</p>
+	
+	<h1>Drawbacks of the Bridge Pattern</h1>
+	<p>As far as we’re concerned, there are few real disadvantages to this pattern. As stated in the benefits, it only promotes ahealthier API, creates more modular components, and encourages a cleaner client implementation. These benefits do come at acost, however. Each bridge used adds another function call, which can negatively affect the performance of your application. They also add complexity, which can make your code harder to debug if aproblem does arise. Bridges are extremely beneficial most of the time, but be sure that you don’t overuse them. For example, if you have abridge that connects two functions, but the functions are never called in any place other than the bridge, the bridge isn’t strictly needed and can be safely removed.</p>
+	
+	<script src="../../Useful Functions/addEvent/addEvent.js"></script>
+	<script src="AsyncRequest.js"></script>
+	<script src="Bridge.js"></script>
+
+</body>
+</html>

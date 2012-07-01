@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>[ DOM :: Create Table / Add TR ]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript">
+<!--
+
+	window.onload = fnSetLinkAttribute;
+
+	function fnSetLinkAttribute()
+	{
+		var storeBODY = document.getElementsByTagName('body').item(0);
+		
+		// Create Link
+		var createElementPara = document.createElement('p');
+		var createElementLink = document.createElement('a');
+		var createElementLinkText = document.createTextNode('Create TABLE');
+		
+		// Set attributes for the created elements
+		createElementLink.setAttribute('href','#');
+		createElementLink.setAttribute('id','id-Link');
+		
+		// Apppend all the created nodes together
+		createElementLink.appendChild(createElementLinkText);
+		createElementPara.appendChild(createElementLink);
+		storeBODY.appendChild(createElementPara);
+		
+		var obj = document.getElementById('id-Link');
+		
+		// Gecko
+		if(obj.addEventListener)
+		{
+			obj.addEventListener('click', fnCreateTable, false);
+		}
+		// Internet Explorer
+		else if(obj.attachEvent)
+		{
+			obj.attachEvent('onclick', fnCreateTable);
+		}
+		else
+		{
+			alert('Event Handler could not be attached?');
+		}
+	}
+
+	function fnCreateTable()
+	{
+        var bodyElement = document.getElementsByTagName('body').item(0).lastChild;
+        
+        tableElement = document.createElement('table');
+        
+		// Need to create a TBODY element, otherwise IE would not create the table.
+		tBodyElement = document.createElement('tbody');
+        
+        for(iRowCounter=0; iRowCounter<2; iRowCounter++)
+		{
+            currRow = document.createElement('tr');
+            
+            for(iColCounter=0; iColCounter<2; iColCounter++)
+			{
+            	currCell = document.createElement('td');
+                currText = document.createTextNode('cell is row ' + iRowCounter + ', column ' + iColCounter);
+                
+                currCell.appendChild(currText);
+                currRow.appendChild(currCell);
+				
+				currID = 'Row' + iRowCounter + 'Col' + iColCounter;
+				currCell.setAttribute('id',currID);
+            }
+            
+            tBodyElement.appendChild(currRow);
+			
+			curRowID = 'Row' + (iRowCounter + 1);
+			currRow.setAttribute('id',curRowID);
+        }
+        
+		tableElement.setAttribute('id','TableIDNum1')
+		tableElement.setAttribute('border',1);
+        tableElement.setAttribute('cellpadding',5);
+        tableElement.appendChild(tBodyElement);
+        bodyElement.appendChild(tableElement);
+		
+		// Create 'Add Table Row' Link
+		var objPara = document.createElement('p');
+		var objLink = document.createElement('a');
+		var objLinkText = document.createTextNode('Add extra row');
+		
+		objLink.setAttribute('href','javascript:void(fnAddNewTableRow("TableIDNum1"));')
+				
+		objLink.appendChild(objLinkText);
+		objPara.appendChild(objLink);
+		bodyElement.insertBefore(objPara,tableElement)
+    }
+	
+	function fnAddNewTableRow(TableIDNum)
+	{
+		objRowLength = document.getElementsByTagName('tr').length - 1;
+		objLastRow = document.getElementsByTagName('tr').item(objRowLength);
+		//alert("Last row is = " + objLastRow.id);
+	
+		var newTableRow = document.createElement('tr');
+		var newTableCol = document.createElement('td');
+		var newTableTxt = document.createTextNode('Test Row');
+		
+    	// Setting the colspan
+		newTableCol.setAttribute("colSpan",'2');
+		
+		newTableCol.appendChild(newTableTxt);
+		newTableRow.appendChild(newTableCol);
+		tBodyElement.appendChild(newTableRow);
+	}
+-->
+</script>
+<style type="text/css">
+<!--
+td,
+a
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	color: #CC0000;
+}
+-->
+</style>
+</head>
+<body>
+	
+</body>
+</html>

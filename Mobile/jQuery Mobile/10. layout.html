@@ -1,0 +1,161 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Layout Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<h2>Grid Layouts</h2>
+				<ul>
+					<li><strong>two</strong>-column (using the <code>ui-grid-a</code> class)</li>
+					<li><strong>three</strong>-column (using the <code>ui-grid-b</code> class)</li>
+					<li><strong>four</strong>-column (using the <code>ui-grid-c</code> class)</li>
+					<li><strong>five</strong>-column (using the <code>ui-grid-d</code> class)</li>
+				</ul>
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><div class="ui-bar ui-bar-b" style="height:120px">A</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-b" style="height:120px">B</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-b" style="height:120px">C</div></div>
+					<div class="ui-block-d"><div class="ui-bar ui-bar-b" style="height:120px">D</div></div>
+				</div>
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><div class="ui-bar ui-bar-a" style="height:120px"><h3>Settings</h3></div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-a" style="height:120px"><label for="valuea" style="margin:8px 10px 0 0; text-align:right;">Price</label></div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-a" style="height:120px"><input id="valuea" value="5,000"></div></div>
+					<div class="ui-block-d"><div class="ui-bar ui-bar-a" style="height:120px"><button type="submit" data-theme="b">Update</button></div></div>
+				</div>
+				<p>If you need a multi-row grid then for each row (such as shown below), then make sure the columns restart the class sequence (e.g. ui-block-a,ui-block-b,ui-block-c,ui-block-a,ui-block-b,ui-block-c)</p>
+				<div class="ui-grid-b">
+					<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-e" style="height:120px">A</div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-e" style="height:120px">B</div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-e" style="height:120px">C</div></div>
+				</div>
+				<h2>Collapsible content</h2>
+				<p>The content area can either have a blank background of can use a theme colour with <code>data-content-theme="a"</code></p>
+				<p>The header has a default colour scheme but can also be styled to use a theme colour with <code>data-theme="a"</code></p>
+				<div data-role="collapsible">
+				   <h3>I'm a header (click on me to show hidden content)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="false">
+				   <h3>I'm a header that should be opened on page load (I have just default theme for both header and content)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
+				   <h3>I'm a header (both header and content has a theme)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="d">
+				   <h3>I'm a header (header has b theme and content has d theme)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="false" data-content-theme="c">
+				   <h3>I'm a header (header is default, content has c theme)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="false" data-content-theme="d">
+				   <h3>I'm a header (header is default, content has d theme)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<div data-role="collapsible" data-collapsed="false" data-content-theme="e">
+				   <h3>I'm a header (header is default, content has e theme)</h3>
+				   <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+				</div>
+				<h2>Nested Collapsibles</h2>
+				<div data-role="collapsible" data-collapsed="false" data-theme="e" data-content-theme="c">
+					<h3>I'm a header</h3>
+					<p>I'm the collapsible content. By default I'm open and displayed on the page, but you can click the header to hide me.</p>
+					
+					<div data-role="collapsible" data-theme="c" data-content-theme="c">
+						<h3>I'm a nested collapsible with a child collapsible</h3>
+						<p>I'm a child collapsible.</p>
+							<div data-role="collapsible" data-theme="d" data-content-theme="d">
+								<h3>Nested inside again.</h3>
+								<p>Three levels deep now.</p>
+									<div data-role="collapsible" data-theme="d" data-content-theme="d">
+										<h3>Nested inside again.</h3>
+										<p>Four levels deep now.</p>
+									</div>
+							</div>
+					</div>
+		
+					<div data-role="collapsible" data-content-theme="c">
+						<h3>Section 3: Form elements</h3>
+						<form action="#" method="get">
+							<div data-role="fieldcontain">
+								<label for="textarea">Textarea:</label>
+								<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+							</div>
+							<div data-role="fieldcontain">
+								<label for="slider">Input slider:</label>
+							 	<input type="range" name="slider" id="slider" value="0" min="0" max="100"  />
+							</div>
+							<fieldset class="ui-grid-a">
+									<div class="ui-block-a"><button type="submit" data-theme="c">Cancel</button></div>
+									<div class="ui-block-b"><button type="submit" data-theme="b">Submit</button></div>	   
+						    </fieldset>
+						</form>
+					</div>
+		
+					<div data-role="collapsible" data-content-theme="c">
+						<h3>Section 4: Collapsed list</h3>
+						<p>Here is an inset list:</p>
+						<ul data-role="listview" data-inset="true" data-theme="d">
+							<li><a href="index.html">Acura</a></li>
+							<li><a href="index.html">Audi</a></li>
+							<li><a href="index.html">BMW</a></li>
+							<li><a href="index.html">Cadillac</a></li>
+							<li><a href="index.html">Chrysler</a></li>
+							<li><a href="index.html">Dodge</a></li>
+							<li><a href="index.html">Ferrari</a></li>
+							<li><a href="index.html">Ford</a></li>
+						</ul>
+					</div>
+				</div>
+				<h2>Collapsible set markup</h2>
+				<p>Collapsible sets start with the exact same markup as <a href="content-collapsible.html" class="ui-link">individual collapsibles</a>. By adding a parent wrapper with a <code> data-role="collapsible-set"</code> attribute around a number of collapsibles, the framework will style these to looks like a visually grouped widget and make it behave like an accordion so only one section can be open at a time.</p>
+				<p>By default, all the sections will be collapsed. To set a section to be open when the page loads, add the <code> data-collapsed="false"</code> attribute to the heading of the section you want expanded.</p>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-theme="b" data-content-theme="b">
+						<h3>Section 1</h3>
+						<p>I'm the collapsible set content for section 1.</p>
+					</div>
+					<div data-role="collapsible" data-theme="a" data-content-theme="a">
+						<h3>Section 2</h3>
+						<p>I'm the collapsible set content for section 2.</p>
+					</div>
+					<div data-role="collapsible" data-theme="e" data-content-theme="e">
+						<h3>Section 3</h3>
+						<p>I'm the collapsible set content for section 3.</p>
+					</div>
+				</div>
+			</div>
+			<p>A footer that utilises a grid same as above</p>
+			<div data-role="footer" data-theme="a" class="ui-bar ui-grid-c">
+				<div class="ui-block-a"><h3 style="margin-top:10px;">Settings</h3></div>
+				<div class="ui-block-b"><label for="valueb" style="margin:8px 10px 0 0; text-align:right;">Price</label></div>
+				<div class="ui-block-c"><input id="valueb" value="5,000"></div>	 
+				<div class="ui-block-d"><div style="margin:6px 0 0 10px;"><button type="submit" data-theme="b">Update</button></div></div>  
+		    </div>
+			<div data-role="footer">
+				<h4>Layout Footer</h4>
+			</div>
+		</div>
+	</body>
+</html>

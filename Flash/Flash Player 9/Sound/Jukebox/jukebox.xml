@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jukebox>
+
+	<song>
+		<title>When the Levee Breaks</title>
+		<artist>Kansas Joe and Memphis Minnie</artist>
+		<url>songs/levee.mp3</url>
+	</song>
+	<song>
+		<title>Better Leave that Stuff Alone</title>
+		<artist>Will Shade</artist>
+		<url>songs/alone.mp3</url>
+	</song>
+	<song>
+		<title>Walk Right In</title>
+		<artist>Cannon's Jug Stompers</artist>
+		<url>songs/walk.mp3</url>
+	</song>
+
+</jukebox>

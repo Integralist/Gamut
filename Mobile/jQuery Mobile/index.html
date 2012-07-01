@@ -1,0 +1,127 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script type="text/javascript">
+			$(document).bind("mobileinit", function(){
+				$.mobile.defaultPageTransition = 'none'; // fixes the issue with the page jumping (which is really noticeable on a mobile device)
+				$.mobile.loadingMessage = 'My loading message'; // the message you see when a page takes a bit of time to load
+				$.mobile.pageLoadErrorMessage = 'Sorry, seems the web is broken'; // the message you see when a page fails to load
+			});
+			
+			$(document).delegate('#mydialog', 'pagecreate', function() {
+				alert('A page with an ID of "mydialog" was just created by jQuery Mobile!');
+			});
+			
+			$(document).delegate('#myscriptingpage', 'pagecreate', function() {
+				alert('A page with an ID of "myscriptingpage" was just created by jQuery Mobile!');
+			});
+			
+			window.setTimeout(function(){
+				//alert("3 seconds have passed so we're about to shift to dialog.html - which itself will trigger an alert message");
+				//$.mobile.changePage('dialog.html', { transition: 'slideup'});
+			}, 3000);
+			
+			$(document).bind('pagebeforeload', function(event, data){
+				console.log('pagebeforeload: ', 'Triggered before any load request is made. ', event, data);
+			});
+			
+			$(document).bind('pagebeforechange', function(event, data){
+				console.log('pagebeforechange: ', 'This event is triggered prior to any page loading or transition. ', event, data);
+			});
+			
+			$(document).bind('pageload', function(event, data){
+				console.log('pageload: ', 'Triggered after the page is successfully loaded and inserted into the DOM. ', event, data);
+			});
+			
+			$(document).bind('pagebeforehide', function(event, data){
+				console.log('pagebeforehide: ', 'Triggered on the "fromPage" we are transitioning away from, before the actual transition animation is kicked off. ', event, data);
+			});
+			
+			$(document).bind('pagebeforeshow', function(event, data){
+				console.log('pagebeforeshow: ', 'Triggered on the "toPage" we are transitioning to, before the actual transition animation is kicked off. ', event, data);
+			});
+			
+			$(document).bind('pagehide', function(event, data){
+				console.log('pagehide: ', 'Triggered on the "fromPage" after the transition animation has completed. ', event, data);
+			});
+			
+			$(document).bind('pageshow', function(event, data){
+				console.log('pageshow: ', 'Triggered on the "toPage" after the transition animation has completed. ', event, data);
+			});
+			
+			$(document).bind('pagechange', function(event, data){
+				console.log('pagechange: ', 'This event is triggered after the changePage() request has finished loading the page into the DOM and all page transition animations have completed. ', event, data);
+			});
+			
+			$(document).bind('pagebeforecreate', function(event, data){
+				console.log('pagebeforecreate: ', 'Triggered on the page being initialized, before most plugin auto-initialization occurs. ', event, data);
+				
+				/*
+					Note that by binding to pagebeforecreate, you can manipulate markup before jQuery Mobile's default widgets are auto-initialized. 
+					For example, say you want to add data-attributes via JavaScript instead of in the HTML source, this is the event you'd use.
+					
+					$('#aboutPage').live('pagebeforecreate', function(event){
+						// manipulate this page before its widgets are auto-initialized
+					});
+				*/
+			});
+			
+			// I've removed the below code because it actually was preventing ANY ajax calls from continuing
+			/*
+			$(document).bind("pagebeforeload", function(event, data){
+				// Let the framework know we're going to handle the load.
+				event.preventDefault();
+				
+				console.log(event, data);
+				
+				/*
+					... load the document then insert it into the DOM ...
+					at some point, either in this callback, or through
+					some other async means, call resolve, passing in
+					the following args, plus a jQuery collection object
+					containing the DOM element for the page.
+				 */
+				
+				// This sends the user to the page requested (absUrl) and passed through additional options (not sure what 'page' should contain though?)
+				//data.deferred.resolve(data.absUrl, data.options, page);
+				//data.deferred.reject( data.absUrl, data.options ); // this rechecks the request
+			
+			//});
+		</script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Page Title</h1>
+			</div>
+			<div data-role="content">
+				<ul>
+					<li><a href="01. basic.html">Basic page</a></li>
+					<li><a href="02. multiple-pages.html" rel="external" data-transition="none">Multiple pages (needs <code>rel="external"</code> set on this link otherwise the multiple-page feature wont work properly)</a></li>
+					<li><a href="03. error-messages.html">Error Messages</a></li>
+					<li><a href="04. back-button.html">Back Button</a></li>
+					<li><a href="05. page-transitions.html">Page Transitions</a></li>
+					<li><a href="06. dialogs.html">Dialogs</a></li>
+					<li><a href="07. scripting.html">Scripting</a></li>
+					<li><a href="08. toolbars.html">Toolbars</a></li>
+					<li><a href="09. buttons.html">Buttons</a></li>
+					<li><a href="10. layout.html">Layout (grids/accordians/content blocks)</a></li>
+					<li><a href="11. forms.html">Forms</a></li>
+					<li><a href="12. lists.html">Lists</a></li>
+					<li><a href="13. api.html">API</a></li>
+					<li><a href="14. css.html">CSS</a></li>
+				</ul>
+				<a href="test.php">test (this page takes 5 seconds to load)</a>
+			</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+	</body>
+</html>

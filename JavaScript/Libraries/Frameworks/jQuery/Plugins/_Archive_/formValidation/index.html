@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>form validation with jQuery</title>
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("#TestForm").validate({
+			rules: {
+				txtFirstName: {
+					required: true
+				},
+				
+				txtLastName: {
+					required: true,
+					minlength: 2
+				},
+
+				messages: {
+					txtFirstName: {
+						required: "* Required"
+					},
+					
+					txtLastName: {
+						required: "* Required",
+						minlength: "* 2 Characters Required."
+					}
+				}
+			}
+		});
+	})
+	
+	/*
+	The validate() function takes an array of objects for an input parameter.  
+	In the above snippet of code, we are passing in a rules object.  
+	This rules object has an entry for each of our text box fields of our form.  
+	For our example, we are requiring that both fields are required 
+	and the Last Name field requires 2 or more characters.
+	
+	Just like the rules object from before, 
+	the messages object contains elements of the same name as our form fields.  
+	These elements contain a mapping between the rules and the message to display once validated.  
+	If a rule is presented without a message, the Title attribute will be used still.
+	*/
+</script>
+<style type="text/css">
+	body
+	{ font-size: small; }
+	
+	#container 
+	{ width: 350px; height: 8em; border: 1px #009933 solid; background-color: #6F6; display: block; }
+	
+	label, input
+	{ margin: 2px 0px 1px 4px; }
+	
+	label 
+	{ margin-top: 3px; font-family: "Times New Roman", Times, serif; font-size: 1.1em; font-weight: bold; }
+</style>
+</head>
+<body>
+
+    <div id="container">
+        <form id="TestForm">
+            <label for="txtFirstName">First Name: </label><br />
+            <input name="txtFirstName" type="text" id="txtFirstName" title="Please Enter a First Name" /><br />
+            
+            <label for="txtLastName">Last Name:</label><br />
+            <input name="txtLastName" type="text" id="txtLastName" title="Pleaes Enter a Last Name"/><br />
+            
+            <input type="submit" value="Submit" id="btnSubmit"  />    
+        </form>
+    </div>
+
+</body>
+</html>

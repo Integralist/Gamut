@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Centered Menu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/*
+	For the impatient ones:
+	
+	The trick is to use 'text-align: center' on the main UL
+	
+	and then 'display: inline' on all LI's
+*/
+
+body
+{ background:#FFFFFF; color:#000000; margin:0; padding:0; }
+
+#navigation
+{ background:#AFD5E0; border:1px solid #979797; border-width:1px 0; font-size:1.1em; margin-top:1em; }
+
+ul, 
+ul li
+{ list-style:none; margin:0; padding:0; }
+
+ul
+{ 
+	/* Because there is padding added to the anchors (see the selector further down) we need to add the same padding to the list so to contain the anchors */
+	/* Remove this 5px padding to see the anchors flow outside the list [Internet Explorer] Note: IE slices off the bottom overflow? */
+	padding:5px 0;	text-align:center; }
+
+ul li
+{ display:inline; margin-right:.75em; }
+
+ul li.last
+{ margin-right:0; }
+
+ul li a
+{ background:#AAF; padding:5px 1em; }
+
+ul li a:hover,
+ul li a:focus
+{ background-color:red; color:#fff; }
+</style>
+
+</head>
+
+<body>
+
+<p>
+For the impatient ones:<br>
+	
+The trick is to use 'text-align: center' on the main UL<br>
+
+and then 'display: inline' on all LI's
+</p>
+
+<div id="navigation">
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Our Work</a></li>
+		<li><a href="#">Products</a></li>
+		<li class="last"><a href="#">Contact Us</a></li>
+	</ul>
+</div>
+
+</body>
+</html>

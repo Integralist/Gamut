@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>JavaScript: Avoiding Switch Statements</title>
+</head>
+<body>
+	
+   <script type="text/javascript">		
+		var foo = 'alpha';
+		
+		var switchObj = {
+			'alpha': function() {
+				alert('alpha');
+			},
+			'beta': function() {
+				alert('beta');
+			},
+			'_default': function() {
+				alert('default');
+			}
+		};
+		
+		(switchObj.hasOwnProperty(foo) && switchObj[foo] || switchObj._default)();
+		
+		////////////////////////////////////////////////////////////////////////////////
+		
+		var doX = function() {
+			alert('doX');
+		}
+		
+		var doY = function() {
+			alert('doY');
+		}
+		
+		var doN = function() {
+			alert('doN');
+		}
+		
+		var defaultFunction = function() {
+			alert('default function');
+		};
+		
+		var something = 4;
+		
+		var cases = {
+			1: doX,
+			2: doY,
+			3: doN,
+			"default": defaultFunction
+		};
+		
+		(cases[something]) ? cases[something]() : cases['default']();
+   </script>
+</body>
+</html>

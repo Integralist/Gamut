@@ -1,0 +1,5 @@
+SELECT dbo.ClientsDetails.ClientID, dbo.ClientsDetails.ClientContactName, dbo.ClientsDetails.ClientContactNumber, dbo.Clients.ClientCompanyName, dbo.Clients.ClientAddressLine1, dbo.Clients.ClientAddressLine2, dbo.Clients.ClientAddressLine3, dbo.Clients.ClientAddressLine4, dbo.Clients.ClientAddressLine5, dbo.Clients.ClientPostcode, dbo.Clients.ClientPhone, dbo.Clients.ClientFax
+FROM dbo.ClientsDetails 
+INNER JOIN dbo.Clients ON dbo.ClientsDetails.ClientID = dbo.Clients.ClientID
+
+Name of table view(read only) - ViewClient

@@ -1,0 +1,3 @@
+This sample, xml_languagePicker.fla, demonstrates how to use XML and nested arrays to choose strings of different languages to populate text fields. 
+
+This sample loads XML data from an XML file (xml_languagePicker.xml) that is in the same directory as the SWF file. You do NOT need to have an active Internet connection for this sample to work. If you add languages to the XML file in the same format that the other languages use, then the ComboBox displays the new language.

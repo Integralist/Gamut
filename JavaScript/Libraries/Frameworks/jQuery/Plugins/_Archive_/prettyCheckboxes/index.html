@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Pretty Checkboxes</title>
+<link rel="stylesheet" type="text/css" href="css/prettyCheckboxes.css" />
+<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="js/jquery.checkboxes.js"></script>
+<script type="text/javascript">
+	// http://www.no-margin-for-errors.com/projects/prettyCheckboxes/
+	$(document).ready(function()
+	{
+		$('input[type=checkbox],input[type=radio]').prettyCheckboxes();
+		
+		/* 
+			// You can provide several parameters to the function if you want to customize it a bit further
+			$('input[type=checkbox],input[type=radio]').prettyCheckboxes(
+			{
+				checkboxWidth: 17, // The width of your custom checkbox
+				checkboxHeight: 17, // The height of your custom checkbox
+				className : 'prettyCheckbox', // The classname of your custom checkbox
+				display: 'list' // The style you want it to be display (inline or list)
+			});
+		*/
+	});
+	
+	function checkValues(which)
+	{
+		if(which == 'checkboxDemo')
+		{
+			msg = "";
+			$('#' + which + ' input[type=checkbox]').each(function(i){
+				msg += 'Checkbox ' + (i+1) + ' is ' + $(this).attr('checked') + '\n';
+			});
+		}
+		else
+		{
+			msg = "";
+			$('#' + which + ' input[type=radio]').each(function(i){
+				msg += 'Radio ' + (i+1) + ' is ' + $(this).attr('checked') + '\n';
+			});
+		}
+		
+		alert(msg);
+	}
+</script>
+</head>
+<body>
+
+	<form id="checkboxDemo" action="">
+        <fieldset>
+            <legend>Custom checkboxes</legend>
+            <label for="checkbox-1" tabindex="1">Item 1</label>
+            <input type="checkbox" name="checkbox-1" id="checkbox-1" value="checkbox-1" onclick="alert('this checkbox has an onclick event');" />
+
+            <label for="checkbox-2" tabindex="2">Item 2, this item is slightly longer to go on 2 lines.</label>
+            <input type="checkbox" name="checkbox-2" id="checkbox-2" value="checkbox-2" />
+
+            <label for="checkbox-3" tabindex="3">Item 3</label>
+            <input type="checkbox" name="checkbox-3" id="checkbox-3" value="checkbox-3" />
+
+            <label for="checkbox-4" tabindex="4">Item 4</label>
+            <input type="checkbox" name="checkbox-4" id="checkbox-4" value="checkbox-4" />
+        
+            <input type="button" value="Check values!" onclick="javascript:checkValues('checkboxDemo'); return false;" class="button" />
+        </fieldset>
+    </form>
+    
+    <form id="radioDemo" action="">
+    	<fieldset>
+        	<legend>Custom radio buttons</legend>
+            <label for="radio-1" tabindex="1">Item 1</label>
+            <input type="radio" name="radio-button" id="radio-1" value="radio-1" />
+    
+            <label for="radio-2" tabindex="2">Item 2</label>
+            <input type="radio" name="radio-button" id="radio-2" value="radio-2" onclick="alert('this radio has an onclick event');" />
+    
+            <label for="radio-3" tabindex="3">Item 3, this item is slightly longer to go on 2 lines.</label>
+            <input type="radio" name="radio-button" id="radio-3" value="radio-3" />
+    
+            <label for="radio-4" tabindex="4">Item 4</label>
+            <input type="radio" name="radio-button" id="radio-4" value="radio-4" />
+        
+            <input type="button" value="Check values!" onclick="javascript:checkValues('radioDemo'); return false;" class="button" />
+        </fieldset>
+    </form>
+    
+    <form class="inlineRadios" action="">
+        <fieldset>
+            <legend>Inline radio buttons</legend>
+            <label for="radio-5" tabindex="1">Item 1</label>
+            <input type="radio" name="radio-button-inline" id="radio-5" value="radio-1" />
+    
+            <label for="radio-6" tabindex="2">Item 2</label>
+            <input type="radio" name="radio-button-inline" id="radio-6" value="radio-2" />
+    
+            <label for="radio-7" tabindex="3">Item 3</label>
+            <input type="radio" name="radio-button-inline" id="radio-7" value="radio-3" />
+    
+            <label for="radio-8" tabindex="4">Item 4</label>
+            <input type="radio" name="radio-button-inline" id="radio-8" value="radio-4" />
+        </fieldset>
+    </form>
+
+</body>
+</html>

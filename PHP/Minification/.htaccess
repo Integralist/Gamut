@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^([-.A-Za-z0-9_/]+)\.js /Assets/Includes/minify.php?f=$1 [NC,QSA,L]

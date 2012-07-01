@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Carousel</title>
+<style>
+	body {
+		background:url(http://testing.licklist.co.uk/Assets/Images/section.png) left top repeat-x #000;
+	}
+	
+	#carousel {
+		margin:auto;
+		position:relative;
+		width:566px;
+	}
+	
+	#carousel h2 {
+		color:#fff;
+		left:15px;
+		margin:0;
+		position:absolute;
+		top:15px;
+		text-shadow:1px 1px 2px #000000;
+	}
+	
+	#image-loader {
+		background:url(ajax-loader.gif) center no-repeat;
+		border:2px solid #fff;
+		border-bottom:0;
+		height:270px;
+		margin-left:-1px;
+		width:564px;
+	}
+	
+	#carousel-links {
+		margin:auto;
+		position:relative;
+		width:564px;
+	}
+	
+	.advertisement #carousel-links {
+		display:none;
+	}
+	
+	#carousel-images {
+		border:2px solid #fff;
+		border-width:2px 0;
+		margin-left:22px;
+	}
+	
+	.competition #carousel-images {
+		margin-left:23px;
+	}
+	
+	.advertisement #carousel-images {
+		border-right:2px solid #fff;
+		margin-left:-1px;
+	}
+	
+	#carousel-images ul {
+		height:62px;
+		overflow:hidden;
+	}
+	
+	.competition #carousel-images ul {
+		height:97px;
+	}
+	
+	.advertisement #carousel-images ul {
+		height:103px;
+	}
+	
+	#carousel-images li {
+		border-left:2px solid #fff;
+	}
+	
+	#carousel-images img {
+		border:0;
+	}
+	
+	#prev,
+	#next {
+		border:2px solid #fff;
+		bottom:-66px;
+		cursor:pointer;
+		height:62px;
+		position:absolute;
+		z-index:1000;
+	}
+	
+	#prev {
+		left:-2px;
+	}
+	
+	#next {
+		right:-2px	;
+	}
+	
+	.competition #prev,
+	.competition #next {
+		bottom:-101px;
+		height:97px;
+		width:22px;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="carousel" class="advertisement">
+   	<h2>Advertisement</h2>
+      <div id="image-loader">
+      	<img src="large/1.jpg" id="image-update">
+      </div>
+      <div id="carousel-links">
+         <img src="prev.png" title="previous image" id="prev">
+         <img src="next.png" title="next image" id="next">
+      </div>
+      <div id="carousel-images">
+         <ul>
+            <li><a href="large/1.jpg"><img src="Advert-1.jpg" width="139" height="103"></a></li>
+            <li><a href="large/2.jpg"><img src="Advert-2.jpg" width="139" height="103"></a></li>
+            <li><a href="large/3.jpg"><img src="Advert-3.jpg" width="139" height="103"></a></li>
+            <li><a href="large/4.jpg"><img src="Advert-4.jpg" width="139" height="103"></a></li>
+         </ul>
+      </div>
+   </div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+   <script src="jq-carousel.js"></script>
+	<script>
+		// Wait for DOMContentLoaded event
+		jQuery(function(){
+			// Cache objects
+			var img = jQuery('#image-update'),
+				 wrapper = jQuery('#carousel'),
+				 carousel = jQuery('#carousel-images'),
+				 numImages = 8,
+				 carouselAuto = 3000;
+			
+			// Work out which animation to show
+			switch (wrapper[0].className) {
+				case 'competition':
+					numImages = 4;
+					break;
+				case 'advertisement':
+					numImages = 4;
+					carouselAuto = null;
+					break;
+				default:
+					numImages = 6;
+					break;
+			}
+			
+			carousel
+				// Set-up event delegation for thumbnail images
+				.delegate('a', 'click', function(){
+					var a = this;
+					img.fadeOut(function(){
+						img[0].src = a.href;
+						img.fadeIn();
+					});
+					return false; // prevent default action AND prevent bubbling
+				})
+				// Trigger carousel plugin
+				.jCarouselLite({
+					speed: 2000,
+					auto: carouselAuto, // Advertisement wont have any scrolling
+					visible: numImages, // Decide how many thumbnails to show (LOTW = 8; Competition = 3; Advertisement = 4)
+					btnPrev: "#prev",
+					btnNext: "#next"
+				});
+		});
+   </script>
+</body>
+</html>

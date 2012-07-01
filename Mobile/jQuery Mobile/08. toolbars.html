@@ -1,0 +1,231 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Toolbar Title (navbar can appear in header along with buttons)</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="a.html">One</a></li>
+						<li><a href="b.html">Two</a></li>
+						<li><a href="c.html">Three</a></li>
+						<li><a href="d.html">Four</a></li>
+						<li><a href="e.html">Five</a></li>
+					</ul>
+				</div>
+				<a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
+			</div>
+			<div data-role="content">
+				<div data-role="header"> 
+					<a href="index.html" data-icon="delete" data-theme="e">Cancel</a>
+					<h2>A header element</h2>
+					<a href="index.html" data-icon="check" data-theme="b">Save</a>
+				</div>
+				<div data-role="header"> 
+					<a href="index.html" data-icon="delete" data-theme="c">Cancel</a>
+					<h2>A header element</h2>
+					<a href="index.html" data-icon="check" data-theme="d">Save</a>
+				</div>
+				<div data-role="header">
+					<a href="index.html" data-icon="gear" class="ui-btn-right">Options</a>
+					<h2>A header element</h2>
+				</div>
+				<div data-role="header">
+					<a href="index.html" data-icon="arrow-r" data-iconpos="right" data-theme="b">Save</a>
+					<h2>A header element</h2>
+					<a href="index.html" data-icon="arrow-l" data-iconpos="left" data-theme="b">Save</a>
+				</div>
+				<div data-role="header">
+					<a href="index.html" data-icon="plus" data-theme="c">New</a>
+					<h2>A header element</h2>
+				</div>
+				<hr>
+				<p>Below are two toolbars without using the <code>data-role="header"</code> - but they have different classes on them</p>
+				<hr>
+				<div class="ui-bar">
+					<h3>I'm just a div with bar classes and a <a href="#" data-role="button">Button</a></h3>
+				</div>
+				<div class="ui-bar ui-bar-b">
+					<h3>I'm just a div with bar classes and a <a href="#" data-role="button">Button</a></h3>
+				</div>
+				<hr>
+				<p>Similar styles applied but with some custom stylings (shows the delete button code)</p>
+				<hr>
+				<div class="ui-bar ui-bar-e">
+						<h3 style="float:left; margin-top:8px;">This is an alert message with dismiss button. </h3>
+						<div style="float:right; margin-top:4px;"><a href="#" data-role="button" data-icon="delete" data-iconpos="notext" title="Button" data-theme="e" class="ui-btn ui-btn-icon-notext ui-btn-corner-all ui-shadow ui-btn-down-e ui-btn-up-e"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Button</span><span class="ui-icon ui-icon-delete ui-icon-shadow"></span></span></a></div>
+						<p style="clear:both; font-size:85%; margin-bottom:8px;">And here's some additional text in a paragraph.</p>
+					</div>
+			</div>
+			<div data-role="footer">
+				<h4>Toolbar Footer</h4>
+			</div>
+			<hr>
+			<div data-role="footer" class="ui-bar-b">
+				<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+				<a href="index.html" data-role="button" data-icon="arrow-l">Left</a>
+				<a href="index.html" data-role="button" data-icon="arrow-r">Right</a>
+			</div>
+			<hr>
+			<div data-role="footer" class="ui-bar-b">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+					<a href="index.html" data-role="button" data-icon="plus">Add</a>
+					<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+					<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+					<a href="index.html" data-role="button" data-icon="arrow-l">Left</a>
+					<a href="index.html" data-role="button" data-icon="arrow-r">Right</a>
+				</div>
+			</div>
+			<hr>
+			<div data-role="footer" class="ui-bar" data-position="inline">
+				<label for="select-choice-1">Shipping:</label>
+				<select name="select-choice-1" id="select-choice-1" data-theme="a">
+					<option value="standard">Standard: 7 day</option>
+					<option value="rush">Rush: 3 days</option>
+					<option value="express">Express: next day</option>
+					<option value="overnight">Overnight</option>
+				</select>
+			</div>
+			<hr>
+			<div data-role="footer" class="ui-bar ui-bar-e" data-position="inline">
+				<label for="select-choice-1">Shipping:</label>
+				<select name="select-choice-1" id="select-choice-1" data-theme="a">
+					<option value="standard">Standard: 7 day</option>
+					<option value="rush">Rush: 3 days</option>
+					<option value="express">Express: next day</option>
+					<option value="overnight">Overnight</option>
+				</select>
+			</div>
+			<hr>
+			<div data-role="footer" class="ui-bar ui-bar-b" data-position="inline">
+				<label for="select-choice-1">Shipping:</label>
+				<select name="select-choice-1" id="select-choice-1" data-theme="e">
+					<option value="standard">Standard: 7 day</option>
+					<option value="rush">Rush: 3 days</option>
+					<option value="express">Express: next day</option>
+					<option value="overnight">Overnight</option>
+				</select>
+			</div>
+			<hr>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="a.html">One</a></li>
+					<li><a href="b.html">Two</a></li>
+					<li><a href="c.html">Three</a></li>
+					<li><a href="d.html">Four</a></li>
+					<li><a href="e.html">Five</a></li>
+					<li><a href="f.html">Six</a></li>
+					<li><a href="g.html">Seven</a></li>
+					<li><a href="h.html">Eight</a></li>
+					<li><a href="i.html">Nine</a></li>
+				</ul>
+			</div>
+			<hr>
+			<div data-role="footer">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="grid">One</a></li>
+						<li><a href="#" data-icon="star">Two</a></li>
+						<li><a href="#" data-icon="gear" class="ui-btn-active">Three</a></li>
+					</ul>
+				</div
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="bottom">
+					<ul>
+						<li><a href="#" data-icon="grid">One</a></li>
+						<li><a href="#" data-icon="star">Two</a></li>
+						<li><a href="#" data-icon="gear">Three</a></li>
+					</ul>
+				</div
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="left">
+					<ul>
+						<li><a href="#" data-icon="grid">One</a></li>
+						<li><a href="#" data-icon="star">Two</a></li>
+						<li><a href="#" data-icon="gear">Three</a></li>
+					</ul>
+				</div
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li><a href="#" data-icon="grid">One</a></li>
+						<li><a href="#" data-icon="star">Two</a></li>
+						<li><a href="#" data-icon="gear">Three</a></li>
+					</ul>
+				</div
+			</div>
+			<style type="text/css"> 
+		    	.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+		        .nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+		        #chat .ui-icon { background:  url(http://jquerymobile.com/test/docs/toolbars/glyphish-icons/09-chat2.png) 50% 50% no-repeat; background-size: 24px 22px; }
+		        #email .ui-icon { background:  url(http://jquerymobile.com/test/docs/toolbars/glyphish-icons/18-envelope.png) 50% 50% no-repeat; background-size: 24px 16px;  }
+		        #login .ui-icon { background:  url(http://jquerymobile.com/test/docs/toolbars/glyphish-icons/30-key.png) 50% 50% no-repeat;  background-size: 12px 26px; }
+		        #beer .ui-icon { background:  url(http://jquerymobile.com/test/docs/toolbars/glyphish-icons/88-beermug.png) 50% 50% no-repeat;  background-size: 22px 27px; }
+		        #coffee .ui-icon { background:  url(http://jquerymobile.com/test/docs/toolbars/glyphish-icons/100-coffee.png) 50% 50% no-repeat;  background-size: 20px 24px; }
+		        #skull .ui-icon { background:  url(http://jquerymobile.com/test/docs/toolbars/glyphish-icons/21-skull.png) 50% 50% no-repeat;  background-size: 22px 24px; }
+		    </style>
+			<div data-role="footer" class="nav-glyphish-example">
+		        <div data-role="navbar" class="nav-glyphish-example">
+			        <ul>
+			            <li><a href="#" id="chat" data-icon="custom">Chat</a></li>
+			            <li><a href="#" id="email" data-icon="custom">Email</a></li>
+			            <li><a href="#" id="skull" data-icon="custom">Danger</a></li>
+			            <li><a href="#" id="beer" data-icon="custom">Beer</a></li>
+			            <li><a href="#" id="coffee" data-icon="custom">Coffee</a></li>
+			        </ul>
+		        </div>
+		    </div>
+		    <div class="ui-body-a ui-body">
+				<h3>Swatch A</h3>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="grid">A</a></li>
+						<li><a href="#" data-icon="star">B</a></li>
+						<li><a href="#" data-icon="gear">C</a></li>
+						<li><a href="#" data-icon="arrow-l">D</a></li>
+						<li><a href="#" data-icon="arrow-r">E</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="ui-body-d ui-body">
+				<h3>Swatch B</h3>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="grid">A</a></li>
+						<li><a href="#" data-icon="star">B</a></li>
+						<li><a href="#" data-icon="gear">C</a></li>
+						<li><a href="#" data-icon="arrow-l">D</a></li>
+						<li><a href="#" data-icon="arrow-r">E</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="footer">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="grid"data-theme="a">A</a></li>
+						<li><a href="#" data-icon="star" data-theme="b">B</a></li>
+						<li><a href="#" data-icon="gear" data-theme="c">C</a></li>
+						<li><a href="#" data-icon="arrow-l" data-theme="d">D</a></li>
+						<li><a href="#" data-icon="arrow-r" data-theme="e">E</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.portfolio-container-container{
+	position: relative;
+}
+.portfolio-container{
+	background-image: url(background.jpg);
+	background-position: bottom;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+	width: 700px;
+	display: none;
+}
+.portfolio-container .portfolio-mp3-container{
+	position: absolute; top: 0;  text-align: center;
+}
+.portfolio-container .portfolio-mp3 {
+	border: none;
+	
+}
+.portfolio-container img.portfolio-loading-bar{
+	border: none;
+}
+.portfolio-container ul.multimedia-portfolio{
+	list-style-type: none;
+	position: absolute;
+	left: 0;
+	padding: 0 0 0 0;
+	margin: 10px 0 0 0;
+	width: 20000px;
+	
+}
+.portfolio-container ul.multimedia-portfolio li{
+	position: relative;
+	text-align: center;
+	float: left;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.portfolio-container ul.multimedia-portfolio img{
+	border: 1px solid white;
+}
+.portfolio-container .portfolio-object-border{
+	border: 1px solid white;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.portfolio-container ul.multimedia-portfolio li img, .portfolio-container ul.multimedia-portfolio li embed, .portfolio-container ul.multimedia-portfolio li object, .portfolio-container ul.multimedia-portfolio li applet{
+	vertical-align: bottom;
+}
+.portfolio-container .portfolio-title{
+	text-align: center;
+	color: white;
+	font-size: 0.8em;
+	font-family: Arial;
+	
+}
+
+.slider-container{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	margin: 0;
+	padding: 0;
+	
+}
+.ui-slider-1
+{
+	height: 16px;
+	position: relative;
+	left: 0;
+	background: url(background-scroll.png);
+	z-index: 1;
+	background-repeat: repeat-x;
+	cursor : pointer;
+	padding: 0;
+	margin: 0;
+}
+.ui-slider-handle
+{
+	width: 62px;
+	height: 13px;
+	background-image: url(slider_handle.png);
+	position: absolute;
+	font-size: 1px;
+	overflow: hidden;
+	border: none;
+	position: relative;
+	z-index: 2;
+}
+.portfolio-container .portfolio-scroll-right{
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	width: 27px;
+	height: 12px;
+	z-index: 500;
+}
+.portfolio-container .portfolio-scroll-left{
+	position: absolute;
+	left: 0;
+	bottom: 4px;
+	width: 27px;
+	height: 12px;
+	z-index: 500;
+}
+
+/* The slider control at bottom */
+div.gallery div.bottom div.slider { height: 22px; width: 200px; position: absolute; top: 15px; right: 60px; background-image: url(../images/slider_bg.png); background-position: 0px 1px; }
+* html div.gallery div.bottom div.slider { background-image: url(../images/slider_bg.gif); }
+div.gallery div.bottom div.slider div.handle { position: absolute; top: 2px; left: 0px; height: 22px; width: 23px; background-image: url(../images/slider.png); }

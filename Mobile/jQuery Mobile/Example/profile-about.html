@@ -1,0 +1,86 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="Assets/Styles/LickList.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css" />
+		<!--
+		When using a custom Theme you have a smaller 'structure' jQuery Mobile CSS file, so the below file appears to be redundant?
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+		BUT on some pages it can stop existing styles working (I assume because the normal stylesheet has extra styles outside of the typical 'theme' styles)
+		This means those styles will have to be re-created in our custom.css (I haven't bothered doing this yet, but I should be able to set-up a test page using old CSS and grab styles from there?)
+		-->
+		<link href="Assets/Styles/custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="Assets/Scripts/custom.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<a href="profile.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Back"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
+				<h1 class="logo"><span>LickList</span></h1>
+				<a href="index.html" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Logout"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Logout</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<div class="home-advert aligntext-center">
+					<img src="Assets/Images/advert.png">
+				</div>
+				<ul data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true">
+					<li>
+						<a href="profile-about.html">
+							<img src="Assets/Images/user.png" />
+							<h3>Joe Bloggs</h3>
+							<p>Social Status</p>
+						</a>
+					</li>
+				</ul>
+				<div class="aligntext-center profile-nav" data-role="controlgroup" data-type="horizontal">
+					<a href="profile.html" data-role="button">Hub</a>
+					<a href="profile-about.html" data-role="button">About Me</a>
+					<a href="profile-galleries.html" data-role="button">Galleries</a>
+					<a href="profile-friends.html" data-role="button">Friends</a>
+				</div>
+				<dl class="short-list">
+					<dt>Name</dt>
+					<dd>Joe Bloggs</dd>
+					<dt>Nickname</dt>
+					<dd>Bob</dd>
+					<dt>Social Status</dt>
+					<dd>Cheesy Quaver</dd>
+					<dt>Age</dt>
+					<dd>30</dd>
+					<dt>Town</dt>
+					<dd>Southend</dd>
+					<dt>County</dt>
+					<dd>Essex</dd>
+					<dt>Relationship</dt>
+					<dd>Married</dd>
+					<dt>"Buy me a&hellip;"</dt>
+					<dd>Beer</dd>
+					<dt>Music</dt>
+					<dd>Dubstep, Progressive House, Break-beat</dd>
+					<dt>Favourite Venues</dt>
+					<dd>Mayhem, Storm, Ministry of Sound</dd>
+					<dt>About me</dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum mauris eget velit semper eget elementum nulla gravida. Mauris pellentesque aliquet lobortis. Morbi porttitor faucibus metus a porta. Integer non ipsum eu lorem iaculis tristique. Nulla a vestibulum nisi. Vivamus a urna vel nulla ullamcorper dapibus ac eu felis. Ut pharetra consequat sem ut tincidunt. Nulla in sem ligula.</dd>
+				</dl>
+				<div class="aligntext-center profile-user-review">
+					<h4>User Review</h4>
+					<p class="rating">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="none"></span>
+					</p>
+					<p><a href="profile-userreviews.html">Read all reviews</a></p>
+					<p>xxx Venue reviews <a href="profile-venuereviews.html">view all</a></p>
+					<h4>Profile Views</h4>
+					<p>xxx</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

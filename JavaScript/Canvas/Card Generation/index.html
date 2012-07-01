@@ -1,0 +1,168 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<title>HTML5 Canvas</title>
+    	<style type="text/css">
+    	   body {
+    	       font: normal large Helvetica, sans-serif;
+    	   }
+    	   
+    	   #card {
+    	       border: 1px solid red;
+    	   }
+    	</style>
+    </head>
+    <body>
+        <p>Status:</p>
+        <ul id="status"></ul>
+        <script type="text/javascript">
+            var doc = document,
+                status = doc.getElementById("status"),
+                canvas = doc.createElement("canvas"),
+                counter = 0;
+                cards = [
+                            { img: "card1", txt: "card 1 text" },
+                            { img: "card2", txt: "card 2 text" },
+                            { img: "card3", txt: "card 3 text" }
+                        ];
+                        
+            canvas.width = 960;
+            canvas.height = 739;
+                
+            cards.forEach(function (card) {
+                var img = new Image();
+                    img.id = "Card" + ++counter;
+                    img.src = "Templates/" + card.img + ".png";
+                    img.onload = function(){
+                        // First argument of drawImage (see further down) should be an image and not a string
+                        // So we must replace string in object to be the image just created
+                        card.img = img;
+                        
+                        // Now create a new canvas for this image
+                        createCanvas(card);
+                    };
+            });
+            
+            function createCanvas(card) {
+                var newCanvas = canvas.cloneNode(false), // shallow clone
+                    ctx = newCanvas.getContext("2d");
+                
+                // Now load relevant image into this canvas
+                loadImageIntoCanvas(card, newCanvas, ctx);
+            }
+                
+            function loadImageIntoCanvas (card, newCanvas, ctx) {
+                // Load the specified image into the canvas (image, x, y, width[optional], height[optional])
+                ctx.drawImage(card.img, 0, 0, 700, 400); // I've purposedly squashed the image
+                
+                // Now image is loaded we'll draw some text into the canvas
+                writeText(card, newCanvas, ctx);
+            }
+            
+            function writeText (card, newCanvas, ctx) {
+                // Place text into the canvas (beware the text can't wrap so you might need multiple 'fillText' calls)
+                ctx.fillStyle = "#CC0000";
+                ctx.font = "italic bold 25px Helvetica";
+                ctx.fillText(card.txt, 125, 180);
+                
+                // Now lets save this image
+                saveImage(card, newCanvas, ctx);
+            }
+            
+            function checkHTTPSuccess (xhr) {
+            	try {
+					// If no server status is provided, and we're actually
+					// requesting a local file, then it was successful
+					return !xhr.status && location.protocol == 'file:' ||
+					
+					// Any status in the 200 range is good
+					( xhr.status >= 200 && xhr.status < 300 ) ||
+					
+					// Successful if the document has not been modified
+					xhr.status == 304 ||
+					
+					// Safari returns an empty status if the file has not been modified
+					navigator.userAgent.indexOf('Safari') >= 0 && typeof xhr.status == 'undefined';
+				} catch(e){
+					// Throw a corresponding error
+					throw new Error("httpSuccess Error = " + e);
+				}
+				
+				// If checking the status failed, then assume that the request failed too
+				return false;
+            }
+            
+            function getHTTPData (xhr, type) {
+            	if (type === 'json') {
+					return JSON.parse(xhr.responseText);
+				}
+				
+				else if (type === 'html') {
+					return xhr.responseText;
+				}
+				
+				else if (type === 'xml') {
+					return xhr.responseXML;
+				}
+				
+				// Attempt to work out the content type
+				else {
+					// Get the content-type header
+					var contentType = xhr.getResponseHeader("content-type"), 
+						data = !type && contentType && contentType.indexOf("xml") >= 0; // If no default type was provided, determine if some form of XML was returned from the server
+					
+					// Get the XML Document object if XML was returned from the server,
+					// otherwise return the text contents returned by the server
+					data = (type == "xml" || data) ? xhr.responseXML : xhr.responseText;	
+					
+					// Return the response data (either an XML Document or a text string)
+					return data;
+				}
+            }
+            
+            function onSuccessfulImageProcessing (card, newCanvas, ctx, response) {
+            	// Clean-up after ourselves to save application memory
+                newCanvas = null;
+                ctx = null;
+                
+                // Update status list
+                var txt = doc.createTextNode(card.img.id + " has now been generated."),
+                    li = doc.createElement("li");
+                    li.appendChild(txt);
+                    status.appendChild(li);
+            }
+            
+            function saveImage(card, newCanvas, ctx) {
+                // Can't use standard library AJAX methods (such as…)
+                // data: "imgdata=" + newCanvas.toDataURL()
+                // Not sure why it doesn't work as we're only abstracting an API over the top of the native XHR object?
+                // To make this work we need to use a proper FormData object (no data on browser support)
+                var formData = new FormData();  
+  				formData.append("imgdata", newCanvas.toDataURL());
+  				
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "saveimage.php");
+                xhr.send(formData);
+                
+                // Watch for when the state of the document gets updated
+				xhr.onreadystatechange = function(){					
+					// Wait until the data is fully loaded, and make sure that the request hasn't already timed out
+					if (xhr.readyState == 4) {						
+						// Check to see if the request was successful
+						if (checkHTTPSuccess(xhr)) {
+							// Execute the success callback
+							onSuccessfulImageProcessing(card, newCanvas, ctx, getHTTPData(xhr));
+						}
+						else {
+							throw new Error("checkHTTPSuccess failed = " + e);
+						}
+						
+						xhr.onreadystatechange = null;
+						xhr = null;						
+					}					
+				};
+            }
+    	</script>
+    </body>
+</html>

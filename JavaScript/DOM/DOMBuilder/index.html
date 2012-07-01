@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>DOM Builder</title>
+<script src="dombuilder.js" type="text/javascript"></script>
+<script type="text/javascript">
+		DomBuilder.apply(window); // This is needed to attach the DOMBuilder.
+		var times = 0;		
+		
+		var DOMCreate = {
+			create: function(obj)
+			{
+				times++;
+				alert(obj);
+				document.body.appendChild(
+					DIV({ id : 'obj-' + times }, STRONG('Lovely'), ' nodes! #' + times, ' - this is even more text')
+				);
+				
+				document.body.appendChild(
+					DIV('some text ' + times)
+				);
+				// First create a DIV element.
+				// i.e. DIV()
+				
+				// Then set its attributes.
+				// i.e. { attribute : 'value'}
+				// Note that if it is a reserved word (like 'class') then it needs to be contained in speechmarks.
+				
+				// Then add text nodes.
+				// i.e. STRONG('Lovely')
+				// Notice the additional HTML Tag encases the text.
+				
+				// You can add more text nodes by separating them with commas.
+				// i.e. , ' more text here'
+			}
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		// This runs the DOMBuilder when the user clicks anywhere in the page.
+		
+		document.onclick = function() {
+			times++;
+			document.body.appendChild(
+				DIV({ id : 'el_' + times}, 
+					STRONG('Lovely'), ' nodes! #' + times
+				)
+			);
+		}
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+		// This is another way to use DOMBuilder.
+		
+			var html = DomBuilder.apply();
+
+			var form = html.FORM(
+			  html.DIV(
+				html.INPUT({type : 'text', name : 'email'}),
+				html.INPUT({type : 'text', name : 'password'}),
+				html.INPUT({type : 'submit'}),
+			  )
+			);
+		*/		
+</script>
+</head>
+
+<body style="font-family: Arial; font-size: 12px;">
+<p>
+	Click anywhere in the window to generate some content <em>[this code has been commented out]</em>.
+</p>
+
+<p>
+	<a href="#" onClick="DOMCreate.create('this is my argument');">onClick="DOMCreate.create('this is my argument');"</a>
+</p>
+</body>
+</html>

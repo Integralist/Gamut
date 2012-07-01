@@ -1,0 +1,8 @@
+body
+{ background-color: red; }
+
+#links
+{ list-style: none; margin: 0; padding: 0; }
+
+#links li
+{ float: left; margin-right: 20px; }

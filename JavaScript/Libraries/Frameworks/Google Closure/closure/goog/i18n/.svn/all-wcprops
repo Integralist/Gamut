@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/147/trunk/closure/goog/i18n
+END
+datetimesymbols.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/137/trunk/closure/goog/i18n/datetimesymbols.js
+END
+datetimeformat.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/137/trunk/closure/goog/i18n/datetimeformat.js
+END
+charpickerdata.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/137/trunk/closure/goog/i18n/charpickerdata.js
+END
+bidi.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/137/trunk/closure/goog/i18n/bidi.js
+END
+numberformatsymbols.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/137/trunk/closure/goog/i18n/numberformatsymbols.js
+END
+datetimeparse_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/137/trunk/closure/goog/i18n/datetimeparse_test.html
+END
+mime_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/137/trunk/closure/goog/i18n/mime_test.html
+END
+timezone_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/137/trunk/closure/goog/i18n/timezone_test.html
+END
+currency_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/147/trunk/closure/goog/i18n/currency_test.html
+END
+bidiformatter_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/137/trunk/closure/goog/i18n/bidiformatter_test.html
+END
+currencycodemap.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/137/trunk/closure/goog/i18n/currencycodemap.js
+END
+graphemebreak_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/137/trunk/closure/goog/i18n/graphemebreak_test.html
+END
+charlistdecompressor_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/137/trunk/closure/goog/i18n/charlistdecompressor_test.html
+END
+datetimesymbolsext.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/137/trunk/closure/goog/i18n/datetimesymbolsext.js
+END
+datetimeparse.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/137/trunk/closure/goog/i18n/datetimeparse.js
+END
+mime.js
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/137/trunk/closure/goog/i18n/mime.js
+END
+numberformat_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/137/trunk/closure/goog/i18n/numberformat_test.html
+END
+uchar_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/137/trunk/closure/goog/i18n/uchar_test.html
+END
+currency.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/147/trunk/closure/goog/i18n/currency.js
+END
+timezone.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/137/trunk/closure/goog/i18n/timezone.js
+END
+bidiformatter.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/137/trunk/closure/goog/i18n/bidiformatter.js
+END
+datetimeformat_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/137/trunk/closure/goog/i18n/datetimeformat_test.html
+END
+graphemebreak.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/137/trunk/closure/goog/i18n/graphemebreak.js
+END
+bidi_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/137/trunk/closure/goog/i18n/bidi_test.html
+END
+charlistdecompressor.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/137/trunk/closure/goog/i18n/charlistdecompressor.js
+END
+numberformat.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/137/trunk/closure/goog/i18n/numberformat.js
+END
+uchar.js
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/137/trunk/closure/goog/i18n/uchar.js
+END

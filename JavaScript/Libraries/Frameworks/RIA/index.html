@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creating our own STORM js library</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>JavaScript Library</h1>
+
+	<hr class="testClass anotherClass" />
+
+	<img src="../_Storm Media_/Images/large.jpg" width="100" />
+
+	<hr />
+
+	<script type="text/javascript" src="Library.js"></script>
+	<script type="text/javascript">
+		// TEST THE ONDOMREADY METHOD
+		
+			// Outputs "The DOM is ready!" when the DOM is ready for access 
+			$.onDomReady(function()
+			{ 
+				alert("The DOM is ready!"); 
+			});
+		
+		
+		// TEST THE EVENT METHODS
+		
+			// Clicking anywhere on the page will output the current coordinates 
+			// of the mouse pointer 
+			$.Events.add(document.body, "click", function(e) 
+			{ 
+				alert("Mouse clicked at 'x' position " + e.pageX + " and 'y' position "+ e.pageY); 
+			}); 
+		
+		
+		// TEST THE 'REMOTE'/AJAX METHODS
+		
+			// Load the contents of the URL index.html from the root of the web server 
+			$.Remote.load({ 
+				url: "External.html", 
+				callback: function(response) 
+				{ 
+					// Get the plain text contents of the file 
+					var text = response.text; 
+					
+					// If the HTML file was written in XHTML format, it would be available 
+					// in XML format through the response.xml property 
+					var xml = response.xml; 
+					
+					// Output the contents of the index.html file as plain text 
+					alert(text);
+				} 
+			});
+		
+		
+		// TEST THE UTILITY METHODS
+		
+			// Combine two object literals 
+			var creature = { 
+				face: 1, 
+				arms: 2, 
+				legs: 2 
+			};
+			
+			var animal = { 
+				legs: 4, // this 'legs' property overides the previous object's 'legs' property
+				chicken: true 
+			};
+			
+			var testMerge = $.Utils.mergeObjects(creature, animal);
+			for (var prop in testMerge) {
+				document.write("<br><hr>");
+				document.write(testMerge[prop] + "<br>");
+			}
+			
+			// Outputs "You have 3 messages waiting in your inbox."; 
+			alert( $.Utils.replaceText("You have {count} messages waiting in your {folder}.", { 
+				count: 3, 
+				folder: "inbox" 
+			}) ); 
+			
+			// Outputs "fontFamily" 
+			alert($.Utils.toCamelCase("font-family")); 
+			
+			// Outputs "font-family" 
+			alert($.Utils.toHyphens("fontFamily"));
+		
+		
+		// TEST THE CSS METHODS
+		
+			// Locate the first <hr> element within the page 
+			var horizontalRule = document.getElementsByTagName("hr")[0]; 
+			
+			// Output the current width of the <hr> element 
+			alert("width = " + $.CSS.getAppliedStyle(horizontalRule, "width")); 
+			
+			// Add the hide CSS class to the <hr> element 
+			$.CSS.addClass(horizontalRule, "hide"); 
+			
+			// Remove the hide CSS class from the <hr> element 
+			$.CSS.removeClass(horizontalRule, "anotherClass"); 
+			
+			// Outputs true if the hide CSS class exists on the <hr> element 
+			alert($.CSS.hasClass(horizontalRule, "hide")); 
+			
+			// Outputs the x and y coordinates of the <hr> element 
+			var position = $.CSS.getPosition(horizontalRule) 
+			alert("The element is at 'x' position '" + position.x + "' and 'y' position '" + position.y + "'. It also has a width of '" + position.width + "' and a height of '" + position.height + "'");
+    </script>
+</body>
+</html>

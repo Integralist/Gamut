@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="../jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		// add click event for any a links with a href attribute value that starts with "http://jquery"
+		$('a[href^=http://jquery]').click(function(e)
+		{
+			alert('this is a jquery link');
+			e.preventDefault();
+		});
+		
+		// add click event for any a links with a href attribute value that starts with "http://www"
+		$('a[href^=http://www]').click(function(e)
+		{
+			alert('this is a www link');
+			e.preventDefault();
+		});
+		
+		// for each input found display the text value
+		$('input').each(function()
+		{
+			// remember you have to wrap 'this' in a jQuery command to be able to use the jQuery method .val()
+			alert($(this).val());
+		});
+		
+		// add click event for any input with a type attribute value of "text"
+		$('input[type=text]').click(function()
+		{
+			alert('this is a text input link');
+		});
+		
+		// for each link that points to a PDF file...
+		$('a[href$=.pdf]').each(function()
+		{
+			// remember you have to wrap 'this' in a jQuery command to be able to use the jQuery method .text()
+			alert($(this).text());
+		});
+		
+		// for each link that points to a EPS file...
+		$('a[href$=.eps]').each(function()
+		{
+			// remember you have to wrap 'this' in a jQuery command to be able to use the jQuery method .text()
+			alert($(this).text());
+		});
+		
+		// for each link that points to a SWF file...
+		$('a[href$=.swf]').each(function()
+		{
+			// remember you have to wrap 'this' in a jQuery command to be able to use the jQuery method .text)
+			alert($(this).text());
+		});
+		
+		// for each link that has 'storm-media' somewhere in it's href attribute...
+		$('a[href*=storm-media]').each(function()
+		{
+			// remember you have to wrap 'this' in a jQuery command to be able to use the jQuery method .text)
+			alert($(this).text());
+		});
+	});
+</script>
+<title>jQuery Attributes Selectors</title>
+</head>
+<body>
+
+	<p>
+    	This script uses the attribute selector to trigger some events. In the jQuery selector's code the caret character (^) is used to specify that the match is to occur at the beginning of a value.
+    </p>
+
+	<ul>
+    	<li><a href="http://jquery.com/">remote 1 (jquery.com)</a></li>
+        <li><a href="http://jquery.com/">remote 2 (jquery.com)</a></li>
+        <li><a href="local.html">local 1</a></li>
+        <li><a href="http://www.storm-media.co.uk/">remote 3 (www.storm-media.co.uk)</a></li>        
+        <li><a href="local.html">local 2</a></li>
+        <li><input type="button" value="this is my button"></li>
+        <li><input type="text" value="this is my text field"></li>
+        <li><a href="file.pdf">file type 1 (pdf)</a></li>
+        <li><a href="file.eps">file type 2 (eps)</a></li>
+        <li><a href="file.swf">file type 3 (swf)</a></li>
+        <li><a href="file.pdf">file type 4 (pdf)</a></li>
+        <li><a href="file.eps">file type 5 (eps)</a></li>
+        <li><a href="file.swf">file type 6 (swf)</a></li>
+        <li><a href="http://www.storm-media.co.uk/">test 1 (www.storm-media.co.uk)</a></li>  
+        <li><a href="http://www.storm-media.co.uk/">test 2 (www.storm-media.co.uk)</a></li>  
+    </ul>
+
+</body>
+</html>

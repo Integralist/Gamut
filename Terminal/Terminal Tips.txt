@@ -1,0 +1,142 @@
+Ctrl + A 
+= Start of line
+
+Ctrl + E 
+= End of line
+
+Esc + B
+= Back one word 
+(CAREFUL to keep pressing Esc you can't just press it once otherwise the command will keep typing B)
+
+Esc + F 
+= Forward one word
+(CAREFUL to keep pressing Esc you can't just press it once otherwise the command will keep typing F)
+
+Ctrl + U 
+= Remove entire line
+
+ls 
+= lists all folders in home directory (the home directory is markmcdonnell)
+
+ls -l
+= Gives a long listing of the files and directories in the current directory. In addition, this command will also show the permissions, user the file/directory belongs to, and the creation date. 
+
+ls -a 
+= Lists all of the files/directories (including hidden files) in the current directory. This command is useful if you have a hidden file that you need to find, edit, or delete.
+
+ls -ld .* 
+= Lists all dot files . only
+
+cd 
+= change directory (e.g. cd Desktop will take you to the desktop & cd on it's own returns you to the home directory)
+
+cd {start_of_file_name}[TAB] 
+= if you start type the first few characters of a word then press the TAB key the terminal will try and figure out what directory/file you wanted - if there are more than one option then just type the next character in the file name and press TAB again.
+
+mkdir 
+= makes a directory (e.g. mkdir testProject creates a folder call testProject)
+
+touch 
+= to open a file (if a file doesn't exist then it's created e.g. touch index.html)
+you can either use cd to move into the directory and then create a file
+or you can specify the folder to create a file within (e.g. touch mysubfolder/myfile)
+
+echo {content} > {file}
+= this command writes the 'content' to the specified 'file'
+
+echo {content} >> {file}
+= this command writes the 'content' to the end of the specified 'file' content
+
+cat {file}
+= this shows the content of a file
+
+vim
+= open a file like README and edit it (e.g. vim README)
+you need to first type i to go into insert mode (so we can actually type in text)
+:wq (saves the text and closes the file)
+
+rm
+= remove a file or folder (e.g. rm myfile.php)
+if you try to remove a folder that isn't empty you'll get an error? rm -rf (will do this)
+
+rm -i {file}
+= the -i option tells Terminal to run the rm command in interactive mode (asking you if you are sure to remove the file).
+press y for yes and press return
+
+rm -rf {directory}
+= removes the directory without asking you to confirm (CAREFUL!)
+
+open . 
+open {file/directory}
+= tells Finder to open the current directory or file
+
+cmd+k
+= clear out the terminal screen
+
+pwd
+= prints out the current working directory path
+
+killall Finder
+= restarts the Finder
+
+cp {source file} {destination path + file name(optional)}
+= copy a file
+
+mv {source file} {destination path + file name(optional)}
+= move a file
+mv can be used as a file renamer? mv oldfile.name newfile.name
+
+tail {file_name}
+= shows the last 10 lines of the file
+
+tail -f {file_name}
+= shows the last 10 lines of the file but on a constant loop so you can see errors as they come in. Ctrl C to exit out of that.
+
+tail -n {file_name}
+= shows the last {n} number of lines of the file
+
+/var/www/vhosts/
+= the location of where Parallels (on Linux) stores websites
+
+export VARIABLE_NAME="SOME VALUE"
+= Creates an environment variable
+
+unset VARIABLE_NAME
+= Removes specified environment variable
+
+echo $PATH
+= Shows value of environment variable PATH (notice that env vars are set without a $ prefix but need the $ prefix to echo them)
+
+e.g.
+/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+
+cat /etc/paths
+= Shows value of environment variable PATH (as per above) but notice split into separate lines
+
+e.g.
+/usr/bin
+/bin
+/usr/sbin
+/sbin
+/usr/local/bin
+
+env | grep SomeValueToLookFor
+= Searches 'evn' (which is a list of your computers environment) for the text SomeValueToLookFor
+
+man grep
+= See full grep commands (i flag is case insensitive / c flag is return the count i.e. number of matches)
+
+find ./ -name \*.php
+= find files that have a .php extension
+
+-rwxrwxrwx
+= a file who has (r)ead (w)rite e(x)ecute access for all 3 user types.
+first 3 are for you the user (e.g. markmcdonnell), the second are for your user group (e.g. staff) and the third are for miscellaneous users
+
+drwxrwxrwx
+= a directory (the d at the start indicates this, if it was a dash - then it would indicate a file)
+
+chmod {who}={permission} {filename}
+= change permissions on the file
+who is (u)ser, (g)roup, (o)ther, (a)ll
+permission is (r)ead (w)rite e(x)ecute

@@ -1,0 +1,266 @@
+/*
+    Document   : Layout
+    Created on : 18-May-2009, 15:00:00
+    Author     : Mark McDonnell
+    Description:
+        Completely controls the website design and layout
+*/
+
+#website
+{ background-color:#FFF; border:1px solid #91B2B5; margin:auto; overflow:hidden; position:relative; width:964px; }
+
+/*#logo
+{ border-bottom:1px solid #91B2B5; border-top:3px solid #91B2B5; height:127px; margin:0; position:relative; width:964px; }
+
+#logo span
+{ background-image:url(../Images/logo.png); background-repeat:no-repeat; height:100%; position:absolute; width:100%; }
+*/
+
+#logo
+{ border-bottom:1px solid #91B2B5; }
+
+#address
+{ list-style:none; position:absolute; right:15px; top:20px; width:390px; }
+
+#address li.company
+{ text-align:right; width:370px; }
+
+#address li,
+#address a
+{ color:#999; display:inline; text-decoration:none; }
+
+#address a:hover,
+#address a:focus
+{ color:#007878; }
+
+#address li
+{ float:left; margin-left:1em; }
+
+#promotions
+{ background-color:#FFF; float:left; width:225px; }
+
+#promotions ul
+{ list-style:none; padding:25px 20px 20px; }
+
+#promotions ul ul
+{ padding: 10px 0 0; }
+
+#promotions ul li
+{ margin-bottom:1em; }
+
+#promotions ul li ul li
+{ margin-bottom:0.7em; }
+
+#promotions ul li ul
+{ margin-bottom:-10px; }
+
+#promotions ul li a,
+#promotions ul ul li a
+{ color:#939598; display:block; text-decoration:none; width:192px; }
+
+#promotions ul ul li a
+{ background:url(../Images/arrow.png) left center no-repeat; padding-left:13px; }
+
+#promotions ul li a:hover,
+#promotions ul li a:focus,
+#promotions ul ul li a:hover,
+#promotions ul ul li a:focus,
+#promotions ul li a.current
+{ color:#007878; }
+
+#promotions ul li a.current
+{ font-weight:bold; }
+
+#promotions ul li.highlight a
+{ background-color:#007878; color:#FFF; margin-left:-20px; padding:5px 20px; width:185px; }
+
+#promotions ul li.highlight a:hover,
+#promotions ul li.highlight a:focus,
+#promotions ul li.highlight a.current
+{ background-color:#CCC; }
+
+#promotions dl
+{ background-color:#A7A9AC; }
+
+#promotions dl dd.phone,
+#promotions dl dd.email
+{ background:url(../Images/phone.png) left top no-repeat; color:#FFF; font-weight:bold; line-height:37px; padding-left:50px; }
+
+#promotions dl dd.email
+{ background-image:url(../Images/email.png); }
+
+#promotions dl dd.email a,
+#promotions dl dd.more a
+{ color:#FFF; text-decoration:none; }
+
+#promotions dl dd.email a:hover,
+#promotions dl dd.email a:focus,
+#promotions dl dd.more a:hover,
+#promotions dl dd.more a:focus
+{ color:#666; }
+
+#promotions dl dd.more
+{ border-top:1px dashed #FFF; font-size:85%; margin-left:19px; margin-top: 10px; padding: 15px 0; width:190px; }
+
+#website .main
+{ background-color:#FFF; border-left:1px solid #91B2B5; float:right; min-height:516px; width:738px; }
+
+#website .main h1
+{ color:#007878; font-size: 160%; }
+
+#website .intro
+{ color:#007878; font-size:120%; }
+
+#website .home img
+{ border-bottom:1px solid #91B2B5; }
+
+#website .home .welcome
+{ background:url(../Images/home-text-bg.png) left top repeat-x; border-bottom:1px solid #A7A9AC; min-height:116px; padding:15px; }
+
+#website .home .nomargin
+{ margin:0; }
+
+#website .home .welcome h1
+{ height:24px; margin-bottom:15px; position:relative; width:279px; }
+
+#website .home .welcome h1 span,
+#website .home .price h2 span,
+#website .home .guarantee h2 span,
+#website .home .project h2 span
+{ background-image:url(../Images/welcome.png); background-repeat:no-repeat; height:100%; position:absolute; width:100%; }
+
+#website .home h2
+{ font-size:100%; }
+
+#website .home .price h2,
+#website .home .guarantee h2
+{ height:119px; position:relative; width:245px; }
+
+#website .home .price h2 span
+{ background-image:url(../Images/price.jpg); }
+
+#website .home .guarantee h2 span
+{ background-image:url(../Images/guarantee.jpg); }
+
+#website .home .project h2
+{ height:38px; position:relative; width:113px; }
+
+#website .home .project h2 span
+{ background-image:url(../Images/latestproject.png); }
+
+.price,
+.guarantee,
+.project
+{ border-right:1px solid #A7A9AC; float:left; min-height:173px; width:245px; }
+
+.project
+{ background:url(../Images/latest.jpg) right top no-repeat; border:0; padding-right:130px; width:116px; }
+
+.price .nomargin,
+.guarantee .nomargin
+{ font-size:85%; padding-left:17px; padding-right:10px; }
+
+.guarantee .nomargin
+{ padding-left:15px; }
+
+.project .nomargin
+{ font-size:85%; padding-left:9px; }
+
+.price .nomargin a
+{ color:#A7A9AC; text-decoration:none; }
+
+.price .nomargin a:hover,
+.price .nomargin a:focus
+{ color:#007878; }
+
+.guarantee .nomargin a
+{ color:#007878; text-decoration:none; }
+
+.guarantee .nomargin a:hover,
+.guarantee .nomargin a:focus
+{ color:#A7A9AC; }
+
+.project .nomargin a
+{ color:#007878; text-decoration:none; }
+
+.project .nomargin a:hover,
+.project .nomargin a:focus
+{ color:#A7A9AC; }
+
+#website .sub h1
+{ background:url(../Images/headers.png) left top no-repeat; border-bottom:1px solid #91B2B5; padding:145px 0 20px 30px; width:708px; }
+
+#website .sub h1.doubleLine
+{ padding-top:122px; }
+
+#website .sub .container
+{ padding:20px 30px; }
+
+#website .sub .container a
+{ color:#007878; text-decoration:none; }
+
+#website .sub .container a:hover,
+#website .sub .container a:focus
+{ color:#939598; }
+
+#website .sub .container .sitemap
+{ padding-left:15px; }
+
+#website .sub .container .disclaimer
+{ margin-top:2em; padding-left:20px; }
+
+#website .sub .container .disclaimer li
+{ margin-bottom:1.5em; }
+
+#website .sub .container .disclaimer li ul
+{ margin:1.5em 0 1.5em 0; padding-left:20px; }
+
+#website .sub .container .disclaimer li li
+{ margin-bottom:0; }
+
+#website .sub .container .sitemap ul
+{ padding-left:15px; }
+
+#website .gallery
+{ min-height:456px; padding:30px; width:678px; }
+
+#website .gallery .pagination
+{ float:right; list-style:none; margin-top:-25px; }
+
+#website .gallery .pagination li
+{ float:left; }
+
+#website .gallery .pagination a
+{ background:url(../Images/arrow-back.png) left center no-repeat; color:#A7A9AC; display:block; margin-bottom:1em; padding-left:0.8em; text-decoration:none; }
+
+#website .gallery .pagination a.next
+{ background:url(../Images/arrow-next.png) right center no-repeat; margin-right:0.8em; padding-right:0.8em; }
+
+#website .gallery .pagination a:hover,
+#website .gallery .pagination a:focus
+{ color:#007878; }
+
+#website .gallery table
+{ width:100%; }
+
+#website .gallery table a
+{ display:block; padding-left:8px; padding-bottom:20px; }
+
+#website .gallery table a img
+{ border:1px solid #A7A9AC; }
+
+#footer
+{ background-color:#ECEDED; border-top:1px solid #91B2B5; clear:both; list-style:none; overflow:hidden; padding: 13px 19px; width:964px; }
+
+#footer li
+{ background:url(../Images/divider.png) right center no-repeat; float:left; margin-right:0.5em; padding-right:1em; }
+
+#footer li a
+{ color:#A7A9AC; text-decoration:none; }
+
+#footer li a:hover,
+#footer li a:focus
+{ color:#000; }
+
+#footer li#storm
+{ background-image:none; display:inline; float:right; margin-right:3em; padding:0; }

@@ -1,0 +1,21 @@
+<!doctype html >
+<html>
+<head></head>
+<body>
+	<!-- Tweets will be inserted into this element -->
+	<div id="twitter"></div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script src="jTweet.js"></script>
+	<script type="text/javascript">
+		// DOMContentLoaded Event Handler
+		jQuery(function(){
+			// Initialise
+			$('#twitter').tweets({
+				tweets:4,
+				username: "integralist"
+			});
+		});
+	</script>
+</body>
+</html>

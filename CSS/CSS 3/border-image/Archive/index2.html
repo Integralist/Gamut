@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3 border-image</title>
+<style type="text/css">
+	body
+	{ padding:10px; }
+	
+	div 
+	{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:small;
+		padding:3px 0;
+		text-align:center;
+		max-width:50%;
+		
+		/*
+			I’m telling the browser to apply a 0 width border to the top, 
+			an 12px border to the right,
+			a 0 width border to the bottom,
+			and an 12px width border to the left 
+			
+			i.e. the four parameters start at the top of the box and work their way around clockwise).
+		*/
+		border:double 1em;
+		
+		-webkit-border-image:url(border.png) 27 27 27 27 stretch stretch;
+		-moz-border-image:url(border.png) 27 27 27 27;
+		/*
+			the url of the image
+			the top width
+			the right width
+			the bottom width
+			the left width
+			(optional parameters) the style to apply to the border's top/bottom width (repeat, stretch, round)
+			(optional parameters) the style to apply to the border's central left/right height (repeat, stretch, round)
+		*/
+	}
+</style>
+</head>
+<body>
+
+	<div>
+		Some Text
+	</div>
+
+</body>
+</html>

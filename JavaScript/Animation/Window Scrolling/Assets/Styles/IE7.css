@@ -1,0 +1,17 @@
+/*
+	Author		: Storm Creative
+	Document		: IE7
+	Created on	: dd-mm-yyyy
+	Description	: Determines the design and layout of the website.
+	Swatches		:
+		#000000 = Black
+*/
+
+#signup input[type="image"],
+#contactus input[type="image"] {
+	top: 61px;
+}
+
+#contactus input[type="image"] {
+	top: 112px;
+}

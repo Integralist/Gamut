@@ -1,0 +1,4 @@
+SELECT FirstName, Phone
+FROM table_intra_users
+WHERE Phone LIKE '0%'
+ORDER BY FirstName, Phone

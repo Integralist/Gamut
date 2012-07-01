@@ -1,0 +1,13 @@
+/*
+	Author		: Storm Creative
+	Document		: IE
+	Created on	: dd-mm-yyyy
+	Description	: Determines the design and layout of the website.
+	Swatches		:
+		#000000 = Black
+*/
+
+#contactus textarea {
+	overflow: auto;
+	width: 270px;
+}

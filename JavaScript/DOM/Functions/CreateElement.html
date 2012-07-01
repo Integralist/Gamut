@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DOM. Create Elements</title>
+<script type="text/javascript">
+function fnCreateLink(url)
+{
+	var link = document.createElement('a');
+	var text = document.createTextNode('this is my link');
+	link.setAttribute('href',url);
+	link.appendChild(text);
+	return link;
+}
+
+var mynewlink = fnCreateLink("http://www.yahoo.com/");
+var mynewlink2 = fnCreateLink("http://www.google.com/");
+var storeBody = document.getElementsByTagName('body');
+
+window.onload = function()
+				{
+					/*alert(mynewlink);*/
+					storeBody[0].appendChild(mynewlink);
+					storeBody[0].appendChild(document.createElement('p'));
+					storeBody[0].appendChild(mynewlink2);
+				}
+</script>
+</head>
+<body>
+
+	
+
+</body>
+</html>

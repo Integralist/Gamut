@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>width/height example</title>
+<script language="javascript">
+
+// Use unobtrusive JavaScript function to create an 'event' when the function is called.
+function fnAddEvent(obj, evType, fn, useCapture){
+	
+	if (obj.addEventListener) // Gecko browsers (Mozilla / Firefox)
+	{
+		//alert("obj.addEventListener");
+		obj.addEventListener(evType, fn, useCapture);
+		return true;
+	}
+	else if (obj.attachEvent) // Internet Explorer
+	{
+		//alert("obj.attachEvent");
+		var r = obj.attachEvent("on" + evType, fn);
+		return r;
+	}
+	else
+	{
+		alert("Handler could not be attached");
+	}
+
+}
+
+/*
+Call the 'fnAddEvent' function.
+Specify the type of event to create.
+Specify the function that should run when the event is triggered.
+*/
+fnAddEvent(window, 'load', fnInit);
+
+// Function to write to the DOM the dimensions that have been set on each displayed image.
+function fnInit()
+{
+	var images = new Array(3);
+	images[0] = document.getElementById('image1');
+	images[1] = document.getElementById('image2');
+	images[2] = document.getElementById('image3');
+	
+	var output = document.getElementById('output');
+	eUL_Variable = document.createElement('ul');
+	
+	for (var i = 0; i < images.length; i++)
+	{
+		eLI_Variable = document.createElement('li');
+		eTX_Variable = document.createTextNode('image' + (i+1) + ': height=' + images[i].height + ', width=' + images[i].width + ', style.height=' + images[i].style.height + ', style.width=' + images[i].style.width);
+		
+		eLI_Variable.appendChild(eTX_Variable);
+		eUL_Variable.appendChild(eLI_Variable); 
+	}
+	
+	output.appendChild(eUL_Variable);
+  
+}
+</script>
+<style type="text/css">
+p, li {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+
+}
+</style>
+</head>
+<body>
+
+<p><b>Image 1:</b> no height, width, or style
+	<br> 
+	<img id="image1" src="http://www.mozilla.org/images/mozilla-banner.gif">
+</p>
+<p><b>Image 2:</b> height="50", width="500", but no style
+	<br> 
+	<img id="image2" src="http://www.mozilla.org/images/mozilla-banner.gif" 
+		height="50" width="500">
+</p>
+<p><b>Image 3:</b> no height, width, but style="height: 50px; width: 500px;"
+	<br>
+	<img id="image3" src="http://www.mozilla.org/images/mozilla-banner.gif" 
+		style="height: 50px; width: 500px;">
+</p>
+
+<div id="output"></div>
+
+</body>
+</html>

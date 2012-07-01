@@ -1,0 +1,11 @@
+// add a new column before another column
+ALTER TABLE `integralist`.`articles` ADD COLUMN `article_intro` VARCHAR(45) NOT NULL AFTER `article_title`;
+
+// add a 'COLUMN CANT BE NULL' column called 'department_id' from the table 'testtable' in the database 'testdb'
+ALTER TABLE `testdb`.`testtable` ADD COLUMN `department_id` INTEGER UNSIGNED NOT NULL AFTER `lastname`;
+
+// add a 'COLUMN CAN BE NULL' column called 'department_id' from the table 'testtable' in the database 'testdb'
+ALTER TABLE `testdb`.`testtable` ADD COLUMN `department_id` INTEGER UNSIGNED AFTER `lastname`;
+
+// delete a column called 'department_id' from the table 'testtable' in the database 'testdb'
+ALTER TABLE `testdb`.`testtable` DROP COLUMN `department_id`;

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery.metadata.js"></script> 
+<script type="text/javascript" src="jquery.media.js"></script> 
+<script type="text/javascript">
+	$(function() 
+	{
+        // this one liner handles all the examples on this page
+		$('a.media').media();
+	});
+	
+	/*
+	//You can add flashvars using an options object: 
+	$('#myMedia').media({ 
+		flashvars: { 
+			myVar1: 'myValue1', 
+			myVar2: 'myValue2' 
+		} 
+	});
+	
+	//or by using markup metadata: 
+	<a class="{ flashvars: { myVar1: 'myValue1', myVar2: 'myValue2' } }">My Media</a>
+	
+	//You can also change the flashvars global defaults: 
+	$.fn.media.defaults.flashvars = { myVar1: 'myValue1', myVar2: 'myValue2' };
+	
+	//You can add params using an options object: 
+	$('#myMedia').media({ 
+		params: { 
+			myParam1: 'myValue1', 
+			myParam2: 'myValue2' 
+		} 
+	});
+	
+	//or by using markup metadata: 
+	<a class="{ params: { myParam1: 'myValue1', myParam2: 'myValue2' } }">My Media</a>
+	
+	//You can also change the params global defaults: 
+	$.fn.media.defaults.params = { myVar1: 'myValue1', myVar2: 'myValue2' };
+	
+	//The default player for Flash video is a global default. To use a different player just change this setting: 
+	$.fn.media.defaults.flvPlayer = 'mySnazzyPlayer.swf';
+	*/
+</script>
+</head>
+<body>
+
+<a class="media {width:250, height:200}" href="example.swf">SWF File</a>
+<br>
+<a class="media {width:450, height:380, type:'swf'}" href="http://youtube.com/v/TyvN59L4hJU">Youtube Video (SWF)</a> 
+<br>
+<a class="media" href="example.pdf">PDF File</a> 
+<br>
+<a class="media {type: 'html'}" href="../Accordian/demo/index.html">HTML File</a> 
+
+</body>
+</html>

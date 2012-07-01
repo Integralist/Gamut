@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Min-Height for IE6</title>
+<style type='text/css'>
+	/*
+	 * IE6 ignores the !important keyword.
+	 * And all other browsers will use the property set with !important over the one following it.
+	 */
+    div
+	{ background-color:#C00; height:auto !important; height:500px; min-height:500px; }
+</style>
+</head>
+<body>
+	
+    <div>
+    	My DIV should have a minimum height of 500px
+    </div>
+    
+</body>
+</html>

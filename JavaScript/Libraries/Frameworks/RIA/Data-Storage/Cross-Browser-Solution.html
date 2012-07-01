@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creating, Locating, and Deleting Cookies Using the $ Library</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>Cross-Browser Local Data Storage API</h1>
+   <p>To handle local storage in your RIAs, you can set up a single API for cross-browser support, which includes all the available techniques and uses the best one available.</p>
+   <p>First, let’s organize the different storage techniques in order of preference, starting with the ones that combine the largest storage space with the most standards-adopting practices and ending with the least storage space and least-preferred solution.</p>
+
+   <script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript">
+		// Execute the code that makes the decision about which of the various techniques to use within the current browser. In this case, no parameter is supplied to the initialize method, which means that Flash will not be used to store data 
+		$.Storage.initialize();
+		
+		// Save an email address using whichever technique was selected previously 
+		$.Storage.set({
+			name: "email", 
+			value: "me@denodell.com"
+		});
+
+		// Output the "email" value we saved earlier. After a browser restart, the data will still be there 
+		$.Storage.get("email", function(value) 
+		{
+			alert(value);
+		});
+	
+		// Delete the "email" data value permanently 
+		$.Storage.remove("email");
+		
+		// Outputs an empty string since the "email" data no longer exists 
+		$.Storage.get("email", function(value) 
+		{
+			alert(value);
+		});
+   </script>
+</body>
+</html>

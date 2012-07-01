@@ -1,0 +1,13 @@
+/* 
+    Document   : small
+    Created on : 19-Feb-2009, 11:12:44
+    Author     : Mark McDonnell
+    Description:
+        Make the text small and red
+*/
+
+body {
+    font-size: 85%;
+    color: red;
+}
+

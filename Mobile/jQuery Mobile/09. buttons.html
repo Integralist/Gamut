@@ -1,0 +1,133 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Buttons Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<h2>Default Settings</h2>
+				<p>Here is a <a href="#" data-role="button">link</a> that has been made to look like a button</p>
+				<p>Here is a 'disabled' <a href="#" data-role="button" class="ui-disabled">link</a></p>
+				<p>Here is a <a href="#" id="convert-me">link</a> that has/will be turned into a button via <code>script</code> (see source code)</p>
+				<p>Inputs (with a type of submit, reset, button, or image) and Button elements automatically get the button styling: <input type="submit" value="Input type=Submit"> <button>A Button element</button></p>
+				<h2>Custom Settings (for links and buttons)</h2>
+				<p><button data-corners="false">No rounded corners</button> (also via script <code>$('a').buttonMarkup({ corners: "false" });</code>)</p>
+				<p><button data-icon="star">Utilise an icon</button> (also via script <code>$('a').buttonMarkup({ icon: "star" });</code>)</p>
+				<p><button data-icon="star" data-iconpos="right">Change icon position</button> <button data-icon="star" data-iconpos="top">Change icon position</button> <button data-icon="star" data-iconpos="bottom">Change icon position</button> (also via script <code>$('a').buttonMarkup({ iconpos: "right" });</code>)</p>
+				<p><button data-shadow="false">No-Shadow</button> (also via script <code>$('a').buttonMarkup({ shadow: "false" });</code>)</p>
+				<p><button data-inline="true">Make this button inline</button> (also via script <code>$('a').buttonMarkup({ inline: "true" });</code>)</p>
+				<p><button data-inline="true" data-theme="e">Give this button another 'theme'</button> (also via script <code>$('a').buttonMarkup({ theme: "e" });</code>)</p>
+				<h2>Script Methods for just form buttons</h2>
+				<p>The following button has a click event binded to it: <input type="button" data-inline="true" id="disable-me" value="Button disabled (set via script)"> (<code>$('#disable-me').button('disable');</code>)</p>
+				<h2>Button Icons</h2>
+				<p>The jQuery Mobile framework includes a selected set of icons most often needed for mobile apps. To minimize download size, jQuery Mobile includes a single white icon sprite, and automatically adds a semi-transparent black circle behind the icon to ensure that it has good contrast on any background color.</p>
+				<div data-role="controlgroup" data-type="horizontal">
+					<button data-inline="true" data-theme="b" data-icon="arrow-l">Arrow Left</button>
+					<button data-inline="true" data-theme="b" data-icon="arrow-r">Arrow Right</button>
+					<button data-inline="true" data-theme="b" data-icon="arrow-u">Arrow Up</button>
+					<button data-inline="true" data-theme="b" data-icon="arrow-d">Arrow Down</button>
+				</div>
+				<div data-role="controlgroup">
+					<button data-theme="b" data-icon="arrow-l">Arrow Left</button>
+					<button data-theme="b" data-icon="arrow-r">Arrow Right</button>
+					<button data-theme="b" data-icon="arrow-u">Arrow Up</button>
+					<button data-theme="b" data-icon="arrow-d">Arrow Down</button>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal">
+					<button data-inline="true" data-theme="b" data-icon="delete">Delete</button>
+					<button data-inline="true" data-theme="b" data-icon="plus">Plus</button>
+					<button data-inline="true" data-theme="b" data-icon="minus">Minus</button>
+					<button data-inline="true" data-theme="b" data-icon="check">Check</button>
+					<button data-inline="true" data-theme="b" data-icon="gear">Gear</button>
+					<button data-inline="true" data-theme="b" data-icon="refresh">Refresh</button>
+					<button data-inline="true" data-theme="b" data-icon="forward">Forward</button>
+					<button data-inline="true" data-theme="b" data-icon="back">Back</button>
+					<button data-inline="true" data-theme="b" data-icon="grid">Grid</button>
+					<button data-inline="true" data-theme="b" data-icon="star">Star</button>
+					<button data-inline="true" data-theme="b" data-icon="alert">Alert</button>
+					<button data-inline="true" data-theme="b" data-icon="info">Info</button>
+					<button data-inline="true" data-theme="b" data-icon="home">Home</button>
+					<button data-inline="true" data-theme="b" data-icon="search">Search</button>
+				</div>
+				<p><button data-inline="true" data-theme="b" data-icon="arrow-l">Arrow Left</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="arrow-r">Arrow Right</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="arrow-u">Arrow Up</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="arrow-d">Arrow Down</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="delete">Delete</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="plus">Plus</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="minus">Minus</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="check">Check</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="gear">Gear</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="refresh">Refresh</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="forward">Forward</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="back">Back</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="grid">Grid</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="star">Star</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="alert">Alert</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="info">Info</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="home">Home</button></p>
+				<p><button data-inline="true" data-theme="b" data-icon="search">Search</button></p>
+				<h2>No text, just icon</h2>
+				<p>You set <code>data-iconpos="notext"</code></p>
+				<div data-role="controlgroup" data-type="horizontal">
+					<button data-inline="true" data-theme="b" data-icon="arrow-l" data-iconpos="notext">Arrow Left</button>
+					<button data-inline="true" data-theme="b" data-icon="arrow-r" data-iconpos="notext">Arrow Right</button>
+					<button data-inline="true" data-theme="b" data-icon="arrow-u" data-iconpos="notext">Arrow Up</button>
+					<button data-inline="true" data-theme="b" data-icon="arrow-d" data-iconpos="notext">Arrow Down</button>
+					<button data-inline="true" data-theme="b" data-icon="storm-random" data-iconpos="notext">My Custom Icon</button>
+				</div>
+				<div data-role="controlgroup">
+					<button data-theme="b" data-icon="arrow-l" data-iconpos="notext">Arrow Left</button>
+					<button data-theme="b" data-icon="arrow-r" data-iconpos="notext">Arrow Right</button>
+					<button data-theme="b" data-icon="arrow-u" data-iconpos="notext">Arrow Up</button>
+					<button data-theme="b" data-icon="arrow-d" data-iconpos="notext">Arrow Down</button>
+					<button data-theme="b" data-icon="storm-random" data-iconpos="notext">My Custom Icon</button>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal">
+					<button data-inline="true" data-theme="b" data-icon="delete" data-iconpos="notext">Delete</button>
+					<button data-inline="true" data-theme="b" data-icon="plus" data-iconpos="notext">Plus</button>
+					<button data-inline="true" data-theme="b" data-icon="minus" data-iconpos="notext">Minus</button>
+					<button data-inline="true" data-theme="b" data-icon="check" data-iconpos="notext">Check</button>
+					<button data-inline="true" data-theme="b" data-icon="gear" data-iconpos="notext">Gear</button>
+					<button data-inline="true" data-theme="b" data-icon="refresh" data-iconpos="notext">Refresh</button>
+					<button data-inline="true" data-theme="b" data-icon="forward" data-iconpos="notext">Forward</button>
+					<button data-inline="true" data-theme="b" data-icon="back" data-iconpos="notext">Back</button>
+					<button data-inline="true" data-theme="b" data-icon="grid" data-iconpos="notext">Grid</button>
+					<button data-inline="true" data-theme="b" data-icon="star" data-iconpos="notext">Star</button>
+					<button data-inline="true" data-theme="b" data-icon="alert" data-iconpos="notext">Alert</button>
+					<button data-inline="true" data-theme="b" data-icon="info" data-iconpos="notext">Info</button>
+					<button data-inline="true" data-theme="b" data-icon="home" data-iconpos="notext">Home</button>
+					<button data-inline="true" data-theme="b" data-icon="search" data-iconpos="notext">Search</button>
+				</div>
+				<h2>Custom Icons</h2>
+				<p>To use custom icons, specify a <code> data-icon</code> value that has a unique name like <code>myapp-email</code> and the button plugin will generate a class by prefixing <code>ui-icon-</code> to the <code> data-icon</code> value and apply it to the button. You can then write a CSS rule that targets the <code>ui-icon-myapp-email</code> class to specify the icon background source. To maintain visual consistency, create a white icon 18x18 pixels saved as a PNG-8 with alpha transparency.</p>
+				<p>See: <a href="http://jquerymobile.com/test/docs/buttons/buttons-icons.html">http://jquerymobile.com/test/docs/buttons/buttons-icons.html</a></p>
+				<p><button data-inline="true" data-theme="a" data-icon="storm-random">My Custom Icon</button> (this allow us to style using CSS .ui-icon-storm-random)</p>
+				<p><button data-inline="true" data-theme="b" data-icon="storm-random">My Custom Icon</button> (this allow us to style using CSS .ui-icon-storm-random)</p>
+				<p><button data-inline="true" data-theme="c" data-icon="storm-random">My Custom Icon</button> (this allow us to style using CSS .ui-icon-storm-random)</p>
+				<p><button data-inline="true" data-theme="d" data-icon="storm-random">My Custom Icon</button> (this allow us to style using CSS .ui-icon-storm-random)</p>
+				<p><button data-inline="true" data-theme="e" data-icon="storm-random">My Custom Icon</button> (this allow us to style using CSS .ui-icon-storm-random)</p>
+			</div>
+			<div data-role="footer">
+				<h4>Buttons Footer</h4>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('#convert-me').button();
+			//$('#disable-me').button('disable'); // ERRORS
+			$('#disable-me').bind( "click", function(event, ui) {
+  				alert(event.target);
+			});
+		</script>
+	</body>
+</html>

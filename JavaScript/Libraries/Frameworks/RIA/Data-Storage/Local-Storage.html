@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Setting, Getting, and Removing Data Using the Local Storage API</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>Setting, Getting, and Removing Data Using the Local Storage API</h1>
+   <p>The first of these APIs is known as local storage. By default, most browsers allocate 5MB of space for data to be stored locally and shared among all sites, though this setting is user-configurable within the settings for each supported browser. This is considerably more space than if you stored data using cookies or the IE-specific userData mechanism. Like both of these methods, the local storage API associates the data stored with the domain the current web site is running within, providing the necessary security for the saved data.</p>
+   <p>With this API, you cannot limit access to data within different directories on the same web site, as is possible with cookies, and most important, you cannot configure an expiration date for the data. This puts the length of the existence of the data under the control of the browser and any user settings it supports to allow end users to manage the data that is being saved in their name. As with all the methods discussed so far, data can be stored only as strings.</p>
+   <p>At the time of writing, the local storage API is supported by IE 8 and up, Safari 3.1 and up, Google Chrome 2 and up, and Firefox 3.5 and up.</p>
+    
+   <script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript" src="Local-Storage.js"></script>
+	<script type="text/javascript">
+		// Save an email address 
+		$.Storage.LocalStorage.set({ 
+			name: "email", 
+			value: "me@denodell.com" 
+		}); 
+		
+		// Output the "email" value we saved earlier. 
+		// After a browser restart, the data will still be there 
+		alert($.Storage.LocalStorage.get("email")); 
+		
+		// Delete the "email" data value permanently 
+		$.Storage.LocalStorage.remove("email"); 
+		
+		// Outputs an empty string since the "email" data no longer exists 
+		alert($.Storage.LocalStorage.get("email"));
+    </script>
+</body>
+</html>

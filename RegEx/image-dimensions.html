@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+   <head>
+      <title>Regex: check image dimensions</title>
+      <meta charset="utf-8">
+      <link href="Styles/Styles.css" rel="stylesheet" media="screen">
+   </head>
+   <body>
+   
+   	<h1>DreamWeaver: Check Image Dimensions</h1>
+   	<p>Checks if an &lt;img&gt; tag is missing either a height or width attribute.</p>
+   	<p><code><img\b(?![^>]*?\s(?:width\s*=[^>]+?\sheight\s*=|height\s*=[^>]+?\swidth\s*=))[^>]*></code></p>
+      <p>View Source: for example HTML</p>
+      
+      <!-- EXAMPLE HTML -->
+      <!--
+	      <img alt="test" src="test.jpg" width="10" height="10">
+         <img src="test.jpg" width="10" alt="test" height="10">
+         <img src="test.jpg" alt="test">
+         <img src="test.jpg" alt="test" width="10" height="10">
+         <img src="test.jpg"      width=    "10"    height        =     "    10    ">
+         <img height="a">
+         <img width="10">
+         <img width="10" height="10">
+         <img max-width="10" height="10">
+         <img>
+         <img src="test.jpg">
+         <img src="<?php echo ROOT; ?>Assets/Images/test.jpg" alt="test" width="10" height="10">
+      -->
+      
+		<script>
+      	var pattern = /<img\b(?![^>]*?\s(?:width\s*=[^>]+?\sheight\s*=|height\s*=[^>]+?\swidth\s*=))[^>]*>/i;
+      </script>
+      
+   </body>
+</html>

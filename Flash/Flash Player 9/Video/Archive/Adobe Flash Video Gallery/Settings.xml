@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+***************************************
+Settings.xml
+Provides a configurable data source for the Flash Video
+Gallery application. 
+
+Configurable Settings:
+- labels: exposes labels for localization.
+- links: configure main screen links and resulting urls.
+- filters(1): creates a list for filtering (up to 4 filters).
+- filters(2): creates an alternate list for filtering (up to 4 filters).
+- videos: creates a list of video display information.
+
+Note: Text nodes are for localization and node attributes
+are not. The exception is the 'url' attributes...
+
+Last Modified: March 2, 2007
+***************************************
+-->
+<flashvideogallery>
+	
+	<!-- Labels for localization -->
+	<labels>
+		<label name="title"><![CDATA[ActionScript 3.0 Flash Video Gallery]]></label>
+		<label name="welcome"><![CDATA[<b>Click on a thumbnail to view details</b>]]></label>
+		<label name="videoPreview"><![CDATA[Webvideo Preview]]></label>
+	</labels>
+	
+	<!-- Links for the main screen (up to 8 sidebar links) -->
+	<links>
+		<link name="textLink1" url="http://www.adobe.com/products/flash/video/"><![CDATA[Learn more about Flash video >]]></link>
+		<link name="textLink2" url="http://www.adobe.com/devnet/flash/"><![CDATA[Visit the Flash Developer Center >]]></link>
+		<link name="textLink3" url="http://www.adobe.com/devnet/flash/articles/video_gallery.html"><![CDATA[Examine the gallery source files >]]></link>
+		<link name="textLink4" url="http://www.adobe.com"><![CDATA[View more examples of Flash video >]]></link>
+		<link name="textLink5" url="http://www.adobe.com/products/flash/"><![CDATA[Learn about Flash CS3 Professional >]]></link>
+		<link name="textLink6" url=""/>
+		<link name="textLink7" url=""/>
+		<link name="textLink8" url=""/>
+	</links>
+	
+	<!-- Filter by list #1 (category radio button and up to 4 checkbox filters) -->
+	<filters>
+		<filter name="radio1" view="1"><![CDATA[Filter videos by industry]]></filter>
+		<filter name="checkbox1" id="i0" view="1"><![CDATA[Content]]></filter>
+		<filter name="checkbox2" id="i1" view="1"><![CDATA[Entertainment]]></filter>
+		<filter name="checkbox3" id="i2" view="1"><![CDATA[Marketing]]></filter>
+		<filter name="checkbox4" id="i3" view="0"/>
+	</filters>
+	
+	<!-- Filter by list #2 (category radio button and up to 4 checkbox filters) -->
+	<filters>
+		<filter name="radio2" view="0"><![CDATA[Filter videos by region]]></filter>
+		<filter name="checkbox5" id="r0" view="1"><![CDATA[Europe]]></filter>
+		<filter name="checkbox6" id="r1" view="1"><![CDATA[North America]]></filter>
+		<filter name="checkbox7" id="r2" view="0"/>
+		<filter name="checkbox8" id="r3" view="0"/>
+	</filters>
+	
+	<!-- List up to 36 videos for display in the gallery -->	
+	<videos>
+		<video preview="thumbnails/creativebubble.flv" flv="video/creativebubble.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Creative Bubble]]></title>
+			<description><![CDATA[Creative Bubble needed a way to show their demo reels to the largest audience possible with the best experience. Their solution is a Flash-based UI that instantly streams video to their home page.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/hondademexico.flv" flv="video/hondademexico.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Honda de México]]></title>
+			<description><![CDATA[Honda de México wanted a single, all-inclusive corporate video with sub-videos for each branch of the company (cars, motorcycles, motors, and marine). Flash video is used to show the different car models in action.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/btopenworld.flv" flv="video/btopenworld.flv" filter2="r0" filter1="i0">
+			<title><![CDATA[British Telecom Openworld Broadband Gateway]]></title>
+			<description><![CDATA[BT Openworld wanted to give access to a simple and complete broadband experience, using the best Internet tools and content on the market. Using Flash, Lightmaker created an enhanced broadband interface to provide a better experience for BTopenworld's broadband users.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/abc7listens.flv" flv="video/abc7listens.flv" filter2="r1" filter1="i2,i0">
+			<title><![CDATA[ABC7 Listens]]></title>
+			<description><![CDATA[ABC7 News was looking for a way to better understand and report on the concerns of Bay Area residents and wanted to use the Internet to change the way they reached people. Together with Hertz Research, they created a web video that incorporates video and audio to enhance the polling experience, while still maintaining their scientific results.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/benjerrys.flv" flv="video/benjerry.flv" filter2="r1" filter1="i0,i2">
+			<title><![CDATA[Ben & Jerry's Homemade, Inc.]]></title>
+			<description><![CDATA[Ben & Jerry's wanted a fun, interactive way to educate their customers and build brand awareness. From Cow to Cone educated their customers on how they make ice cream, and gave them other options to learn more about the company.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/reevolution.flv" flv="video/reevolution.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Re:Evolution]]></title>
+			<description><![CDATA[Userplane desired to create an online experience allowing viewers to watch and download full episodes of Red Bull's high-energy, extreme sport television show, Re:Evolution of Sports. To do this, they designed a Flash web video that streams 17 full episodes of 45-minute television, and allows users to download and save each 300 MB episode to their hard drive.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/barenakedladies.flv" flv="video/barenakedladies.flv" filter2="r1" filter1="i1">
+			<title><![CDATA[Barenaked Ladies Media Gramophone]]></title>
+			<description><![CDATA[The Barenaked Ladies wanted to deliver streaming video and audio to their fans before the launch of their new album. So Skeey Interactive designed a media player for the band that was easy to update and could handle streaming music and video.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+
+		<video preview="thumbnails/macromediaondemand.flv" flv="video/macromediaondemand.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Macromedia On Demand]]></title>
+			<description><![CDATA[Macromedia On Demand was a library of anytime, anywhere online seminars available. On Demand seminars featured multimedia presentations and demos that helped users evaluating Macromedia products to get up to speed quickly.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/directfromthetour.flv" flv="video/directfromthetour.flv" filter2="r1" filter1="i2,i1">
+			<title><![CDATA[Titleist Golf]]></title>
+			<description><![CDATA[Titleist wanted to build brand credibility and loyalty among golfers visiting its web video. Weymouth Design created an online media center so users could view television ads and the Direct from the Tour section, so golf fans could access video interviews and footage from the most current golf events.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/goodyeareaglef1.flv" flv="video/goodyeareaglef1.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Goodyear Eagle F1]]></title>
+			<description><![CDATA[Goodyear wanted to create a total immersion racecar driving experience to launch the new Eagle F1 tire and reignite Goodyear as a high-performance tire manufacturer. By delivering video in Flash they cost-effectively reached their targeted niche market and gained award-winning recognition within the tire and multimedia industries.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/aolgermany.flv" flv="video/aolgermany.flv" filter2="r0" filter1="i2,i1">
+			<title><![CDATA[AOL Germany]]></title>
+			<description><![CDATA[The objective of the AOL microvideo is to inform about the features of the new software and to gain new AOL members. The claim 'With AOL everything gets better' is penetrated into the market by well-known comedians that speak for displeased Internet users.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/historychannel.flv" flv="video/historychannel.flv" filter2="r1" filter1="i0">
+			<title><![CDATA[HistoryChannel.com]]></title>
+			<description><![CDATA[The History Channel's aim was to launch a stimulating, functional broadband video that would appeal to history enthusiasts around the world. AETN Interactive created an engaging web video that delivered high-quality video as an educational tool for both students and teachers.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/ibmfusionwebisode.flv" flv="video/ibmfusionwebisode.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[IBM 'Fusion' Webisodes]]></title>
+			<description><![CDATA[IBM wanted to take the best qualities and production value of TV advertising and heighten it with the rapid information access unique to the web. Each webisode features a series of 'pop-up video'-like moments, providing users with a chance to link directly to specific case studies, resources, offers, and overviews on the IBM e-business video relevant to the topic at hand.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/baconskateboards.flv" flv="video/baconskateboards.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Bacon Skateboards]]></title>
+			<description><![CDATA[Bacon Skateboards needed to create an engaging, dynamic webvideo to promote its products and sponsored riders. Realizing that video was an integral component of their web video, they sought to introduce more engaging video clips, both quickly and economically.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/redbullcopilot.flv" flv="video/redbullcopilot.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Red Bull Copilot]]></title>
+			<description><![CDATA[Red Bull wanted to put motorcycle racing fans in the middle of the pack with the best racers in the world. The only limitation was that it had to be done through a web browser. Answering the challenge, odopod created a high-impact video that synchronizes numerous video, audio, and data streams. ]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/virtualbyron.flv" flv="video/virtualbyron.flv" filter2="r1" filter1="i0,i2">
+			<title><![CDATA[Virtual Byron]]></title>
+			<description><![CDATA[Virtualbyron.com is a virtual gateway to Byron Bay and the Northern Rivers region of NSW Australia. Whether planning to go, or wanting to relive old times, it's the only web video you need. Take a self-paced tour of the pristine beaches, age-old rainforests, and colorful lifestyle.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/sunquarterlylaunchevent.flv" flv="video/sunquarterlylaunchevent.flv" filter2="r1" filter1="i2,i1">
+			<title><![CDATA[Sun Microsystems Quarterly Launch Event]]></title>
+			<description><![CDATA[The Sun Microsystems quarterly launch event Network Solution 03-Q3 is an innovative quarterly online announcement of new products, programs, and solutions. By integrating video and synchronization animation using Flash, the event was an overwhelming success and supported more operating systems, more browsers, and even 56K modem users.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/sonystyle.flv" flv="video/sonystyle.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[SonyStyle 'Life with DVD']]></title>
+			<description><![CDATA[John Kabira, host of the raido show J-WAVE Good Morning Tokyo is the virtual host of this video, inviting you explore Sony prodcuts and view video content. Once the video loads, choose a DVD to play.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/canopus.flv" flv="video/canopus.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Canopus]]></title>
+			<description><![CDATA[Canopus showcases examples of videos created using Let's EDIT, their video editing software with movie-style effects. Each clip shows combinations of titles created in Let's EDIT and still images made with third-party graphics software, animated using real-time title motion effects and exported using Flash video export capabilities.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/fordf150.flv" flv="video/fordf150.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[2004 Ford F-150 Microvideo]]></title>
+			<description><![CDATA[2Advanced helped Ford Vehicles give life to the unveiling of the 2004 Ford F-150, with a powerful microvideo that highlights the features of Ford's new vehicle using cutting-edge Flash with video. The microvideo introduces the Ford F-150 spokesperson, Rick Titus, and uses his video clips to navigate visitors through a tour of all of the F-150's features.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/mailboxesetc.flv" flv="video/mailboxesetc.flv" filter2="r0" filter1="i2">
+			<title><![CDATA[Mail Boxes Etc. Italy]]></title>
+			<description><![CDATA[Mail Boxes Etc. (Italy, Spain, and German headquarters) created an engaging, online application targeted at people interested in opening new locations with the MBE brands.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/expnaxiscam.flv" flv="video/expnaxiscam.flv" filter2="r1" filter1="i1">
+			<title><![CDATA[EXPN Axis Cam]]></title>
+			<description><![CDATA[The Axis Cam brings together 36 cameras, one trick, and a whole lot of technology to create a video game like wrap-around view of an athlete in motion. The X Games are about the progression of action sports and the Axis Cam is about progressing the coverage of these tricks.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+			
+		<video preview="thumbnails/volvos40.flv" flv="video/volvos40.flv" filter2="r0" filter1="i2">
+			<title><![CDATA[The Inside Story - The New Volvo S40]]></title>
+			<description><![CDATA[The video was created in an effort to support the launch of the new Volvo S40 in Sweden, Norway, Denmark, and Finland. The objectives were to create the same emotional impact on the Internet as in a really good print or film campaign.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/washingtonpostnewsweek.flv" flv="video/washingtonpostnewsweek.flv" filter2="r1" filter1="i2,i0">
+			<title><![CDATA[Washingtonpost.Newsweek Interactive]]></title>
+			<description><![CDATA[Travis Fox, washingtonpost.com video journalist, recently spent three weeks in Afghanistan chronicling the country's transformation, and wanted to use video to deliver the experience online. The Washington Post used Flash to fully integrate maps, text, and video content.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/yahooadvision.flv" flv="video/yahooadvision.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Yahoo! Advision]]></title>
+			<description><![CDATA[Using the Intolerable Cruelty campaign as a general reference, Yahoo! was able to move the campaign from mockup to finished deliverables in two days using the AdVision Flash component. The campaign ran for three weeks on the Yahoo! Network and served over four million stream views on the main trailer for the movie.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+			
+		<video preview="thumbnails/prideandprejudice.flv" flv="video/prideandprejudice.flv" filter2="r1" filter1="i1">
+			<title><![CDATA[Pride & Prejudice]]></title>
+			<description><![CDATA[Excel Entertainment wanted a web video with 'sex appeal' to promote their feature film, Pride & Prejudice, a modern adaptation of the Jane Austen book. They created a video where visitors can experience the life of the film through video and images in a way that would not have been possible in a non-Flash video.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/cbc.flv" flv="video/cbc.flv" filter2="r1" filter1="i0">
+			<title><![CDATA[CBC Radio 3]]></title>
+			<description><![CDATA[CBC Radio 3, part of the Canadian Broadcasting Corporation, demonstrates their commitment to promote and deliver Canadian content via their high-quality, award-winning online magazine. They leverage a Flash-based UI to deliver a deeply creative experience and augment their print stories and photo essays with a streaming MP3 jukebox and video films and stories.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/gulfstream.flv" flv="video/gulfstream.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Gulfstream Aerospace Corporation]]></title>
+			<description><![CDATA[Gulfstream wanted to incorporate video into their newly redesigned video, but with only a five-person internal development team the company needed a tool that required a minimum amount of training. Using Flash they were able to incorporate video, double their average video session, and increase overall traffic by 23%.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/shocktheworld.flv" flv="video/shocktheworld.flv" filter2="r1" filter1="i2,i1">
+			<title><![CDATA[Shock the World]]></title>
+			<description><![CDATA[Casio USA wanted to completely rebrand the web video for their most popular line of watches, the G-Shock brand. They wanted one video that all of its consumers and potential consumers could go to, which would make finding the 'appropriate' watch as interesting as it is easy. Through the use of Flash, they were able to create a unique, interactive experience for the user.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/bmw5series.flv" flv="video/bmw5series.flv" filter2="r0" filter1="i2">
+			<title><![CDATA[BMW]]></title>
+			<description><![CDATA[The aim of the BMW 5 Series Internet highlight is the same as the 5 Series itself: to set new standards. This is achieved by deploying innovative Internet technology in an inspired way, creating an emotionally appealing tone of communicating the vehicle's strengths as well as a design that catches the eye of every beholder.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/videotalk.flv" flv="video/videotalk.flv" filter2="r0" filter1="i0">
+			<title><![CDATA[Video Talk]]></title>
+			<description><![CDATA[The European Space Agency wanted to provide its visitors with a more immediate and lively means of learning about space topics through the use of high-impact sounds, images, videos, and texts within a single format.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/root6tvjukebox.flv" flv="video/root6tvjukebox.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[ROOT6 TV JukeBox]]></title>
+			<description><![CDATA[ROOT6 has a mission to bring to market new and innovative tools for the broadcast, post-production, and corporate sectors. Their goal was to develop a prototype data-driven video jukebox that streams an entire library of videos inside an interactive UI without compromising video quality or creating the need for extensive QA testing.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>		
+		
+		<video preview="thumbnails/directordariopiana.flv" flv="video/directordariopiana.flv" filter2="r0" filter1="i2">
+			<title><![CDATA[Director Dario Piana]]></title>
+			<description><![CDATA[The video is the online portfolio of Dario Piana, renowned advertising director. Piana has shot more than 350 commercials around the globe. He needed an online portfolio to display some of his highly awarded productions.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/sonylatinamerica.flv" flv="video/sonylatinamerica.flv" filter2="r1" filter1="i2">
+			<title><![CDATA[Sony Latin America]]></title>
+			<description><![CDATA[Sony Latin America wanted an interactive way to educate and show users the features and functions of their latest technology.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/sundance.flv" flv="video/sundance.flv" filter2="r1" filter1="i1,i0">
+			<title><![CDATA[Sundance Online Film Festival]]></title>
+			<description><![CDATA[The Sundance Film Festival wanted to extend the reach of its online festival and take the experience beyond the average video video. With the highest player penetration anywhere and the capacity to provide a seamless user experience, Flash allowed them to do both.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+		
+		<video preview="thumbnails/keiko.flv" flv="video/keiko.flv" filter2="r1" filter1="i1,i2">
+			<title><![CDATA[KEIKO - Solo Project]]></title>
+			<description><![CDATA[This is a promotional video for the first solo album from KEIKO of Globe fame, called KCO. The video features the Human Race music video.]]></description>
+			<moreInfo url="http://www.adobe.com"><![CDATA[More info...]]></moreInfo>
+		</video>
+	</videos>
+	
+</flashvideogallery>

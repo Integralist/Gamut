@@ -1,0 +1,603 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>jQuery sIFR Plugin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+
+* {
+	margin: 0;
+}
+
+html {
+	background: url(resources/html_bg.png) scroll repeat-y center top;
+}
+
+body {
+	background: url(resources/body_bg.png) scroll repeat-x left top;
+	min-height: 600px;
+	font: 14px Lucida Sans Unicode, Lucida Grande, sans-serif;
+}
+
+a, a:hover {
+	color: #11f;
+	text-decoration: none;
+	border-bottom: 1px dotted #ccf;
+}
+
+#header {
+	background: url(resources/header_bg.png) scroll no-repeat center top;
+	height: 600px;
+	margin-bottom: -600px;
+}
+
+h1#title {
+	font: bold 72px Admissio Display SSi, Arial Black, Gadget, sans-serif;
+	height: 106px;
+	margin: 0 auto;
+	padding: 64px 24px 0 26px;
+	text-align: left;
+	width: 912px;
+}
+
+h1 a {
+	color: #003;
+	text-decoration: none;
+}
+
+#navigation {
+	margin: 0 auto;
+	width: 960px;
+	height: 30px;
+}
+
+#navigation ul {
+	float: right;
+}
+
+#navigation li {
+	float: left;
+}
+
+#navigation a {
+	color: #000;
+	display: block;
+	font: 16px Arial, Helvetica, sans-serif;
+	padding: 5px 10px;
+	border-bottom: 0;
+}
+
+#content-wrapper {
+	margin: 0 auto;
+	width: 900px;
+	padding: 20px 30px 30px;
+}
+
+h3 {
+	background: #ddf;
+	font: normal 36px AvantGarde Md BT, Arial, sans-serif;
+	margin: 0 -10px 15px;
+	padding: 6px 12px;
+	text-align: left;
+}
+
+h3 a {
+	color: #000;
+	text-decoration: none;
+}
+
+h4 {
+	font: normal 24px Futura, Arial, sans-serif;
+	text-align: left;
+	border-bottom: 1px solid #888;
+	padding: 5px 0;
+	margin: 0 0 15px;
+}
+
+p {
+	clear: both;
+	padding: 0 0 24px;
+	line-height: 1.75em;
+}
+
+dl {
+	display: block;
+	line-height: 1.5em;
+	margin: 0 0 1em;
+}
+
+dt {
+	margin: 0 0 -1.5em;
+}
+
+dd {
+	padding-left: 16em;
+}
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+#writeForm p {
+	padding: 0;
+}
+
+#writeForm dt, #writeForm dd {
+	padding: 10px 0;
+}
+
+.example {
+	border: 1px dashed #CCCCCC;
+	cursor: text;
+	line-height: 2em;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	white-space: pre;
+}
+
+.back-to-top {
+	text-align: right;
+	font-size: .75em;
+}
+
+</style>
+<script src="javascript/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascript/jquery.flash.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="javascript/jquery.sifr.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+$(function () {
+	$.sifr({path:'fonts'});
+	$('h1').sifr({font:'Admissio Display SSi'});
+	$('h3').sifr({font:'AvantGarde Md BT'});
+	$('h4').sifr({font:'Futura'});
+});
+
+</script>
+</head>
+<body>
+<div id="header"></div>
+<h1 id="title">
+	<a href="http://jquery.thewikies.com/sifr/">jQuery sIFR Plugin</a>
+</h1>
+<div id="navigation">
+	<ul>
+		<li>
+			<a href="#download">Download</a>
+		</li>
+		<li>
+			<a href="#description">Description</a>
+		</li>
+		<li>
+			<a href="#features">Features</a>
+		</li>
+		<li>
+			<a href="#examples">Examples</a>
+		</li>
+		<li>
+			<a href="#knownIssues">Known Issues</a>
+		</li>
+		<li>
+			<a href="#license">License</a>
+		</li>
+		<li>
+			<a href="#writeMe">Write Me</a>
+		</li>
+	</ul>
+</div>
+<div id="content-wrapper">
+	<h3>
+		<a id="downloadLink" href="#download" name="download">Download</a>
+	</h3>
+	<dl>
+		<dt>jQuery Sifr Plugin v2.0 Beta 3</dt>
+		<dd>
+			<a href="javascript/jquery.sifr.min.js">Minified Js</a> (4.30k)
+		</dd>
+		<dd>
+			<a href="javascript/jquery.sifr.js">Uncompressed Js</a> (7.21k)
+		</dd>
+		<dd>
+			<a href="http://jquery.thewikies.com/sifr/jquery.sifr.zip">All-in-One Zip</a> (187k)
+		</dd>
+		<dd>
+			<a href="http://jquery.thewikies.com/sifr/">Homepage</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>jQuery Flash Plugin v1.0.1</dt>
+		<dd>
+			<a href="javascript/jquery.flash.min.js">Minified Js</a> (3.23k)
+		</dd>
+		<dd>
+			<a href="javascript/jquery.flash.js">Uncompressed Js</a> (8.31k)
+		</dd>
+		<dd>
+			<a href="http://jquery.lukelutman.com/plugins/flash/">Homepage</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>jQuery v1.2.6</dt>
+		<dd>
+			<a href="javascript/jquery.min.js">Minified Js</a> (54.2k)
+		</dd>
+		<dd>
+			<a href="javascript/jquery.js">Uncompressed Js</a> (97.8k)
+		</dd>
+		<dd>
+			<a href="http://jquery.com/">Homepage</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>sIFR Flash Font Source v2.0.5</dt>
+		<dd>
+			<a href="sifr.source.zip">All-in-One Zip</a> (6.56k)
+		</dd>
+		<dd>
+			<a href="http://novemberborn.net/sifr/2.0.5">Homepage</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>Author</dt>
+		<dd>
+			<a href="http://www.jonathantneal.com/">Jonathan Neal</a>
+		</dd>
+		<dd>
+			<a href="mailto:jneal@liferay.com?subject=jQuery | sIFR">jneal@liferay.com</a>
+		</dd>
+	</dl>
+	<dl>
+		<dt>Last Updated</dt>
+		<dd>
+			September 25th, 2008
+		</dd>
+	</dl>
+	<p class="back-to-top"><a href="#">Back to Top</a></p>
+	<h3>
+		<a id="descriptionLink" href="#description" name="description">Description</a>
+	</h3>
+	<h4>
+		What is the jQuery sIFR Plugin?
+	</h4>
+	<p>
+		 The <strong>jQuery sIFR Plugin</strong> is an addon for jQuery that makes it easy to replace text in a web page with flash text (sIFR).
+	</p>
+	<h4>
+		What does it do?
+	</h4>
+	<p>
+		 It gives you a function in javascript to replace text in a web page dynamically with sIFR (Scalable Inman Flash Replacement) text, using native jQuery functionality along with the jQuery Flash Plugin. <br/>
+		<br/>
+		<img height="250" width="692" src="resources/example.jpg" alt="Image of the jQuery sIFR Plugin in action."/>
+	</p>
+	<h4>
+		How does it work?
+	</h4>
+	<p>
+		 First, <strong>jQuery</strong> makes finding the item(s) that you want to replace as easy as using CSS. Then, the <strong>jQuery sIFR Plugin</strong> does all the work of figuring out the text, files, sizes, colors, and any other configurations needed for the conversion. The jQuery sIFR plugin is fully configurable and can choose how little or how much you want to customize the display of the sIFRed text. Finally, the <strong>jQuery Flash Plugin</strong> does a most excellent job of embedding the sIFR flash into your web page. After all is said and done, you should have beautiful sIFR replaced text with consistent behavior across all major browsers.
+	</p>
+	<h4>
+		And what is jQuery?
+	</h4>
+	<p>
+		<strong>jQuery</strong> is a small but power-packed bundle of javascript functions that make writing javascript quick and simple. Selecting elements on your page is like using CSS, learning and using functions requires minimal fuss, and the learning curve is <a href="http://15daysofjquery.com/">sometimes described as "zero"</a>.
+	</p>
+	<h4>
+	So, why do I also need the jQuery Flash Plugin? </h4>
+	<p>
+		 The jQuery Flash Plugin is the best tool for embedding flash into a web page. It's basically SWFObject written in jQuery. It's better in my opinion because it's as intuitive and configurable as jQuery, and it uses jQuery's native functionality to the eliminate the otherwise code redundancy in SWFObject, meaning you get a much smaller filesize and even faster loading.
+	</p>
+	<h4>
+		Nice!
+	</h4>
+	<p>
+		 I know. <a href="#download">Get it now!</a>
+	</p>
+	<p class="back-to-top"><a href="#">Back to Top</a></p>
+	<h3>
+		<a id="featuresLink" href="#features" name="features">Features</a>
+	</h3>
+	<p>
+		 The <strong>jQuery sIFR Plugin</strong> strives to make configuration simple and intuitive. Specify what you need, and nothing more -- sensible defaults take care of the rest.
+	</p>
+	<ul>
+		<li class="tab tab-string"><strong>font</strong>: The sIFR font file (SWF) to be used.
+		<p class="example">$('#someThing').sifr({
+	font: 'My Awesome Font' <i>// this will load the font name 'My Awesome Font.swf'</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>path</strong>: The directory path of the sIFR font file (note: this is relative to the page's url).
+		<p class="example">$('#someThing').sifr({
+	path: 'resources/fonts' <i>// this will prepend 'resources/fonts/' to the font name</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>width</strong>: The width of the sIFR element in absolute pixels.
+		<p class="example">$('#someThing').sifr({
+	width: 500 <i>// this will make the sIFR element 500 pixels wide</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>height</strong>: The height of the sIFR element in absolute pixels.
+		<p class="example">$('#someThing').sifr({
+	height: 30 <i>// this will make the sIFR element 30 pixels high</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>color</strong>: The color of the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	color: '#f00' <i>// this will make the text red</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>link</strong>: The color of anchor links in the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	link: '#0f0' <i>// this will make hyperlinks green</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>hover</strong>: The color of anchor links when hovered over in the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	hover: '#00f' <i>// this will make hyperlinks blue when a mouse goes over them</i>
+});</p>
+		</li>
+		<li class="tab tab-boolean"><strong>underline</strong>: The underlining of anchor links when hovered over in the sIFR text (default is false).
+		<p class="example">$('#someThing').sifr({
+	underline: true <i>// this will links underlined</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>textTransform</strong>: The transform options of the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	textTransform: 'capitalize' <i>// this will make every first letter in every word uppercase</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>textAlign</strong>: The horizontal alignment of the sIFR text (default is 'center').
+		<p class="example">$('#someThing').sifr({
+	textAlign: 'right' <i>// this will align the sIFR text to the right of the embed</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>offsetLeft</strong>: The horizontal offset of the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	offsetLeft: 3 <i>// this will move the text 7 pixels right maybe hiding the right of the text</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>offsetTop</strong>: The vertical offset of the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	offsetTop: 7 <i>// this will move the text 7 pixels down maybe hiding the bottom of the text</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>zoom</strong>: The z-access zoom of the sIFR text.
+		<p class="example">$('#someThing').sifr({
+	zoom: .5 <i>// this will zoom the text to 50% of the original size</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>zoomLeft</strong>: The horizontal zoom of the z-access zoom (requires the zoom property to be set).
+		<p class="example">$('#someThing').sifr({
+	zoomLeft: 1.5 <i>// this will make the zoom from the left 150% as strong</i>
+});</p>
+		</li>
+		<li class="tab tab-integer"><strong>zoomTop</strong>: The vertical zoom of the z-access zoom (requires the zoom property to be set).
+		<p class="example">$('#someThing').sifr({
+	zoomTop: .75 <i>// this will make the zoom from the top 75% as strong</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>content</strong>: The content (the text) of a sIFR element.
+		<p class="example">$('#someThing').sifr({
+	content: '<a href="#sIFR">sIFRed text</a>' <i> // this will change the text to be sIFRed</i>
+});</p>
+		</li>
+		<li class="tab tab-boolean"><strong>expressInstall</strong>: Whether a user should be prompted to update Flash with <a href="http://kb.adobe.com/selfservice/viewContent.do?externalId=6a253b75&amp;sliceId=2">Express Install</a> (default is false).
+		<p class="example">$('#someThing').sifr({
+	expressInstall: true <i>// user will be prompted to update their flash player with an expressInstall option</i>
+});</p>
+		</li>
+		<li class="tab tab-boolean"><strong>update</strong>: Whether a user should be prompted to update Flash (default is false).
+		<p class="example">$('#someThing').sifr({
+	update: true <i>// user will be prompted to update their flash player</i>
+});</p>
+		</li>
+		<li class="tab tab-string"><strong>version</strong>: The required version of flash to run sIFR (default is 7).
+		<p class="example">$('#someThing').sifr({
+	version: '6.0.65' <i>// this version or higher of flash must be present to run</i>
+});</p>
+		</li>
+		<li class="tab tab-object"><strong>embedOptions</strong>: Any overriding attributes of the sIFR embedding.
+		<p class="example">$('#someThing').sifr({
+	embedOptions: {
+		wmode: 'window' <i>// this will disable the transparency of the sIFR embedding</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-object"><strong>flashOptions</strong>: Any overriding options for the jQuery Flash Plugin.
+		<p class="example">$('#someThing').sifr({
+	flashOptions: {
+		expressInstall: false, <i>// user will not be prompted with an expressInstall option</i>
+		update: true, <i>// user will be prompted to update</i>
+		version: '7' <i>// user must have at least flash player 7</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-object"><strong>flashvars</strong>: Any overriding and/or additional flashvars to set.
+		<p class="example">$('#someThing').sifr({
+	flashvars: {
+		linkcolor: '#FF0000', <i>// this would overwrite the link color</i>
+		emcolor: '#FF6600' <i>// for styling elements in <a href="http://webdesign.maratz.com/lab/multi_color_sifr/">multi-color sIFR</a> fonts</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-function"><strong>before</strong>: A function to be run before sIFR begins executing, where 'this' is the object(s) and arg1 is the current sIFR parameters.
+		<p class="example">$('#someThing').sifr({
+	before: function () {
+		alert('We need sIFR power for ' + this.length + ' object(s)!'); <i>// alerts before any sIFRing</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-function"><strong>after</strong>: A function to be run after sIFR finishes executing, where 'this' is the object(s) and arg1 is the current sIFR parameters.
+		<p class="example">$('#someThing').sifr({
+	after: function(param) {
+		alert('sIFR is completely done with the font ' + param.font + '!'); <i>// alerts after all sIFRing</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-function"><strong>beforeEach</strong>: A function to be run before each sIFR execution, where 'this' is the object, arg1 is jQuery(this), and arg2 is the current sIFR parameters.
+		<p class="example">$('#someThing').sifr({
+	beforeEach: function () {
+		alert(this.innerHTML + ' needs sIFR power!'); <i>// alerts before every element</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-function"><strong>afterEach</strong>: A function to be run after each sIFR execution, where 'this' is the object, arg1 is jQuery(this), and arg2 is the current sIFR parameters.
+		<p class="example">$('#someThing').sifr({
+	afterEach: function (t) {
+		alert(t.text() + ' needed sIFR power!'); <i>// alerts after every element</i>
+	}
+});</p>
+		</li>
+		<li class="tab tab-boolean"><strong>save</strong>: Whether settings passed into the jQuery sIFR Plugin will be saved for later use.
+		<p class="example">$('#someThing').sifr({
+	path: 'resources/fonts',
+	underline: true,
+	save: true <i>// everytime jQuery sIFR runs, from now on these settings will be the default</i>
+});</p>
+		<p class="example">$.sifr({
+	<i>// save is true by default if sIFR is run without an element</i>
+	path: 'resources/fonts', underline: true });</p>
+		</li>
+		<li class="tab tab-boolean"><strong>unsifr</strong>: Whether the element(s) passed into the jQuery sIFR Plugin will be un-sIFRed.
+		<p class="example">$('#someThing').sifr({
+	unsifr: true <i>// this will un-sIFR text, if the text is currently sIFRed</i>
+});</p>
+		</li>
+	</ul>
+	<p class="back-to-top"><a href="#">Back to Top</a></p>
+	<h3>
+		<a id="examplesLink" href="#examples" name="examples">Examples</a>
+	</h3>
+	<p>
+		 In this example, we change the text of an element with the id of <strong>oldtype</strong> into <strong>red Medici</strong> sIFR text.
+	</p>
+	<p class="example"
+>&lt;div id=&quot;oldtype&quot; style=&quot;font: 8em 'Times'; &quot;&gt;Sample Text&lt;/div&gt;
+
+&lt;input type=&quot;button&quot; value=&quot;sIFR this...&quot; onClick=&quot;$('#oldtype').sifr({font: 'fonts/Medici Text', color:'#f00'}); &quot;&gt;
+&lt;input type=&quot;button&quot; value=&quot;UnsIFR this...&quot; onClick=&quot;$('#oldtype').sifr(false); &quot;&gt;</p>
+	<div id="oldtype" style="font: 8em 'Times'; ">
+		 Sample Text
+	</div>
+	<input type="button" value="sIFR this..." onclick="$('#oldtype').sifr({path: 'fonts/', font: 'Medici Text', color:'#f00'});"><input type="button" value="UnsIFR this..." onclick="$('#oldtype').sifr(false);">
+	<p>
+		 &nbsp;
+	</p>
+	<p>
+		 In this example, we save some settings for later use.
+	</p>
+	<p class="example"
+>&lt;script type=&quot;text/javascript&quot;&gt;
+$.sifr({
+path: 'fonts/',
+color: '#060'
+});
+&lt;/script&gt; &lt;div id=&quot;gunmetal&quot; style=&quot;font: 5em 'Times'; &quot;&gt;Sample Text&lt;/div&gt;
+&lt;input type=&quot;button&quot; value=&quot;sIFR this...&quot; onClick=&quot;$('#gunmetal').sifr({font: 'Gunmetal' }); &quot;&gt;
+
+&lt;input type=&quot;button&quot; value=&quot;UnsIFR this...&quot; onClick=&quot;$('#gunmetal').sifr(false); &quot;&gt;
+	</p>
+	<div id="gunmetal" style="font: 5em 'Times'; ">
+		 Sample Text
+	</div>
+	<input type="button" value="sIFR this..." onclick="$('#gunmetal').sifr({path: 'fonts/', color: '#060', font: 'Gunmetal' });">
+
+	<input type="button" value="UnsIFR this..." onclick="$('#gunmetal').sifr(false);">
+	<p>
+		 &nbsp;
+	</p>
+	<p>
+		 In this example, you can test your own results with my plugin.
+	</p>
+	<p class="example"
+>&lt;div id=&quot;test&quot; style=&quot;<input id="test_css" class="test" style="width:345px;" onkeyup="$('#test').sifr(false); $('#test').attr('style', this.value);" type="text" value="font: 5em 'Times'; color: #f00; ">&quot;&gt;
+
+<input id="test_txt" class="test" style="width:430px;" onkeyup="$('#test').sifr(false); $('#test').html(this.value);" type="text" value="Your Text Here">
+&lt;/div&gt;
+&lt;input type=&quot;button&quot; value=&quot;sIFR this...&quot; onClick=&quot;$('#test').sifr({<input id="test_jss" class="test" style="width:270px;" type="text" value="font: 'fonts/Gunmetal'">}); &quot;&gt;
+&lt;input type=&quot;button&quot; value=&quot;UnsIFR this...&quot; onClick=&quot;$('#test').sifr(false); &quot;&gt;</p>
+
+	<div id="test" style="font: 5em 'Times'; color: #f00; ">
+		 Sample Text
+	</div>
+	<input type="button" value="sIFR this..." onclick="eval('$(\'#test\').sifr({path:\'\',' + $('#test_jss').val() + '});');">
+	<input type="button" value="UnsIFR this..." onclick="$('#test').sifr(false);">
+	<p class="back-to-top"><a href="#">Back to Top</a></p>
+	<h3>
+		<a id="knownIssuesLink" href="#knownIssues" name="knownIssues">Known Issues</a>
+	</h3>
+	<p>
+		 In Opera Browsers, you must set the font in the function (e.g: $('h1').sifr({font: 'font name'});), because Opera drops unregistered fonts from CSS. Apparently, they don't want to dream.
+	</p>
+	<p>
+		 You should not use jQuery packed with this plugin (or ever for that matter). If you do use jQuery packed with this plugin, Internet Explorer will probably display a "click to activate" border on every sIFR replacement.
+	</p>
+	<p class="back-to-top"><a href="#">Back to Top</a></p>
+	<h3>
+		<a id="licenseLink" href="#license" name="license">License</a>
+	</h3>
+	<p>
+		 jQuery Sifr Plugin uses a dual MIT/GPL license.
+	</p>
+	<h4>
+		MIT License
+	</h4>
+	<p>
+		 Copyright (c) 2008 Jonathan Neal
+	</p>
+	<p>
+		 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+	</p>
+	<p>
+		 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+	</p>
+	<p>
+		 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	</p>
+	<h4>
+		GPL License
+	</h4>
+	<p>
+		 jQuery Sifr Plugin by Jonathan Neal
+	</p>
+	<p>
+		 Copyright (C) 2008 Jonathan Neal
+	</p>
+	<p>
+		 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+	</p>
+	<p>
+		 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+	</p>
+	<p>
+		 You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
+	</p>
+	<p class="back-to-top"><a href="">Back to Top</a></p>
+	<h3>
+		<a id="writeMeLink" href="#writeMe" name="writeMe">Write Me</a>
+	</h3>
+	<p>Feel free to leave me any questions, concerns, encouragement, or any other feedback related to the jQuery sIFR Plugin.</p>
+	<form id="writeForm" method="post" action="http://jquery.thewikies.com/sifr/writeme.php">
+		<dl>
+			<dt>Your Email:</dt>
+			<dd>
+				<input name="email-address" style="width: 400px;" type="text">
+			</dd>
+			<dt>Subject:</dt>
+			<dd>
+				<input name="email-subject" style="width: 400px;" type="text">
+			</dd>
+			<dt>Message:</dt>
+			<dd>
+				<textarea cols="45" name="email-message" rows="5" style="width: 400px;"></textarea>
+			</dd>
+			<dd>
+				<input type="submit" value="Write Me!"/>
+			</dd>
+		</dl>
+	</form>
+	<p class="back-to-top"><a href="#">Back to Top</a></p>
+</div>
+</body>
+</html>

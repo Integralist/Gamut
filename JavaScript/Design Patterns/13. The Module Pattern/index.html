@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript: The Module Pattern</title>
+</head>
+<body>
+
+	<h1>The Module Pattern</h1>
+	<p><a href="http://www.engfers.com/code/javascript-module-pattern/">http://www.engfers.com/code/javascript-module-pattern/</a></p>
+	<p>One drawback of the private members when used with constructors is that they are recreated every time the constructor is invoked to create a new object.</p>
+	<p>This is actually a problem with any members you add to this inside of constructors. In order to avoid this duplication of effort and save memory, you can add common properties and methods to the pro- totype property of the constructor. This way they are shared among instances created with the same constructor.</p>
+	<p>See code within this page for an example...</p>
+	
+	<script src="Module.js"></script>
+	<script type="text/javascript">
+		function Gadjet() {
+			// Private member
+			var name = 'iPod';
+			
+			// Public method
+			this.getName = function() {
+				return name;
+			};
+		}
+		
+		Gadjet.prototype = (function() {
+			// Private member
+			var browser = "WebKit";
+			
+			// Public prototype members
+			return {
+				getBrowser: function() {
+					return browser;
+				}
+			};
+		})();
+		
+		var toy = new Gadget();
+		console.log(toy.getName()); // Privileged "own" method
+		console.log(toy.getBrowser()); // Privileged prototype method
+	</script>
+
+</body>
+</html>

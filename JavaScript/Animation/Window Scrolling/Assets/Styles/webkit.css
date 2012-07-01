@@ -1,0 +1,12 @@
+/*
+	Author		: Storm Creative
+	Document		: WebKit
+	Created on	: dd-mm-yyyy
+	Description	: Applies WebKit specific styles.
+	Swatches		:
+		#000000 = Black
+*/
+
+#contactus textarea {
+	width: 280px;
+}

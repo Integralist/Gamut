@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Table Pagination with jQuery</title>
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jTPS.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$('#demoTable').jTPS( { perPages: [5,12,15,50,'ALL'], scrollStep: 1, scrollDelay: 30 } );
+			
+		// bind mouseover for each tbody row and change cell (td) hover style
+		$('#demoTable tbody tr:not(.stubCell)').bind('mouseover mouseout', function (e) {
+			// hilight the row
+			e.type == 'mouseover' 
+				? $(this).children('td').addClass('hilightRow') 
+				: $(this).children('td').removeClass('hilightRow');
+		});
+	})
+</script>
+<link rel="stylesheet" href="jTPS.css" media="screen" />
+<style type="text/css">
+	body 
+	{ font-family: Tahoma; font-size: 9pt; }
+	
+	#demoTable thead th 
+	{ white-space: nowrap; overflow-x:hidden; padding: 3px; }
+	
+	#demoTable tbody td 
+	{ padding: 3px; }
+</style>
+</head>
+<body>
+
+	<table id="demoTable" style="border: 1px solid #ccc;" cellspacing="0" width="700"> 
+        <thead> 
+            <tr> 
+                <th sort="index">ucode</th> 
+                <th sort="date">Date</th> 
+                <th sort="description">Room Type</th> 
+                <th sort="beds">Beds</th> 
+                <th sort="maxGuests">Occupancy</th> 
+                <th sort="average">Nightly Avg</th> 
+                <th sort="total">Total</th> 
+            </tr> 
+        </thead> 
+        <tbody> 
+            <tr> 
+                <td align="right">&#x602; \u0602</td> 
+                <td>8/31/2008</td> 
+                <td>1 Bdrm Condo K (96 left)</td> 
+                <td>1</td> 
+                <td>4 max</td> 
+                <td>$169.00</td> 
+                <td align="right">$676.00</td> 
+            </tr><tr> 
+                <td align="right">&#x612; \u0612</td> 
+                <td>9/1/2008</td> 
+                <td>Studio Condo Q (10 left)</td> 
+                <td>1</td> 
+                <td>4 max</td> 
+                <td>$149.00</td> 
+                <td align="right">$596.00</td> 
+            </tr><tr> 
+                <td align="right">&#x614; \u0614</td> 
+                <td>9/2/2008</td> 
+                <td>2 Bdrm Townhome (7 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$239.00</td> 
+                <td align="right">$956.00</td> 
+            </tr><tr> 
+                <td align="right">&#x615; \u0615</td> 
+                <td>9/3/2008</td> 
+                <td>3 Bdrm Condo K/Q/2T (2 left)</td> 
+                <td>4</td> 
+                <td>8 max</td> 
+                <td>$379.00</td> 
+                <td align="right">$1516.00</td> 
+            </tr><tr> 
+                <td align="right">&#x618; \u0618</td> 
+                <td>9/4/2008</td> 
+                <td>2 Bdrm Condo w/Den Custom (1 left)</td> 
+                <td>2</td> 
+                <td>6 max</td> 
+                <td>$329.00</td> 
+                <td align="right">$1316.00</td> 
+            </tr><tr> 
+                <td align="right">&#x620; \u0620</td> 
+                <td>9/5/2008</td> 
+                <td>2 Bdrm Condo K/K (25 left)</td> 
+                <td>2</td> 
+                <td>6 max</td> 
+                <td>$229.00</td> 
+                <td align="right">$916.00</td> 
+            </tr><tr> 
+                <td align="right">&#x621; \u0621</td> 
+                <td>9/6/2008</td> 
+                <td>3 Bdrm Townhome (3 left)</td> 
+                <td>3</td> 
+                <td>6 max</td> 
+                <td>$409.00</td> 
+                <td align="right">$1636.00</td> 
+            </tr><tr> 
+                <td align="right">&#x630; \u0630</td> 
+                <td>9/7/2008</td> 
+                <td>2 Bdrm Condo K/2T (57 left)</td> 
+                <td>3</td> 
+                <td>6 max</td> 
+                <td>$229.00</td> 
+                <td align="right">$916.00</td> 
+            </tr><tr> 
+                <td align="right">&#x603; \u0603</td> 
+                <td>9/8/2008</td> 
+                <td>Hotel Loft K/Q (16 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$189.00</td> 
+                <td align="right">$756.00</td> 
+            </tr><tr> 
+                <td align="right">&#x607; \u0607</td> 
+                <td>9/9/2008</td> 
+                <td>2 Bdrm. Loft K/Q/Q,3T/SS (9 left)</td> 
+                <td>6</td> 
+                <td>11 max</td> 
+                <td>$389.00</td> 
+                <td align="right">$1556.00</td> 
+            </tr><tr> 
+                <td align="right">&#x610; \u0610</td> 
+                <td>9/10/2008</td> 
+                <td>1 Bdrm Loft K/Q+2T/Murphy (5 left)</td> 
+                <td>5</td> 
+                <td>8 max</td> 
+                <td>$269.00</td> 
+                <td align="right">$1076.00</td> 
+            </tr><tr> 
+                <td align="right">&#x622; \u0622</td> 
+                <td>9/11/2008</td> 
+                <td>Hotel Loft Ste K/Q (3 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$179.00</td> 
+                <td align="right">$716.00</td> 
+            </tr><tr> 
+                <td align="right">&#x625; \u0625</td> 
+                <td>9/12/2008</td> 
+                <td>2 Bdrm K/Q/Murphy (6 left)</td> 
+                <td>3</td> 
+                <td>6 max</td> 
+                <td>$269.00</td> 
+                <td align="right">$1076.00</td> 
+            </tr><tr> 
+                <td align="right">&#x626; \u0626</td> 
+                <td>9/13/2008</td> 
+                <td>Hotel Jr Suite K (4 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$149.00</td> 
+                <td align="right">$596.00</td> 
+            </tr><tr> 
+                <td align="right">&#x628; \u0628</td> 
+                <td>9/14/2008</td> 
+                <td>Std Hotel Room 2 Double (27 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$109.00</td> 
+                <td align="right">$436.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x632; \u0632</td> 
+                <td>9/15/2008</td> 
+                <td>Hotel Loft K/2T (15 left)</td> 
+                <td>3</td> 
+                <td>4 max</td> 
+                <td>$189.00</td> 
+                <td align="right">$756.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x633; \u0633</td> 
+                <td>9/16/2008</td> 
+                <td>Studio Q/Murphy (6 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$169.00</td> 
+                <td align="right">$676.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x635; \u0635</td> 
+                <td>9/17/2008</td> 
+                <td>Exec 2 Bdrm Lft K/K/2Q/SS (1 left)</td> 
+                <td>4</td> 
+                <td>10 max</td> 
+                <td>$399.00</td> 
+                <td align="right">$1596.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x636; \u0636</td> 
+                <td>9/18/2008</td> 
+                <td>Std Hotel Room Q (34 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$117.00</td> 
+                <td align="right">$466.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x638; \u0638</td> 
+                <td>9/19/2008</td> 
+                <td>Std Hotel Room 2 Q (28 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$117.00</td> 
+                <td align="right">$466.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x639; \u0639</td> 
+                <td>9/20/2008</td> 
+                <td>1 Bdrm K/Murphy (19 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$229.00</td> 
+                <td align="right">$916.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x640; \u0640</td> 
+                <td>9/21/2008</td> 
+                <td>Exec. 2 Bdrm K/2Q/Murphy (2 left)</td> 
+                <td>4</td> 
+                <td>8 max</td> 
+                <td>$269.00</td> 
+                <td align="right">$1076.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x641; \u0641</td> 
+                <td>9/22/2008</td> 
+                <td>Hotel Superior K (26 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$149.00</td> 
+                <td align="right">$596.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x642; \u0642</td> 
+                <td>9/23/2008</td> 
+                <td>2 Bdrm Cabin Firepl K/Q+T (1 left)</td> 
+                <td>3</td> 
+                <td>7 max</td> 
+                <td>$339.00</td> 
+                <td align="right">$1356.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x601; \u0601</td> 
+                <td>9/24/2008</td> 
+                <td>3 Bdrm Cabin K/Q+T/2T (1 left)</td> 
+                <td>5</td> 
+                <td>9 max</td> 
+                <td>$469.00</td> 
+                <td align="right">$1876.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x605; \u0605</td> 
+                <td>9/25/2008</td> 
+                <td>Dlx 1Bd Loft,K,Q/T firepl (1 left)</td> 
+                <td>3</td> 
+                <td>6 max</td> 
+                <td>$469.00</td> 
+                <td align="right">$1876.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x606; \u0606</td> 
+                <td>9/26/2008</td> 
+                <td>2 Bdrm Cabin K/Q+T (2 left)</td> 
+                <td>3</td> 
+                <td>5 max</td> 
+                <td>$279.00</td> 
+                <td align="right">$1116.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x609; \u0609</td> 
+                <td>9/27/2008</td> 
+                <td>Dlx 1 Bdrm Cabin Firepl K (3 left)</td> 
+                <td>1</td> 
+                <td>4 max</td> 
+                <td>$389.00</td> 
+                <td align="right">$1556.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x611; \u0611</td> 
+                <td>9/28/2008</td> 
+                <td>Dlx 2 Bdm Cbn Firepl K/2T (3 left)</td> 
+                <td>2</td> 
+                <td>6 max</td> 
+                <td>$469.00</td> 
+                <td align="right">$1876.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x613; \u0613</td> 
+                <td>9/29/2008</td> 
+                <td>Lodge 2 Bdrm Suite Q/Q (1 left)</td> 
+                <td>2</td> 
+                <td>4 max</td> 
+                <td>$279.00</td> 
+                <td align="right">$1116.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x617; \u0617</td> 
+                <td>9/30/2008</td> 
+                <td>Dlx3Bdm/2Bth/FP/K/QT/QT (1 left)</td> 
+                <td>5</td> 
+                <td>8 max</td> 
+                <td>$549.00</td> 
+                <td align="right">$2196.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x619; \u0619</td> 
+                <td>10/1/2008</td> 
+                <td>Studio Cabin Firepl K (6 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$209.00</td> 
+                <td align="right">$836.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x623; \u0623</td> 
+                <td>10/2/2008</td> 
+                <td>Studio Cabin Q (6 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$169.00</td> 
+                <td align="right">$676.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x624; \u0624</td> 
+                <td>10/3/2008</td> 
+                <td>1 Bdrm Cabin Firepl K (3 left)</td> 
+                <td>1</td> 
+                <td>4 max</td> 
+                <td>$279.00</td> 
+                <td align="right">$1116.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x631; \u0631</td> 
+                <td>10/4/2008</td> 
+                <td>Lodge Rm/Shared Bath Q (4 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$109.00</td> 
+                <td align="right">$436.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x637; \u0637</td> 
+                <td>10/5/2008</td> 
+                <td>Lodge Room Q (4 left)</td> 
+                <td>1</td> 
+                <td>2 max</td> 
+                <td>$169.00</td> 
+                <td align="right">$676.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x604; \u0604</td> 
+                <td>10/6/2008</td> 
+                <td>Deluxe 3 Bdrm Condo K/Q/Q (2 left)</td> 
+                <td>3</td> 
+                <td>8 max</td> 
+                <td>$499.00</td> 
+                <td align="right">$1996.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x608; \u0608</td> 
+                <td>10/7/2008</td> 
+                <td>1 Bdrm Condo with Den K (1 left)</td> 
+                <td>1</td> 
+                <td>6 max</td> 
+                <td>$222.00</td> 
+                <td align="right">$886.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x616; \u0616</td> 
+                <td>10/8/2008</td> 
+                <td>Studio Condo Murphy (5 left)</td> 
+                <td>NaN</td> 
+                <td>4 max</td> 
+                <td>$169.00</td> 
+                <td align="right">$676.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x627; \u0627</td> 
+                <td>10/9/2008</td> 
+                <td>3 Bdrm Condo K/Q/Q (6 left)</td> 
+                <td>3</td> 
+                <td>8 max</td> 
+                <td>$339.00</td> 
+                <td align="right">$1356.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x629; \u0629</td> 
+                <td>10/10/2008</td> 
+                <td>1 Bdrm Condo K (76 left)</td> 
+                <td>1</td> 
+                <td>4 max</td> 
+                <td>$179.00</td> 
+                <td align="right">$716.00</td> 
+            </tr><tr class="hideTR"> 
+                <td align="right">&#x634; \u0634</td> 
+                <td>10/11/2008</td> 
+                <td>2 Bdrm Condo K/Q (88 left)</td> 
+                <td>2</td> 
+                <td>6 max</td> 
+                <td>$229.00</td> 
+                <td align="right">$916.00</td> 
+            </tr> 
+     
+        </tbody> 
+        <tfoot> 
+            <tr> 
+                <td colspan=7> 
+                    <div class="pagination"></div> 
+                    <div class="paginationTitle">Page</div> 
+                    <div class="selectPerPage"></div> 
+                    <div class="status"></div> 
+                </td> 
+            </tr> 
+        </tfoot> 
+    </table>
+    
+</body>
+</html>

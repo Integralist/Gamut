@@ -1,0 +1,13 @@
+p code {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.ui-icon-storm-random {
+	background: url(custom-icon.png) 0 0 no-repeat;
+}
+
+#test_loadPage {
+	border: 1px dashed #C00;
+	cursor: pointer;
+}

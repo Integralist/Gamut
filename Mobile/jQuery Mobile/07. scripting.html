@@ -1,0 +1,43 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script>
+				alert('This runs before the page animates into view');
+		</script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="myscriptingpage">
+			<div data-role="header">
+				<h1>Scripting Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<h2>Using JavaScript</h2>
+				<p>The below link opens a dialog. The dialog has an <code>id</code> value of 'mydialog'.</p>
+				<p>We have binded the <code>pagecreate</code> event to the main <code>document</code> and are using event delegation to wait for the element with the id of 'mydialog' to bubble up, and then we trigger an <code>alert</code> message.</p>
+				<a href="dialog.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop">Open dialog (pop transition)</a>
+				<p>We also set a timeout of 2 seconds before calling the <code>changePage</code> function which changes the current page to the specified URL.</p>
+				<h2>Enhancing new markup</h2>
+				<p>The page plugin dispatches a “pagecreate” event, which most widgets use to auto-initialize themselves. As long as a widget plugin script is referenced, it will automatically enhance any instances of the widgets it finds on the page.</p>
+				<p>However, if you generate new markup client-side or load in content via Ajax and inject it into a page, you can trigger the <code>create</code> event to handle the auto-initialization for all the plugins contained within the new markup. This can be triggered on any element (even the page div itself), saving you the task of manually initializing each plugin (listview button, select, etc.).</p>
+				<p>For example, if a block of HTML markup (say a login form) was loaded in through Ajax, trigger the <code>create</code> event to automatically transform all the widgets it contains (<a href="http://jquerymobile.com/test/docs/forms/textinputs/index.html" class="ui-link">inputs</a> and <a href="http://jquerymobile.com/test/docs/buttons/index.html" class="ui-link">buttons</a> in this case) into the enhanced versions. The code for this scenario would be:</p>
+				<pre style="margin: 25px 0;"><code style="font-size: 12px;">$( ...new markup that contains widgets... ).appendTo( ".ui-page" ).trigger( "create" );</code></pre>
+				<h2>Create vs. refresh: An important distinction</h2>
+				<p>Note that there is an important difference between the <code>create</code> event and <code>refresh</code> method that some widgets have. The <code>create</code> event is suited for enhancing <em>raw markup</em> that contains one or more widgets. The <code>refresh</code> method should be used on existing (already enhanced) widgets that have been manipulated programmatically and need the UI be updated to match.</p>
+				<p>For example, if you had a page where you dynamically appended a new unordered list with <code>data-role=listview</code> attribute after page creation, triggering <code>create</code> on a parent element of that list would transform it into a <a href="http://jquerymobile.com/test/docs/lists/index.html" class="ui-link">listview</a> styled widget. If more list items were then programmatically added, calling the listview’s <code>refresh</code> method would update just those new list items to the enhanced state and leave the existing list items untouched.</p>
+				<h2>Binding to mouse and touch events</h2>
+				<p>One inportant consideration in mobile is handling mouse and touch events. These events differ significantly across mobile platforms, but the common denominator is that click events will work everywhere, but usually after a significant delay of 500-700ms. This delay is necessary for the browser to wait for double tap, scroll and extended hold tap events to potentially occur. To avoid this delay, it's possible to bind to touch events (ex. touchstart) but the issue with this approach is that some mobile platforms (WP7, Blackberry) don't support touch. To compound this issue, some platforms will emit <em>both</em> touch and mouse events so if you bind to both types, duplicate events will be fired for a single interaction.</p>
+				<p>Our solution is to create a set of <a href="../api/events.html" class="ui-link">virtual events</a> that normalize mouse and touch events. This allows the developer to register listeners for the basic mouse events, such as mousedown, mousemove, mouseup, and click, and the plugin will take care of registering the correct listeners behind the scenes to invoke the listener at the fastest possible time for that device. This still retains the order of event firing in the traditional mouse environment, should multiple handlers be registered on the same element for different events. The virtual mouse system exposes the following virtual events to jQuery bind methods: <code>vmouseover</code>, <code>vmousedown</code>, <code>vmousemove</code>, <code>vmouseup</code>, <code>vclick</code>, and <code>vmousecancel</code></p>
+			</div>
+			<div data-role="footer">
+				<h4>Scripting Footer</h4>
+			</div>
+		</div>
+	</body>
+</html>

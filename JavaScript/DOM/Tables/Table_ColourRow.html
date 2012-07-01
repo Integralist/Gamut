@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DOM. Colour alternating TABLE Rows</title>
+<style type="text/css">
+body
+{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+table
+{
+	border: 1px dotted red;
+}
+
+caption
+{
+	padding: .2em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+th
+{
+	font-weight: normal;
+	font-style: italic;
+	text-align: left;
+	border: 1px dotted #699;
+	background-color: #9CC;
+	color: #000000;
+}
+
+th,
+td
+{
+	width: 10em;
+	padding: .5em;
+}
+</style>
+<script type="text/javascript">
+	
+	window.onload = fnStripeTable
+	
+	function fnStripeTable()
+	{
+		if(!document.getElementsByTagName)
+		{
+			return false;
+		}
+		
+		var tables = document.getElementsByTagName('table');
+		
+		for(var i=0; i<tables.length; i++)
+		{
+			var odd = false;
+			var rows = tables[i].getElementsByTagName('tr');
+			
+			for(var iCounter=0; iCounter<rows.length; iCounter++)
+			{
+				if(odd == true)
+				{
+					rows[iCounter].style.backgroundColor = '#FFC';
+					odd = false;
+				}
+				else
+				{
+					odd = true;
+				}
+			}
+		}
+	}
+</script>
+</head>
+<body>
+
+<table>
+	<caption>Itinerary</caption>
+	<!-- Table Header -->
+	<thead>
+	<tr>
+		<th>When</th>
+		<th>Where</th>
+	</tr>
+	</thead>	
+	<!-- Table Body -->
+	<tbody>
+	<tr>
+		<td>June 9th</td>
+		<td>Portland, <abbr title="Oregon">OR</abbr></td>
+	</tr>
+	<tr>
+		<td>June 10th</td>
+		<td>Seattle, <abbr title="Washington">WA</abbr></td>
+	</tr>
+	<tr>
+		<td>June 12th</td>
+		<td>Sacramento, <abbr title="California">CA</abbr></td>
+	</tr>
+	</tbody>
+</table>
+
+<table style="border-top: 0px;">
+	<tr>
+		<th>header 1</th>
+	</tr>
+	<tr>
+		<td>column 1</td>
+	</tr>
+	<tr>
+		<td>column 1</td>
+	</tr>
+	<tr>
+		<td>column 1</td>
+	</tr>
+	<tr>
+		<td>column 1</td>
+	</tr>
+	<tr>
+		<td>column 1</td>
+	</tr>
+	<tr>
+		<td>column 1</td>
+	</tr>
+</table>
+
+</body>
+</html>

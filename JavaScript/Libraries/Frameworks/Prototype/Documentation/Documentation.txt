@@ -1,0 +1,2 @@
+http://www.prototypejs.org/api
+http://en.wikipedia.org/wiki/Prototype_JavaScript_Framework

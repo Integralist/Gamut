@@ -1,0 +1,89 @@
+			/* Page Elements */
+				body {
+					font-family:		helv, arial, verdana, sans-serif;
+					font-size:			66%;
+					color:				#000000;
+					background:			#ffffff;
+				}
+		
+				form {
+					position:			relative;
+				}
+		
+			/* Form Elements */
+				label {
+					position:			relative;
+					display:			block;
+					float:				left;
+					width:				500px;
+					clear:				both;
+					border:				1px solid #dedede;
+					padding:			5px;
+					font-size:			1.2em;
+					line-height:		30px;
+					margin-bottom:		5px;
+				}
+				
+				label.nocontent {
+					border:				none;
+				}
+				
+				label.active {
+					background-color:	#DBF9C7;
+					border:				1px solid green;
+				}
+				
+				label.error {
+					background-color:	#ecd0ce;
+					border:				1px solid red;
+				}				
+				
+				label.required {
+					background-image:	url(required.gif);
+					background-repeat:	no-repeat;
+					background-position:center left;
+				}	
+				
+				label.isgood {
+					background-image:	url(tick.gif);
+					background-repeat:	no-repeat;
+					background-position:center left;
+				}
+				
+				label input {
+					width:				200px;
+					float:				right;
+					padding:			5px;
+					font-size:			1.2em;
+					border:				2px solid #afafaf;
+				}
+				label input.active {
+					border:				2px solid green;
+				}
+				label input.error {
+					border:				2px solid red;
+				}				
+				#formsubmit {
+					width:				150px;
+				}
+				
+				
+				/* Info pop up classes */
+				.infopop {
+					display:			block;
+					position:			absolute;
+					left:				513px;
+					top:				-11px;
+					background:			transparent url(popBox.gif) no-repeat top left;
+					line-height:		40px;
+					color:				white;
+					font-size:			1.2em;
+					width:				270px;
+					height:				62px;
+					line-height:		62px;
+					text-indent:		30px;
+				}
+				
+				.errorpop {
+					background-image:	url(popBoxWarning.gif);
+				} 

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<title>Dynamic explorer tree menu with DOMscripting</title>
+	<style type="text/css">
+		@import 'PureDOMExplorer.css';
+		@import 'pagestyles.css';
+	</style>
+	<script type="text/javascript" src="PureDOMExplorer.js"></script>
+</head>
+<body>
+<div id="boundary">
+<div id="content">
+	<h1>Explorer style tree navigations with unobtrusive DOMScripting - PureDOMExplorer</h1>
+	<p>If you want to use a windows explorer style tree menu on your sites, 
+	pureDOMexplorer might be something for you.</p>
+	<p>Simply <a href="pde.zip">download the script</a> and call it in the head section 
+	of your HTML page:</p>
+<pre><code>&#60;script 
+type=&#34;text/javascript&#34; <strong>src=&#34;pde.js&#34;</strong>&#62;&#60;/script&#62;
+</code></pre>
+	<p>The script turns a nested list with the CSS class &#34;pde&#34; like the following example
+	into a collapsible tree menu as shown in the demos.</p>
+<pre><code>&#60;ul class=&#34;pde&#34;&#62;
+  &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 1&#60;/a&#62;&#60;/li&#62;
+  &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 2&#60;/a&#62;&#60;/li&#62;
+  &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3&#60;/a&#62;
+    &#60;ul&#62;	
+      &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_1&#60;/a&#62;&#60;/li&#62;
+      &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_2&#60;/a&#62;
+        &#60;ul&#62;
+          &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_2_1&#60;/a&#62;&#60;/li&#62;
+          &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_2_2&#60;/a&#62;&#60;/li&#62;
+          &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_2_3&#60;/a&#62;&#60;/li&#62;
+          &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_2_4&#60;/a&#62;&#60;/li&#62;
+        &#60;/ul&#62;
+      &#60;/li&#62;
+      &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_3&#60;/a&#62;&#60;/li&#62;
+      &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 3_4&#60;/a&#62;&#60;/li&#62;
+    &#60;/ul&#62;
+  &#60;/li&#62;
+  &#60;li&#62;&#60;a href=&#34;#&#34;&#62;Link 4&#60;/a&#62;&#60;/li&#62;
+&#60;/ul&#62;
+</code></pre>
+<p>PureDOMExplorer automatically recognises which list item has a nested list. 
+It then adds a class called &#34;parent&#34; to this item and
+adds a linked image that shows and hides the nested list. In this example it 
+turns the item "Link 3" into:</p>
+<pre><code>&#60;li class=&#34;parent&#34;&#62;
+  &#60;a href=&#34;#&#34;&#62;
+    &#60;img title=&#34;open section&#34; 
+    alt=&#34;open section&#34; src=&#34;plus.gif&#34;&#62;&#60;/a&#62;
+  &#60;a href=&#34;#&#34;&#62;Link 3&#60;/a&#62;
+  [...]
+&#60;/li&#62;
+</code></pre>
+<p>The nested list gets hidden by adding a CSS class called "hide" to it.</p>
+<p>PureDOMExplorer does not collapse a list if there is a STRONG element in it. This allows you to 
+keep a &#34;current section&#34; state in your tree.</p>
+<p>You can override the script settings by changing the properties of the pde 
+object in the pde source file:</p>
+<pre><code>// CSS classes
+pdeClass:'pde',
+hideClass:'hide',
+parentClass:'parent',
+currentClass:'current',
+// images added to the parent links
+openImage:'Close.gif',
+closedImage:'Open.gif',
+openMessage:'close section',
+closedMessage:'open section',
+</code></pre>
+<p>That's all. Now let's just recap why using PureDOMExplorer is a good idea:</p>
+<ul>
+	<li>It used modern, unobtrusive DOMscripting that only shows the functionality when 
+	JavaScript is enabled.</li>
+	<li>It is fully self-contained and works well with other scripts</li>
+	<li>Lists can be collapsed and expanded with keyboard and mouse</li>
+	<li>You can style the tree completely in CSS - the script does not change any 
+	of the look and feel.</li>
+	<li>It allows endless levels of nested lists.</li>
+	<li>It is free</li>
+</ul>
+<p>What now?</p>
+<ul>
+	<li><a href="pde.zip">Download the script and this demo page now!</a></li>
+	<li><a href="http://www.wait-till-i.com/index.php?p=213">Comment about it on the blog</a></li>
+	<li><a href="http://onlinetools.org">Browse more scripts like this one</a></li>
+</ul>
+</div>
+<div id="demos">
+<h5>Demo #1</h5>
+<ul class="pde">
+	<li><a href="#">Link 1</a></li>
+	<li><a href="#">Link 2</a>
+		<ul>	
+			<li><a href="#">Link 2_1</a></li>
+			<li><strong>Link 2_2 (current page)</strong></li>
+			<li><a href="#">Link 2_3</a></li>
+			<li><a href="#">Link 2_4</a></li>
+		</ul>	
+	</li>
+	<li><a href="#">Link 3</a>
+		<ul>	
+			<li><a href="#">Link 3_1</a></li>
+			<li><a href="#">Link 3_2</a>
+				<ul>
+					<li><a href="#">Link 3_2_1</a></li>
+					<li><a href="#">Link 3_2_2</a></li>
+					<li><a href="#">Link 3_2_3</a></li>
+					<li><a href="#">Link 3_2_4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Link 3_3</a></li>
+			<li><a href="#">Link 3_4</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Link 4</a></li>
+</ul>
+<h5>Demo #2</h5>
+<ul class="pde">
+	<li><a href="#">Link 1</a></li>
+	<li><a href="#">Link 2</a></li>
+	<li><a href="#">Link 3</a>
+		<ul>	
+			<li><a href="#">Link 3_1</a></li>
+			<li><a href="#">Link 3_2</a>
+				<ul>
+					<li><a href="#">Link 3_2_1</a></li>
+					<li><a href="#">Link 3_2_2</a></li>
+					<li><a href="#">Link 3_2_3</a></li>
+					<li><a href="#">Link 3_2_4</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Link 3_3</a></li>
+			<li><a href="#">Link 3_4</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Link 4</a></li>
+</ul>
+<img src="nocollapse.gif" id="colinfo" width="167" height="114" alt="Not collapsed, as there is a strong element" />
+</div>
+</div>
+<div id="footer">All work by Christian Heilmann</div>
+</body>
+</html>

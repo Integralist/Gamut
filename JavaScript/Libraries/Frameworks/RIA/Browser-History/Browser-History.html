@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creating our own STORM js library</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>Browser history test</h1>
+    
+    <!-- Create a navigation list of links to other pages --> 
+    <ul> 
+        <li><a href="Page1.html">Page 1</a></li> 
+        <li><a href="Page2.html">Page 2</a></li> 
+        <li><a href="Page3.html">Page 3</a></li> 
+    </ul>
+    
+    <!-- Create an empty page element to store our Ajax responses --> 
+    <div id="content"></div>
+
+	<script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript">
+		$.onDomReady(function() 
+		{ 
+        	// Enable the browser history listener so we can manually add items to the browser's history 
+			$.History.enable();
+			
+         // Assign a function to our new browser history onChange event 
+         $.History.onChange = function(currentItem, previousItem) 
+			{ 
+            // We will be adding URLs of pages to load via Ajax to the 
+				// browser history, so if a URL exists in the current history 
+				// item's hash value, load that URL via Ajax, populating the 
+				// <div id="content">page element with the result. If there is 
+				// no URL in the current history item's hash value, empty the 
+				// page element
+				if (currentItem != "") { 
+					$.Remote.load({ 
+						url: currentItem, 
+						callback: function(response)
+						{
+							// Now we have the HTML as a String 
+							// lets parse it into a DOM node
+							// so we can then locate an element 
+							// within the HTML we want to pull in
+					 
+							// Create an empty DIV which wont be used for anything
+							// other than storing the HTML response
+							var tempNode = document.createElement("div");
+					 
+							// Set the DIV's innerHTML to the HTML String we've received
+							tempNode.innerHTML = response.text;
+					 
+							// Grab a reference to all DIV's in the 'Test.html' page
+							var nodes = tempNode.getElementsByTagName("div");
+							
+							// Loop through each DIV found...
+							for (var i=0, len=nodes.length; i<len; i++) {
+								// ...looking for the DIV we want
+								if (nodes[i].id === "pageContent") {
+									// Insert the found element into the page
+									//document.getElementById("content").innerHTML = nodes[i].getElementsByTagName("h1")[0].innerHTML;
+									document.getElementById("content").innerHTML = nodes[i].innerHTML;
+					 
+									// Clean-up
+									var tempNode = null;
+									var nodes = null;
+					 
+									// Break the loop now we have found the element we want
+									break;
+								}
+							}
+						} 
+					}); 
+				} else { 
+					console.warn("aha!");
+					document.getElementById("content").innerHTML = ""; 
+				} 
+			} 
+			
+			// Listen for mouse click events throughout the current page 
+			$.Events.add(document.body, "click", function(e) 
+			{
+				// If the user clicks on an anchor <a> tag, stop the default 
+				// action from occurring and add the URL to the browser history 
+				// via the URL hash 
+				if (e.target.tagName.toLowerCase() == "a") { 
+					e.preventDefault(); 
+					
+					// We add the URL of the current link to the history list, 
+					// which will, in turn, fire the onChange method we defined 
+					// previously, loading the URL via Ajax and displaying its 
+					// contents on the page. Navigating through the browser 
+					// history using the Back and Forward buttons on the browser 
+					// toolbar will cause the different pages to load via Ajax 
+					// according to the order they were loaded in the first 
+					// place. Click a few links and see for yourself 
+					$.History.add(e.target.href); 
+				} 
+			}); 
+		});
+    </script>
+</body>
+</html>

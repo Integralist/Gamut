@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+	    <meta charset="utf-8" />
+    	<title>Modernizr</title>
+        <link href="Styles.css" media="screen" rel="stylesheet">
+    </head>
+    <body>
+    	<h1>Modernizr</h1>
+        <p><a href="http://www.modernizr.com/docs/">http://www.modernizr.com/docs/</a></p>
+    
+    	<div id="border">
+            This box should have rounded corners.
+        </div>
+        
+        <div id="shadow">
+            This box should have a shadow.
+        </div>
+        
+        <div id="gradient">
+            This box should have a gradient.
+        </div>
+    
+    	<script src="modernizr-1.5.js"></script>
+        <script>
+        	// if placeholder isn't supported:
+			if (!Modernizr.input.placeholder){
+				// use a input hint script
+				alert('placeholder replacement script here');
+			}
+			
+			if (Modernizr.localstorage){
+				// take advantage of local storage that is persistent
+				// between tabs on the same site and can store MBs of data
+				alert('take advantage of local storage that is persistent');
+			} else {
+				// resort to cookies as best you can
+				alert('resort to cookies as best you can');
+			}
+			
+			if (Modernizr.hashchange){
+				// bind to window.onhashchange
+				alert('bind to window.onhashchange');
+			} else {
+				// set up a polling loop to watch for changes
+				alert('set up a polling loop to watch for changes');
+			}
+        </script>
+    </body>
+</html>

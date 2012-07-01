@@ -1,0 +1,159 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+	<title>Mustache.js</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Mark McDonnell" />
+	<style type="text/css">
+		div {
+			margin-bottom: 1em;
+		}
+		
+		strong {
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<p><a href="https://github.com/janl/mustache.js">https://github.com/janl/mustache.js</a></p>
+	<hr>
+	<div id="example1"></div>
+	<div id="example2"></div>
+	<div id="example3"></div>
+	<div id="example4"></div>
+	
+	<!-- http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-using-the-mustache-template-library/ -->
+	<script src="Mustache.js"></script>
+	<script type="text/javascript">
+// EXAMPLE 1
+
+		/*
+		Most likely, you’ll be getting your data from the server in the form of JSON when you’re using Mustache in production. 
+		However, it’s just as easy to hard-code an object literal and use that, which is what we’ll do here.
+		*/
+		var data1 = {
+			name: "Some Useful Websites",
+			sites: ["google", "yahoo", "integralist"],
+			// If a 'section key' returns a function, it will be called and passed both the unrendered block of text and a renderer convenience function.
+			/* 
+				e.g.
+				
+				"name": "Mark",
+				"bolder": function() {
+				 	return function(text, render) {
+				   	return "<b>" + render(text) + '</b>'
+					}
+				}
+				
+				...along with...
+				
+				{{#bolder}}Hi {{name}}.{{/bolder}}
+				
+				...will return...
+				
+				<b>Hi Mark.</b>
+			*/ 
+			url: function () {
+				return function (text, render) {
+					text = render(text);
+					var url = text.trim().toLowerCase().split('tuts+')[0] + '.co.uk';
+					return '<a href="http://www.' + url + '">' + text + '</a>';
+				}
+			}
+		};
+		
+		// You can do multi-line JavaScript by escaping the line breaks 
+		// (without this the js will cause an error stopping Mustache from working)
+		var template1 = " \
+		<h1>{{name}}</h1> \
+		<ul> \
+		{{#sites}} \
+			<li> \
+				{{#url}} {{.}} {{/url}} \
+			</li> \
+		{{/sites}} \
+		</ul>";
+		
+		// to_html binds the JavaScript object 'data' to the 'template' 
+		// so the Mustache tags {{...}} know where to grab their data from
+		var html1 = Mustache.to_html(template1, data1);
+		
+// EXAMPLE 2
+
+		var data2 = {
+			your_condition: function() {
+  				// [...your code goes here...]
+  				return true;
+			}
+		}
+		
+		var template2 = " \
+		<h1>Example 2 - Conditional Sections</h1> \
+		<p>Conditional sections begin with #condition and end with /condition. \
+		When condition evaluates to true, the section is rendered, otherwise the whole block will output nothing at all. \
+		The condition may be a function returning true/false or a simple boolean.</p> \
+		{{#your_condition}} \
+			<strong>I will be visible if condition is true</strong> \
+		{{/your_condition}}";
+		
+		var html2 = Mustache.to_html(template2, data2);
+
+// EXAMPLE 3
+
+		var data3 = {
+			name: "Joe's shopping card",
+         items: ["bananas", "apples", "strawberries"]
+      };
+		
+		var template3 = " \
+		<h1>Example 3 - Enumerable Sections</h1> \
+		<p>Enumerable Sections use the same syntax as condition sections do. #shopping_items and /shopping_items. \
+		Actually the view decides how mustache.js renders the section. If the view returns an array, it will iterator over the items. \
+		Use {.} to access the current item inside the enumeration section.</p> \
+		{{name}}: \
+		<ul> \
+			{{#items}} \
+				<li>{{.}}</li> \
+			{{/items}} \
+		</ul>";
+		
+		var html3 = Mustache.to_html(template3, data3);
+		
+// EXAMPLE 4
+
+		var data4 = {
+			name: "Mark",
+		  	winnings: {
+		   	value: 1000,
+		   	taxed_value: function() {
+		      	return this.value - (this.value * 0.4);
+		    	}
+			}
+		};
+		
+		// {{>...}} is the syntax for a partial 'view'
+		var template4 = "<h1>Example 4 - Partial Views</h1><p>Welcome, {{name}}! {{>winnings}}</p>";
+		
+		// Here is the template for the partial view
+		var partials = {
+			winnings: "You just won £{{value}} (which is £{{taxed_value}} after tax)"
+		};
+		
+		var html4 = Mustache.to_html(template4, data4, partials);
+
+// DISPLAY RESULTS
+		
+		// Wait for DOM to be ready before inserting generated content into the page
+		window.onload = function(){
+			// Example 1
+			document.getElementById('example1').innerHTML = html1;
+			// Example 2
+			document.getElementById('example2').innerHTML = html2;
+			// Example 3
+			document.getElementById('example3').innerHTML = html3;
+			// Example 4
+			document.getElementById('example4').innerHTML = html4;
+		};
+	</script>
+</body>
+</html>

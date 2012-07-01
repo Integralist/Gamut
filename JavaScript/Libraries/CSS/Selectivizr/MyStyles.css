@@ -1,0 +1,14 @@
+#myDIV {
+	background-color: #999;
+	padding: 10px;
+}
+
+.someClass {
+	border: 1px solid red;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+div:nth-child(2n+1) {  
+	background-color: lime;  
+}

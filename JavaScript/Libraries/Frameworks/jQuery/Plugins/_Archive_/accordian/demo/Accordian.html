@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>jQuery UI Accordion</title>
+	
+	<link rel="stylesheet" href="demo.css" />
+	
+	<script type="text/javascript" src="../lib/jquery.js"></script>
+	<script type="text/javascript" src="../lib/chili-1.7.pack.js"></script>
+	
+	<script type="text/javascript" src="../lib/jquery.easing.js"></script>
+	<script type="text/javascript" src="../lib/jquery.dimensions.js"></script>
+	<script type="text/javascript" src="../jquery.accordion.js"></script>
+
+	<script type="text/javascript">
+	jQuery().ready(function(){
+		// simple accordion
+		jQuery('#list1a').accordion();
+		jQuery('#list1b').accordion({
+			autoheight: false
+		});
+		
+		// second simple accordion with special markup
+		jQuery('#navigation').accordion({
+			active: false,
+			header: '.head',
+			navigation: true,
+			event: 'mouseover',
+			fillSpace: true,
+			animated: 'easeslide'
+		});
+		
+		// highly customized accordion
+		jQuery('#list2').accordion({
+			event: 'mouseover',
+			active: '.selected',
+			selectedClass: 'active',
+			animated: "bounceslide",
+			header: "dt"
+		}).bind("change.ui-accordion", function(event, ui) {
+			jQuery('<div>' + ui.oldHeader.text() + ' hidden, ' + ui.newHeader.text() + ' shown</div>').appendTo('#log');
+		});
+		
+		// first simple accordion with special markup
+		jQuery('#list3').accordion({
+			header: 'div.title',
+			active: false,
+			alwaysOpen: false,
+			animated: false,
+			autoheight: false
+		});
+		
+		var wizard = $("#wizard").accordion({
+			header: '.title',
+			event: false
+		});
+		
+		var wizardButtons = $([]);
+		$("div.title", wizard).each(function(index) {
+			wizardButtons = wizardButtons.add($(this)
+			.next()
+			.children(":button")
+			.filter(".next, .previous")
+			.click(function() {
+				wizard.accordion("activate", index + ($(this).is(".next") ? 1 : -1))
+			}));
+		});
+		
+		// bind to change event of select to control first and seconds accordion
+		// similar to tab's plugin triggerTab(), without an extra method
+		var accordions = jQuery('#list1a, #list1b, #list2, #list3, #navigation, #wizard');
+		
+		jQuery('#switch select').change(function() {
+			accordions.accordion("activate", this.selectedIndex-1 );
+		});
+		jQuery('#close').click(function() {
+			accordions.accordion("activate", -1);
+		});
+		jQuery('#switch2').change(function() {
+			accordions.accordion("activate", this.value);
+		});
+		jQuery('#enable').click(function() {
+			accordions.accordion("enable");
+		});
+		jQuery('#disable').click(function() {
+			accordions.accordion("disable");
+		});
+		jQuery('#remove').click(function() {
+			accordions.accordion("destroy");
+			wizardButtons.unbind("click");
+		});
+	});
+	</script>
+
+</head>
+<body>
+	
+<div class="basic" style="float:left;"  id="list1a">
+	<a>There is one obvious advantage:</a>
+	<div>
+		<p>
+			You've seen it coming!<br/>
+			Buy now and get nothing for free!<br/>
+			Well, at least no free beer. Perhaps a bear,<br/>
+			if you can afford it.
+		</p>
+	</div>
+	<a>Now that you've got...</a>
+	<div>
+		<p>
+			your bear, you have to admit it!<br/>
+			No, we aren't selling bears.
+		</p>
+	</div>
+	<a>Rent one bear, ...</a>
+	<div>
+		<p>
+			get two for three beer.
+		</p>
+		<p>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			And now, for something completely different.<br/>
+			Period.
+		</p>
+	</div>
+</div>
+
+</body>
+</html>

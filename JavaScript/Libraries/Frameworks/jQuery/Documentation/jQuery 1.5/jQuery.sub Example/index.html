@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title><html>
+			<head>
+				<title>jQuery.sub Example</title>
+				<style type="text/css">
+					.stewie { width:200px; height:250px; background: url('images/s2.gif') no-repeat;}
+					.telling { background: url('images/s1.jpg') no-repeat;}
+					.sophisticated { background: url('images/s3.gif') no-repeat; }
+					h1 { font-size: 1.8em; padding:10px;}
+			    </style>
+			    <script type="text/javascript" src="../Releases/jquery-1.5.1.min.js"></script>
+			    <script type="text/javascript">
+			    
+			    $(function(){
+					/*
+					 Playing with jQuery.sub
+					*/
+					
+					(function() {
+					/* create a brand new copy of jQuery w/.sub() */
+					var sub$ = jQuery.sub();
+					
+					/* only available to sub$ */
+					sub$.fn.imTelling = function(){
+					   this.addClass('telling');
+					};
+					
+					/* modify .delay() for this instance*/
+					sub$.fn.delay = function(len){
+					   sub$('h1').html('Delaying for...' + len + 'ms');
+					   return $.fn.delay.apply(this, arguments);
+					};
+					
+					/* test our methods in the sub'd version*/
+					sub$(document).ready(function() {
+					    
+					    sub$('#st1').bind('click', function(){
+					      var stewie = sub$('.stewie');
+					       stewie.imTelling();
+					    });
+					    
+					     sub$('#st2').bind('click', function(){
+					      var stewie = sub$('.stewie');
+					      stewie.slideUp(300).delay(900).fadeIn(400);
+					    });
+					});
+					
+					})();
+					
+					
+					(function() {
+					  /* create a sub'd jQuery and play with plugins*/
+					  var plugin = jQuery.sub();
+					  plugin.fn.extend({
+					    imSophisticated: function() {
+					      return this.addClass('sophisticated');
+					    }
+					  });
+					
+					  /*add plugin to original jQuery*/
+					  jQuery.fn.substuff = function() {
+					    return plugin( this );
+					  };
+					})();
+					
+					
+					/* Some tests */
+					$(document).ready(function(){
+					    
+					   $('#st3').bind('click', function(){
+					      var stewie = $('.stewie');
+					      //stewie.imTelling();
+					      stewie.slideUp(300).delay(900).fadeIn(400);
+					   });
+					    
+					   $('#st4').bind('click', function(){
+					      var stewie = $('.stewie');
+					       stewie.substuff().imSophisticated();
+					   });
+					});
+				});
+
+			    </script>
+			</head>
+			<body>
+			
+			<h1>A jQuery.sub Demo.</h1>
+
+			<div class="stewie"></div>
+			
+			<ul>
+			    <li><a id="st1" href="#">Example 1: I'm telling! (sub)</a></li>
+			    <li><a id="st2" href="#">Example 2: Modified delay (sub)</a></li>
+			    <li><a id="st3" href="#">Example 3: Testing outside sub$</a></li>
+			    <li><a id="st4" href="#">Example 4: Expose specific sub'd methods externally</a></li>
+			</ul>
+			<small>From <a href="http://addyosmani.com">AddyOsmani.com</a></small>
+			</body>
+		</html>
+		</title>
+	</head>
+	<body>
+	</body>
+</html>

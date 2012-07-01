@@ -1,0 +1,49 @@
+body {
+	background-color:red;
+}
+
+div {
+	background: #ccc;
+	margin-bottom:1em;
+	padding:15px;
+	width:200px;
+}
+
+#border {
+	border-radius: 10px 10px 0 0;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+}
+
+.no-borderradius #border {
+	background:url(border.png) left top no-repeat #ccc;
+}
+
+#shadow {
+	border-bottom: 5px solid #666;
+   	border-right: 5px solid #777;
+}
+
+.boxshadow #shadow {
+	border:0;
+	box-shadow: #666 1px 1px 10px;
+	-moz-box-shadow: #666 1px 1px 10px;
+	-webkit-box-shadow: #666 1px 1px 10px;
+}
+
+#gradient {
+	background:url(gradient.png) left top repeat;
+	height:auto !important;
+	height:100px;
+	min-height:200px;
+}
+
+.cssgradients #gradient {
+	background: #ccc -webkit-gradient(linear, left top, left bottom, 
+		from(rgba(255,255,255, .4)), 
+		color-stop(0.5, rgba(255,255,255, .7)), 
+		color-stop(0.5, rgba(0,0,0, .2)), 
+		to(rgba(0,0,0, .1)));
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Basic Page</h1>
+				<a href="test.html" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all ui-btn-right" title="Logout"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Logout</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<p id="testid"><a href="test-scripts2.html">asdasddas</a> Test page with scripts (both inline and externally linked)</p>
+				<div id="home-search-filter">
+					<ul data-role="listview" data-inset="true" data-filter="true"></ul>
+				</div>
+			</div>
+			<div data-role="footer">
+				<h4>Basic Footer</h4>
+			</div>
+			<script type="text/javascript">
+				alert('my inline script');
+				var testelem = document.getElementById('testid');
+				alert(testelem);
+				testelem.style.border = '1px solid red';
+				testelem.addEventListener('click', function(e){
+					console.log(e);
+				}, false);
+				
+				var filterContainer = $('#home-search-filter'),
+					filterUL = filterContainer.find('ul')[0];
+				
+				console.log(filterUL);
+				
+				function getUsers(self) {
+					$.mobile.showPageLoadingMsg();
+					return $.ajax({ url: 'Example/search.html' });
+				}
+				
+				function filterHandler() {
+					console.log('inside handler');
+					getUsers().then(function(response){
+						filterContainer.off('focus', 'input', filterHandler);
+						$(filterUL).html(response);
+						$.mobile.hidePageLoadingMsg();
+						$(filterUL).listview('refresh');
+					}, function(){
+						console.log('failure');
+					});
+				}
+					
+				filterContainer.on('focus', 'input', filterHandler);
+				
+				$(document).bind('pagecreate', function(event, data){
+					alert('page created');
+				});
+				
+				$(document).bind('pagechange', function(event, data){
+					alert('page change');
+				});
+			</script>
+			<script src="test.js"></script>
+		</div>
+	</body>
+</html>

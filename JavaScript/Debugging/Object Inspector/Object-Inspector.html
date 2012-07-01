@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <title>PrettyPrint</title>
+            <style type="text/css">
+                body {background:#EEE;color:#222;font:0.8em Arial,Verdana,Sans-Serif;margin:0;padding:20px;}
+                #debug {
+                    width: 700px;
+                }
+            </style>
+    </head>
+    <body>
+        
+        <h1>PrettyPrint demo</h1>
+
+        <p>Author: James Padolsey,<br/>more info here: <a href="http://james.padolsey.com/javascript/prettyprint-for-javascript/">http://james.padolsey.com/javascript/prettyprint-for-javascript/</a></p>
+        <!-- prettyPrint demo -->
+        <div id="debug">JavaScript must be enabled for this to work.<br/><button id="button">Pretty print!</button></div>
+        
+        <script src="prettyprint.js"></script>
+        <script>
+        
+            var randomObject = {
+                someNumber: 99283,
+                someRegexyThing: new RegExp('a'),
+                someFunction: function(arg1, arg2, arg3) {
+                    doSomethingAmazing();
+                },
+                anotherObject: {
+                    prop: [1,2,3,{a:1}],
+                    prop2: [
+                        new Date(),
+                        "som\"ething else"
+                    ]
+                },
+                domThing: document.body.firstChild
+            };
+            
+            randomObject.circularRef = randomObject;
+            
+            document.getElementById('button').onclick = function(){
+                this.value = 'wait a sec...';
+                var ppTable = prettyPrint(randomObject, { maxDepth:1 }),
+                    debug = document.getElementById('debug');
+                debug.innerHTML = '';
+                debug.appendChild(ppTable);
+            };
+            
+        </script>
+         
+    </body>
+</html>

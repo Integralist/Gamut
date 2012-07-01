@@ -1,0 +1,168 @@
+body {
+	font-family:Georgia, Times, Serif;
+	background:#2C2421;
+	margin:50px
+}
+/* classes for tooltips */
+
+.hovertip {
+	position: absolute;
+    display: none; /* in case javascript is disabled */
+	width: 270px;
+	height:350px;
+    background: url('sub-bg.png') no-repeat;
+	font-size: 12px;
+	z-index: 100;
+	margin-left: 5px;
+	margin-top: 10px;
+	}
+.hovertip_target {
+				 font-style: italic;
+}
+ .hovertip_target:hover {
+						text-decoration: none;
+					  cursor:help;
+}
+.nav, .nav * {
+	margin:0;
+	padding:0;
+}
+#cloud{
+	float: left;
+	position:absolute;
+	line-height:1.0;
+	background:	url('bg.gif') no-repeat;
+	width:380px; 
+	height:333px; 
+	padding:80px 40px 40px 40px; 
+}
+.nav {
+	float: left;
+	position:absolute;
+	line-height:1.0;
+	width:310px; 
+	height:333px;
+	padding:0px; 
+}
+.nav ul {
+    width:160px;	
+	list-style:none;	
+	background:#fff; /*IE6 needs this*/
+}
+.nav li {
+	float: left;
+	list-style:none;	
+	position:relative;
+}
+.nav a {
+	color: #fff; 
+	text-decoration:none;
+	display:block;
+}
+.nav li ul {
+	left:0;
+	top:-999em;
+	width: 180px;
+	padding-top:50px;
+	height:190px;
+	background: url('sub-bg.png') no-repeat;
+	position:absolute;
+	list-style:none;
+	z-index:100;
+	text-align: center;
+	}
+
+
+ul.hovertip li {
+	display:inline;
+	list-style:none;
+}
+ul.hovertip li a{ text-decoration:none; font-style:italic}
+ul.hovertip {width:200px; padding-top:30px; padding-left:10px; height:95px; padding-bottom:20px; display:block}
+
+a.size1 {
+	font-size:25px;
+	padding: 10px;
+	color:#804D40;
+}
+a.size1:hover {
+	color:#E13728;
+}
+a.size2 {
+	padding: 7px;
+	font-size:20px;
+	color:#B9251A;
+}
+a.size2:hover {
+	color:#E13728;
+}
+
+
+a.size3 {
+	padding: 5px;
+	font-size:35px;
+	color:#C4876A;
+}
+
+a.size3:hover {
+	color:#E13728;
+}
+
+a.size4 {
+	padding: 5px;
+	font-size:15px;
+	color:#B46A47;
+}
+
+a.size4:hover {
+	color:#E13728;
+}
+
+a.size5 {
+	padding: 5px;
+	font-size:25px;
+	color:#E13728;
+}
+a.size5:hover {
+	color:#B46A47;
+}
+a.size6 {
+	padding: 0px;
+	font-size:12px;
+	color:#77625E
+}
+a.size6:hover {
+	color:#E13728;
+}
+a.size-sub1 {
+	padding: 20px;
+	font-size:12px;
+	color:#804D40;
+}
+a.size-sub1:hover {
+	color:#fff;
+}
+a.size-sub2 {
+	padding: 25px;
+	font-size:20px;
+	color:#E13728;
+}
+a.size-sub2:hover {
+	color:#fff;
+}
+a.size-sub3 {
+	padding: 10px;
+	font-size:18px;
+	color:#804D40;
+}
+a.size-sub3:hover {
+	color:#fff;
+}
+a.size-sub4 {
+	padding: 15px;
+	font-size:25px;
+	color:#fff;
+}
+a.size-sub4:hover {
+	color:#E13728;
+}

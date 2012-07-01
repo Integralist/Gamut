@@ -1,0 +1,19 @@
+CREATE TABLE `testdb`.`testTable` (
+  `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `firstname` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+// WE CAN CREATE A TABLE WITH A FOREIGN KEY...
+
+CREATE TABLE `testdb`.`markforeigntest` (
+  `mark_id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `my_department_id` INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY (`mark_id`),
+  CONSTRAINT `testForeignKey` FOREIGN KEY `testForeignKey` (`my_department_id`)
+    REFERENCES `departments` (`dep_id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT
+)
+ENGINE = InnoDB;

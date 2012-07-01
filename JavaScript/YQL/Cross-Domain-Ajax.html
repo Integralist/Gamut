@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<title>untitled</title>
+	<style type="text/css">
+		body { text-align: center; }
+	</style>
+</head>
+<body>
+	<h1>Cross-Domain AJAX Requests with jQuery and YQL </h1>
+	<div id="container">
+		<form>
+			<p><label>Type a URL : </label> <input type="text" name="sitename" id="sitename" /></p>
+			<p><input type="submit" name="submit" id="submit" value="Make Cross-Domain AJAX Request"></p>
+		</form>	
+	</div>
+
+     
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>	
+<script type="text/javascript" src="cross-domain-requests.js"></script>
+
+<script type="text/javascript">
+
+$('form').submit(function() {
+	var path = $('#sitename').val();
+
+	requestCrossDomain(path, function(results) {
+		$('#container').html(results);
+	});
+
+	return false;
+});		
+
+</script>
+</body>
+</html>

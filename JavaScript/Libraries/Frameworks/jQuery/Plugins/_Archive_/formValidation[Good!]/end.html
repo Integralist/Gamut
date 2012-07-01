@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Form Validation with JQuery</title>
+		<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min-packed.js"></script>
+		<script type="text/javascript">
+
+			$(function(){
+				// Grab each form element
+				$("label[title]").each(function(){
+					$(this).append("<div class=\"infopop\">");	
+					titletext = $(this).attr("title");
+					$(this).removeAttr("title");
+					$(".infopop",this).css({opacity:0}).html(titletext);
+					$("input",this).focus(function(){
+						// Mouseover
+						doFocus(this);
+					}).blur(function(){
+						// MouseOut
+						doBlur(this);
+					});
+				});
+			});
+			
+			function doFocus(obj) {
+				$(obj).addClass("active").parents("label").addClass("active").find(".infopop").animate({opacity:1,left:492},500);
+			}
+			
+			function doBlur(obj) {
+				if (validate(obj)) { 
+					isGood(obj);
+				}
+			}
+			
+			function reportErr(obj, message) {
+				$(obj).addClass("error").parents("label").removeClass("isgood").addClass("required").addClass("error").find(".infopop").html(message).addClass("errorpop").animate({opacity:1,left:492},500);
+			}
+			
+			function isGood(obj) {
+				$(obj).removeClass("error").removeClass("active").parents("label").addClass("isgood").removeClass("error").removeClass("active").find(".infopop").removeClass("errorpop").animate({opacity:0,left:513},500);
+			} 			
+			
+			function validate(obj) {
+				// Extend jQuery object to include Regular expression masks assigned to properties
+				mask = jQuery.extend({textfieldmask: /^[a-z\.\s-]{5,}$/i,phonemask: /^[0-9\(\)\+\.\s-]{8,}$/i,passwordmask: /^\w{5,}$/, emailmask:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/});
+				// Extend jQuery object to include error messages assigned to properties
+				errmsg = jQuery.extend({textfielderr:"5 or more letters",phoneerr: "Include dialling code",passworderr:"Minimum 5 characters",emailerr:"Invalid address",matcherr: "Must match"});
+			
+				// Set up variables to hold details of which mask to use and whether the field should match another field
+				var masktouse = null;
+				var mustmatch = null;
+				// Determine the type of mask we're going to validate against
+				switch(obj.name) {
+					case "name": 		masktouse="textfieldmask"; 		errtouse="textfielderr"; 	break;
+					case "phone": 		masktouse="phonemask"; 			errtouse="phoneerr"; 		break;
+					case "username": 	masktouse="textfieldmask"; 		errtouse="textfielderr"; 	break;
+					case "email": 		masktouse="emailmask"; 			errtouse="emailerr"; 		break;
+					case "password": 	masktouse="passwordmask"; 		errtouse="passworderr"; 	mustmatch="verpassword"; 	break;
+					case "verpassword": masktouse="passwordmask"; 		errtouse="passworderr"; 	mustmatch="password"; 		break;
+				}
+				// Check that the element is a required field before validating against it.
+				if($(obj).parents("label").hasClass("required") && masktouse) {
+					// Set up a quick way of accessing the object we're validating
+					pointer = $(obj);
+					// Test the value of the field against the Regular Expression
+					if (mask[masktouse].test(pointer.val())) {
+						// The field validated successfully!
+						
+						// Check to see if the field needs to match another field in the form
+						if (mustmatch) {
+							// It does need to match, so grab the object it needs to match
+							matchobj = $("#"+mustmatch);
+							if (matchobj.val()!='' && matchobj.val()!=pointer.val()) {
+								// The fields don't match, so report an error on both of them
+								reportErr(obj,errmsg["matcherr"]);	
+								reportErr(matchobj,errmsg["matcherr"]);
+							}
+							else {
+								// Either the fields match, or the other field hasn't been completed yet
+								// If the other field has been completed, call the isGood function to clear any error message showing
+								if (matchobj.val()!='') { isGood(matchobj);}
+								return true;
+							}
+						}
+						else {
+							// No match is required, so return true - validation passed!
+							return true;
+						} 
+					}
+					else { 
+						// The field failed to validate against the Regular Expression
+						reportErr(obj,errmsg[errtouse]);
+						return false; 
+					}
+				} 
+				else {	
+					// This isn't a required field, so we won't validate it against anything			
+					return true;
+				}
+			}
+	
+		</script>
+		<link href="styles/screen.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<h1>Client Side Form Validation using jQuery</h1>
+		<form>
+			<label class="required" for="name" title="Enter your name"><input type="text" id="name" name="name" />Name</label>
+			<label class="required" for="email" title="Enter your email address"><input type="text" id="email" name="email" />Email</label>
+			<label class="required" for="phone" title="Enter your phone number"><input type="text" id="phone" name="phone" />Telephone</label>
+			<label for="mobile" title="Enter your mobile phone number"><input type="text" id="mobile" name="mobile" />Mobile</label>
+			<label class="required" for="username" title="Choose a username"><input type="text" id="username" name="username" />Username</label>
+			<label class="required" for="password" title="Choose a password"><input type="password" id="password" name="password" />Password</label>
+			<label class="required" for="verpassword" title="Verify your password"><input type="password" id="verpassword" name="verpassword" />Password confirmation</label>
+			<label for="formsubmit" class="nocontent"><input type="submit" id="formsubmit" value="Create Account" /><strong>Note:</strong> Items marked <img src="images/required.gif" alt="Required marker" width="12" height="12" /> are required fields</label>
+		</form>
+		<p></p>
+</body>
+</html>

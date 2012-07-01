@@ -1,0 +1,9 @@
+// a basic update
+UPDATE testdb.testtable
+set department_id = 1
+where lastname = 'McDonnell'
+
+// with additional filters applied to the WHERE clause
+UPDATE testdb.testtable
+set department_id = 1
+where lastname = 'McDonnell' and host = 'mysite' and location like '%Connecticut'

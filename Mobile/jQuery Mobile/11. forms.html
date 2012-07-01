@@ -1,0 +1,274 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Forms Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<h2>Markup conventions</h2>
+				<p>When constructing forms to be used in jQuery Mobile, most of the standard guidelines used to create forms that submit via normal HTTP post or get still apply. However, one thing to keep in mind is that the id attributes of form controls need to be not only unique on a given page, but also unique across the pages in a site. This is because jQuery Mobile's single-page navigation model allows many different "pages" to be present in the DOM at the same time, so you must be careful to use unique id attributes so there will be only one of each in the DOM (and of course, be sure to pair them properly with label elements via the for attribute).</p>
+				<h2>Hiding labels accessibly</h2>
+				<p>For the sake of accessibility, jQuery Mobile requires that all form elements be paired with a meaningful <code>label</code>. To hide labels in a way that leaves them visible to assistive technologies—for example, when letting an element’s <code>placeholder</code> attribute serve as a label—apply the helper class <code>ui-hidden-accessible</code> to the label itself:</p>
+				<code>
+					<pre>&lt;label for="username" <strong>class="ui-hidden-accessible"</strong>&gt;Username:&lt;/label&gt;
+&lt;input type="text" name="username" id="username" value="" placeholder="Username"/&gt;
+					</pre>
+				</code>
+				<p>To hide labels within a field container and adjust the layout accordingly, add the class <code>ui-hide-label</code> to the field container as in the following:</p>
+				<code>
+					<pre>&lt;div data-role="fieldcontain" <strong>class="ui-hide-label"</strong>&gt;
+	&lt;label for="username"&gt;Username:&lt;/label&gt;
+	&lt;input type="text" name="username" id="username" value="" placeholder="Username"/&gt;
+&lt;/div&gt;
+				</pre>
+				</code>
+				<h2>Initializing groups of dynamically-injected form elements</h2>
+				<p>If you should generate new markup client-side or load in content via AJAX and inject it into a page, you can trigger the <code>create</code> event to handle the auto-initialization for all the plugins contained within the new markup. This can be triggered on any element (even the page div itself), saving you the task of manually initializing each plugin (see below).</p>
+				<p>For example, if a block of HTML markup (say a login form) was loaded in through Ajax, trigger the create event to automatically transform all the widgets it contains (inputs and buttons in this case) into the enhanced versions. The code for this scenario would be:</p>
+				<code>$( ...new markup that contains widgets... ).appendTo( ".ui-page" ).trigger( "create" );</code>
+				<h2>Refreshing form elements</h2>
+				<p>In jQuery Mobile, some enhanced form controls are simply styled (inputs), but others are custom controls (selects, sliders) built from, and kept in sync with, the native control. To programmatically update a form control with JavaScript, first manipulate the native control, then use the <code>refresh</code> method to tell the enhanced control to update itself to match the new state. Here are some examples of how to update common form controls, then call the <code>refresh</code> method:</p>
+				<h4>Example - Checkboxes:</h4>
+				<code>$("input[type='checkbox']").prop("checked",true).checkboxradio("refresh");</code>
+				<h4>Example - Radios:</h4>
+				<code>$("input[type='radio']").prop("checked",true).checkboxradio("refresh");</code>
+				<h4>Example - Selects:</h4>
+				<code><pre>var myselect = $("#selectfoo");
+myselect[0].selectedIndex = 3;
+myselect.selectmenu("refresh");
+				</pre></code>
+				<h4>Example - Sliders:</h4>
+				<code>$("input[type='range']").val(60).slider("refresh");</code>
+				<h4>Example - Flip switches (they use slider):</h4>
+				<code><pre>var myswitch = $("#selectbar");
+myswitch[0].selectedIndex = 1;
+myswitch.slider("refresh");
+				</pre></code>
+				<h2>Examples of form elements</h2>
+				<div data-role="fieldcontain">
+					<label for="name">Text Input:</label>
+					<input type="text" name="name" id="name" value=""  />
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="textarea">Textarea:</label>
+					<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="search">Search Input:</label>
+					<input type="search" name="password" id="search" value=""  />
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="slider2">Flip switch:</label>
+					<select name="slider2" id="slider2" data-role="slider">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+					</select>
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="slider">Slider:</label>
+				 	<input type="range" name="slider" id="slider" value="0" min="0" max="100"  />
+				</div>
+	
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
+						<legend>Choose as many snacks as you'd like:</legend>
+						<input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+						<label for="checkbox-1a">Cheetos</label>
+		
+						<input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+						<label for="checkbox-2a">Doritos</label>
+		
+						<input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+						<label for="checkbox-3a">Fritos</label>
+		
+						<input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+						<label for="checkbox-4a">Sun Chips</label>
+				    </fieldset>
+				</div>
+	
+				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+				    	<legend>Font styling:</legend>
+				    	<input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
+						<label for="checkbox-6">b</label>
+		
+						<input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
+						<label for="checkbox-7"><em>i</em></label>
+		
+						<input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom" />
+						<label for="checkbox-8">u</label>
+				    </fieldset>
+				</div>
+	
+				<div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup">
+				    	<legend>Choose a pet:</legend>
+				         	<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+				         	<label for="radio-choice-1">Cat</label>
+	
+				         	<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
+				         	<label for="radio-choice-2">Dog</label>
+	
+				         	<input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
+				         	<label for="radio-choice-3">Hamster</label>
+	
+				         	<input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4"  />
+				         	<label for="radio-choice-4">Lizard</label>
+				    </fieldset>
+				</div>
+	
+				<div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup" data-type="horizontal">
+				     	<legend>Layout view:</legend>
+				         	<input type="radio" name="radio-choice-b" id="radio-choice-c" value="on" checked="checked" />
+				         	<label for="radio-choice-c">List</label>
+				         	<input type="radio" name="radio-choice-b" id="radio-choice-d" value="off" />
+				         	<label for="radio-choice-d">Grid</label>
+				         	<input type="radio" name="radio-choice-b" id="radio-choice-e" value="other" />
+				         	<label for="radio-choice-e">Gallery</label>
+				    </fieldset>
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="select-choice-1" class="select">Choose shipping method:</label>
+					<select name="select-choice-1" id="select-choice-1">
+						<option value="standard">Standard: 7 day</option>
+						<option value="rush">Rush: 3 days</option>
+						<option value="express">Express: next day</option>
+						<option value="overnight">Overnight</option>
+					</select>
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="select-choice-3" class="select">Your state:</label>
+					<select name="select-choice-3" id="select-choice-3">
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+						<option value="CA">California</option>
+						<option value="CO">Colorado</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="HI">Hawaii</option>
+						<option value="ID">Idaho</option>
+						<option value="IL">Illinois</option>
+						<option value="IN">Indiana</option>
+						<option value="IA">Iowa</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NV">Nevada</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NM">New Mexico</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="ND">North Dakota</option>
+						<option value="OH">Ohio</option>
+						<option value="OK">Oklahoma</option>
+						<option value="OR">Oregon</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="SD">South Dakota</option>
+						<option value="TN">Tennessee</option>
+						<option value="TX">Texas</option>
+						<option value="UT">Utah</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WA">Washington</option>
+						<option value="WV">West Virginia</option>
+						<option value="WI">Wisconsin</option>
+						<option value="WY">Wyoming</option>
+					</select>
+				</div>
+	
+				<div data-role="fieldcontain">
+					<label for="select-choice-a" class="select">Choose shipping method:</label>
+					<select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+						<option>Custom menu example</option>
+						<option value="standard">Standard: 7 day</option>
+						<option value="rush">Rush: 3 days</option>
+						<option value="express">Express: next day</option>
+						<option value="overnight">Overnight</option>
+					</select>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<label for="select-choice-9" class="select">Shipping method(s): (multiple choice)</label>
+					<select name="select-choice-9" id="select-choice-9" multiple="multiple" data-native-menu="false">
+						<option>Choose options</option>
+						<option value="standard">Standard: 7 day</option>
+						<option value="rush">Rush: 3 days</option>
+						<option value="express">Express: next day</option>
+						<option value="overnight">Overnight</option>
+					</select>
+				</div>
+	
+				<div class="ui-body ui-body-b">
+					<fieldset class="ui-grid-a">
+						<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+						<div class="ui-block-b"><button type="submit" data-theme="a">Submit</button></div>
+				    </fieldset>
+				</div>
+				
+				<h2>Styling with data attributes</h2>
+				<p>You can specify any jQuery Mobile button <code>data-</code> attribute on a select element, too. In this example, we're setting the theme, icon and inline properties:</p>
+			
+				<div data-role="fieldcontain">
+					<label for="select-choice-11" class="select">Actions</label>
+					<select name="select-choice-11" id="select-choice-11" data-theme="e" data-icon="gear" data-inline="true" data-native-menu="false">
+						<option value="edit">Edit user</option>
+						<option value="delete">Delete user</option>
+					</select>
+				</div>
+				
+				<h2>Default Ajax form example</h2>
+	            <p>This demonstrates automated ajax handling of form submissions. The form below is configured to send regular a <code>get</code> request to <code>forms-sample-response.php</code>. On submit, jQuery Mobile will make sure that the Url specified is able to be retrieved via Ajax, and handle it appropriately. Keep in mind that just like ordinary HTTP form submissions, jQuery Mobile allows <code>get</code> result pages to be bookmarked by updating the Url hash when the response returns successfully. Also like ordinary form submissions, <code>post</code> requests do not contain query parameters in the hash, so they are not bookmarkable.</p>
+				<form action="forms-sample-response.php" method="get" class="ui-body ui-body-a ui-corner-all">
+					<fieldset>
+						<div data-role="fieldcontain">
+							<label for="shipping" class="select">Shipping method:</label>
+							<select name="shipping" id="shipping">
+								<option value="Standard shipping">Standard: 7 day</option>
+								<option value="Rush shipping">Rush: 3 days</option>
+								<option value="Express shipping">Express: next day</option>
+								<option value="Overnight shipping">Overnight</option>
+							</select>
+						</div>
+						<button type="submit" data-theme="b" name="submit" value="submit-value">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+			<div data-role="footer">
+				<h4>Forms Footer</h4>
+			</div>
+		</div>
+	</body>
+</html>

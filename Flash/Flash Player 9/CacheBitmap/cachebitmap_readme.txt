@@ -1,0 +1,1 @@
+This sample, cacheBitmap.fla, demonstrates the benefit of using bitmap caching when you animate complex vector shapes. Stars move across the Stage. Click the "cache that bitmap!" button on the Stage to see the vast improvement that the cacheAsBitmap property has on animating movie clips.

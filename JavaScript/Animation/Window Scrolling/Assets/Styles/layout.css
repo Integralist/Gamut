@@ -1,0 +1,361 @@
+/*
+	Author		: Storm Creative
+	Document		: Layout
+	Created on	: dd-mm-yyyy
+	Description	: Determines the design and layout of the website.
+	Swatches		:
+		#000000 = Black
+*/
+
+/* HTML5 Block Stylings
+ **********************************************************************/
+
+article, aside, dialog, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+
+/* Set Generic Browser Defaults
+ **********************************************************************/
+
+html, body
+{ border:0; color:#fff; font:normal small Arial, Verdana, sans-serif; margin:0; padding:0; vertical-align:baseline; }
+
+body
+{ background:url(../Images/Core/bg.png) left top repeat-x #000; }
+
+pre, code
+{ font-family:Consolas, "Courier New", Courier, monospace; color:#00C; }
+
+table
+{ border-collapse:collapse; table-layout:fixed; }
+
+p, h1, h2, h3, h4, h5, h6
+{ margin:0 0 0.5em; }
+
+h1
+{ font-size:3em; }
+
+h2
+{ font-size:2.5em; }
+
+h3, h4, h5, h6
+{ font-size:2em; }
+
+img, embed, object
+{ border:none; display:block; }
+
+form
+{ margin:0; }
+
+hr
+{ background-color:#959AC3; border:0; color:#959AC3; height:1px; }
+
+/* Styles for Image Replacement Technique
+ **********************************************************************/
+
+.imageReplacement
+{ margin:0; position:relative; }
+
+.imageReplacement span
+{ background-repeat:no-repeat; height:100%; position:absolute; width:100%; }
+
+/* General Layout
+ **********************************************************************/
+
+#container {
+	margin: auto;
+	padding-top: 15px;
+	position: relative;
+}
+
+#container,
+#speakers {
+	width: 720px;
+}
+
+#speakers {
+	background: url(../Images/Core/sprite.png) 0 0 no-repeat;
+	display: block;
+	height: 258px;
+}
+
+#girls {
+	background: url(../Images/Core/bg-girls.png) 0 0 no-repeat;
+	height: 232px;
+	left: 167px;
+	position: absolute;
+	top: 30px;
+	width: 362px;
+}
+
+#logo {
+	background: url(../Images/Core/sprite.png) 0 -258px no-repeat;
+	height: 233px;
+	left: 178px;
+	position: absolute;
+	top: 34px;
+	width: 350px;
+}
+
+#launch {
+	background: url(../Images/Core/sprite.png) -349px -265px no-repeat;
+	display: block;
+	height: 65px;
+	margin: 10px 187px 30px;
+	width: 336px;
+}
+
+#launch.success {
+	background-position: -350px -409px;
+}
+
+#launch.error {
+	background-position: -350px -1320px;
+}
+
+#buttons {
+	margin: auto;
+	position: relative;
+	width: 331px;
+}
+
+#buttons span {
+	background: url(../Images/Core/sprite.png) -520px -333px no-repeat;
+	cursor: pointer;
+	display: inline-block;
+	height: 43px;
+	width: 161px;
+}
+
+#buttons span[title='Sign up'] {
+	background-position: -350px -333px;
+	width: 159px;
+}
+
+#signup,
+#contactus {
+	background: url(../Images/Core/sprite.png) 0 -904px no-repeat;
+	height: 126px;
+	left: -87px;
+	position: absolute;
+	top: -15px;
+	width: 500px;
+	z-index: -1;
+}
+
+#contactus {
+	background-position: 0 -1030px;
+	height: 173px;
+}
+
+#signup input,
+#contactus input,
+#contactus textarea {
+	border: 1px solid #3a3a3a;
+	color: #999;
+	font-family: Arial, sans-serif;
+	font-size: 90%;
+	left: 23px;
+	padding: 5px;
+	position: relative;
+	top: 45px;
+	
+	/* CSS3 */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#contactus textarea {
+	height: 30px;
+	top:50px;
+	width: 260px;
+}
+
+#signup input:focus,
+#contactus input:focus,
+#contactus textarea:focus {
+	color:#333;
+}
+
+#signup input[type="image"],
+#contactus input[type="image"] {
+	border: 0;
+	top: 66px;
+}
+
+#contactus input[type="image"] {
+	top: 112px;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+#reasons {
+	bottom: 0;
+	background: url(../Images/Core/bg-reasons.png) left top repeat-x #000;
+	height: 156px;
+	position: absolute;
+	z-index: -2; /* this is so the footer bar can sit ontop of the sign-up/contact forms */
+}
+
+#reasons > span {
+	background: url(../Images/Core/sprite.png) 0 -591px no-repeat;
+	cursor: pointer;
+	display: block;
+	height: 43px;
+	margin: 98px auto 0;
+	width: 458px;
+}
+
+article {
+	margin: 35px auto auto;
+	padding: 30px;
+	position: relative;
+	width: 653px;
+}
+
+article span:first-child {
+	background: url(../Images/Core/sprite.png) 0 -491px no-repeat;
+	height: 100px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 713px;
+	z-index: -1;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5 {
+	font-size: 150%;
+}
+
+article p {
+	font-size: 95%;
+}
+
+article div {
+	border-bottom:1px solid #3a3a3a;
+	margin-bottom: 25px;
+	min-height: 120px;
+	padding-bottom: 30px;
+}
+
+article span.left {
+	float: left;
+}
+
+article span.right {
+	float: right;
+}
+
+article span.left,
+article span.right {
+	background: none;
+	position: static;
+}
+
+article .venue span,
+article .social span,
+article .offers span,
+article .gallery span,
+article .comps span {
+	background: url(../Images/Core/sprite.png) 0 0 no-repeat;
+}
+
+article .venue span {
+	background-position: 0 -634px;
+	height: 124px;
+	margin: 0 30px;
+	width: 249px;
+}
+
+article .social span {
+	background-position: -249px -653px;
+	height: 105px;
+	margin: 0 40px;
+	width: 240px;
+}
+
+article .offers span {
+	background-position: -80px -812px;
+	height: 92px;
+	margin: 20px -80px 0 0;
+	width: 420px;
+}
+
+article .gallery span {
+	background-position: -501px -663px;
+	height: 95px;
+	margin: 20px 60px 0 50px;
+	width: 219px;
+}
+
+article .comps span {
+	background-position: -565px -758px;
+	height: 146px;
+	margin: 0 160px 0 60px;
+	width: 155px;
+}
+
+article .offers p {
+	width: 300px;
+}
+
+article .comps {
+	border-bottom: 0;
+}
+
+article h2 {
+	padding-top: 5px;
+}
+
+article h4 {
+	padding-top: 15px;
+}
+
+#reasons #boxBottom {
+	background-position: 0 -1203px;
+	height: 117px;
+	margin: -140px auto 0;
+	width: 721px;
+}
+
+#socials {
+	padding: 10px 0 50px;
+	text-align: center;
+}
+
+#socials li {
+	display: inline;
+}
+
+#socials a {
+	background: url(../Images/Core/sprite.png) -350px -376px no-repeat;
+	display: inline-block;
+	height: 32px;
+	text-indent: -999em;
+	width: 32px;
+}
+
+#socials a[title='Twitter'] {
+	background-position: -390px -376px;
+}
+
+#socials a[title='MySpace'] {
+	background-position: -428px -376px;
+}
+
+.error {
+	background-color: #F00;
+	color: #fff !important;
+}

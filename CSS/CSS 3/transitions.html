@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CSS3 Transitions</title>
+<style>
+/*
+	-webkit-transition: color 0.2s linear;
+	-moz-transition: color 0.2s linear;
+	-ms-transition: color 0.2s linear;
+	-o-transition: color 0.2s linear;
+	transition: color 0.2s linear;
+*/
+
+h1 {
+	color:red;
+	cursor:pointer;
+	
+	/* CSS3 Transitions */
+	
+	-webkit-transition-property:color; 
+	-webkit-transition-duration:0.5s; /* s (seconds) or ms (milli-seconds) */
+	-webkit-transition-timing-function:linear; /* ease, linear, ease-in, ease-out, ease-in-out */
+	-webkit-transition-delay:1s;
+	
+	-moz-transition-property:color; 
+	-moz-transition-duration:0.5s; /* s (seconds) or ms (milli-seconds) */
+	-moz-transition-timing-function:linear; /* ease, linear, ease-in, ease-out, ease-in-out */
+	-moz-transition-delay:1s;
+	
+	-o-transition-property:color; 
+	-o-transition-duration:0.5s; /* s (seconds) or ms (milli-seconds) */
+	-o-transition-timing-function:linear; /* ease, linear, ease-in, ease-out, ease-in-out */
+	-o-transition-delay:1s;
+	
+	transition-property:color; 
+	transition-duration:0.5s; /* s (seconds) or ms (milli-seconds) */
+	transition-timing-function:linear; /* ease, linear, ease-in, ease-out, ease-in-out */
+	transition-delay:1s;
+}
+
+h1:hover {
+	color:blue;
+}
+
+#myID {
+	border:1px solid red;
+	margin-bottom:3em;
+	height:3em;
+	width:3em;
+	
+	/* CSS3 Transitions - SHORTHAND VERSION */
+	
+	-webkit-transition:height 1s linear, width 1s linear;
+	-moz-transition:height 1s linear, width 1s linear;
+	-o-transition:height 1s linear, width 1s linear;
+	transition:height 1s linear, width 1s linear;
+}
+
+#myID:hover {
+	height:10em;
+	width:15em;
+}
+
+#myID2 {
+	background-color:pink;
+	border:5px solid green;
+	margin-bottom:3em;
+	
+	/* CSS3 Transitions - SHORTHAND 'MULTIPLE TRANSITIONS' VERSION */
+		
+	-webkit-transition:background-color 0.5s linear, border 1s linear;
+	-moz-transition:background-color 0.5s linear, border 1s linear;
+	-o-transition:background-color 0.5s linear, border 1s linear;
+	transition:background-color 0.5s linear, border 1s linear;
+}
+
+#myID2:hover {
+	background-color:yellow;
+	border:5px solid blue;
+}
+
+#myID3 {
+	background-color:purple;
+	border:5px dashed green;
+	
+	/* CSS3 Transitions - SHORTHAND 'MULTIPLE PROPERTIES' VERSION */
+	-webkit-transition-property:border, background-color; 
+	-webkit-transition-duration:1s, 3s;
+	-moz-transition-property:border, background-color; 
+	-moz-transition-duration:1s, 3s;
+	-o-transition-property:border, background-color; 
+	-o-transition-duration:1s, 3s;
+	transition-property:border, background-color; 
+	transition-duration:1s, 3s;
+}
+
+#myID3:hover {
+	background-color:red;
+	border:5px dashed blue;
+}
+</style>
+</head>
+<body>
+
+	<h1>Header</h1>
+    
+    <div id="myID">
+    	my boxed content
+    </div>
+    
+    <div id="myID2">
+    	my boxed content
+    </div>
+    
+    <div id="myID3">
+    	my boxed content
+    </div>
+
+</body>
+</html>

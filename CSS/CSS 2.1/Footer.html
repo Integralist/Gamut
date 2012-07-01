@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB"> 
+<head> 
+	<title>How to keep footers at the bottom of the page (CSS demo)</title> 
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" /> 
+	<meta name="description" content="How to keep footers at the bottom of the page (CSS demo)" /> 
+	<meta name="keywords" content="How to keep footers at the bottom of the page (CSS demo)" /> 
+	<meta name="robots" content="index, follow" /> 
+	<style media="screen" type="text/css"> 
+	html,
+	body {
+		margin:0;
+		padding:0;
+		height:100%;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background:#ff0;
+		padding:10px;
+	}
+	#body {
+		padding:10px;
+		padding-bottom:60px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:60px;			/* Height of the footer */
+		background:#6cf;
+	}
+	/* other non-essential CSS */
+	#header p,
+	#header h1 {
+		margin:0;
+		padding:10px 0 0 10px;
+	}
+	#footer p {
+		margin:0;
+		padding:10px;
+	}
+	</style> 
+	<!--[if lt IE 7]>
+	<style media="screen" type="text/css">
+	#container {
+		height:100%;
+	}
+	</style>
+	<![endif]--> 
+</head> 
+<body> 
+ 
+<div id="container"> 
+
+	<div id="header"> 
+		<p><a href="http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page" title="How to keep footers at the page bottom with valid CSS">&laquo; Back to the CSS article</a> by <a href="http://matthewjamestaylor.com">Matthew James Taylor</a></p> 
+		<h1>How to keep footers at the bottom of the page (CSS demo)</h1> 
+	</div> 
+   
+	<div id="body"> 
+		<p>In this demo the footer is pushed to the bottom of the screen in all standards compliant web browsers even when there is only a small amount of content on the page. This with work with IE 6 and IE 5.5 too. Non-standards compliant browsers degrade gracefully by positioning the footer under the content as per normal. Read the <a href="http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page">full article</a> for all the details.</p> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nunc tellus, posuere id venenatis id, semper eget elit. Praesent dui mauris, pellentesque sed commodo at, euismod ut arcu. Sed eget ante ut justo vulputate placerat. Fusce viverra sem sit amet ipsum hendrerit vitae suscipit ligula pharetra. Nam magna enim, bibendum non mollis ut, interdum vitae nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed malesuada nibh ac elit convallis id fringilla leo hendrerit. Phasellus facilisis consequat augue, in imperdiet nulla tristique ut. Nam tincidunt enim quis velit mollis elementum. Duis auctor, tortor ultrices molestie luctus, felis velit pellentesque est, id placerat justo risus bibendum ligula. Curabitur at nisl nisl. Aliquam erat volutpat. Proin varius nisi et urna convallis porttitor. In bibendum tortor sollicitudin urna posuere auctor. Proin convallis aliquam libero, eget ultricies nisi iaculis a. Morbi augue nibh, interdum in mollis ut, accumsa vitae diam. Fusce est turpis, vulputate vitae molestie eget, bibendum a nunc. Maecenas rhoncus volutpat lacinia. Suspendisse potenti. In tincidunt justo ac nisi pretium quis blandit lectus euismod.</p>
+		<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac tellus at turpis cursus ultrices. Sed pretium laoreet elit, ut dictum massa tempus vitae. Nulla porttitor mollis est, quis feugiat sem pretium sed. Aliquam suscipit tempor ullamcorper. Vivamus odio ipsum, gravida non ornare at, tempus at augue. Integer vehicula laoreet neque, at eleifend tortor fermentum nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et felis non sapien eleifend convallis nec quis justo. Mauris mollis, erat ut rutrum viverra, nisl sem suscipit diam, eget pretium arcu augue eu dolor. Aliquam eros justo, venenatis eu fermentum in, tempor a nisi.</p>
+		<p>Curabitur orci libero, faucibus nec gravida id, condimentum ac lectus. Maecenas quis leo risus, eu rhoncus enim. Quisque at felis in ante ultrices tincidunt id non quam. Suspendisse venenatis felis in justo pharetra vel posuere libero cursus. Ut sed nulla consequat turpis laoreet porta. Nullam sed mauris non leo placerat sagittis. Suspendisse libero risus, tincidunt in dapibus in, ornare non mauris. In nec felis vitae lorem ornare consectetur a ac orci. Vivamus egestas vestibulum diam, et dignissim arcu viverra vel. Sed tincidunt semper libero scelerisque viverra. Sed non dolor libero, nec venenatis quam. Ut scelerisque aliquet fringilla. Vivamus eleifend consectetur diam, non dignissim odio commodo in. Phasellus luctus elementum quam sit amet mollis. Cras at gravida odio. Quisque lacinia vulputate mi, nec mattis enim semper in. Curabitur at tincidunt erat.</p>
+		<p>Donec eget vestibulum turpis. Nulla vitae tincidunt sapien. Vestibulum id nibh nec turpis pretium sodales. Nullam consequat egestas placerat. Nunc diam felis, lacinia sit amet ultrices nec, suscipit sed magna. Donec sem sem, ullamcorper nec pharetra at, lobortis at orci. Etiam at lectus ante, ut volutpat turpis. Vestibulum id tellus eget leo eleifend sollicitudin. Vivamus quis est at lectus laoreet placerat. In in metus nec felis sagittis rhoncus. Aliquam erat volutpat. Vestibulum pharetra felis vitae ante pulvinar auctor. Cras malesuada mollis odio, in congue dolor porttitor nec. Ut porta pellentesque enim in lobortis. Vivamus dapibus tellus sed nisl accumsan in condimentum justo lacinia. Mauris id nibh magna, vitae luctus ante. Maecenas nulla libero, consectetur ac vehicula vitae, dapibus ac dui.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac tellus at turpis cursus ultrices. Sed pretium laoreet elit, ut dictum massa tempus vitae. Nulla porttitor mollis est, quis feugiat sem pretium sed. Aliquam suscipit tempor ullamcorper. Vivamus odio ipsum, gravida non ornare at, tempus at augue. Integer vehicula laoreet neque, at eleifend tortor fermentum nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et felis non sapien eleifend convallis nec quis justo. Mauris mollis, erat ut rutrum viverra, nisl sem suscipit diam, eget pretium arcu augue eu dolor. Aliquam eros justo, venenatis eu fermentum in, tempor a nisi.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac tellus at turpis cursus ultrices. Sed pretium laoreet elit, ut dictum massa tempus vitae. Nulla porttitor mollis est, quis feugiat sem pretium sed. Aliquam suscipit tempor ullamcorper. Vivamus odio ipsum, gravida non ornare at, tempus at augue. Integer vehicula laoreet neque, at eleifend tortor fermentum nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et felis non sapien eleifend convallis nec quis justo. Mauris mollis, erat ut rutrum viverra, nisl sem suscipit diam, eget pretium arcu augue eu dolor. Aliquam eros justo, venenatis eu fermentum in, tempor a nisi.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac tellus at turpis cursus ultrices. Sed pretium laoreet elit, ut dictum massa tempus vitae. Nulla porttitor mollis est, quis feugiat sem pretium sed. Aliquam suscipit tempor ullamcorper. Vivamus odio ipsum, gravida non ornare at, tempus at augue. Integer vehicula laoreet neque, at eleifend tortor fermentum nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et felis non sapien eleifend convallis nec quis justo. Mauris mollis, erat ut rutrum viverra, nisl sem suscipit diam, eget pretium arcu augue eu dolor. Aliquam eros justo, venenatis eu fermentum in, tempor a nisi.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac tellus at turpis cursus ultrices. Sed pretium laoreet elit, ut dictum massa tempus vitae. Nulla porttitor mollis est, quis feugiat sem pretium sed. Aliquam suscipit tempor ullamcorper. Vivamus odio ipsum, gravida non ornare at, tempus at augue. Integer vehicula laoreet neque, at eleifend tortor fermentum nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et felis non sapien eleifend convallis nec quis justo. Mauris mollis, erat ut rutrum viverra, nisl sem suscipit diam, eget pretium arcu augue eu dolor. Aliquam eros justo, venenatis eu fermentum in, tempor a nisi.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac tellus at turpis cursus ultrices. Sed pretium laoreet elit, ut dictum massa tempus vitae. Nulla porttitor mollis est, quis feugiat sem pretium sed. Aliquam suscipit tempor ullamcorper. Vivamus odio ipsum, gravida non ornare at, tempus at augue. Integer vehicula laoreet neque, at eleifend tortor fermentum nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et felis non sapien eleifend convallis nec quis justo. Mauris mollis, erat ut rutrum viverra, nisl sem suscipit diam, eget pretium arcu augue eu dolor. Aliquam eros justo, venenatis eu fermentum in, tempor a nisi.</p>
+	</div> 
+   
+	<div id="footer"> 
+		<p><strong>Footer</strong> (always at the bottom). View more <a href="http://matthewjamestaylor.com/blog/-website-layouts">website layouts</a> and <a href="http://matthewjamestaylor.com/blog/-web-design">web design articles</a>.</p> 
+	</div> 
+   
+</div>
+ 
+</body> 
+</html>

@@ -1,0 +1,15 @@
+// "testdb.testtable" is the first table I created (with the names of all the people I know as the data)
+// "testdb.departments" is a another table which simply holds the name of the 'departments' they work in at their place of work
+
+// in MySQL I created a foreign key within "testdb.testtable" in the column "department_id"
+// this foreign key pointed to the primary key "dep_id" within "testdb.department"
+
+SELECT testdb.testtable.firstname, testdb.testtable.lastname, testdb.departments.department
+FROM testdb.testtable
+INNER JOIN testdb.departments ON testdb.testtable.department_id = testdb.departments.dep_id
+
+// EXAMPLE
+SELECT integralist.articles.article_date, integralist.articles.article_title, integralist.articles.article_content, integralist.categories.category 
+FROM integralist.articles
+INNER JOIN integralist.categories ON integralist.articles.cat_id = integralist.categories.cat_id
+WHERE integralist.articles.article_id = 1

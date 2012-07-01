@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			#myelement {
+				background-color: red;
+				color: #fff;
+				font-family: Arial;
+				padding: 10px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div id="myelement" style="left:0; top:0;">
+			My Element
+		</div>
+		
+		<script src="moveElement-noeasing.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				moveElement('myelement', 300, 300);
+			};
+		</script>
+		
+	</body>
+</html>

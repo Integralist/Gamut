@@ -1,0 +1,18 @@
+body {
+    font: normal small Arial;
+    margin: 10px;
+    padding: 10px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h1,
+.last {
+    margin-bottom: 1em;
+}
+
+strong {
+    color: #C00;
+}

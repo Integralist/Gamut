@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>External Interface example</title>
+
+	<script language="JavaScript">
+	<!--
+		// Use a variable to reference the embedded SWF.
+		var flashVideoPlayer;
+
+		/* When the HTML page loads (via the onLoad event of the <body> tag) we have it call the initialize() function. */
+		function initialize() {
+			/* Check if the browser is IE. If so, flashVideoPlayer is window.videoPlayer. Otherwise, it's window.document.videoPlayer. The videoPlayer is the id assigned to <object> and <embed> tags. */
+			var ie = navigator.appName.indexOf("Microsoft") != -1;
+			flashVideoPlayer = (ie) ? window['videoPlayer'] : document['videoPlayer'];
+		}
+
+		/* When the user clicks the play button in the form, update the videoStatus textarea, and call the playVideo() function within the SWF, passing it the URL of the FLV file. */
+		function callFlashPlayVideo() {
+			initialize();
+			var comboBox = document.forms['videoForm'].videos;
+			var video = comboBox.options[comboBox.selectedIndex].value;
+			updateStatus("____" + video + "____");
+			flashVideoPlayer.playVideo("http://www.helpexamples.com/flash/video/" + video);
+		}
+
+		// Call the pauseResume() function within the SWF.
+		function callFlashPlayPauseVideo() {
+			initialize();
+			flashVideoPlayer.pauseResume();
+		}
+
+		/* The updateStatus() function is called from the SWF from the onStatus() method of the NetSream object. */
+		function updateStatus(message) {
+			document.forms['videoForm'].videoStatus.value += message + "\n";
+		}
+	// -->
+	</script>
+</head>
+<body bgcolor="#ffffff">
+<!--url's used in the movie-->
+<!--text used in the movie-->
+<!-- saved from url=(0013)about:internet -->
+
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="AC_RunActiveContent.js" language="javascript"></script>
+<script language="javascript">
+    if (AC_FL_RunContent == 0) {
+        alert("This page requires AC_RunActiveContent.js.");
+    } else {
+        AC_FL_RunContent(
+            'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+            'width', '320',
+            'height', '240',
+            'src', 'external',
+            'quality', 'high',
+            'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+            'align', 'middle',
+            'play', 'true',
+            'loop', 'true',
+            'scale', 'showall',
+            'wmode', 'window',
+            'devicefont', 'false',
+            'id', 'videoPlayer',
+            'bgcolor', '#ffffff',
+            'name', 'videoPlayer',
+            'menu', 'true',
+            'allowFullScreen', 'false',
+            'allowScriptAccess','always',
+            'movie', 'external',
+            'salign', ''
+            ); //end AC code
+    }
+</script>
+<noscript>
+    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="320" height="240" id="videoPlayer" align="middle">
+    <param name="allowScriptAccess" value="always" />
+    <param name="allowFullScreen" value="false" />
+    <param name="movie" value="external.swf" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#ffffff" />
+    <embed src="external.swf" quality="high" bgcolor="#ffffff" width="320" height="240" name="videoPlayer" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+    </object>
+</noscript>
+
+
+<form name="videoForm">
+	Select a video:<br />
+	<select name="videos">
+		<option value="lights_long.flv">lights_long.flv</option>
+		<option value="clouds.flv">clouds.flv</option>
+		<option value="typing_long.flv">typing_long.flv</option>
+		<option value="water.flv">water.flv</option>
+	</select>
+	<input type="button" name="selectVideo" value="play" onClick="callFlashPlayVideo();" />
+	<br /><br />
+
+	Playback <input type="button" name="playPause" value="play/pause" onClick="callFlashPlayPauseVideo();" />
+
+	<br /><br />
+	Video status messages <br />
+	<textarea name="videoStatus" cols="50" rows="10"></textarea>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<navigation>
+<menu name="Home" href="/home/" />
+<menu name="Tutorials" href="/tutorials/">
+	<submenu name="Flash" href="/tutorials/flash/" />
+	<submenu name="ActionScript" href="/tutorials/actionscript/" />
+</menu>
+<menu name="Reviews" href="/reviews/">
+	<submenu name="Books" href="/reviews/books/" />
+	<submenu name="Software" href="/reviews/software/" />
+</menu>
+</navigation>

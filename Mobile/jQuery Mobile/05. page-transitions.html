@@ -1,0 +1,54 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Page Transitions</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">		
+				<h2>Page transitions</h2> 
+				<p>The jQuery Mobile framework includes a set of six CSS-based transition effects that can be applied to any object or page change event, which apply the chosen transition when navigating to a new page and the reverse transition for the Back button. By default, the framework applies the right to left slide transition.</p>
+				<p>To set a custom transition effect, add the <code>data-transition</code> attribute to the link. Possible values include: </p>
+				<code><code>
+					&lt;a href="index.html" data-transition="pop"&gt;I'll pop&lt;/a&gt;
+				</code></code>
+				<p>
+					<a href="#dialog" data-role="button" data-rel="dialog" data-transition="slide" class="ui-btn ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true">slide</span></a>
+					<a href="#dialog" data-role="button" data-rel="dialog" data-transition="slideup" class="ui-btn ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true">slideup</span></a>
+					<a href="#dialog" data-role="button" data-rel="dialog" data-transition="slidedown" class="ui-btn ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true">slidedown</span></a>
+					<a href="#dialog" data-role="button" data-rel="dialog" data-transition="pop" class="ui-btn ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true">pop</span></a>
+					<a href="#dialog" data-role="button" data-rel="dialog" data-transition="fade" class="ui-btn ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true">fade</span></a>
+					<a href="#dialog" data-role="button" data-rel="dialog" data-transition="flip" class="ui-btn ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner" aria-hidden="true">flip *</span></a>
+				</p>
+				<p>NOTE: The flip transition isn't rendered correctly on most versions of Android because it lacks 3D CSS transform capabilities. Unfortunately, instead of ignoring the flip, Android makes the page "cartwheel" away by rotating instead of flipping. We recommend using this transition sparingly until support improves.</p>
+				<p>In addition, you can also force a "backwards" transition by specifying <code>data-direction="reverse"</code> on your link. Note: (this was formerly <code>data-back="true"</code>, which will remain supported until 1.0)</p>
+			</div>
+			<div data-role="footer">
+				<h4>Transitions Footer</h4>
+			</div>
+		</div>
+		
+		<!-- Here is our dialog -->
+		<div data-role="page" id="dialog">
+			<div data-role="header" data-theme="e">
+				<h1>Ta-da!</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content" data-theme="e">
+				<p>That was an animated page transition effect that we added with a <code>data-transition</code> attribute on the link.</p>
+				<p>Since it uses CSS transforms, this should be hardware accelerated on many mobile devices.</p>
+				<p>What do you think?</p>
+				<a href="docs-transitions.html" data-role="button" data-theme="b" data-rel="back">I like it</a>   
+			</div>
+		</div>
+	</body>
+</html>

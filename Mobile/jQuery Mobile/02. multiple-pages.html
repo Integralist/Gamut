@@ -1,0 +1,42 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="foo">
+			<div data-role="header">
+				<h1>Foo Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<p>I'm first in the source order so I'm shown as the page.</p>
+				<p>View internal page called <a href="#bar">bar</a></p>
+				<p>WARNING! It's important to note if you are linking from a mobile page that was loaded via Ajax to a page that contains multiple internal pages (such as we have done here linking from index.html > multiple-pages.html), you need to add a rel="external" or data-ajax="false" to the link. This tells the framework to do a full page reload to clear out the Ajax hash in the URL. This is critical because Ajax pages use the hash (#) to track the Ajax history, while multiple internal pages use the hash to indicate internal pages so there will be conflicts in the hash between these two modes.</p>
+				<p>For example, a link to a page containing multiple internal pages would look like this:</p>
+				<code>&lt;a href="multipage.html" rel="external"&gt;Multi-page link&lt;/a&gt;</code>
+			</div>
+			<div data-role="footer">
+				<h4>Foo Footer</h4>
+			</div>
+		</div>
+		<div data-role="page" id="bar">
+			<div data-role="header">
+				<h1>Bar Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<p>I'm the second in the source order so I'm hidden when the page load. I'm just shown, if a link that reference my ID is beeing clicked.</p>
+				<p><a href="#foo">Back to foo</a></p>
+			</div>
+			<div data-role="footer">
+				<h4>Bar Footer</h4>
+			</div>
+		</div>
+	</body>
+</html>

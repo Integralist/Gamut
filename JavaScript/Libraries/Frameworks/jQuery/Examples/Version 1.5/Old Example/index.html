@@ -1,0 +1,54 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+	<title>jQuery 1.5</title>
+   <meta charset="utf-8">
+   <style type="text/css">
+   	#test {
+   		background-color:pink;
+   		display:none;
+   		padding:10px;
+   		text-align:center;
+   		width:200px;
+   	}
+   </style>
+</head>
+<body>
+
+	<p>In 5 seconds a hidden div element with fade into view (in the mean time make sure your 'console' is open so you can see any logs incoming...</p>
+
+	<div id="test">
+		Some content
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function getData(){
+			return $.get('json.php');
+		}
+		
+		function doSomething(){
+			// Create new instance of a Deferred object
+			var dfd = $.Deferred();
+			
+			// Do stuff...
+			// BUT! important that we set a 'resolve' (and if we were using an AJAX function then we'd look to provide a 'reject' for any problems)
+			$('#test').delay('5000').fadeIn(2000, dfd.resolve);
+			
+			// MUST! return the 'promise' method of the deferred object instance
+			return dfd.promise();
+		}
+		
+		// Global 'when' method which listens out for any 'promises'.
+		// We tell it to execute the functions and wait for both 'promises' to be returned.
+		$.when( getData(), doSomething() )
+			.then(function(result){
+				console.log('The animation AND the ajax request are both complete.');
+				console.log('The ajax call would have completed in only a few milliseconds, but this callback couldn\'t be executed until both specified functions completed.');
+				console.log('Now that jQuery has implemented the "deferred" design pattern we are able to lose the old style of JavaScript programming, i.e. long messy anonymous callback functions');
+				console.log(result); // server response
+			});
+	</script>
+
+</body>
+</html>

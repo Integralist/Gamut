@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AJAX</title>
+<style type="text/css">
+body 
+{ margin: 1em; padding: 1em; }
+
+h1, p 
+{ margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+
+	<h1>JavaScript Library</h1>
+	<p class="intro">This is a very basic utilities library that handles AJAX, Events, CSS and some other core stuff.</p>
+	<p class="intro">I'll improve the library as I go on, but this will do just fine for now.</p>
+	<p>The below DIV should load in content from another page...</p>
+	<div id="content" class="someRandomClass"></div>
+	
+	<script type="text/javascript" src="JSON.js"></script>
+	<script type="text/javascript" src="Library.js"></script>
+	<script type="text/javascript">	
+		// TEST THE ONDOMREADY METHOD		
+		
+		function TestLoad1() {
+			console.log("TestLoad1 was loaded in " + new Date().getMilliseconds() + "milliseconds");
+		}
+		
+		function TestLoad2() {
+			console.log("TestLoad2 was loaded in " + new Date().getMilliseconds() + "milliseconds");
+		}
+		
+		$.ready(TestLoad1);
+		$.ready(TestLoad2);
+			
+		// TEST THE 'REMOTE'/AJAX METHODS
+		
+		$.remote({
+			// The URL of the HTML sports scores
+			url: "external.html",
+			
+			// GET or POST (defaults to POST)
+			method: "GET",
+			
+			// It's an HTML document
+			data: "html",
+			
+			// If there is an error while processing the request then show it
+			onError: function(msg) {
+				console.log("onError: " + msg);
+			},
+			
+			// This function will be executed whenever the request is complete
+			onSuccess: function(data) {				
+				// We're going to be inserting into the div that has an id of 'scores'
+				var content = document.getElementById("content");
+				
+				// Inject the new HTML into the document
+				content.innerHTML = data;
+			},
+			
+			// This is considered the 'callback' function and is called after onError/onSuccess.
+			// WARNING! This function is called regardless of whether the request failed or succeeded
+			onComplete: function() {
+				console.log("Request completed!");
+			}
+		});
+		
+		$.remote({
+			url: "JSON.php",
+			method: "GET",
+			data: "json",
+			onError: function(msg) {
+				console.log("onError: " + msg);
+			},
+			onSuccess: function(data) {
+				console.log(data);
+			}
+		});
+		
+		$.remote({
+			url: "POST.php",
+			query: "name=Mark McDonnell&age=28",
+			onError: function(msg) {
+				console.log("onError: " + msg);
+			},
+			onSuccess: function(data) {
+				console.log(data);
+			}
+		});
+		
+		// TEST THE EVENT METHODS
+		
+		$.events.add(document, "click", function(e) { 
+			alert("Mouse clicked at 'x' position " + e.pageX + " and 'y' position "+ e.pageY); 
+		});
+		
+		$.events.add(window, 'load', CSSTests);
+		$.events.add(window, 'load', ElementsTest);
+		
+		// TEST THE CSS METHODS (which also utilise the UTILS methods at the same time)
+		
+		function CSSTests() {
+			var elementToTest = document.getElementById("content");
+		
+			// Output the current width of the <hr> element 
+			console.info("getAppliedStyle (WIDTH) = " + $.css.getAppliedStyle(elementToTest, "width")); 
+			
+			$.css.addClass(elementToTest, "aNewClass");
+			$.css.addClass(elementToTest, "anotherClass"); 
+			$.css.removeClass(elementToTest, "someRandomClass"); 
+			
+			console.info("hasClass (unknownClass) = " + $.css.hasClass(elementToTest, "unknownClass")); // false
+			console.info("hasClass (aNewClass) = " + $.css.hasClass(elementToTest, "aNewClass")); // true
+			console.info("hasClass (anotherClass) = " + $.css.hasClass(elementToTest, "anotherClass"));  // true
+			
+			// Outputs the x and y coordinates of the <hr> element 
+			var position = $.css.getPosition(elementToTest) 
+			console.info("'x' position = " + position.x + " and 'y' position = " + position.y + ". width = " + position.width + "' and height = " + position.height);
+		}
+		
+		// TEST THE ELEMENTS METHOD
+		
+		function ElementsTest() {
+			var arrayOfElements = $.elements.getElementsByClassName('intro');
+			console.log("arrayOfElements = " + arrayOfElements);
+		}
+	</script>
+</body>
+</html>

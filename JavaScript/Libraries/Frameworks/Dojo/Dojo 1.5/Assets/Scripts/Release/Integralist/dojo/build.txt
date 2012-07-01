@@ -1,0 +1,27 @@
+Files baked into this build:
+
+dojo.js:
+./jslib/dojoGuardStart.jsfrag
+./../../dojo/_base/_loader/bootstrap.js
+./../../dojo/_base/_loader/loader.js
+./../../dojo/_base/_loader/hostenv_browser.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/lang.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/array.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/declare.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/connect.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/Deferred.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/json.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/Color.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/window.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/event.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/html.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/NodeList.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/query.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/xhr.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/fx.js
+./../../../Assets/Scripts/Release/Integralist/dojo/_base/browser.js
+./jslib/dojoGuardEnd.jsfrag
+
+../Classes/Init.js:
+

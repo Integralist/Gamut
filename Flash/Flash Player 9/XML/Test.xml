@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<FAMILY surname="Smith" location="New York">
+     <SON name="Dave" bday= "08/10" /> 
+     <SON name="Bob" bday= "05/06" />
+     <DAUGHTER married_name="Perone">
+         <GRANDCHILD age="5" />
+         <GRANDCHILD age="6" />
+     </DAUGHTER>
+</FAMILY>

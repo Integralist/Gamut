@@ -1,0 +1,40 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+   <meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<p>If 5 seconds time (hopefully jsfiddle will be loaded into the iframe by then) the iframe content will be overwritten</p>
+	<script type="text/javascript">
+		var body = document.body,
+		    iframe = document.createElement('iframe'),
+		    iframeContent;
+		
+		iframe.src = 'http://jsfiddle.net/';
+		iframe.frameBorder = '0';
+		iframe.height = '400px';
+		iframe.width = '400px';
+		
+		body.appendChild(iframe);
+		
+		console.log('before timeout: ', iframe.src);
+		
+		iframeContent = (iframe.contentWindow) 
+		                    ? iframe.contentWindow 
+		                    : iframe.contentDocument.document;
+		
+		console.log(iframeContent)
+		
+		window.setTimeout(function() { 
+		    iframe.src = 'http://jsfiddle.net/#123'; 
+		    console.log('timeout triggered: ', iframe.src);
+		    
+		    iframeContent.document.open();
+			iframeContent.document.write('123');
+			iframeContent.document.close();
+		}, 5000);
+		
+	</script>
+</body>
+</html>

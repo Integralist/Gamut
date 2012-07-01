@@ -1,0 +1,26 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div>
+			<a href="#" id="abc">my element</a>
+		</div>
+		<script src="core/Flow.js"></script>
+		<script src="core/Extend.js"></script>
+		<script src="core/Dom.js"></script>
+		<script src="core/Event.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var foo = document.getElementById("abc"),
+					 ZOMG = function(e) {
+				    	 alert("zomg");
+				    	 e.preventDefault();
+					 };
+				
+				foo.addEventListener("click", ZOMG, false);
+			};
+		</script>
+	</body>
+</html>

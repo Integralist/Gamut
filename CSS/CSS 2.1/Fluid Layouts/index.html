@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+      <meta charset="utf-8" />
+      <title></title>
+      <style type="text/css">
+      	p,
+		#container,
+		#containerFluid {
+			background-color:pink;
+			margin:1em auto;
+			overflow:hidden;
+			width:960px;
+		}
+		
+		p {
+			background-color:yellow;
+			text-align:center;
+		}
+		
+		#main,
+		#mainFluid {
+			background-color:red;
+			float:left;
+			width:400px;
+		}
+		
+		#mainFluid {
+			/*
+			 * target width ÷ container width(context) = result as a percentage(move decimal point over 2 places to the right)
+			 */
+			width:41.66666667%; /*0.4166666667*/
+		}
+		
+		#aside,
+		#asideFluid {
+			background-color:green;
+			float:left;
+			width:200px;
+		}
+		
+		#asideFluid {
+			/*
+			 * target width ÷ container width(context) = result as a percentage(move decimal point over 2 places to the right)
+			 */
+			width:20.83333333%; /*0.2083333333*/
+		}
+		
+		#sub,
+		#subFluid {
+			background-color:blue;
+			width:210px;
+		}
+		
+		#subFluid {
+			/*
+			 * target width ÷ container width(context) = result as a percentage
+			 */
+			width:52.5%; /*0.525*/
+		}
+		
+		#static {
+			background: green;
+			float:left;
+		}
+		
+		#floated {
+			display:inline;
+			background: pink;
+		}
+		
+		#floated:before {
+			content: 'asd';
+			display:block;
+			clear: both;
+		}
+      </style>
+  	</head>
+   <body>
+   		
+   		<div id="static">
+   			element
+   		</div>
+   		<p id="floated">
+   			floated
+   		</p>
+   		<p>target width ÷ container width(context) = result as a percentage(move decimal point over 2 places to the right)</p>
+   		<div id="container">
+        	<div id="main">
+            	Main
+                <div id="sub">
+                	Sub Element
+                </div>
+            </div>
+        	<div id="aside">
+            	Aside
+            </div>
+        </div>
+        
+        <div id="containerFluid">
+        	<div id="mainFluid">
+            	Main
+                <div id="subFluid">
+                	Sub Element
+                </div>
+            </div>
+        	<div id="asideFluid">
+            	Aside
+            </div>
+        </div>
+   </body>
+</html>

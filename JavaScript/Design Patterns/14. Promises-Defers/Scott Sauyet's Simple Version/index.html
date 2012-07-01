@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>http://scott.sauyet.com/Javascript/Test/2011-03-29a/</p>
+		
+		<script src="Promise.js"></script>
+		<script type="text/javascript">
+			var run = function() {
+    			var dfd = new Lib.Deferred(),
+        			 promise = Lib.when(dfd);
+				
+				promise.then(function(result) { 
+					alert(result);
+				}).fail(function(error) { 
+					alert(error);
+				});
+    
+				try {
+        			var answer = prompt("What is the meaning of life?", "");
+					if (answer && answer.length > 3) {
+						dfd.resolve("'" + answer + "' is probably not the meaning of life");
+					} else {
+						dfd.reject("Answer not given or too short");
+					}
+				} catch (e) {
+					dfd.reject(e);
+				}
+				
+				promise.then(function(result) { 
+					alert("Life might just well be meaningless");
+				});
+				
+				promise.fail(function(error) { 
+					alert("Try again if you like.");
+				});
+			};
+			
+			run();
+		</script>
+	</body>
+</html>

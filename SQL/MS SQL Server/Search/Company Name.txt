@@ -1,0 +1,4 @@
+SELECT *
+FROM table_intra_client_company
+WHERE Company
+LIKE 'snow%'

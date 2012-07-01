@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Ajax Test</title>
+		<style type="text/css">
+			#test {
+				background-color:pink;
+				display:none;
+				padding:10px;
+				text-align:center;
+				width:200px;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div id="test">
+			Some content
+		</div>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$.ajax({
+				url: 'test.js',
+				success: function(response) {
+					console.log('I\'m the most basic AJAX request (test.js): ', response);
+				}
+			});
+			
+			function aSuccessfullAJAXCall() {
+				var myData = $.ajax({
+					type: "GET",
+					url: "test.js",
+					dataType: "json"
+				});
+				
+				return myData;
+			}
+			
+			function aFailingAJAXCall() {
+				var myData = window.setTimeout(function(){
+					$.ajax({
+						type: "GET",
+						url: "i-dont-exist.js",
+						dataType: "json"
+					})
+				}, 5000);
+				
+				return myData;
+			}
+			
+			function doSomethingAsynchronously() {
+				// Create new instance of a Deferred object
+				var dfd = $.Deferred();
+				
+				// In 5 seconds time fade in the hidden div so it becomes visible
+				// This is considered an 'asynchronous' task as the function doSomethingAsynchronously() will technically finish executing ages before the 5 second timeout is triggered
+				// When the animation finishes we let jQuery's Deferred object know but calling the 'resolve' property (dfd.resolve)
+				$('#test').delay('5000').fadeIn(2000, dfd.resolve);
+				
+				// Whenever you use a Deferred object you must return a 'promise'
+				// This is because the asynchronous task we're carrying out could take a long time to process
+				// So dfd.promise() is saying: "Go on and do other stuff, I'm going wait here, and I'll let you know when something happens"
+				return dfd.promise();
+			}
+			
+			// Global 'when' method which listens out for any 'promises' to both be returned.
+			// The 'then()' method only executes when both specified functions are successful
+			$.when(aSuccessfullAJAXCall(), doSomethingAsynchronously()).then(function(result) {
+				console.group();
+					console.log('The animation AND the ajax request are both complete.');
+					console.log('The ajax call would have completed in only a few milliseconds, but this callback couldn\'t be executed until both specified functions completed.');
+					console.log('Now that jQuery has implemented the "deferred" design pattern we are able to lose the old style of JavaScript programming, i.e. long messy anonymous callback functions');
+					console.log('This is the complete server response (data, status, jqXHR): ', result);
+				console.groupEnd();
+				console.group();
+					console.log('Display our json data (from test.js): ', result[0]); // the specific json data from our test.js file
+					console.log('Display specifically the \'Brad\' object: ', result[0][0]);
+					console.log('Display Brad\'s age: ', result[0][0].age);
+				console.groupEnd();
+			});
+		</script>
+	
+	</body>
+</html>

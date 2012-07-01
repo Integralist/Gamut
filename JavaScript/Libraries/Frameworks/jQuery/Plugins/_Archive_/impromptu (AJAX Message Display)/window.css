@@ -1,0 +1,23 @@
+.jqiwarning .jqi
+{ background-color: #b0be96; }
+
+.jqifade 
+{ position: absolute; background-color: black; }
+
+div.jqi
+{ position: absolute; font-family: Arial, Helvetica, sans-serif; background-color: blue; padding: 10px; width: 70%; text-align: left; }
+
+div.jqi .jqiclose
+{ font-family: Consolas, Arial, Helvetica, sans-serif; float: right; margin: -35px -10px 0 0; cursor: pointer; color: #c0cEa6; }
+
+div.jqi .jqicontainer
+{ background-color: green; padding: 5px; color: #ffffff; font-weight: bold; }
+
+div.jqi .jqimessage
+{ background-color: pink; padding: 10px; }
+
+div.jqi .jqibuttons
+{ text-align: center; padding: 5px 0 0 0; }
+
+div.jqi button
+{ padding: 3px 10px 3px 10px; margin: 0 10px; }

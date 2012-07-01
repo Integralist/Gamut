@@ -1,0 +1,42 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>addEventListener Shim</title>
+		<!--[if lte IE 7]>
+			<script src="IE7.js"></script>
+			<style type="text/css">
+				* { behavior: url(ie_fix.htc); }
+			</style>
+		<![endif]-->
+	</head>
+	<body>
+	
+		<div id="testelement" class="testclass">
+			This is my test element
+		</div>
+		
+		<script type="text/javascript">
+			// IE8 (provides access to its 'Element' Interface)
+			if (window.Element && !window.addEventListener) {
+				window.Element.prototype.addEventListener = function(type, listener, useCapture) {
+					this.attachEvent('on' + type, listener);
+				}
+				
+				window.Element.prototype.removeEventListener = function(type, listener, useCapture) {
+					this.detachEvent('on' + type, listener);
+				}
+			}
+			
+			function test() {
+				alert('I\'m the listener for the addEventListener');
+				
+				testelem.removeEventListener('click', test, false);
+			}
+			
+			var testelem = document.getElementById('testelement');
+			
+			testelem.addEventListener('click', test, false);
+		</script>
+	</body>
+</html>

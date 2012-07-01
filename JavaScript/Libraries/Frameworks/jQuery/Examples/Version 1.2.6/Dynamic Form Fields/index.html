@@ -1,0 +1,69 @@
+<html>
+<head>
+<script type="text/javascript" src="../jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+	$(document).ready( function () 
+	{
+		
+		$('.leader').each( function () 
+		{
+			var name = $(this).attr('name');
+		 	
+			if ($(this).val()!='other') {
+		 		$(this).next().removeAttr('name').hide();
+			 }
+		});
+		
+		
+		$('.leader').change(onChange);
+		
+		function onChange()
+		{
+			var desiredName = $(this).attr('name');
+			if ($('#'+desiredName).val()=='other') 
+			{
+				$('#'+desiredName).next().attr('name',desiredName).fadeIn('fast');
+			}
+			else 
+			{
+				$('#'+desiredName).next().removeAttr('name').fadeOut('fast');
+			}
+		}
+
+	});
+</script>
+</head>
+<body>
+
+<h1>Favorite Leaders (... and Liters)</h1><p>Select your favorite leaders/liters from the options below. If you can't find the one you truly like the most, write in your own submission.</p>
+<form id="selectLeaders" method="post" action="received.php">
+	
+    <fieldset>
+    	<legend>Favorite Leaders</legend>
+        <label for="selectLeader_1">Who do you consider to be your favorite US President?</label>
+        <select class="leader" name="selectLeader_1" id="selectLeader_1">
+        	<option value="Thomas Jefferson">Thomas Jefferson</option>
+            <option value="Abraham Lincoln">Abraham Lincoln</option>
+            <option value="George W. Bush">Dubya</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" name="selectLeader_1" />
+    </fieldset>
+    
+    <fieldset>
+    	<legend>Favorite Liters</legend>
+        <label for="selectLeader_2">What do you consider to be your favorite liter?</label>
+        <select class="leader" name="selectLeader_2" id="selectLeader_2">
+        	<option value="Soda">A Liter of Soda</option>
+            <option value="Jack Daniels">A Liter of Jack</option>
+            <option value="1.056 Quarts of Milk">Slightly less than a liter of Milk</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" name="selectLeader_2" />
+    </fieldset>
+    
+    <input type="submit" name="submitLeader" value="Vote For Your Leader!" />
+    
+</form>
+</body>
+</html>

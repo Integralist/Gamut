@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript: The Factory Pattern</title>
+</head>
+<body>
+
+	<h1>The Factory Pattern</h1>
+	<p>The true factory pattern differs from the simple factory in that instead of using another class or object to create the bicycles, you will use a subclass. The formal definition of the factory is a class that defers instantiation of its member objects to a subclass. Let’s use the BicycleShop example to illustrate the differences between the simple factory and the factory pattern.</p>
+	<p>You want to allow each bicycle shop to get its inventory from any manufacturer it chooses. Because of this, a single BicycleFactory object isn’t going to be able to provide all of the bicycle instances necessary. Instead, you can create BicycleShop as an abstract class and let the subclasses implement their own createBicycle method, using whatever manufacturer they choose:</p>
+	
+	<script src="../../OOP/Emulating 'Interfaces'/Interface.js"></script>
+	<script src="../../OOP/Emulating 'extend'/Extend.js"></script>
+	<script src="Factory.js"></script>
+
+</body>
+</html>

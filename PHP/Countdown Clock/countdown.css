@@ -1,0 +1,140 @@
+body,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+img,
+#olympic span,
+#paralympic span,
+#olympic span.fr,
+#paralympic span.fr {
+	display: block;
+}
+
+#countdown {
+	background: url('box-bottom.png') left bottom no-repeat;
+	padding-bottom: 23px;
+	width: 418px;
+}
+
+#box-top {
+	background: url('box-top.png') left top no-repeat;
+	height: 65px;
+	width: 418px;
+}
+
+#box-top,
+#olympic,
+#paralympic {
+	text-indent: -999em;
+}
+
+#olympic,
+#paralympic {
+	padding-left: 25px;
+}
+
+#olympic,
+#olympic span.fr {
+	height: 56px;
+}
+
+#paralympic,
+#paralympic span.fr {
+	height: 34px;
+}
+
+#olympic {
+	background: url('box-left1.png') left top no-repeat;
+}
+
+#paralympic {
+	background: url('box-left2.png') left top no-repeat;
+}
+
+#olympic span.fr {
+	background: url('box-right1.png') left top no-repeat;
+}
+
+#paralympic span.fr {
+	background: url('box-right2.png') left top no-repeat;
+}
+
+#olympic span,
+#paralympic span {
+	background-color: #000;
+	float: left;
+	height: 34px;
+	width:78px;
+}
+
+#olympic span.fr,
+#paralympic span.fr {
+	float: right;
+	width: 315px;
+}
+
+#inbetween {
+	background:url('inbetween.png') left top no-repeat;
+	display: block;
+	height: 22px;
+	left:25px;
+	position: absolute;
+	top: 99px;
+	width: 78px;
+}
+
+#olympic b,
+#paralympic b {
+	background:url('time.png') 0 0 no-repeat;
+	display: inline-block;
+	float: left;
+	height: 34px;
+	width: 25px;
+}
+
+#olympic b.t1,
+#paralympic b.t1 {
+	background-position: 0 -34px;
+}
+
+#olympic b.t2,
+#paralympic b.t2 {
+	background-position: 0 -68px;
+}
+
+#olympic b.t3,
+#paralympic b.t3 {
+	background-position: 0 -102px;
+}
+
+#olympic b.t4,
+#paralympic b.t4 {
+	background-position: 0 -136px;
+}
+
+#olympic b.t5,
+#paralympic b.t5 {
+	background-position: 0 -170px;
+}
+
+#olympic b.t6,
+#paralympic b.t6 {
+	background-position: 0 -204px;
+}
+
+#olympic b.t7,
+#paralympic b.t7 {
+	background-position: 0 -238px;
+}
+
+#olympic b.t8,
+#paralympic b.t8 {
+	background-position: 0 -272px;
+}
+
+#olympic b.t9,
+#paralympic b.t9 {
+	background-position: 0 -306px;
+}

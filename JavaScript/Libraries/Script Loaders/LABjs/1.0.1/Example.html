@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>LABjs</title>
+<script type="text/javascript" src="LAB.js"></script>
+<script type="text/javascript">
+	var timeDiff = function(){
+		var d;
+		return {
+			setStartTime:function (){
+				d = new Date();
+				time  = d.getTime();
+			},
+			getDiff:function (){
+				d = new Date();
+				return (d.getTime()-time);
+			}
+		};
+	}();
+	
+	function done() {
+		var log_value_text = "Loading/Execution Time: "+timeDiff.getDiff()+"\nVerification: "+script3+"\n";
+		(function fn(){
+			var load_log = document.getElementById("load_log");
+			if (load_log !== null) load_log.value += log_value_text;
+			else setTimeout(fn,10);
+		})();
+	}
+	
+	timeDiff.setStartTime();
+	
+	$LAB
+	.setOptions({AlwaysPreserveOrder:true,UseLocalXHR:false})
+	.script("../jQuery/jquery-1.3.1.min.js")
+	.script("../MooTools/mootools-1.2.3-core-nc.js")
+	.script("../Prototype/prototype-packed.js")
+	.wait(done);	
+</script>
+</head>
+
+<body>
+
+<h1>LABjs tests (LABjs with preloading #1)</h1>
+
+<img src="../../Useful Functions/onDOMLoad/Large1.jpg" width="100" hspace="5" alt="image 1" />
+<img src="../../Useful Functions/onDOMLoad/Large2.jpg" width="100" hspace="5" alt="image 2" />
+<img src="../../Useful Functions/onDOMLoad/Large3.jpg" width="100" hspace="5" alt="image 3" />
+
+<br />
+<form name="log_form">
+	<textarea id="load_log" name="load_log" cols="80" rows="10"></textarea>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery. Equalize Columns</title>
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery.equalizeColumns.js"></script>
+<script type="text/javascript" src="jquery.onfontresize.js"></script>
+<script type="text/javascript">
+	// equalize all columns
+	$(document).ready(function()
+	{
+		$("#col1, #col2, #col3").equalizeCols();
+	});
+
+	// after all elements are equalized, THEN keep a check on them
+	// so if the text on the page is resized then equalize all elements again
+	$(document).bind("fontresize", function()
+	{
+		$("#col1, #col2, #col3").equalizeCols();
+	});
+</script>
+</head>
+<body>
+
+    <div id="col1" style="border: 5px solid black; padding: 15px; background: red none repeat scroll 0% 0%; float: left; margin-right: 10px; width: 200px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+	    This is column 1
+    </div>
+    
+    <div id="col2" style="background: yellow none repeat scroll 0% 0%; float: left; margin-right: 10px; width: 200px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; padding-bottom: 200px;">
+        This is column 2<br>    
+        This is column 2<br>
+        This is column 2
+    </div>
+    
+    <div id="col3" style="border-top: 15px solid black; background: blue none repeat scroll 0% 0%; float: left; margin-right: 10px; width: 200px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3<br>    
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3<br>
+        This is column 3
+    </div>
+
+</body>
+</html>

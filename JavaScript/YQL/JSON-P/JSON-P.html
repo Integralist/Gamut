@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>A simple example</title>
+<script>
+function makeRequest() 
+{
+	var scriptTag = document.
+	createElement('script');
+	scriptTag.setAttribute('src', 'http://local.yahooapis.com/LocalSearchService/V3/localSearch?' + 'appid=YahooDemo&&output=json&callback=myCallback&' + 'query=pizza&zip=90210');
+	scriptTag.setAttribute('type', 'text/javascript');
+	var headTag = document.getElementsByTagName('head').item(0);
+	headTag.appendChild(scriptTag);
+}
+
+function myCallback(inResults) 
+{
+	var s = '';
+	
+	for (var i = 0; i < inResults.ResultSet.Result.length; i++) {
+		s += '<br>';
+		
+		for (var p in inResults.ResultSet.Result[i]) {
+			s += p + ' = ' + inResults.ResultSet.
+			Result[i][p] + '<br>';
+		}
+	}
+	
+	document.getElementById('divResults').
+	innerHTML = s;
+}
+</script>
+</head>
+<body>
+	<input type="button" value="Click to call remote service" onClick="makeRequest();">
+	<br><br>	
+	<div id="divResults" style="border:1px solid #000000;width:300ps;height:300px;overflow:scroll;"></div>
+</body>
+</html>

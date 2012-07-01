@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript: The Composite Pattern</title>
+</head>
+<body>
+
+	<h1>The Composite Pattern</h1>
+	<p>You should only usethe composite pattern when you have both of the following:</p>
+	<ul>
+		<li>Groups of objects, in some sort of hierarchy (the exact structure of which could be unknown at development time)</li>
+		<li>An operation you want to perform on those objects, or on some subset of them</li>
+	</ul>
+	<p>The composite excels at performing operations on large numbers of objects. It is designed to organize those objects and pass operations from one level to the next. This allows you to make objects more loosely coupled and to use several classes or instances interchangeably. The code produced will be more modular and more maintainable.</p>
+	
+	<h1>Benefits of the Composite Pattern</h1>
+	<p>Simple operations can produce complex results with the composite. Instead of creating alot of glue code to manually traverse arrays and other data structures, you can simply call an operation on the top-level object and let each sub-object worry about how to pass it on. This is especially useful when you call these operations repeatedly.</p>
+	<p>Objects within acomposite are veryloosely coupled. As long as all objects within a composite implement the same interface, moving them around or interchanging them is a trivial operation. This improves code reuse and allows easier refactoring.</p> 
+	<p>Composite objects make excellent hierarchical structures. Every time you execute an operation on a top-level composite, you are essentially performing adepth-first search on the entire structure to find the nodes. All of this is transparent to the programmer instantiating the object. It is very easy to add, remove, and find nodes within the hierarchy.</p>
+	
+	<h1>Drawbacks of the Composite Pattern</h1>
+	<p>The composite’s ease of use can mask the cost of each of the operations it supports. Because of the fact that any operation called on acomposite is passed on to all of its children, performance can suffer if the hierarchy is too large. It isn’t immediately obvious to aprogrammer that calling amethod such as topGallery.show()will instigate acomplete traversal of atree; good documentation is very helpful in this situation.</p>
+	<p>In both examples, composite and nodeclasses were used as wrappers for HTML elements. This is only one of the potential uses for the pattern, but it is acommon one. In these cases, the rules governing the use of HTML must also apply to your composites. For example, it is difficult to turn atable into acomposite; each table tag can only have certain tags within it. The leaf nodes also aren’t immediately obvious; table cells could be considered leaves, but they can also have other elements within them. These restrictions make your composite objects less useful and reduce some of the modularity of the code. Be sure to weigh the benefits against the costs when using acomposite in this manner.</p>
+	<p>Some form ofinterface is required for composites to work properly. The stricter the interface check, the more reliable your composite class will be. This adds complexity to the system, but not alot. If you are already using some form of interface or duck typing (such as the Interfaceclass), this won’t be aproblem. If you aren’t, you will have to incorporate type checking into yourcode.</p>
+	
+	<script src="../../../Useful Functions/addEvent/addEvent.js"></script>
+	<script src="../../../OOP/Emulating 'Interfaces'/Interface.js"></script>
+	<script src="../../../OOP/Emulating 'extend'/Extend.js"></script>
+	<script src="Composite.js"></script>
+
+</body>
+</html>

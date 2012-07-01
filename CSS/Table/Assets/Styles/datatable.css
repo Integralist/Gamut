@@ -1,0 +1,95 @@
+.data {
+	border-collapse:collapse;
+	margin-bottom:20px;
+	width:100%;
+}
+
+.data, 
+.data caption {
+	/* Following box shadow settings not understood by IE at all */
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.data caption,
+.data th,
+.data td {
+	border:1px solid #989898;
+	padding:5px;
+	text-align:left;
+	vertical-align:top;
+}
+
+.data caption {
+	/* Following rounded corner radius settings not understood by IE at all */
+	-moz-border-radius:10px 10px 0 0;
+	-webkit-border-radius:10px 10px 0 0;
+	border-radius:10px 10px 0 0;
+}
+
+.data caption {
+	background:url(../Images/Admin/datagrid-caption.png) left top repeat-x #E3E4E5;
+	border-bottom:0;
+	font-size:120%;
+	font-weight:bold;
+	padding:10px;
+}
+
+/* 
+	WebKit is the only rendering engine that doesn't stretch the <caption> the full 100% width?
+	So target WebKit and correct it.
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.data caption {
+		width:97%;
+	}
+}
+
+.data th,
+.data td {
+	border-width:0 1px;
+}
+
+.data th {
+	border-top-width:1px;
+}
+
+.data tfoot td {
+	border-bottom-width:1px;
+}
+
+.data td {
+	font-size:90%;
+}
+
+.data td a {
+	color:#007AC2;
+}
+
+.data td a:hover,
+.data td a:focus {
+	color:#ABE0F9;
+	text-decoration:none;
+}
+
+.data tr.even {
+	background-color:#F2F2F2;
+}
+
+.data th.descending,
+.data th.ascending {
+	background:url(../Images/Admin/arrow-descending.png) right center no-repeat;
+}
+
+.data th.ascending {
+	background-image:url(../Images/Admin/arrow-ascending.png);
+}
+
+#active th {
+	cursor:pointer;
+}
+
+#active th.nolink {
+	cursor:auto;
+}

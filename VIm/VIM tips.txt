@@ -1,0 +1,71 @@
+VIM has two modes (INSERT and NORMAL)
+Esc = NORMAL
+i = INSERT
+
+Move cursor
+h = left
+l = right
+k = up
+j = down
+
+Quit without saving
+:q!
+
+Quit and save
+:wq
+
+Delete a character from the document without moving to insert mode
+Press x where cursor is position
+
+If you want to append text to the bottom of a document (not same as INSERT mode where you edit from cursor location)
+Press A (capital A!)
+
+Moving the cursor in NORMAL mode (VIM has 'motions' to assist here)
+e = move cursor to the end of a word (this places the cursor at the last character of the word)
+w = move cursor to the start of the next word (same as pressing alt+left/right key) but only moves forward.
+
+In the regex world, e would be equivalent to \w+\b where as w would be equivalent to \w+\s\b
+
+Using a counter with a 'motion'
+3e = moves cursor to the end of the 3rd word (moving forward)
+2w = moves cursor position two words (moving forward)
+0 = moves cursor to start of the line
+
+Delete a word in your document (including space after the word)
+Go to NORMAL mode, place cursor in relevant place and type dw (this is the d 'operator' with the w 'motion')
+
+Delete a word in your document (excluding space after the word)
+Go to NORMAL mode, place cursor in relevant place and type de (this is the d 'operator' with the e 'motion')
+
+Delete multiple consecutive words (including space after the word)
+Go to NORMAL mode, place cursor in relevant place and type d3w (this is the d 'operator' & w 'motion' with a counter of 3)
+
+Delete multiple consecutive words (excluding space after the word)
+Go to NORMAL mode, place cursor in relevant place and type d3e (this is the d 'operator' & e 'motion' with a counter of 3)
+
+Delete an entire line of the document
+Go to NORMAL mode, place cursor at the start of a line and type d$
+Due to the frequency of this requirement, VIM implements a shortcut of dd
+
+Undo a single command
+u
+
+Undo all changes on a line (return it to it's original unsaved state)
+U
+
+The format for a change command is:
+operator   [number]   motion
+where:
+	operator - is what to do, such as  d  for delete
+     [number] - is an optional count to repeat the motion
+     motion   - moves over the text to operate on, such as  w (word), $ (to the end of line), etc.
+
+Move text without copy/paste
+First delete the text you want to copy (odd I know), but that text is stored and then use the p operator to put back where you want
+
+Replace single character (without going to INSERT mode)
+Place cursor at position of character and press r followed by new character which will replace the current character
+
+Replace entire word (without going to INSERT mode - although it'll put you in INSERT mode after!)
+Place cursor at position of character and press ce followed by new word which will replace from the current cursor position till end.
+Notice this is the 'change' operator followed with the 'e' operator (which acts like a word boundary but ignores spaces).

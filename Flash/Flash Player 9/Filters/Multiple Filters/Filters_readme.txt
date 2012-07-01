@@ -1,0 +1,2 @@
+This sample, Filters.fla, shows how to apply filter effects to images with ActionScript. Based on your selection from the combo box, the sample loads three flower images from helpexamples.com. You can apply a drop shadow and/or a blur filter, and then manipulate their properties using numeric steppers and check boxes. The ActionScript code shows how to apply filters and manipulate the filter properties using components.
+

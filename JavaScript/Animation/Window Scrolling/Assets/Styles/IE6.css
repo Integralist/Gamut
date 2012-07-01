@@ -1,0 +1,17 @@
+body,html
+{ height:100%; overflow:hidden; }
+
+#ie-container
+{ background-color:#000; filter:alpha(opacity=70); height:100%; left:0; position:absolute; top:0; width:100%; z-index:1; }
+
+#ie-message 
+{ background:#C00; text-align:center; border:10px solid #F00; color:#fff; height:110px; left:50%; margin:-100px 0 0 -380px; padding-top:90px; position:absolute; top:50%; width:760px; z-index:1000; }
+
+#ie-message a 
+{ color:#fff; }
+
+#ie-message a:hover
+{ text-decoration:none; }
+
+select 
+{ display:none; }

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Nettuts Slider</title>
+<!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript" src="../jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.ui.js"></script>
+<script type="text/javascript" src="scripts/cookie.js"></script>
+<script type="text/javascript">
+$(function() 
+{
+var startSize = $.cookie('fontSize');
+var startSize = parseFloat(startSize, 12);
+
+$('#text p').css('font-size', startSize);
+
+	$('#slider_caption').hide();
+	var captionVisible = false;
+	$('.slider_bar').slider({
+		handle: '.slider_handle',
+		startValue: startSize*100/15 - 53.3 ,
+		minValue: 0,
+		maxValue: 100,
+		start: function(e, ui) {
+			$('#slider_caption').fadeIn('fast', function() { captionVisible = true;});
+			$('#font_indicator').fadeIn('slow');
+			
+		},
+		stop: function(e, ui) { 
+			if (captionVisible == false) {
+				$('#slider_caption').fadeIn('fast', function() { captionVisible = true;});
+				$('#font_indicator').fadeIn('slow');
+				$('#slider_caption').css('left', ui.handle.css('left')).text(Math.round(ui.value * 15/100 + 8 ));
+				$('#font_indicator b').text(Math.round(ui.value * 15/100 + 8 ));
+				$("div#text p").animate({fontSize: ui.value * 15/100 + 8 }).fadeIn("slow");
+
+			}
+			$('#slider_caption').fadeOut('fast', function() { captionVisible = false; });
+			$('#font_indicator').fadeOut('slow');
+			
+			
+		},
+	
+		slide: function(e, ui) {
+			$('#slider_caption').css('left', ui.handle.css('left')).text(Math.round(ui.value * 15/100 + 8 ));
+			$('#font_indicator b').text(Math.round(ui.value * 15/100 + 8 ));
+			$("div#text p").css({fontSize: ui.value * 15/100 + 8 }).fadeIn("slow");
+
+		}
+	});
+	
+	$(".add").click(function(){
+    var currentFontSize = $('#text p').css('font-size');
+    var currentFontSizeNum = parseFloat(currentFontSize, 10);
+    var newFontSize = currentFontSizeNum+1;
+	if (newFontSize < 23) {
+    $('#text p').css('font-size', newFontSize);
+	$('#slider_caption').css('left', newFontSize*19.75 - 158).fadeIn('fast').text(Math.round(newFontSize )).fadeOut();
+	$('.slider_handle').css('left', newFontSize*19.75 - 158);
+	$('#font_indicator').fadeIn('slow');
+	$('#font_indicator b').text(Math.round(newFontSize ));
+	$('#font_indicator').fadeOut('slow');
+	}
+	else{
+	$('#font_indicator').fadeIn('slow');
+	$('#font_indicator b').text("Isn't 23 big enough?");
+	$('#font_indicator').fadeOut('slow');
+	}
+    return false;
+  });
+  	  $(".minus").click(function(){
+    var currentFontSize = $('#text p').css('font-size');
+    var currentFontSizeNum = parseFloat(currentFontSize, 10);
+    var newFontSize = currentFontSizeNum-1;
+	if (newFontSize > 8) {
+    $('#text p').css('font-size', newFontSize);
+	$('#slider_caption').css('left', newFontSize*19.75 - 158).fadeIn('fast').text(Math.round(newFontSize )).fadeOut();
+	$('.slider_handle').css('left', newFontSize*19.75 - 158);
+	$('#font_indicator').fadeIn('slow');
+	$('#font_indicator b').text(Math.round(newFontSize ));
+	$('#font_indicator').fadeOut('slow');
+	}
+	else{
+	$('#font_indicator').fadeIn('slow');
+	$('#font_indicator b').text("Isn't 8 small enough?");
+	$('#font_indicator').fadeOut('slow');
+	}
+	return false;
+  });
+
+});
+
+window.onbeforeunload = leaveCookie;
+
+function leaveCookie()
+{
+	var FontSize = $('#text p').css('font-size');
+	var IntFontSize = parseFloat(FontSize, 10);
+	$.cookie('fontSize', IntFontSize);
+}
+	</script>
+<style type="text/css" media="screen">
+body {
+	background: #373737;
+	text-align: center;
+	margin: 0px;
+}
+#header {
+	width: 700px;
+	height: 200px;
+	background: #48887d url(images/header.jpg);
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+.slider_container {
+	position: absolute;
+	height: 25px;
+	top: 170px;
+	left: 165px;
+}
+.minus {
+	background: url(images/minus-trans.png) no-repeat;
+	height: 9px;
+	width: 25px;
+	overflow: hidden;
+	float: left;
+	cursor: pointer;
+}
+.slider_bar {
+	background: url(images/bar-trans.png) no-repeat;
+	height: 9px;
+	width: 316px;
+	float: left;
+	margin: 0px 5px;
+	position: relative;
+}
+.add {
+	background: url(images/add-trans.png) no-repeat;
+	height: 25px;
+	width: 23px;
+	float: left;
+	position: relative;
+	top: -5px;
+	cursor: pointer;
+}
+.slider_handle {
+	background: url(images/selector-trans.png) no-repeat;
+	height: 25px;
+	width: 12px;
+	position: absolute;
+	top: -8px;
+}
+#slider_caption {
+	background: url(images/caption-trans.png) no-repeat;
+	height: 45px;
+	width: 38px;
+	overflow: hidden;
+	position: absolute;
+	top: -50px;
+	margin-left:-10px;
+	padding: 5px 0px 0px 0px;
+	font-family: "Myriad Pro";
+	color: #36665d;
+	font-weight: bold;
+	text-align: center;
+}
+#text {
+	font-family: Helvetica, Arial, sans-serif;
+	width: 655px;
+	background: #f9f9f9;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 20px 20px 25px;
+	position: relative;
+}
+#text p {
+	font-size: 12px;
+	text-align: left;
+	color: black;
+}
+#text h1 {
+	text-align: left;
+	margin-left: 20px;
+}
+
+p{
+font-family: Arial, Helvetica, sans-serif;
+color: #CCCCCC;
+}
+p a{
+text-decoration: none;
+color: #FFFFFF;
+}
+
+a:hover{
+text-decoration: underline;
+}
+
+#font_indicator{
+position: absolute;
+right: 100px;
+top: 50px;
+font-size: 10px;
+display: none;
+}
+</style>
+</head>
+<body>
+<div id="header">
+  <div class="slider_container">
+    <div class="minus"></div>
+    <div class="slider_bar">
+      <div id="slider_caption"></div>
+      <div id="slider1_handle" class="slider_handle"></div>
+    </div>
+    <div class="add"></div>
+  </div>
+</div>
+<div id="text">
+  <h1>Text Size Slider</h1>
+  <div id="font_indicator">Current Font Size: <b></b> </div>
+  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+</div>
+<p><a href="http://nettuts.com">Tutorial</a> made by <a href="http://nettuts.com/author/connorzwick/"> Connor Zwick</a></p>
+</body>
+</html>

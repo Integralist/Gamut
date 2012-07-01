@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Js: Preloading an Array of images</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+    	function preload(srcArray) 
+		{
+			for (var i=0, len=srcArray.length; i<len; i++) {
+				(new Image()).src = srcArray[i];
+			}
+		}
+		
+		var images = [
+			"image1.jpg",
+			"image2.jpg",
+			"image3.jpg",
+			"image4.jpg",
+			"image5.jpg"
+		];
+		
+		preload(images);
+    </script>
+
+</body>
+</html>

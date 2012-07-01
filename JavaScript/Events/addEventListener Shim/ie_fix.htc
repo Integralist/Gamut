@@ -1,0 +1,7 @@
+<PUBLIC:COMPONENT>
+    <PUBLIC:METHOD NAME="addEventListener" INTERNALNAME="_addEventListener" />
+	<script type="text/javascript">
+        var element = new Element;
+        _addEventListener = element.addEventListener;
+    </script>
+</PUBLIC:COMPONENT>

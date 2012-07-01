@@ -1,0 +1,61 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="Assets/Styles/LickList.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css" />
+		<!--
+		When using a custom Theme you have a smaller 'structure' jQuery Mobile CSS file, so the below file appears to be redundant?
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+		BUT on some pages it can stop existing styles working (I assume because the normal stylesheet has extra styles outside of the typical 'theme' styles)
+		This means those styles will have to be re-created in our custom.css (I haven't bothered doing this yet, but I should be able to set-up a test page using old CSS and grab styles from there?)
+		-->
+		<link href="Assets/Styles/custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="Assets/Scripts/custom.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1 class="logo"><span>LickList</span></h1>
+				<a href="index.html" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all ui-btn-right" title="Logout"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Logout</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<div class="home-advert aligntext-center">
+					<img src="Assets/Images/advert.png">
+				</div>
+				<div id="home-search-filter">
+					<ul data-role="listview" data-inset="true" data-filter="true"></ul>
+				</div>
+				<div class="aligntext-center home-grid ui-grid-b">
+					<div class="ui-block-a"><div class="ui-bar ui-bar-d ui-corner-tl"><a href="hot-licks.html" data-role="none">Hot Licks<img src="Assets/Images/home-icon-a.png"></a></div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-d"><a href="profile.html" data-role="none">Profile<img src="Assets/Images/home-icon-b.png"></a></div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-d ui-corner-tr"><a href="notifications.html" data-role="none">Notifications<img src="Assets/Images/home-icon-c.png"></a></div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-d"><a href="chat.html" data-role="none">Chat<img src="Assets/Images/home-icon-d.png"></a></div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-d"><a href="social-summary.html" data-role="none">Social Summary<img src="Assets/Images/home-icon-e.png"></a></div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-d"><a href="messages.html" data-role="none">Messages<img src="Assets/Images/home-icon-f.png"></a></div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar-d ui-corner-bl"><a href="add-post.html" data-role="none">Add Post<img src="Assets/Images/home-icon-g.png"></a></div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar-d"><a href="whos-out-tonight.html" data-role="none">Whos out tonight<img src="Assets/Images/home-icon-h.png"></a></div></div>
+					<div class="ui-block-c"><div class="ui-bar ui-bar-d ui-corner-br"><a href="settings.html" data-role="none">Settings<img src="Assets/Images/home-icon-i.png"></a></div></div>
+				</div>
+				<div class="home-subsections">
+					<div class="aligntext-center" data-role="controlgroup" data-type="horizontal">
+						<a href="#" data-icon="home" data-role="button">Venues</a>
+						<a href="#" data-icon="home" data-role="button">Offers</a>
+					</div>
+					<div class="aligntext-center" data-role="controlgroup" data-type="horizontal">
+						<a href="#" data-icon="home" data-role="button">Events</a>
+						<a href="#" data-icon="home" data-role="button">Reviews</a>
+					</div>
+					<div class="aligntext-center" data-role="controlgroup" data-type="horizontal">
+						<a href="#" data-icon="home" data-role="button">Gallery</a>
+						<a href="#" data-icon="home" data-role="button">Competitions</a>
+					</div>
+				</div>
+				<script src="Assets/Scripts/search.js"></script>
+			</div>
+		</div>
+	</body>
+</html>

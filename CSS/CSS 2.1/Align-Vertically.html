@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>Float-Clear Demo</title> 
+ 
+<style type="text/css" media="all"> 
+html, body	
+{ height:100%; margin:0; padding:0; }
+ 
+#top 
+{ position: relative; float: right; width: 100%; text-align: center; }
+
+#floater	
+{ height: 50%; margin-bottom: -150px; position: relative; }
+
+#content	
+{ clear: both; height: 300px; position: relative; margin: 0 auto; background-color: #FFCC66; width: 70%; padding: 20px; }
+</style> 
+ 
+</head> 
+ 
+<body> 
+ 
+<div id="top"> 
+	<h1>Float-Clear Vertical Centering</h1> 
+</div> 
+ 
+<div id="floater"></div> 
+ 
+<div id="content"> 
+	<h2>Centred Content</h2> 
+	<p>When you shrink the window, a scrollbar will appear, and this box will not cover the title, which is also floated.</p> 
+	<p>Note: I'm Australian, that's why centre is spelt with &lsquo;re&rsquo;, not &lsquo;er&rsquo;. Don&rsquo;t get confused when css'ing: centre must be spelt &lsquo;cent<strong>er</strong>&rsquo;</p> 
+</div>
+ 
+</body>
+</html> 

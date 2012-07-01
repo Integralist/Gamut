@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Setting, Getting, and Removing Data Using the Global Storage API</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>Setting, Getting, and Removing Data Using the Global Storage API</h1>
+   <p>Before the local storage API was defined by the WHATWG, Mozilla developers implemented its own similar, but notably different, storage API for the same purpose: to store data on the user’s local computer or device. They called this DOM storage or global storage, and it provides meth- ods for storing, retrieving, and deleting data in much the same way as the local storage API. It even has the same 5MB default data size limit. The only implementation difference between this technique and the local storage API is that the global storage object must specify which domain to store the data against, even though, for all intents and purposes, this must be the same domain on which the code is currently executing.</p>
+    
+	<script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript" src="Mozilla-Global-Storage.js"></script>
+	<script type="text/javascript">
+		// Initialize GlobalStorage for use 
+		$.Storage.GlobalStorage.initialize(); 
+		
+		// Save an email address 
+		$.Storage.GlobalStorage.set({ 
+			name: "email", 
+			value: "me@denodell.com" 
+		}); 
+		
+		// Output the "email" value we created earlier. 
+		// After a browser restart, the data will still be there 
+		alert($.Storage.GlobalStorage.get("email")); 
+		
+		// Delete the "email" data value permanently 
+		$.Storage.GlobalStorage.remove("email"); 
+		
+		// Outputs an empty string since the "email" data no longer exists 
+		alert($.Storage.GlobalStorage.get("email"));
+    </script>
+</body>
+</html>

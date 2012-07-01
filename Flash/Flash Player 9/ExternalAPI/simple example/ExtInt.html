@@ -1,0 +1,85 @@
+<!-- saved from url=(0013)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>ExtInt</title>
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<script src="AC_RunActiveContent.js" language="javascript"></script>
+<!--- revised --->
+<script language="JavaScript">
+	function thisMovie(movieName) {
+		var isIE = navigator.appName.indexOf("Microsoft") != -1;
+		return (isIE) ? window[movieName] : document[movieName];
+	}
+
+	function makeCall(str) {
+		thisMovie("extint").asFunc(str);
+	}
+
+	// This function "jsFunc" will be called from ActionScript
+    function jsFunc(str) {
+		document.forms["inForm"].inField.value = "ActionScript: " + str;
+    }
+</script>
+<!--- // revised --->
+
+</head>
+<body bgcolor="#ffffff">
+
+<!--url's used in the movie-->
+<!--text used in the movie-->
+<!-- saved from url=(0013)about:internet -->
+<script language="javascript">
+	if (AC_FL_RunContent == 0) {
+		alert("This page requires AC_RunActiveContent.js.");
+	} else {
+		AC_FL_RunContent(
+			'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0',
+			'width', '330',
+			'height', '245',
+			'src', 'ExtInt',
+			'quality', 'high',
+			'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
+			'align', 'middle',
+			'play', 'true',
+			'loop', 'true',
+			'scale', 'showall',
+			'wmode', 'window',
+			'devicefont', 'false',
+			'id', 'extint',
+			'bgcolor', '#ffffff',
+			'name', 'extint',
+			'menu', 'true',
+			'allowFullScreen', 'false',
+			'allowScriptAccess','always',
+			'movie', 'ExtInt',
+			'salign', ''
+			); //end AC code
+	}
+</script>
+<noscript>
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="330" height="245" id="extint" align="middle">
+	<param name="allowScriptAccess" value="always" />
+	<param name="allowFullScreen" value="false" />
+	<param name="movie" value="ExtInt.swf" />
+	<param name="quality" value="high" />
+	<param name="bgcolor" value="#ffffff" />
+	<embed src="ExtInt.swf" quality="high" bgcolor="#ffffff" width="330" height="245" name="extint" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+	</object>
+</noscript>
+
+<!--- revised --->
+<form name="outForm" method="POST" action="javascript:makeCall(document.outForm.outField.value);">
+	Sending to ActionScript:<br />
+	<input type="text" name="outField" value="" /><br />
+	<input type="submit" value="Send" />
+</form>
+
+<form name="inForm" method="POST" action="">
+	Receiving from ActionScript:<br />
+	<input type="text" name="inField">
+</form>
+<!--- // revised --->
+
+</body>
+</html>

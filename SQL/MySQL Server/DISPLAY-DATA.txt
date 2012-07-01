@@ -1,0 +1,7 @@
+SELECT * FROM testdb.testtable
+
+SELECT * FROM testdb.departments
+
+// Using the WHERE clause
+SELECT * FROM testdb.testtable
+WHERE lastname='McDonnell'

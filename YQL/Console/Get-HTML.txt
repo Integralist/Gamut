@@ -1,0 +1,51 @@
+select * from html where url = "http://www.domain.com" and xpath="//div[@class='home']"
+
+/////////////////////////////////////////////////////////////////////
+
+This URL takes you to the YQL Console and runs the relevant SQL code: http://developer.yahoo.com/yql/console/?q=select%20*%20from%20twitter.user.timeline%20where%20id%3D"integralist"&env=http://datatables.org/alltables.env
+
+The REST query:
+http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20twitter.user.timeline%20where%20id%3D%22integralist%22&format=xml&env=http%3A%2F%2Fdatatables.org%2Falltables.env
+
+/////////////////////////////////////////////////////////////////////
+
+select * from html where url="http://www.storm-media.co.uk/" and xpath="//a"
+- returns all <A> elements
+
+select * from html where url="http://www.storm-media.co.uk/" and xpath="//a/text()"
+- returns all <A> elements text concatenated
+
+select * from html where url="http://www.storm-media.co.uk/" and xpath="//div[@class='home']"
+- returns all DIV elements with the class "home"
+
+/////////////////////////////////////////////////////////////////////
+
+YQL requires the xpath expression to evaluate to an itemPath rather than node text. But once you have an itemPath you can project various values from the tree
+
+In other words an ItemPath should point to the Node in the resulting HTML rather than text content/attributes. YQL returns all matching nodes and their children when you select * from the data.
+
+example
+
+select * from html where url="http://stackoverflow.com" and xpath='//div/h3/a'
+
+This returns all the a's matching the xpath. Now to project the text content you can project it out using
+
+select content from html where url="http://stackoverflow.com" and xpath='//div/h3/a'
+
+"content" returns the text content held within the node.
+
+For projecting out attributes, you can specify it relative to the xpath expression. In this case, since you need the href which is relative to a.
+
+select href from html where url="http://stackoverflow.com" and xpath='//div/h3/a'
+
+this returns <results> <a href="/questions/663973/putting-a-background-pictures-with-leds"/> <a href="/questions/663013/advantages-and-disadvantages-of-popular-high-level-languages"/> .... </results>
+
+If you needed both the attribute 'href' and the textContent, then you can execute the following YQL query:
+
+select href, content from html where url="http://stackoverflow.com" and xpath='//div/h3/a'
+
+returns:
+
+<results> <a href="/questions/663950/double-pointer-const-issue-issue">double pointer const issue issue</a>... </results>
+
+/////////////////////////////////////////////////////////////////////

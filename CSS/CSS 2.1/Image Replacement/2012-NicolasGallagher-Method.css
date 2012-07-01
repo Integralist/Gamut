@@ -1,0 +1,47 @@
+/*
+
+The new technique avoids various problems with any text-indent method.
+The benefits are:
+
+* No box of any kind is drawn offscreen, so there is no risk of
+  related performance problems in old iOS devices.
+
+* No need to specify a text-alignment and hide overflow since the text
+  is crushed to take up no space.
+
+* No need to hide `br` or make all fallback HTML `display:inline`
+  because unlike the text-indent approaches, this method is not
+  affected by those scenarios.
+
+* Fewer styles are needed as a result of these improvements.
+
+The function of the new CSS is as follows:
+
+* `font: 0/0 a` is a shorthand property that reduces the font-size and
+  line-height to 0. The `a` value acts as a font-family. The CSS
+  validator complains that using `0/0` in the shorthand `font` property
+  is not valid, but every browser accepts it.
+
+* `text-shadow: none` makes sure than any inherited text shadow is
+  removed, otherwise it will show over the image.
+
+* `color: transparent` is only really needed in browsers than don't
+  completely crush the text to the point of being invisible. Safari 4 is
+  such a browser (but extremely rare). Leaving it in for now in case
+  there are any mobile browsers that require it. Upon further testing,
+  it may be possible to remove this declaration.
+
+Some parts of the pre-existing image replacement technique have been
+retained. The border and background resets are useful when using IR on
+form submit inputs or buttons, as well as when links use default borders
+or backgrounds
+
+*/
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	color: transparent;
+	font: 0/0 a;
+	text-shadow: none;
+}

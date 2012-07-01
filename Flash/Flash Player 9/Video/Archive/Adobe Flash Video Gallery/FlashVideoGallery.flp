@@ -1,0 +1,91 @@
+﻿<flash_project name="FlashVideoGallery" version="1">
+    <project_folder name="fvg" expanded="true">
+        <project_file path="./fvg/VideoThumbnail.as" filetype="as" />
+        <project_file path="./fvg/DetailView.as" filetype="as" />
+        <project_file path="./fvg/FlashVideoGallery.as" filetype="as" />
+        <project_file path="./fvg/TextLink.as" filetype="as" />
+        <project_file path="./fvg/Tooltip.as" filetype="as" />
+    </project_folder>
+    <project_folder name="video" expanded="false">
+        <project_file path="./video/yahooadvision.flv" filetype="flv" />
+        <project_file path="./video/abc7listens.flv" filetype="flv" />
+        <project_file path="./video/aolgermany.flv" filetype="flv" />
+        <project_file path="./video/baconskateboards.flv" filetype="flv" />
+        <project_file path="./video/barenakedladies.flv" filetype="flv" />
+        <project_file path="./video/benjerry.flv" filetype="flv" />
+        <project_file path="./video/bmw5series.flv" filetype="flv" />
+        <project_file path="./video/btopenworld.flv" filetype="flv" />
+        <project_file path="./video/canopus.flv" filetype="flv" />
+        <project_file path="./video/cbc.flv" filetype="flv" />
+        <project_file path="./video/creativebubble.flv" filetype="flv" />
+        <project_file path="./video/directfromthetour.flv" filetype="flv" />
+        <project_file path="./video/directordariopiana.flv" filetype="flv" />
+        <project_file path="./video/expnaxiscam.flv" filetype="flv" />
+        <project_file path="./video/fordf150.flv" filetype="flv" />
+        <project_file path="./video/goodyearEagleF1.flv" filetype="flv" />
+        <project_file path="./video/gulfstream.flv" filetype="flv" />
+        <project_file path="./video/historychannel.flv" filetype="flv" />
+        <project_file path="./video/hondademexico.flv" filetype="flv" />
+        <project_file path="./video/ibmForwardView.flv" filetype="flv" />
+        <project_file path="./video/ibmfusionwebisode.flv" filetype="flv" />
+        <project_file path="./video/keiko.flv" filetype="flv" />
+        <project_file path="./video/macromediaondemand.flv" filetype="flv" />
+        <project_file path="./video/mailboxesetc.flv" filetype="flv" />
+        <project_file path="./video/prideandprejudice.flv" filetype="flv" />
+        <project_file path="./video/redbullcopilot.flv" filetype="flv" />
+        <project_file path="./video/reevolution.flv" filetype="flv" />
+        <project_file path="./video/shocktheworld.flv" filetype="flv" />
+        <project_file path="./video/sonylatinamerica.flv" filetype="flv" />
+        <project_file path="./video/sonystyle.flv" filetype="flv" />
+        <project_file path="./video/sundance.flv" filetype="flv" />
+        <project_file path="./video/sunquarterlylaunchevent.flv" filetype="flv" />
+        <project_file path="./video/videotalk.flv" filetype="flv" />
+        <project_file path="./video/virtualbyron.flv" filetype="flv" />
+        <project_file path="./video/volvos40.flv" filetype="flv" />
+        <project_file path="./video/washingtonpostnewsweek.flv" filetype="flv" />
+    </project_folder>
+    <project_folder name="thumbnails" expanded="false">
+        <project_file path="./thumbnails/yahooadvision.flv" filetype="flv" />
+        <project_file path="./thumbnails/abc7listens.flv" filetype="flv" />
+        <project_file path="./thumbnails/aolgermany.flv" filetype="flv" />
+        <project_file path="./thumbnails/baconskateboards.flv" filetype="flv" />
+        <project_file path="./thumbnails/barenakedladies.flv" filetype="flv" />
+        <project_file path="./thumbnails/benjerrys.flv" filetype="flv" />
+        <project_file path="./thumbnails/bmw5series.flv" filetype="flv" />
+        <project_file path="./thumbnails/btopenworld.flv" filetype="flv" />
+        <project_file path="./thumbnails/canopus.flv" filetype="flv" />
+        <project_file path="./thumbnails/cbc.flv" filetype="flv" />
+        <project_file path="./thumbnails/creativebubble.flv" filetype="flv" />
+        <project_file path="./thumbnails/directFromTheTour.flv" filetype="flv" />
+        <project_file path="./thumbnails/directordariopiana.flv" filetype="flv" />
+        <project_file path="./thumbnails/expnaxiscam.flv" filetype="flv" />
+        <project_file path="./thumbnails/fordf150.flv" filetype="flv" />
+        <project_file path="./thumbnails/goodyearEagleF1.flv" filetype="flv" />
+        <project_file path="./thumbnails/gulfstream.flv" filetype="flv" />
+        <project_file path="./thumbnails/historychannel.flv" filetype="flv" />
+        <project_file path="./thumbnails/hondademexico.flv" filetype="flv" />
+        <project_file path="./thumbnails/ibmfusionwebisode.flv" filetype="flv" />
+        <project_file path="./thumbnails/keiko.flv" filetype="flv" />
+        <project_file path="./thumbnails/kinepolis.flv" filetype="flv" />
+        <project_file path="./thumbnails/macromediaondemand.flv" filetype="flv" />
+        <project_file path="./thumbnails/mailboxesetc.flv" filetype="flv" />
+        <project_file path="./thumbnails/prideandprejudice.flv" filetype="flv" />
+        <project_file path="./thumbnails/redbullcopilot.flv" filetype="flv" />
+        <project_file path="./thumbnails/reevolution.flv" filetype="flv" />
+        <project_file path="./thumbnails/root6tvjukebox.flv" filetype="flv" />
+        <project_file path="./thumbnails/shocktheworld.flv" filetype="flv" />
+        <project_file path="./thumbnails/sonylatinamerica.flv" filetype="flv" />
+        <project_file path="./thumbnails/sonystyle.flv" filetype="flv" />
+        <project_file path="./thumbnails/sundance.flv" filetype="flv" />
+        <project_file path="./thumbnails/sunquarterlylaunchevent.flv" filetype="flv" />
+        <project_file path="./thumbnails/videotalk.flv" filetype="flv" />
+        <project_file path="./thumbnails/virtualbyron.flv" filetype="flv" />
+        <project_file path="./thumbnails/volvos40.flv" filetype="flv" />
+        <project_file path="./thumbnails/washingtonpostnewsweek.flv" filetype="flv" />
+    </project_folder>
+    <project_file path="./Settings.xml" filetype="xml" />
+    <project_file path="./AC_RunActiveContent.js" filetype="js" />
+    <project_file path="./FlashVideoGallery.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./FlashVideoGallery.html" filetype="html" />
+    <project_file path="./Settings_streaming.xml" filetype="xml" />
+</flash_project>

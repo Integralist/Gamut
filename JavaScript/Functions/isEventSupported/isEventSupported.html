@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>JavaScript. Functions. Preventing the Default Browser Action</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="isEventSupported.js"></script>
+<script type="text/javascript">	
+	alert(isEventSupported("contextmenu"));
+	
+	///////////////////////////////////////////////
+	// A stripped down 'mouse' only event detection
+	///////////////////////////////////////////////
+	
+	alert(isMouseEventSupported("mouseenter"));
+</script>
+</head>
+<body>
+
+	<h1>Checking if an Event is supported</h1>
+    <p><a href="http://thinkweb2.com/projects/prototype/detecting-event-support-without-browser-sniffing/">http://thinkweb2.com/projects/prototype/detecting-event-support-without-browser-sniffing/</a></p>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<link href="custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>API Title</h1>
+				<a href="index.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Home"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<h2>Configuring defaults</h2>
+				<p>When the jQuery Mobile starts to execute, it triggers a <code>mobileinit</code> event on the <code>document</code> object, to which you can bind to apply overrides to jQuery Mobile's defaults.</p>
+				<pre>
+					<code>
+$(document).bind("mobileinit", function(){
+	//apply overrides here
+});
+					</code>
+				</pre>
+				<p>Because the <code>mobileinit</code> event is triggered immediately upon execution, you'll need to bind your event handler before jQuery Mobile is loaded. Thus, we recommend linking to your JavaScript files in the following order:</p>
+				<pre>
+					<code>
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+<strong>&lt;script src="custom-scripting.js"&gt;&lt;/script&gt;</strong>
+&lt;script src="jquery-mobile.js"&gt;&lt;/script&gt;
+					</code>
+				</pre>
+				<p>NOTE: put your configuration code into a script file that is loaded in the head of EVERY page (otherwise if a user bookmarks a particular page and comes back to that page rather than your index page then you'll find your config options aren't set)</p>
+				<h2><code>$.mobile.loadPage</code></h2>
+				<p id="test_loadPage">Load an external page, enhance its content, and insert it into the DOM.</p>
+				<div id="emptyelement">Click on the above paragraph to grab a page using <code>$.mobile.loadPage</code> and it will insert the returned page html into this <code>div</code> - but it wont be visible as it's used solely for *pre-loading* pages (but because of the http request overhead, just be sure to use it only when it's very likely the page will be clicked on/needed) Note: <code>createPage</code> uses <code>loadPage</code> internally</div>
+				
+				<script type="text/javascript">
+					$(document).delegate('#test_loadPage', 'click', function(e) {
+						// loadPage returns a deferred promise
+						var dfd = $.mobile.loadPage('list-example.html', { pageContainer: $("#emptyelement") });
+						dfd.then(function(){
+							alert('The preloaded page has now been inserted into the DOM, ready to be shown via changePage or normal anchor link');
+							alert('We\'re now going to show the loading animation for 3 seconds before hiding it (dont worry, we\'ve done nothing, just displaying the animation)');
+							
+							$.mobile.showPageLoadingMsg();
+							window.setTimeout(function(){
+								$.mobile.hidePageLoadingMsg();
+							}, 3000);
+						});
+					});
+					
+					// Useful utility for parsing a URL
+					var obj = $.mobile.path.parseUrl("http://user:password@domain.com:8888/mail/inbox?msg=1234#abc");
+					alert('check console for result of parseURL()');
+					console.group();
+						console.log(obj);
+						console.log('See also: $.mobile.path.makePathAbsolute and $.mobile.path.makeUrlAbsolute');
+					console.groupEnd();
+					console.log($.mobile.activePage); // undefined, except when coming from index.html (?)
+				</script>
+			</div>
+			<div data-role="footer">
+				<h4>API Footer</h4>
+			</div>
+		</div>
+	</body>
+</html>

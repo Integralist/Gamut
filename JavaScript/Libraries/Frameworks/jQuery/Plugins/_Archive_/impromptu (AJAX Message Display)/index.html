@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Impromptu - JavaScript Alert Messages</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+	<script type='text/javascript' src='jquery-1.2.6.min.js'></script>
+    <script type='text/javascript' src='jquery-impromptu.1.5.js'></script>
+    <script type='text/javascript'>
+		$(document).ready(function()
+		{
+			$('a[rel=popup]').click(function(e)
+			{
+				// setup variable to hold HTML data
+				var display;
+			
+				// get the URL for the HTML data
+				var url = $(this).attr('href');
+				
+				// use AJAX to retrieve HTML data
+				$.get(url, {}, function(data)
+				{ 
+					// display the popup window
+					$.prompt(data, { opacity: 0.5, show: 'fadeIn' }); 
+				});
+				
+				// prevent the link from following through
+				e.preventDefault();
+			});
+		});
+	</script>
+    <link rel="stylesheet" href="window.css" />
+
+</head>
+<body style="background-color: yellow;">
+
+	<p><a href="test.html" rel="popup">click here to trigger</a></p>
+    
+    <h3>Docs</h3>
+
+    <p>There are  many options with Impromptu:</p>
+
+    <code>$.prompt( msg , options )</code>
+    <h4>msg</h4>
+
+    <p>The message to be displayed in the prompt.  This may be text or html.</p>
+    <h4>options</h4>
+    <dl>
+
+        <dt>loaded</dt>
+        <dd>A function to be called when the prompt is fully loaded  <em>Default: function(){}</em></dd>
+        
+        <dt>submit</dt>
+
+        <dd>A function to be called when the prompt is submitted. <em>Default: function(){ return true; }</em></dd>
+        
+        <dt>callback</dt>
+        <dd>A function to be called when the prompt is submitted and removed. <em>Default: function(){}</em></dd>
+        
+                            <dt>buttons</dt>
+        <dd>An object containing the text and values of each button the user may click. <em>Default: { Ok : true }</em></dd>
+
+        <dt>prefix</dt>
+        <dd>A prefix to be used for all css classes and html object id's. <em>Default: 'jqi'</em></dd>
+        
+                            <dt>focus</dt>
+        <dd>Index of the button to focus(0,1,2..). <em>Default: 0</em></dd>
+
+                            <dt>zIndex</dt>
+        <dd>zIndex to apply to the prompt. <em>Default: 999</em></dd>
+                    
+        <dt>opacity</dt>
+        <dd>The prefered opacity of the transparent layer placed over the container. <em>Default: 0.6</em></dd>
+        
+                            <dt>overlayspeed</dt>
+        <dd>The prefered speed of the fadeIn and fadeOut of the overlay ("slow", "fast", number) <em>Default: "slow"</em></dd>
+        
+                            <dt>promptspeed</dt>
+        <dd>The prefered opacity of the showing of the prompt ("slow", "fast", number) <em>Default: "fast"</em></dd>
+
+        <dt>show</dt>
+        <dd>Name of the jQuery method to animate the entrance of the prompt("show","fadeIn","slideDown"). <em>Default: "show"</em></dd>
+        
+    </dl>
+    <h4>returns</h4>
+
+    <p>returns a jQuery object of the prompt box and fade. <em>Note: This has changed to a container with everything within it, fade and prompt box.</em></p>
+
+</body>
+</html>

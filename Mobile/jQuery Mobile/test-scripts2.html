@@ -1,0 +1,30 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Basic Page</h1>
+				<a href="test.html" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all ui-btn-right" title="Logout"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Logout</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				Test scripts 2
+			</div>
+			<div data-role="footer">
+				<h4>Basic Footer</h4>
+			</div>
+			<script type="text/javascript">
+				$(document).bind('pagechange', function(event, data){
+					alert('page change on scripts two');
+				});
+			</script>
+			<script src="test.js"></script>
+		</div>
+	</body>
+</html>

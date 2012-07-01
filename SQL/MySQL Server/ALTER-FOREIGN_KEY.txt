@@ -1,0 +1,19 @@
+/*
+the table 'departments' has a primary key column called 'dep_id'
+we want that column to be a foreign key within the table called 'testtable'
+to do this we need to convert the tables from MyISAM type of tables to InnoDB type tables.
+*/
+
+// alter a table type from MyISAM to InnoDB
+ALTER TABLE testdb.testtable ENGINE=InnoDB
+
+// add a foreign key
+ALTER TABLE testdb.testtable
+ADD FOREIGN KEY (department_id) REFERENCES testdb.departments(dep_id);
+
+// we can change the name of the foreign key using SQL - but it involves dropping the key and then recreating it!
+ALTER TABLE testdb.testtable DROP FOREIGN KEY "testtable_ibfk_1",
+ ADD CONSTRAINT "testForeignKey" FOREIGN KEY "testForeignKey" ("department_id")
+    REFERENCES "departments" ("dep_id")
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT;

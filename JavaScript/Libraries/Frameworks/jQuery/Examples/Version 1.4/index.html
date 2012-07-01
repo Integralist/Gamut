@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery 1.4</title>
+</head>
+<body>
+	
+   <div id="myDiv"></div>
+   <ul>  
+	   <li>Apple</li>  
+   	<li>Banana</li>  
+   	<li>Grape</li>  
+      <li>Strawberry</li>  
+      <li>Pear</li>  
+      <li>Peach</li>  
+   </ul>
+   
+   <p><a id="testLink">a link</a></p>
+
+	<script src="../../Releases/jquery-1.4.js"></script>
+   <script>
+		var init = function() {
+			// you can now set an objects attributes and events as you create the object
+			jQuery('<a/>', {  
+				id: 'foo',  
+				href: 'http://google.com',  
+				title: 'Become a Googler',  
+				rel: 'external',  
+				text: 'Go to Google!',
+				css: {
+					color: 'red',
+					backgroundColor: 'yellow',
+					padding: '10px'
+				},
+				click: function(e) {
+					alert(e.target);
+					return false;
+				}
+			}).appendTo('#myDiv');
+			
+			
+			
+			// You want to select all of items after "Apple", but you want to stop once you reach "Strawberry".
+			console.log(
+				jQuery('ul li:contains(Apple)').nextUntil(':contains(Pear)')
+			);
+			
+			
+			
+			// jQuery 1.4 provides a new "proxy" function. It's all about JavaScript's 'this' keyword
+			/*
+			In the following code the "clickHandler" method, when called like "app.clickHandler()" will have "app" as its context, 
+			meaning that the "this" keyword will allow it access to "app". 
+			
+			This works quite well if we simply call:
+			app.clickHandler(); // "Hi!" is alerted
+			
+			Doing this...
+			
+				jQuery('a#testLink').bind('click', app.clickHandler); // this.config is undefined
+			
+			...will mean 'this' is set to the context of the object the event is targeted at
+			*/
+			var app = {  
+				config: {  
+					clickMessage: 'Hi!'  
+				},  
+				clickHandler: function() {  
+					alert(this.config.clickMessage);  
+				}  
+			};
+			
+			jQuery('a#testLink').bind('click',  jQuery.proxy(app, 'clickHandler'));
+			
+			
+			
+			// You can now add a delay to your animation queues
+			jQuery('#myDiv')  
+				.delay(2000) // Do nothing for 2 seconds
+				.slideUp() // Slide up
+				.slideDown() // Slide down again
+				.delay(1000) // Do nothing for 1 second  
+				.fadeOut(); // Fade out		
+			
+			
+			
+			// It's easy to now find the index of an element
+			jQuery('li').click(function() {  
+				alert(jQuery(this).index());
+			});
+		};
+		
+   	jQuery(document).ready(init);
+   </script> 
+
+</body>
+</html>

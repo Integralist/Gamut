@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title><html>
+			<head>
+				<title>jQuery.sub Example</title>
+				<style type="text/css">
+					ol {
+					  font: italic 2em Arial;
+					  color: #999;
+					}
+					
+					ol {
+					    list-style-type: decimal;
+					}
+					
+					ol li {
+					    margin-left: 20px;
+					}
+					
+					li div {
+					    color: #444;
+					}
+					
+					li.end {
+					    padding-top: 10px;
+					    color: green;
+					    list-style-type: none;
+					    margin: 0;
+					}				
+			    </style>
+			    <script type="text/javascript" src="../Releases/jquery-1.5.1.min.js"></script>
+			    <script type="text/javascript">
+			    
+			    $(function(){
+					//variation of a demo by jaubourg
+					
+					var container = $( "<ol/>" ).appendTo( document.body );
+					
+					// creates a deferred to be resolved after a
+					// period of time, and returns a promise
+					function createDeferred(){
+					    return $.Deferred(function(){
+					        setTimeout( this.resolve, Math.floor(Math.random()*1500) );  
+					    }).promise();
+					}
+					
+					// constructs the array of promises, and attach
+					// a done callback to each in the process
+					var promises = [];
+					$.each( "red blue green yellow pink".split(" "), function(_, str) {
+					    promises.push( createDeferred().done(function(){
+					        container.append( '<li><div>' + str + '</div></li>' ).css('background-color', str);
+					    }) );
+					} );
+					
+					// applies the array of promises to $.when
+					$.when.apply( null,  promises ).then(function(){
+					    container.append( '<li class="end">all done!</li>' );
+					});
+				});
+
+			    </script>
+			</head>
+			<body>
+			
+			<h1>A jQuery Deferreds Demo</h1>
+			
+
+			</body>
+		</html>
+		</title>
+	</head>
+	<body>
+	</body>
+</html>

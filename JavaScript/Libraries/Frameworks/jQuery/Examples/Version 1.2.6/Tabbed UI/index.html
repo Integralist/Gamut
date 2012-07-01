@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery UI Tabs Demo</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery-ui-personalized-1.5.2.packed.js"></script>
+<script type="text/javascript" src="sprinkle.js"></script>
+</head>
+<body>
+
+	<!--
+    We begin by opening a DIV element with the ID of ‘tabvanilla’ and class of ‘widget’. 
+    The ID will be used by jQuery in order to identify the area it should effect, 
+    and the class is there for ease-of-use when styling.
+    -->
+    <div id="tabvanilla" class="widget">
+
+        <!--
+        Next is an unordered list with the Class of ‘tabnav’. 
+        The list contains the three different tab names, each with a link in the style of “#xxxxx”. 
+        This is important as these will be the IDs of the sections following.
+        -->
+        <ul class="tabnav">
+            <li><a href="#popular">Popular</a></li>
+            <li><a href="#recent">Recent</a></li>
+            <li><a href="#featured">Featured</a></li>
+            <li><a href="#markTest">Mark</a></li>
+        </ul>
+
+        <!--
+        The following div has an ID of ‘popular’, this matches with the link in the tabs above. 
+        A ‘recent’ and ‘featured’ DIV is also included. 
+        These sections are what will be shown/hidden by jQuery when the corresponding link it selected.
+        -->
+        <div id="popular" class="tabdiv">
+            <ul>
+                <li><a href="#">Welsh Zombie Sheep Invasion</a></li>
+                <li><a href="#">Sheep Rising From The Dead</a></li>
+                <li><a href="#">Blogosphere Daily Released!</a></li>
+                <li><a href="#">Aliens Infiltrate Army Base In UK Town</a></li>
+                <li><a href="#">U2 Rocks New York's Central Park</a></li>
+                <li><a href="#">TA Soldiers Wear Uniforms To Work</a></li>
+                <li><a href="#">13 People Rescued From Flat Fire</a></li>
+                <li><a href="#">US Troops Abandon Afghan Outpost</a></li>
+                <li><a href="#">Are We Alone? A Look Into Space</a></li>
+                <li><a href="#">Apple iPhone 3G Released</a></li>
+            </ul>
+        </div>
+        
+        <div id="recent" class="tabdiv">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        
+        <div id="featured" class="tabdiv">
+            <ul>
+                <li><a href="#">Aliens Infiltrate Army Base In UK Town</a></li>
+                <li><a href="#">Are We Alone? A Look Into Space</a></li>
+                <li><a href="#">U2 Rocks New York's Central Park</a></li>
+                <li><a href="#">TA Soldiers Wear Uniforms To Work</a></li>
+                <li><a href="#">13 People Rescued From Flat Fire</a></li>
+                <li><a href="#">US Troops Abandon Afghan Outpost</a></li>
+                <li><a href="#">Sheep Rising From The Dead</a></li>
+                <li><a href="#">Blogosphere Daily Released!</a></li>
+                <li><a href="#">Apple iPhone 3G Released</a></li>
+                <li><a href="#">Welsh Zombie Sheep Invasion</a></li>
+            </ul>
+        </div>
+        
+        <div id="markTest" class="tabdiv">
+            <ul>
+                <li><a href="#">Test 1</a></li>
+                <li><a href="#">Test 2</a></li>
+                <li><a href="#">Test 3</a></li>
+                <li><a href="#">Test 4</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="featuredvid" class="widget">
+        
+        <div class="fvid" id="vid-1">
+            <object width="270" height="152">	<param name="allowfullscreen" value="true" />	<param name="allowscriptaccess" value="always" />	<param name="movie" value="http://www.vimeo.com/moogaloop.swf?clip_id=1211060&amp;server=www.vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" />	<embed src="http://www.vimeo.com/moogaloop.swf?clip_id=1211060&amp;server=www.vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="270" height="152"></embed></object>
+        </div>
+    
+        <div class="fvid" id="vid-2">
+            <object width="270" height="219"><param name="movie" value="http://www.youtube.com/v/gPwmG3VuO_E&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.youtube.com/v/gPwmG3VuO_E&hl=en&fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="270" height="219"></embed></object>
+        </div>
+        
+        <div class="fvid" id="vid-3">
+            <object width="270" height="219"><param name="movie" value="http://www.youtube.com/v/p86BPM1GV8M&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><embed src="http://www.youtube.com/v/p86BPM1GV8M&hl=en&fs=1" type="application/x-shockwave-flash" allowfullscreen="true" width="270" height="219"></embed></object>
+        </div>
+        
+        <ul class="vidselector">
+            <li><a href="#vid-1"><span>Where The Hell Is Matt? (2008)</span></a></li>
+            <li><a href="#vid-2"><span>Clint Eastwood's The Office</span></a></li>
+            <li><a href="#vid-3"><span>Pale Blue Dot</span></a></li>
+        </ul>            
+        
+    </div>
+
+
+    <p>By <a href="http://www.danharper.me" title="Web Design Portfolio of Dan Harper">Dan Harper</a> using jQuery UI Tabs for <a href="http://www.nettuts.com" title="NETUTS - SPOONFED WEB SKILLS">NETTUTS.com</a></p>
+
+</body>
+</html>

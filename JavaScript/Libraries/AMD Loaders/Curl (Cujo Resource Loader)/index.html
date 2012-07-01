@@ -1,0 +1,34 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+   <meta charset="utf-8">
+	<title>Curl (Cujo Resource Loader)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		curl = {
+		    baseUrl: 'Assets/Scripts',
+		    paths: {
+		        curl: 'Curl',
+		        jquery: 'Utils/jquery'
+		    }
+		};
+	</script>
+	<script src="Assets/Scripts/Curl.js"></script>
+	<script type="text/javascript">
+		/*
+			Instead of using define() to wrap our code, in this (our 'main' file) we use curl(). 
+			
+			The curl() function is similar, in that you pass it an optional array of dependencies, 
+			and a function which will be executed when those dependencies are resolved. 
+			However this code is not stored as a named module, as its purpose is to be run immediately.
+		*/
+		curl(['App/people'], function(iCanCallThisAnythingILike) {
+		
+			// The argument passed through is the returned value from the function definition we defined inside App/people.js
+			console.log(iCanCallThisAnythingILike.list, iCanCallThisAnythingILike.scripts);
+			
+		});
+	</script>
+</body>
+</html>

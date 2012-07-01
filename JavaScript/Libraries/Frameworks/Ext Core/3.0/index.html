@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ext Core</title>
+<style type="text/css">
+	#someId
+	{ background-color:pink; height:200px; width:120px; }
+	
+	.testClass
+	{ border:2px solid green; }
+	
+	.randomClass
+	{ background-color:#FFF; border:2px dashed purple; color:red; font-family:Tahoma, Geneva, sans-serif; }
+	
+	.grey
+	{ color:#CCC; }
+	
+	#hideBox
+	{ cursor:pointer; }
+</style>
+</head>
+<body>
+
+	<div id="mainContainer">
+		<p id="hideBox">Click here to hide the box</p>
+	
+		<div style="background-color: rgb(255, 0, 0); width: 100px; height: 100px;" id="slideEl"></div>
+		
+		<img src="../../_Storm Media_/Images/large.jpg" width="100" id="myLargeImage" />
+		
+		<p class="myClass">Some text styled with a CSS class</p>
+		
+		<div id="someId" class="testClass">
+			someId DIV element
+		</div>
+		
+		<p id="txt1" class="randomClass">Some random text</p>
+		<p id="txt2" class="randomClass">Some more random text</p>
+		
+		<div id="listContainer">
+			<ul id="aList">
+				<li>a-one</li>
+				<li>a-two</li>
+				<li>a-three</li>
+				<li>a-four</li>
+			 </ul>
+			 <ul>
+				<li>b-one</li>
+				<li>b-two</li>
+				<li>b-three</li>                
+			 </ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="ext-core-debug.js"></script>
+	<script type="text/javascript">
+		// Check when the DOM is fully loaded
+		Ext.onReady(function()
+		{
+			// Insert a P element into the body element
+			Ext.DomHelper.append(document.body, {tag: 'p', cls: 'some-class'});
+			
+			// And then update it's content
+			Ext.select('p.some-class').update('Ext Core successfully injected');
+			
+			// Use abstracted getElementById helper function
+			console.log(Ext.get("myLargeImage"));
+			
+			/*
+			 * Ext.fly takes the same argument as Ext.get but it returns a reference to an 
+			 * internally managed flyweight instance of an Ext.Element. 
+			 * Never store a reference to the flyweight object as it will change per invocation of this method. 
+			 * 
+			 * It is intended purely as a mechanism to enhance performance by 
+			 * circumventing the need to instantiate a new Ext.Element when a reference is not needed 
+			 * (eg: if you just want to perform an action). 
+			 */
+			
+			// Add a CSS class to an element
+			Ext.fly('myLargeImage').addClass('testClass');
+			
+			// Remove said CSS class from element
+			Ext.fly('txt1').removeClass('randomClass');
+			
+			Ext.fly('txt1').toggleClass('randomClass'); // the class is added again
+			Ext.fly('txt1').toggleClass('randomClass'); // the class is removed
+			Ext.fly('txt1').toggleClass('randomClass'); // the class is added again
+			
+			// Check if the element has the specified class
+			if (Ext.fly('myLargeImage').hasClass('testClass')) {
+				console.log("#myLargeImage has class testClass");
+			}
+			
+			// Replace class A with class B
+			Ext.fly('myLargeImage').replaceClass('testClass', 'randomClass');
+			
+			// Gets a normalized (currentStyle and computed style) property from the element.
+			var color = Ext.fly('txt2').getStyle('color');
+			var zIndx = Ext.fly('txt2').getStyle('z-index');
+			var fntFmly = Ext.fly('txt2').getStyle('font-family');
+			console.info(color + "\n" + zIndx + "\n" + fntFmly);
+			
+			// Gets a normalized (6 digit hex) color value for the passed in property
+			console.log(Ext.fly('txt2').getColor('background-color'));
+			console.log(Ext.fly('txt2').getColor('color'));
+			
+			// Make every other list item have red text
+			Ext.fly('listContainer').select('li:nth-child(2n)').addClass('grey');
+			
+			// Tests the current element to see if it matches the selector.
+			var el = Ext.get('txt1');
+			if (el.is('p.randomClass')) { // you could do just .randomClass instead of p.randomClass
+				console.log("do something with matched element");
+			}
+			
+			//Finds a parent node that matches the selector, starts at the current node.
+			console.log(
+				Ext.fly('aList').findParent('div')
+			);
+			
+			// Lets create a new node and insert this as a first child of 'listContainer':
+			Ext.fly('listContainer').insertFirst({
+				tag: 'p',
+				html: 'Hi I am the new first child'
+			});
+			
+			// Event API
+			
+			// To remove an event then user either... 
+			// 	el.addListener('click', functionName); 
+			// OR the shorthand... 
+			// 	el.on('click', functionName); 
+			
+			// To remove an event then user either... 
+			// 	el.removeListener('click', functionName); 
+			// OR the shorthand... 
+			// 	el.un('click', functionName);
+			
+			// OR you can save setting up yet another variable for storing the element to apply the event listener to
+			// by using the EventManager (which automatically passes in the event object and the target)...
+			// Ext.EventManager.on('myDiv', 'click', handleClick);
+			// Ext.EventManager.addListener('myDiv', 'click', handleClick);
+			var el = Ext.get('myLargeImage');
+			el.addListener('click', function(e, t) 
+			{
+				// e is a normalized event object (Ext.EventObject)
+				// t the target that was clicked, this is an Ext.Element.
+				// this also points to t.
+				console.info("event = " + e);
+				console.info("target = " + t);
+				console.info("this = " + this);
+			});
+			
+			// This function is used by the below EventManager
+			var handleClick = function(e, t)
+			{
+				console.info("event = " + e);
+				console.info("target = " + t);
+				console.info("this = " + this);
+			};
+			
+			// Use the EventManager to apply event listeners
+			Ext.EventManager.addListener("listContainer", "click", handleClick);
+			
+			// changes the width to 150px and animates with a custom configuration
+			Ext.fly('myLargeImage').setWidth(250, {
+				// animation will have a duration of .5 seconds
+				duration : .5,
+				
+				// will change the content of "someId" to show some new text
+				callback: function()
+				{
+					Ext.fly('someId').update("finished");
+				}
+			});
+			
+			Ext.EventManager.addListener("slideEl", "click", function()
+			{
+				Ext.fly('slideEl').slideOut('r', {
+					callback : function(){
+						alert('Finished sliding the element out');
+					}
+				});
+			});
+			
+			// default: slide the element in from the top
+			// 	el.slideIn();
+			// default: slide the element out from the bottom
+			// 	el.slideOut();
+			
+			var slideElement = function()
+			{
+				// Check if the element is already hidden...
+				if (Ext.fly('slideEl').getHeight() <= 0) {
+					Ext.fly('slideEl').slideIn('t', {
+						easing: 'easeOut',
+						duration: .5
+					});
+				} 
+				// If it isn't hidden then hide it
+				else {
+					Ext.fly('slideEl').slideOut('t', {
+						easing: 'easeOut',
+						duration: .5,
+						remove: false, // if set to true then the element is removed completely from the DOM
+						useDisplay: true // if set to false then the block element creates whitespace the element would have otherwise taken up
+					});
+				}
+			};
+			
+			// Slide in/out
+			Ext.fly('hideBox').addListener('click', slideElement);
+			
+			// AJAX API
+			Ext.Ajax.request({
+				url: 'SimpleJSON.js',
+				success: function(response, opts) {
+					var obj = Ext.decode(response.responseText);
+					console.dir(obj);
+					console.log(response.responseText);
+				},
+				failure: function(response, opts) {
+					console.log('server-side failure with status code ' + response.status);
+				}
+			});
+			
+			// DOM Helper API (abstracts the core DOM creation methods)
+			// Create <a> element and set its content & attributes and append to <body>
+			Ext.DomHelper.append(document.body, {
+				id: 'my-div',
+				cn: [{
+					tag: 'a', 
+					href: 'http://www.yahoo.com/', 
+					html: 'My Link', 
+					target: '_blank'
+				}]
+			});
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript: The 'Simple' Factory Pattern</title>
+</head>
+<body>
+
+	<h1>The 'Simple' Factory Pattern</h1>
+   <p>Often a class or object will contain other objects within it. When these member objects need to be created, it is tempting to just instantiate them normally, using the new keyword and the class constructor. The problem is that this creates a dependency between the two classes. Here we look at a pattern that will help decouple these two classes, and instead use a method to decide which specific class to instantiate. We discuss the simple factory pattern, which uses a separate class (often a singleton) to create instances, and the more complex factory pattern, which uses subclasses to decide what concrete class to instantiate as a member object.</p>
+   <p>The factory pattern depends heavily on interfaces. Without some way of checking an object’s type and ensuring that it implements the needed methods, you will lose a lot of the benefits that you would gain from the factory. In all of these examples, you can create objects and treat them identically because you can ensure that they all respond to the same set of methods.</p>
+   
+   <script src="../../../OOP/Emulating 'Interfaces'/Interface.js"></script>
+	<script src="Factory.js"></script>
+
+</body>
+</html>

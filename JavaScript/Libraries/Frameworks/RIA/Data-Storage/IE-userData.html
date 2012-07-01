@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Setting, Getting, and Removing Data Using Internet Explorer’s userData Mechanism</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>Setting, Getting, and Removing Data Using Internet Explorer’s userData Mechanism</h1>
+   <p>Microsoft introduced its own methods within IE (starting with version 5) that allow content to be stored on the user’s machine from within a JavaScript web application, using what is known as the userData data store. This implementation involves using attribute nodes on a specific type of DOM element to store data, adding and removing attributes in order to add and remove data. Data is persisted by calling a save() method on the DOM element, and recalled using
+a load() method. These elements are added by an IE-specific userData behavior associated with the DOM element. The data store itself is actually represented internally within IE as an XML-based structure.</p>
+	<p>Microsoft imposes a base storage limit of 64KB per page within your site, and a maximum of 640KB of data per domain. Security restrictions are similar to those used within cookie stor- age: no domain is able to access data from another, and data can be removed after a specified time by adding an optional expiry date to the data store. Unlike cookies, however, the expiry date applies to the whole data store, not to individual pieces of data. Additionally, there is no concept of a data store that lasts only for the duration of the current session. In my opinion, the expiry date option should be ignored, allowing the data to be removed by the browser or by the user manually.</p>
+   <p>The <code>userData</code> technique provides a useful mechanism for storing larger amounts of text data offline than possible using cookies. The data is not passed with server requests, as it is with cookies, giving the benefit of permanent data storage without the overhead. This technique is supported by IE 5 and up, although IE 8 now also supports a new technique, which allows for greater storage potential, using the WHATWG Local Storage API.</p>
+    
+   <script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript" src="IE-userData.js"></script>
+	<script type="text/javascript">
+		// Initialize the userData store 
+		$.Storage.IEUserData.initialize(); 
+		
+		// Save an email address to the data store 
+		$.Storage.IEUserData.set({ 
+			name: "email", 
+			value: "me@denodell.com" 
+		}); 
+		
+		// Output the "email" value we created earlier. 
+		// After a browser restart, the data will still be there 
+		alert($.Storage.IEUserData.get("email")); 
+		
+		// Delete the "email" data value permanently from the data store 
+		$.Storage.IEUserData.remove("email"); 
+		
+		// Outputs an empty string since the data no longer exists 
+		alert($.Storage.IEUserData.get("email"));
+    </script>
+</body>
+</html>

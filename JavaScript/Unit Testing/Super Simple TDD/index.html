@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Super Simple Test-Driven Development</title>
+		<link rel="stylesheet" href="tdd.css">
+	</head>
+	<body>
+		<h1>Super Simple Test-Driven Development (TDD)</h1>
+		<p>Check the console to see the logs.</p>
+		<p>The last time the handler() is called it is passed the total results: xA, xF, xE (Assertions/Passes, Fails, Errors)</p>
+		<p class="last"><small>via <a href="">https://gist.github.com/976405</a></small></p>
+		<hr>
+		<script src="tdd.js"></script>
+		<script type="text/javascript">
+			function handler(a, b, c) { 
+			    document.write('<br><strong>Test</strong>: ' + a + '<br><strong>Status</strong>: ' + b + '<br><strong>Message</strong>: ' + c  + '<br><br><hr>');
+			    console.log('Test: ', a, '\nStatus: ', b, '\nMessage: ', c, '\n\n');
+			}
+			
+			test({
+			  'testSomething': function(assert){
+			    assert(1==1, 'testing the obvious'); // pass
+			    assert(1==0, 'testing the obvious'); // fail
+			    assert(1==2, 'testing if 1 equals 2'); // fail
+			  },
+			  'testException': function(assert){ 
+			    DOES-NOT-WORK // errors
+			  } 
+			}, handler);
+		</script>
+	</body>
+</html>

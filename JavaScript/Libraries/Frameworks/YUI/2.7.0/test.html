@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>YUI</title>
+</head>
+<body>
+
+	<h1>Heading 1</h1>
+    <p>Some text</p>
+    
+    <h2>Heading 2</h2>
+    <p>Some text</p>
+    
+    <h3>Heading 3</h3>
+    <p>Some text</p>
+    
+    <h4>Heading 4</h4>
+    <p>Some text</p>
+    
+    <h5>Heading 5</h5>
+    <p>Some text</p>
+    
+    <h6>Heading 6</h6>
+    <p>Paragraph <a href="#">with a link</a> with some text set to <strong>strong</strong> and some abbreviated text like <abbr title="Storm Media Communications">storm</abbr> followed by an acronym like <acronym title="Document Object Model">DOM</acronym>.</p>
+    
+    <ul>
+    	<li>An un-ordered list</li>
+        <li>item 2</li>
+    </ul>
+    
+    <ol>
+    	<li>An un-ordered list</li>
+        <li>item 2</li>
+    </ol>
+    
+    <dl>
+    	<dt>Title</dt>
+        <dd>Description</dd>
+    </dl>
+    
+    <table border="1">
+    	<tr>
+        	<th>1</th>
+            <th>2</th>
+            <th>3</th>
+        </tr>
+    	<tr>
+        	<td>a</td>
+            <td>b</td>
+            <td>c</td>
+        </tr>
+    </table>
+    
+    <!--Include YUI Loader: --> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/yui/2.7.0/build/yuiloader/yuiloader.js"></script> 
+     
+    <!--Use YUI Loader to bring in your other dependencies: --> 
+    <script type="text/javascript"> 
+    // Instantiate and configure YUI Loader: 
+    (function() { 
+        var loader = new YAHOO.util.YUILoader({ 
+            base: "http://ajax.googleapis.com/ajax/libs/yui/2.7.0/build/", 
+            require: ["base","dom","element","event","fonts","reset","selector","yahoo"], 
+            loadOptional: false, 
+            combine: false, 
+            filter: "RAW", 
+            allowRollup: false, 
+            onSuccess: function() { 
+                alert('loaded'); 
+            } 
+        }); 
+     
+    // Load the files using the insert() method. 
+    loader.insert(); 
+    })(); 
+    </script>
+
+</body>
+</html>

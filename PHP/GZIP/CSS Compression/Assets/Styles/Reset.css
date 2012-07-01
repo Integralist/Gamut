@@ -1,0 +1,54 @@
+/* 
+    Document   : Reset
+    Created on : 18-May-2009, 15:00:00
+    Author     : Mark McDonnell
+    Description:
+        Resets some of a browsers default layout settings.
+*/
+
+.regex b.err {background: #ff4300;}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+{ margin: /*IE7 Fix*/ 0; padding:0; border:0; font:normal small Arial, Verdana, sans-serif; color:#000; vertical-align:baseline; }
+
+body
+{ background-color:#007878; }
+
+pre, code
+{ font-family:Consolas, "Courier New", Courier, monospace; color: #00C; }
+
+em
+{ font-style:italic; }
+
+table
+{ table-layout:fixed; border-collapse:collapse; }
+
+p, h1, h2, h3, h4, h5
+{ margin-bottom:0.5em; }
+
+h1, h2, h3, h4, h5
+{ font-weight:bold; }
+
+h1
+{ font-size:3em; }
+
+h2
+{ font-size:2.5em; }
+
+h3, h4, h5
+{ font-size:2em; }
+
+img,
+embed
+{ display:block; border:none; }
+
+form
+{ margin:0; }
+
+hr
+{ color:#959AC3; background-color:#959AC3; height:1px; border:0; }

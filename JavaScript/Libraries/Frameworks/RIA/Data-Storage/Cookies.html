@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creating, Locating, and Deleting Cookies Using the $ Library</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>Creating, Locating, and Deleting Cookies Using the $ Library</h1>
+   <h2>The Downside of Cookies</h2>
+   <p>Cookies provide a simple, cross-browser way of storing small amounts of text-based data within the browser for later retrieval. They do have a downside, though.</p>
+   <p>When your browser makes a request for a page or file that resides on a certain domain, it also sends the entire contents of the cookie associated with that domain along with the request. This is by design, as it allows the web server to read the cookies stored on the user’s machine and personalize the response based on its values. The more data you store in cookies, the larger these requests are going to be, up to the maximum limit of 4KB. This may not sound like a lot, but remember that the cookies are sent regardless of the content type of the file being requested. For example, if your page consists of one HTML file, two CSS files, two JavaScript files, and twenty image files, the cookie data will be sent to the server with the request for each of these files, adding a maximum of 100KB extra data (25 requests ✕ 4KB cookie size) being sent to the web server.</p>
+	<p>You may wonder why this behavior exists at all, since it might result in excessive amounts of data being sent to the server for no reason. Unfortunately, it is the only guaranteed way to ensure that, should the server wish to use this cookie data to alter an image, script, HTML page, or some other file, it has that cookie available. This is by no means an elegant solution, but it is the simplest, and the approach taken when the HTTP specification was written to include cookie support.</p>
+   <p>Also remember that many users have an asynchronous connection, meaning their upload speed from the browser to the server is much slower than their download speed from the server to the browser. Therefore, the time taken to transmit this extra cookie data could have a big impact on performance. In Chapter 4, I explained a work-around for this technique, which involves hosting your images and external assets on a second domain, separate from the domain containing the HTML file itself. Still, sending the cookie data with every HTML request seems a little unnecessary when you consider the main goal here is to store data locally to pro- tect against unforeseen network connection drops and unfortunate browser crashes.</p>
+
+   <script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript" src="Cookies.js"></script>
+	<script type="text/javascript">
+		// Create a new cookie which will expire, by default, in 10 years 
+		$.Storage.Cookies.set({ 
+			name: "email", 
+			value: "test@test.com" 
+		}); 
+		
+		// Output the value of the cookie named "email" we created earlier. 
+		// After a browser restart, the data will still be there 
+		alert($.Storage.Cookies.get("email")); 
+		
+		// Delete the "email" cookie 
+		$.Storage.Cookies.remove("email"); 
+		
+		// Outputs an empty string, since the cookie no longer exists 
+		alert($.Storage.Cookies.get("email")); 
+    </script>
+</body>
+</html>

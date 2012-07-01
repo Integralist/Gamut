@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DOM. Create Elements</title>
+<script type="text/javascript">
+function prepareBlockquotes()
+{
+	var quotes = document.getElementsByTagName("blockquote");
+	
+	for (var i=0; i<quotes.length; i++)
+	{
+		var source = quotes[i].getAttribute("cite");
+		
+		if (source)
+		{
+			var link = document.createElement("a");
+			link.setAttribute("href",source);
+			var text = document.createTextNode("source");
+			link.appendChild(text);
+			var para = document.createElement("p");
+			para.className = "attribution";
+			para.appendChild(link);
+			quotes[i].appendChild(para);
+		}
+	}
+}
+
+window.onload = prepareBlockquotes;
+</script>
+</head>
+<body>
+
+	<blockquote cite="http://en.wikipedia.org/wiki/Progressive_Enhancement">
+		<p>Progressive Enhancement, as a label for a strategy for Web design, was coined by Steven Champeon in a series of articles and presentations for Webmonkey and the SxSW Interactive conference.</p>
+	</blockquote>
+
+</body>
+</html>

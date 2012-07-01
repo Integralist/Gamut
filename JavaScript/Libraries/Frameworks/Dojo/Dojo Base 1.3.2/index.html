@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dojo</title>
+<style type="text/css">
+	#someId
+	{ background-color:pink; height:200px; width:120px; }
+</style>
+</head>
+<body>
+
+	<img src="file:///Macintosh HD/Users/markmcdonnell/Dropbox/Library/JavaScript/Frameworks/_Storm Media_/Images/large.jpg" width="100" id="myLargeImage" />
+	
+	<p class="myClass">Some text styled with a CSS class</p>
+	
+	<div id="someId">
+		someId DIV element
+	</div>
+
+	<script type="text/javascript" src="Dojo-Uncompressed.js"></script>
+	<script type="text/javascript">
+		/*
+		 * Creating your own "Class structured" JavaScript.
+		 * @param {String}, name of the class we are creating
+		 * @param {Class}, name of superclass to inherit from
+		 * @param {Object}, object literal of arguments (inc. Constructor method)
+		 */
+		dojo.declare("Test", null, {
+			constructor: function()
+			{
+				this.name = "test name";
+				this.say = function(msg)
+				{
+					msg = msg || "some default message";
+					console.info("msg = " + msg);
+				};
+			}
+		});
+		
+		var init = function()
+		{
+			// Check that the log is before the page has loaded
+			console.log("DOM loaded");
+			
+			// Test a 'getElementById' method shortcut
+			console.log(dojo.byId("myLargeImage"));
+			
+			// Create instance of your class
+			var test = new Test();
+			console.log(test); // { name=test name declaredClass=Library.Test }
+			test.say();
+			test.say("this is a test message");
+			
+			// Use the query method to locate elements using CSS selectors
+			console.log(dojo.query(".myClass"));
+			
+			// Apply a style to all the nodes returned from the query
+			dojo.query(".myClass").style("border","1px solid red");
+			
+			// Apply event handler to image using connect method
+			dojo.query("#myLargeImage").connect("onclick", function(evt)
+			{
+				console.log("this = " + this); // the 'this' keyword correctly refers to the img node
+				console.log("evt.target = " + evt.target); // we can also access the this information via event.target
+				 
+				// Animate the DIV element
+				dojo.animateProperty({
+					node:"someId",
+					properties: {
+						width: 400,
+						height: { end: 400, start:100 },
+						fontSize: { end:14, units:"pt" }
+					},
+					// Called when the animation finishes
+					onEnd: function()
+					{
+						console.info("the animation has finished");
+					}
+				}).play();
+				
+				// Use AJAX to replace the text content of the DIV with text from a TXT file
+				var contentNode = dojo.byId("someId");
+				dojo.xhrGet({
+					url: "SimpleText.txt",
+					handleAs: "text",
+					load: function(data, args)
+					{
+						// Fade out the node we're modifying
+						dojo.fadeOut({
+							node: contentNode, 
+							duration: 1000, // default is 350 milliseconds
+							onEnd: function()
+							{
+								// Update content and then fade back in the element
+								contentNode.innerHTML = data; 
+								dojo.fadeIn({ node: contentNode }).play(); 
+								
+								// Test AJAX's JSON response
+								callJSON();
+							}
+						}).play();
+					},
+					// Catch any errors
+					error: function(error, args)
+					{
+						console.warn("error!", error);
+					},
+					/*
+					 * If the response never comes the browser may appear to lock up.
+					 * So it's extremely important to provide an error handler and a timeout handler.
+					 */ 
+					timeout: 2000
+				});
+				 
+				/*
+				 * stopEvent() prevents both the default behavior and any propagation (bubbling) of an event.
+				 * But you can stop them separately using event.preventDefault and event.stopPropagation
+				 */
+				dojo.stopEvent(evt);
+			}).style("cursor","pointer"); // Notice we have the ability to chain methods
+		};
+		
+		var callJSON = function()
+		{
+			// Use AJAX to return some JSON code
+			dojo.xhrGet({
+				url: "SimpleJSON.js",
+				handleAs: "json",
+				load: function(data, args)
+				{
+					console.info(data); // { name=Mark McDonnell age=27 speaks=[2] }
+					console.log(data.speaks[0]); // English
+				},
+				// Catch any errors
+				error: function(error, args)
+				{
+					console.warn("error!", error);
+				},
+				/*
+				 * If the response never comes the browser may appear to lock up.
+				 * So it's extremely important to provide an error handler and a timeout handler.
+				 */
+				timeout: 2000
+			});
+		};
+		
+		dojo.addOnLoad(init);
+	</script>
+
+</body>
+</html>

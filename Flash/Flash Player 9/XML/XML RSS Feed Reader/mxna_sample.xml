@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <channel rdf:about="http://weblogs.macromedia.com">
+        <title>Latest Macromedia News</title>
+        <link>http://weblogs.macromedia.com</link>
+        <description>Latest Macromedia News</description>
+        <items>
+            <rdf:Seq>
+                
+					<rdf:li rdf:resource="http://ajlcom.instantspot.com/blog/index.cfm/2007/7/12/Cool-Gmail-Feature--Different-email-addresses-for-one-account"/>
+                
+					<rdf:li rdf:resource="http://feeds.feedburner.com/~r/riapedia/~3/133060232/tailgate_rich_internet_banner_application"/>
+                
+					<rdf:li rdf:resource="http://www.sargeway.com/blog/index.cfm/2007/7/12/CF8-Launch-Event"/>
+                
+					<rdf:li rdf:resource="http://www.cornilliac.com/machblog/index.cfm?event=showEntry&amp;entryId=BB5967F0-3048-7802-93A814E581EB8CEB"/>
+                
+					<rdf:li rdf:resource="http://blog.digitalbackcountry.com/?p=927"/>
+                
+					<rdf:li rdf:resource="http://www.objectiveaction.com/kevin/index.cfm/2007/7/12/Foundations-of-Web-Design-Course"/>
+                
+					<rdf:li rdf:resource="http://www.briankotek.com/blog/index.cfm/2007/7/12/ColdSpring-Mad-Science-Injecting-Metadata-for-use-in-AOP-and-Proxy-Generation"/>
+                
+					<rdf:li rdf:resource="http://www.beedigital.net/blog/?p=948"/>
+                
+					<rdf:li rdf:resource="http://www.beedigital.net/blog/?p=947"/>
+                
+					<rdf:li rdf:resource="http://www.mavromatic.com/archives/000637.asp"/>
+                
+					<rdf:li rdf:resource="http://robrohan.com/2007/07/11/afae-source-code-project-eol/"/>
+                
+					<rdf:li rdf:resource="http://www.brandonellis.org/?p=56"/>
+                
+					<rdf:li rdf:resource="http://www.mavromatic.com/archives/000636.asp"/>
+                
+					<rdf:li rdf:resource="http://www.andyjarrett.co.uk/andy/blog/index.cfm/2007/7/12/Find-and-Replace-in-MySQL"/>
+                
+					<rdf:li rdf:resource="http://www.360conferences.com/360flex/2007/07/360flex-schwag-up-on-store.html"/>
+                
+            </rdf:Seq>
+        </items>
+    </channel>
+    
+        <item rdf:about="http://ajlcom.instantspot.com/blog/index.cfm/2007/7/12/Cool-Gmail-Feature--Different-email-addresses-for-one-account">
+            <title>Cool Gmail Feature: Different email addresses for one account</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199012&amp;nextPage=http%3A%2F%2Fajlcom%2Einstantspot%2Ecom%2Fblog%2Findex%2Ecfm%2F2007%2F7%2F12%2FCool%2DGmail%2DFeature%2D%2DDifferent%2Demail%2Daddresses%2Dfor%2Done%2Daccount</link>
+            <description><![CDATA[So, I was talking to Conrad yesterday about gmail, and his email address has a &quot;.&quot; in it, name DOT othername @gmail.com. And I told him that Google would ignore the &quot;.&quot; in his name if he wanted to drop it for some reason. ...]]></description>
+            <dc:subject>ColdFusion</dc:subject>
+            <dc:creator>Aaron J Lynch</dc:creator>
+            <dc:date>2007-07-12T18:03:33.0-00:00</dc:date>
+            <dc:identifier>A2CA58D2CDA23D18CC75D9D3ACA53804</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://feeds.feedburner.com/~r/riapedia/~3/133060232/tailgate_rich_internet_banner_application">
+            <title>Tailgate - Rich Internet Banner Application?</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199011&amp;nextPage=http%3A%2F%2Ffeeds%2Efeedburner%2Ecom%2F%7Er%2Friapedia%2F%7E3%2F133060232%2Ftailgate%5Frich%5Finternet%5Fbanner%5Fapplication</link>
+            <description><![CDATA[TechCrunch has an article up about Tailgate, a company that is putting a unique twist on Internet advertising. Instead of having banners where users click through to landing pages, Tailgate integrates e-commerce aspects right into the banners themselves. Users can purchase items directly from the banner, entering their credit card information directly into the "banner application". They have a few samples up on their website, and have had at least one customer for it. The TechCrunch comments are mostly negative towards this, focusing on the fact that most people won't feel secure in entering their credit card information on a]]></description>
+            <dc:subject>Flash,Flex,Adobe Feeds</dc:subject>
+            <dc:creator>RIApedia</dc:creator>
+            <dc:date>2007-07-12T18:00:35.0-00:00</dc:date>
+            <dc:identifier>98D124BE5716B30B36817F1C02349CFE</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.sargeway.com/blog/index.cfm/2007/7/12/CF8-Launch-Event">
+            <title>Adobe User Group Hosts CF8 Launch</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199010&amp;nextPage=http%3A%2F%2Fwww%2Esargeway%2Ecom%2Fblog%2Findex%2Ecfm%2F2007%2F7%2F12%2FCF8%2DLaunch%2DEvent</link>
+            <description><![CDATA[The Adobe User Group will host the official ColdFusion 8 launch event on Tuesday, July 31, 2007. Not only is this a monumental occasion for the CF community but they are also raffling an iPhone. The site is being sponsored by Fig Leaf Software. This ...]]></description>
+            <dc:subject>ColdFusion,Flash,Flex,Adobe Feeds</dc:subject>
+            <dc:creator>Sarge's Blog</dc:creator>
+            <dc:date>2007-07-12T17:56:58.0-00:00</dc:date>
+            <dc:identifier>08BEFC74AAF4D7AD2AF87D9F72B5935A</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.cornilliac.com/machblog/index.cfm?event=showEntry&amp;entryId=BB5967F0-3048-7802-93A814E581EB8CEB">
+            <title>How to: Creating an AIR Express Install Badge</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199009&amp;nextPage=http%3A%2F%2Fwww%2Ecornilliac%2Ecom%2Fmachblog%2Findex%2Ecfm%3Fevent%3DshowEntry%26entryId%3DBB5967F0%2D3048%2D7802%2D93A814E581EB8CEB</link>
+            <description><![CDATA[Creating an AIR express install badge is relatively simple. Adobe has done all the heavy lifting for us, our part consists of a little prep work and configuring some Flashvars. It is our part that I want to focus on in this tutorial. What you wil... [more]]]></description>
+            <dc:subject>ColdFusion,Flex</dc:subject>
+            <dc:creator>Tom Cornilliac</dc:creator>
+            <dc:date>2007-07-12T17:18:03.0-00:00</dc:date>
+            <dc:identifier>CFE49BFBE64D98BA2C539C6AF9B73E1C</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://blog.digitalbackcountry.com/?p=927">
+            <title>I?ve Got 25 Free Passes for Online Total Training</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199008&amp;nextPage=http%3A%2F%2Fblog%2Edigitalbackcountry%2Ecom%2F%3Fp%3D927</link>
+            <description><![CDATA[Total Training is one of my favorite training services for Rich Internet Application technologies. Between them and Lynda.com we&#8217;re very well covered. I have a ton of Total Training DVDs sitting around at home so I was really happy to hear that they&#8217;ve gone to an online format so you can get access to their [...]]]></description>
+            <dc:subject>Flash,Flex,On AIR Bus Tour</dc:subject>
+            <dc:creator>Digital Backcountry</dc:creator>
+            <dc:date>2007-07-12T17:14:48.0-00:00</dc:date>
+            <dc:identifier>C308F28D4296EC9FD5509DB2CBBFB8A3</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.objectiveaction.com/kevin/index.cfm/2007/7/12/Foundations-of-Web-Design-Course">
+            <title>Foundations of Web Design Course</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199006&amp;nextPage=http%3A%2F%2Fwww%2Eobjectiveaction%2Ecom%2Fkevin%2Findex%2Ecfm%2F2007%2F7%2F12%2FFoundations%2Dof%2DWeb%2DDesign%2DCourse</link>
+            <description><![CDATA[Adobe have released a new course and the amazing thing is that it is free. It's designed for people who are developing courses for colleges or university and want to teach Web Design using Adobe's tools. To download it, look on the Adobe web site.]]></description>
+            <dc:subject>ColdFusion,Flex</dc:subject>
+            <dc:creator>Objective Action</dc:creator>
+            <dc:date>2007-07-12T17:07:33.0-00:00</dc:date>
+            <dc:identifier>07AD1BFD8207D5A4CC5EEAA391F4AED0</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.briankotek.com/blog/index.cfm/2007/7/12/ColdSpring-Mad-Science-Injecting-Metadata-for-use-in-AOP-and-Proxy-Generation">
+            <title>ColdSpring Mad Science: Injecting Metadata for use in AOP and Proxy Generation</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=199005&amp;nextPage=http%3A%2F%2Fwww%2Ebriankotek%2Ecom%2Fblog%2Findex%2Ecfm%2F2007%2F7%2F12%2FColdSpring%2DMad%2DScience%2DInjecting%2DMetadata%2Dfor%2Duse%2Din%2DAOP%2Dand%2DProxy%2DGeneration</link>
+            <description><![CDATA[I posted about this on the ColdSpring list but I thought I'd add a blog entry on it to see if it draws any further comments or ideas from the community. Basically I am playing with a modification to ColdSpring that will let me inject extra metadata a...]]></description>
+            <dc:subject>ColdFusion</dc:subject>
+            <dc:creator>Brian's Blog</dc:creator>
+            <dc:date>2007-07-12T16:33:11.0-00:00</dc:date>
+            <dc:identifier>44DD73615637AC152F0C4140388D78DA</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.beedigital.net/blog/?p=948">
+            <title>Creation of a game like String Avoider tutorial</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198998&amp;nextPage=http%3A%2F%2Fwww%2Ebeedigital%2Enet%2Fblog%2F%3Fp%3D948</link>
+            <description><![CDATA[A great tutorial by Emanuele Feronato explaining how to create a Stringe Avoider game. And the best&#8230;no monsters&#8230;At least until level 3 &#8230;. The tutorial about how to create a game like this one. String Avoider Game at newgrounds.]]></description>
+            <dc:subject>Flash</dc:subject>
+            <dc:creator>Beedigital Blog</dc:creator>
+            <dc:date>2007-07-12T16:11:23.0-00:00</dc:date>
+            <dc:identifier>0ACA8FA7FC10D46974388883EE309171</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.beedigital.net/blog/?p=947">
+            <title>MAX 2007 Europe Registration</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198999&amp;nextPage=http%3A%2F%2Fwww%2Ebeedigital%2Enet%2Fblog%2F%3Fp%3D947</link>
+            <description><![CDATA[Access to the three-day MAX 2007 Europe program, Monday, Tuesday, and Wednesday (October 15, 16, and 17), including access to all five session tracks, the Community Pavilion, Welcome Reception and the Event Party. Full details here.]]></description>
+            <dc:subject>Flash</dc:subject>
+            <dc:creator>Beedigital Blog</dc:creator>
+            <dc:date>2007-07-12T16:11:23.0-00:00</dc:date>
+            <dc:identifier>DE3D2BA297BA75020C31FD24EFCAB82B</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.mavromatic.com/archives/000637.asp">
+            <title>Envirovision Waterproof Widescreen TV -- Great for Showers!</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198997&amp;nextPage=http%3A%2F%2Fwww%2Emavromatic%2Ecom%2Farchives%2F000637%2Easp</link>
+            <description><![CDATA[I'm really trying to figure out what type of person would want a TV in their shower. I have a 30" LCD television in the ...]]></description>
+            <dc:subject>Technology</dc:subject>
+            <dc:creator>MAVROMATIC</dc:creator>
+            <dc:date>2007-07-12T16:08:38.0-00:00</dc:date>
+            <dc:identifier>BD31BB205C7FCEDA70389BD65239E5B3</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://robrohan.com/2007/07/11/afae-source-code-project-eol/">
+            <title>Afae Source Code; Project EOL</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198996&amp;nextPage=http%3A%2F%2Frobrohan%2Ecom%2F2007%2F07%2F11%2Fafae%2Dsource%2Dcode%2Dproject%2Deol%2F</link>
+            <description><![CDATA[I&#8217;ve put the Afae source code for all the Afae plugins up on the Afae project page. I had the code up there for a while, but it was rather stale. To keep the source fresh, I moved the code into a git repository that you can clone if you&#8217;re interested. I was trying to use [...]]]></description>
+            <dc:subject>ColdFusion</dc:subject>
+            <dc:creator>Rob Rohan - Random Technology</dc:creator>
+            <dc:date>2007-07-12T16:02:51.0-00:00</dc:date>
+            <dc:identifier>26F2CED2C108FD38F7135E45A5A5E4A1</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.brandonellis.org/?p=56">
+            <title>We?re looking for a Flash Designer</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198995&amp;nextPage=http%3A%2F%2Fwww%2Ebrandonellis%2Eorg%2F%3Fp%3D56</link>
+            <description><![CDATA[We&#8217;re looking for a Flash designer to help with the interface and layout on current and future AIR projects. Freelance or full time. Who are we? A small, six-person strategic marketing and software development company based in Richmond, Va. Not in Richmond? That&#8217;s okay ?&#8211; telecommuting is fine. So long as you&#8217;ve got the [...]]]></description>
+            <dc:subject>Flash</dc:subject>
+            <dc:creator>BrandonEllis.org</dc:creator>
+            <dc:date>2007-07-12T16:01:47.0-00:00</dc:date>
+            <dc:identifier>6DBBD1E71A763A970F5239E1E0050FEF</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.mavromatic.com/archives/000636.asp">
+            <title>Fusion Research Genesis Media Server</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198994&amp;nextPage=http%3A%2F%2Fwww%2Emavromatic%2Ecom%2Farchives%2F000636%2Easp</link>
+            <description><![CDATA[If you are looking for a media server that has a graphical user interface and the Kaleidescape is to expensive for you or you don't ...]]></description>
+            <dc:subject>Technology</dc:subject>
+            <dc:creator>MAVROMATIC</dc:creator>
+            <dc:date>2007-07-12T15:56:27.0-00:00</dc:date>
+            <dc:identifier>97CABD5BFFB43A7D59098D9A4A71F101</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.andyjarrett.co.uk/andy/blog/index.cfm/2007/7/12/Find-and-Replace-in-MySQL">
+            <title>Find and Replace in MySQL</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198993&amp;nextPage=http%3A%2F%2Fwww%2Eandyjarrett%2Eco%2Euk%2Fandy%2Fblog%2Findex%2Ecfm%2F2007%2F7%2F12%2FFind%2Dand%2DReplace%2Din%2DMySQL</link>
+            <description><![CDATA[I needed to do a find and replace on a couple of fields in a table and was stuck on the best way to this. Initially I was going to download a database dump and via a text editor find/replace and then re-upload but then I found out that MySQL has a Replace() function. [More]]]></description>
+            <dc:subject>ColdFusion</dc:subject>
+            <dc:creator>Andy Jarrett</dc:creator>
+            <dc:date>2007-07-12T15:56:07.0-00:00</dc:date>
+            <dc:identifier>12F860AE75BB450CFD6D0029DAA7A3C7</dc:identifier>
+        </item>
+    
+        <item rdf:about="http://www.360conferences.com/360flex/2007/07/360flex-schwag-up-on-store.html">
+            <title>360Flex schwag up on the store</title>
+            <link>http://weblogs.macromedia.com/mxna/controller.cfm?handler=PostHandler&amp;action=click&amp;postId=198992&amp;nextPage=http%3A%2F%2Fwww%2E360conferences%2Ecom%2F360flex%2F2007%2F07%2F360flex%2Dschwag%2Dup%2Don%2Dstore%2Ehtml</link>
+            <description><![CDATA[We finally got the cafe press thing figured out! Take a look at the 360Conferences, 360 Flex store!Thanks to Doug (again! Doug really is our hero!) and our pals over at Flying Logo Sisters, we've got some killer graphics for everything from shirts (like this one) to coasters, laptop bags, etc.Remember, if you're staying at the Red Lion and register before the 13th of July, you'll have a $20 gift certificate in your welcome package. Good for anything at the Official online store.Take a look, see what we've got, show your spirit and show up on Mondayin some fly gear!]]></description>
+            <dc:subject>Flash,Flex,Adobe Feeds</dc:subject>
+            <dc:creator>360Flex Conference</dc:creator>
+            <dc:date>2007-07-12T15:47:27.0-00:00</dc:date>
+            <dc:identifier>0F3040D47D4832DA89E8F179B6CAA177</dc:identifier>
+        </item>
+    
+</rdf:RDF>

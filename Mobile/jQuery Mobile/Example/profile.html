@@ -1,0 +1,237 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="Assets/Styles/LickList.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css" />
+		<!--
+		When using a custom Theme you have a smaller 'structure' jQuery Mobile CSS file, so the below file appears to be redundant?
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+		BUT on some pages it can stop existing styles working (I assume because the normal stylesheet has extra styles outside of the typical 'theme' styles)
+		This means those styles will have to be re-created in our custom.css (I haven't bothered doing this yet, but I should be able to set-up a test page using old CSS and grab styles from there?)
+		-->
+		<link href="Assets/Styles/custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="Assets/Scripts/custom.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<a href="home.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Back"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
+				<h1 class="logo"><span>LickList</span></h1>
+				<a href="index.html" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Logout"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Logout</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<div class="home-advert aligntext-center">
+					<img src="Assets/Images/advert.png">
+				</div>
+				<ul data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true">
+					<li>
+						<a href="profile-about.html">
+							<img src="Assets/Images/user.png" />
+							<h3>Joe Bloggs</h3>
+							<p>Social Status</p>
+						</a>
+					</li>
+				</ul>
+				<div class="aligntext-center profile-nav" data-role="controlgroup" data-type="horizontal">
+					<a href="profile.html" data-role="button">Hub</a>
+					<a href="profile-about.html" data-role="button">About Me</a>
+					<a href="profile-galleries.html" data-role="button">Galleries</a>
+					<a href="profile-friends.html" data-role="button">Friends</a>
+				</div>
+				<ul data-role="listview" data-split-icon="gear" data-split-theme="d" data-inset="true">
+					<li>
+						<a href="#">
+							<h3>Is going out tonight</h3>
+							<p>Venue</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Is staying in</h3>
+							<p>Reason</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Is undecided</h3>
+							<p>Reason</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Reviewed a night</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Posted an audio clip</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>And xxx others</p>
+							<p>Changed their profile picture</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Is now friends with:</p>
+							<p>XXXXXXXXXXX</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Has reviewed xxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Was tagged in the album:</p>
+							<p>xxxxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Uploaded a video clip</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Was licked by:</p>
+							<p>xxxxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Is going to xxxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Uploaded some photos to:</p>
+							<p>xxxxxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Downloaded the offer:</p>
+							<p>xxxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+					<li>
+						<a href="#">
+							<h3>Name</h3>
+							<p>Entered the competition:</p>
+							<p>xxxxx</p>
+							<p>dd/mm/yyyy - 00:00</p>
+							<div data-role="controlgroup" data-type="horizontal" class="profile-licks-comments">
+								<a href="#" data-icon="check" data-role="button">xxxx licks</a>
+								<a href="profile-comments.html" data-icon="grid" data-role="button">xxxx comments</a>
+							</div>
+						</a>
+						<a href="profile-hub-dialog.html" data-rel="dialog" data-transition="slidedown">Options</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

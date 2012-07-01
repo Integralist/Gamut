@@ -1,0 +1,4 @@
+DELETE FROM table_intra_users WHERE ID = '29'
+
+DELETE FROM table_intra_users
+WHERE     (ID = '29')

@@ -1,0 +1,1 @@
+This sample, xml_blogTracker.fla, demonstrates how to create a web log tracker by loading, parsing, and manipulating XML data. This sample loads XML data from a web log posted on the Internet. You must have an active Internet connection for this example to work.

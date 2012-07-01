@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>News Ticker</title>
+		<style type="text/css">
+			body {
+				font: normal small Helvetica, Arial, sans-serif;
+			}
+			
+			#ticker {
+				background-color: #eee;
+				border: 1px solid #ccc;
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+				padding: 1em;
+			}
+		</style>
+	</head>
+	<body>		
+		<script type="text/javascript">
+			function handler() {
+				/*
+				 * I try to structure my code as follows:
+				 * 	- Variables (they're hoisted anyway so best to define at top)
+				 *  - Functions (I find it neater to have functions next before the code that uses them)
+				 *  - Code (this is the code that the above variables/functions were set-up for)
+				 */
+				 
+				// Define variables in use throughout script
+				var doc = document,
+					element = doc.createElement('div'),
+					delay = 1000,
+					timer = 100,
+					pos = 0,
+					x = 0,
+					list,
+					max,
+					len;
+				
+				// Define function for handling the ticker text
+				function ticker() {
+						
+					// Get the next section of characters (starting from 0 to current character position)
+					element.innerHTML = list[x].substring(0, pos) + '_';
+					
+					if(pos++ === len) { 
+						
+						pos = 0;
+						
+						// Wait for specified time frame before executing again
+						// This gives the user a chance to read the text in full
+						setTimeout(function(){
+							ticker();
+						}, delay);
+						
+						x++;
+						
+						// If we've reached the end of the list of available strings then reset
+						if(x === max) {
+							x = 0;
+						}
+						
+						len = list[x].length;
+						
+					} else {
+						// If we're not at the end of the current String item then re-execute
+						setTimeout(function(){
+							ticker();
+						}, timer);
+					}
+					
+				}
+				
+				// Set-up the element that will hold the ticker text
+				element.id = 'ticker';
+				doc.body.appendChild(element);
+				
+				// Create the ticker text data	
+				list = [
+					'This is a message',
+					'Another one',
+					'And this will be the third',
+					'And the fourth is the last!'
+				];
+			
+				// Set restrictions
+				max = list.length;
+				len = list[0].length;
+				
+				// Start the ticker
+				ticker();
+			}
+			
+			document.addEventListener('DOMContentLoaded', handler, false);
+		</script>
+	</body>
+</html>

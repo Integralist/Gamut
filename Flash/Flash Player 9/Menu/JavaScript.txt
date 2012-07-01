@@ -1,0 +1,18 @@
+<script type="text/javascript">
+        addDOMLoadEvent(function()
+        {
+	        if(getElement('menu'))
+            {
+	            var FO2 = { movie:"/Badgehurst/Assets/Flash/Menu.swf", 
+	                        width:"629", 
+	                        height:"32", 
+	                        majorversion:"9", 
+	                        build:"0", 
+	                        wmode:"opaque", 
+	                        flashvars:"current=2", 
+	                        allowscriptaccess:"sameDomain", 
+	                        menu:"false" };
+	            UFO.create(FO2, "menu");
+            }
+        });
+    </script>

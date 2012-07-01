@@ -1,0 +1,101 @@
+Firefox 3.5 = old
+Firefox 3.6 = Earliest we support
+Safari 3.0 =  Earliest we support
+Chrome = Has nearly everything we ever need
+Internet Explorer = Not worth worrying about as it never supports what we need unless version 9+
+Opera 10.5 = Earliest we support (although we don't really support this browser at all)
+
+border-image
+Firefox 3.5
+Opera 10.5
+Chrome 7
+Safari 3
+
+border-radius
+Firefox 3.5
+Internet Explorer 9
+Opera 10.5
+Chrome 0.2
+Safari 3.0
+
+fonts face
+Firefox 3.5
+Internet Explorer 5
+Opera 10.5
+Chrome 4.2
+Safari 3
+
+gradients
+Firefox 3.6
+Opera 11.10
+Chrome 3
+Safari 4
+
+media queries
+Firefox 3.5
+Internet Explorer 9
+Opera 7
+Chrome
+Safari 3
+
+multiple columns
+Firefox 3.5
+Internet Explorer 10
+Opera 11.1
+Chrome 9.0
+Safari 3.2
+
+box shadow
+Firefox 3.5
+Internet Explorer 9
+Opera 10.5
+Chrome 1
+Safari 3
+
+multiple backgrounds
+Firefox 3.6
+Internet Explorer 9
+Opera 10.5
+Chrome
+Safari 3
+
+text shadow
+Firefox 3.1
+Opera 9.5
+Chrome
+Safari 3
+
+transform
+Firefox 3.5
+Internet Explorer 9
+Opera 10.5
+Chrome
+Safari 3.1
+
+opacity
+Firefox 0.9
+Internet Explorer 7/8 (filter)
+Internet Explorer 9
+Opera 9
+Chrome
+Safari 2
+
+RGBa
+Firefox 3
+Internet Explorer 9
+Opera 10
+Chrome
+Safari 3
+
+selector (Nth-child)
+Firefox 3.5
+Internet Explorer 9
+Opera 11
+Chrome 4
+Safari 4
+
+transitions
+firefox 4
+opera 10.5
+chrome
+safari 4

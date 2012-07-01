@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript: The Facade Pattern</title>
+</head>
+<body>
+
+	<h1 id="foo">The Facade Pattern</h1>
+	<p id="bar">The facade pattern doestwo things: it simplifies the interface of aclass, and it decouples that class from the client code that uses it. In JavaScript, facades are often adeveloper’s bestfriend. Facades are the core principle behind nearly all JavaScript libraries. The facade pattern can make library utilitieseasier to understand by creating convenience methods that allow complex systems to be used easily and simply. Facades provide programmers with the ability to indirectly interact with subsystems in amanner that is less buggy and less error-prone than accessing the subsystem directly.</p>
+	<p id="baz">The facade pattern simplifies common or repetitive tasks such as error logging or keeping track of page-view statistics. Afacade also allows objects to appear to be more fully featured than they really are by adding convenience methods (which take several existing methods and combine them into one).</p>
+	<p><a href="http://www.google.co.uk/" id="example">Facades serve to simplify complex interfaces. They can do error checking for you behind the scenes, clean up large objects that are no longer in use, and present an object’s features in an easier to use fashion.</a></p>
+	<p>Facades are never strictly necessary. The same tasks can be completed without them. This is an organizational pattern; it allows you to modify the interfaces of classes and objects to be more convenient to you. As aprogrammer, they make your life easier and your code more manageable.</p>
+	
+	<h1>General Steps for Implementing the Facade Pattern</h1>
+	<p>After locating the areas whereyou feel afacade method would be agood fit for your application, you can begin adding your convenience methods. Name your functions carefully, so as to match their original purpose. For grouped functions, it may be easy enough to just combine the name of the functions into one camel-cased function name, or simply thisFunctionAndThatFunction.</p>
+	<p>For the separate case of dealing with inconsistent browser APIs, simply embed your branching code within your newly created facade function, using techniques such as object detection or (in some situations) browser sniffing. Choosing aname for these kinds of functions can be abit tricky since you’re dealing with asimilar piece of functionality that just happens to be called something different by various browsers. What one browser calls pageX, another browser calls clientX. What one browser calls addEventListener, another calls attachEvent. The best advice at this point is to make the name recognizable and document your code, noting the purpose of the facade.</p>
+	
+	<h1>When Should the Facade Pattern Be Used?</h1>
+	<p>Recognizing grouped repetitive patterns is the key to deciding whether you should implement facade methods. If you’re constantly spotting function bfollowing function a, it may be agood idea to include afacade that groups these two functions together.</p>
+	<p>Another case where you may wish to add facade functions to your core set of utilities is when built-in JavaScript functions and objects vary between browsers. It isn’t that you are unable to use these APIs directly, but rather when you have to cope with cross-browser differences, it’s best to abstract these differences into facade methods. They will provide amore consistent interface, as the addEventfunction does.</p>
+	
+	<h1>Drawbacks of the Facade Pattern</h1>
+	<p>In some cases, afacade can add extra unnecessary baggage. Just because something is convenient, it doesn’t mean it should be used. It is common to misuse facade interfaces. Think carefully before you use your favorite facade functions. You may be using too much to do too little. For example, you wouldn’t bring along your refrigerator on acamping trip despite its convenience and ability to hold alot of groceries. Nor would you rent atractor to dig ahole for your flower garden. Consider the practicality of your operations before committing potentially disastrous and expensive routines that may cause your applications to drag. Sometimes the granularity of the constituent functions is preferable to asingle monolithic facade function. The facade functions may often perform tasks that you don’t need done.</p>
+	<p>For the case of asimple personal website or acouple of small marketing web pages, including an entire JavaScript library may not be wise if the only enhanced behavior is a few tooltips and apop-up window. It may be possible to use afew simple facades instead of a library full of them. In the end, it’s up to you to make these calls and decide whether it is practical to use this pattern.</p>
+	
+	<script src="../../Useful Functions/addEvent/addEvent.js"></script>
+	<script src="../../Useful Functions/$ dollar function/dollar.js"></script>
+	<script src="Facade.js"></script>
+
+</body>
+</html>

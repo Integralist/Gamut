@@ -1,0 +1,5 @@
+USE [tablename_]
+GO
+
+ALTER TABLE [dbo].[Products]
+ALTER COLUMN Code VARCHAR(50) NOT NULL

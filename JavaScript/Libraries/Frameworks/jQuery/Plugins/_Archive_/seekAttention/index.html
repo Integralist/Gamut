@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Seek Attention</title>
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="seekAttention.min.jquery.js"></script>
+<style type="text/css">
+	#myContainer
+	{ padding: 20px; }
+	
+	#myDIV
+	{ background-color: #99FFCC; }
+</style>
+</head>
+<body>
+
+	<h1>remember to check the link at the very bottom of this page! (you have to scroll to see it)</h1>
+
+	<p>
+    	<a href="#" onclick="$('#myTextBox').seekAttention();">apply to input text field</a>
+    	<br />
+        <input type="text" id="myTextBox" />
+    </p>
+    
+    <hr />
+    
+    <div id="myContainer">
+    	<a href="#" onclick="$('#myDIV').seekAttention({ container: '#myContainer' });">apply to DIV element</a>
+    	<br />
+        <div id="myDIV">
+        	some text content<br />
+            some text content<br />
+            some text content<br />
+            some text content<br />
+            some text content<br />
+        </div>
+    </div>
+    
+    <hr />
+    
+    <div id="myContainer">
+    	<a href="#" onclick="$('#my-important-link').seekAttention({
+                                                        paddingTop: 5,
+                                                        paddingBottom: 5,
+                                                        paddingLeft: 5,
+                                                        paddingRight: 5,
+                                                        opacity: 0.7
+                                                    });">apply to A element</a>
+    	<br />
+        <p>Pellentesque sodales diam. Aenean <a href="#" id="my-important-link">vel dui non ligula</a> vulputate tincidunt. Mauris auctor nisi. Nam condimentum sem quis lectus. Fusce convallis risus at massa. Sed nisi urna, vulputate quis, ultricies nec, pretium vel, leo. Maecenas cursus arcu in sem. Suspendisse potenti. Nulla malesuada erat id nisl. Proin pulvinar pharetra dui. Sed gravida mattis nulla. Nulla feugiat nulla. Integer molestie egestas nisi. Phasellus aliquet, lectus ac fringilla posuere, justo est laoreet sem, convallis interdum leo augue vel nulla. Suspendisse laoreet metus quis sem.</p>
+    </div>
+    
+    <hr />
+    
+    <p>
+    	<a href="#" onclick="$('#myTextBox2').seekAttention({ pulse: false });">apply to input text field <strong>WITHOUT PULSE</strong></a>
+    	<br />
+        <input type="text" id="myTextBox2" />
+    </p>
+    
+    <hr />
+    
+    <div>
+    	<select id="selectcolor"> 
+            <option value="red">red</option> 
+            <option value="blue">blue</option> 
+            <option value="green">green</option> 
+            <option value="orange">orange</option> 
+            <option value="purple">purple</option> 
+        </select>
+        <br />
+        <a href="#" onclick="$('#myTextBox3').seekAttention({ color: $('#selectcolor').val() });">choose colour for overlay</a>
+        <input type="text" id="myTextBox3" />
+    </div>
+    
+    <hr />
+    
+    <p>
+    	<a href="#" onclick="$('#myTextBox4').seekAttention({ pulseSpeed: 800 });">apply to input text field <strong>WITH SLOWER PULSE SPEED</strong></a>
+    	<br />
+        <input type="text" id="myTextBox4" />
+    </p>
+    
+    <hr />
+    
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    
+    <a href="#" onclick="$('#myTextBox').seekAttention();">what the page scroll as it goes to the top of the page to apply this effect to the first input field again!</a>
+
+</body>
+</html>

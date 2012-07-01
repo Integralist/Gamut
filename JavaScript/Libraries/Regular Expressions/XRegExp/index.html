@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+	    <meta charset="utf-8" />
+    	<title></title>
+    </head>
+    <body>
+    	<script src="XRegExp.js"></script>
+        <script>
+        	var string = "Accepts a regexp pattern and flags; returns a new, extended RegExp object. Differs from a native regular expression in that additional syntax and flags are supported and cross-browser regex(REGEX) syntax inconsistencies are ameliorated.";
+			
+			var pattern = "\
+			(?<testing> reg(?:ular\\s)?ex(?:pression|p?))	# find variations of the word regex/regexp/regular expression\
+			", 
+				regex = XRegExp(pattern, "gix"), 
+				replacement = "<em>${testing}</em>", 
+				update = string.replace(regex, replacement);
+			
+			console.log(update + '\n\n');
+			
+			/////////////////////////////////////////////////
+			
+			var matches = [];
+			XRegExp.iterate(string, /reg(?:ular\s)?ex(?:pression|p?)/i, function (match, counter, original, regobj) {
+				console.info('match: ' + match + '\ncounter: ' + counter + '\noriginal: ' + original + '\nregobj: ' + regobj + '\n\n');
+				// match = Array [matched string, backreferences, and extended properties]
+				// match array is same as returned by RegExp.prototype.exec, and may contain additional properties from named capture.
+			});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>insertAfter function</title>
+<script type="text/javascript">
+	function insertAfter(newElement, targetElement)
+	{
+		var parent = targetElement.parentNode;
+		if(parent.lastChild == targetElement)
+		{
+			parent.appendChild(newElement);
+		}
+		else
+		{
+				parent.insertBefore(newElement, targetElement.nextSibling);
+		}
+	}
+	
+	window.onload = function()
+					{
+						var testTargetElement = document.getElementById('id-Content');
+						var testNewElement = document.createElement('p');
+						var testNewText = document.createTextNode('DOM created text');
+						
+						testNewElement.setAttribute('class','cls-Test'); // Gecko
+						testNewElement.setAttribute('className','cls-Test'); // IE
+						
+						testNewElement.appendChild(testNewText);
+						
+						insertAfter(testNewElement, testTargetElement);
+					}
+	
+</script>
+<style type="text/css">
+*
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+p
+{
+	margin: 0px;
+	width: 50%;
+	background-color: red;
+}
+
+div#id-Header
+{
+	background-color: #666666;
+	font-weight: bold;
+}
+
+div#id-ContentContainer
+{
+	background-color: #999999;
+	font-weight: bold;
+}
+
+div#id-Footer
+{
+	background-color: #CCCCCC;
+	font-weight: bold;
+}
+
+.cls-Test
+{
+	background-color: yellow;
+	margin-left: 20px;
+}
+</style>
+</head>
+<body>
+
+<div id="id-Header">
+	This is my Header DIV
+</div>
+
+<div id="id-ContentContainer">
+	<p id="id-Content">
+		This is my Content DIV
+	</p>
+</div>
+
+<div id="id-Footer">
+	This is my Footer DIV
+</div>
+
+</body>
+</html>

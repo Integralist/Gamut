@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3 border-image</title>
+<style type="text/css">
+	body
+	{ padding:10px; }
+	
+	div.one,
+	div.two,
+	div.three,
+	div.four
+	{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:small;
+		padding:3px 0;
+		margin-bottom:2em;
+		text-align:center;
+		max-width:50%;
+		
+		/*
+			I’m telling the browser to apply a 0 width border to the top, 
+			an 12px border to the right,
+			a 0 width border to the bottom,
+			and an 12px width border to the left 
+			
+			i.e. the four parameters start at the top of the box and work their way around clockwise).
+		*/
+		border-width:0 12 0 12;
+		
+		/*
+			The image whiteButton.png has 12px to the left which is the left side of the box,
+			it has 12px to the right which is the right side of the box,
+			and the remaining 5px in the center of the image can be stretched because the design is a solid colour!
+			
+			With the border widths in place, I can apply the border image.
+			The widths in the border-image property are not border widths; 
+			they are the widths to slice from the image.
+			
+			Taking the right border as an example, 
+			I’m telling the browser to take the left 12px of the image and apply them to the right border, 
+			which also happens to have an 12px width.
+		*/
+		-webkit-border-image:url(whiteButton.png) 0 12 0 12 repeat stretch;
+		-moz-border-image:url(whiteButton.png) 0 12 0 12 repeat stretch;
+		/*
+			the url of the image
+			the top width
+			the right width
+			the bottom width
+			the left width
+			(optional parameters) the style to apply to the border's width (repeat, stretch, round)
+			(optional parameters) the style to apply to the border's height (repeat, stretch, round)
+		*/
+	}
+	
+	div.two
+	{
+		-webkit-border-image:url(whiteButton.png) 9 12 12 12 repeat;
+		-moz-border-image:url(whiteButton.png) 0 12 0 12 repeat stretch;
+	}
+	
+	div.three
+	{
+		-webkit-border-image:url(whiteButton.png) 9 12 12 12 stretch stretch;
+		-moz-border-image:url(whiteButton.png) 0 12 0 12 repeat stretch;
+	}
+	
+	div.four
+	{
+		-webkit-border-image:url(whiteButton.png) 0 12 0 12 stretch stretch;
+		-moz-border-image:url(whiteButton.png) 0 12 0 12 stretch stretch;
+	}
+</style>
+</head>
+<body>
+
+	<div class="one">
+		Some Text
+	</div>
+	
+	<div class="two">
+		Some Text
+	</div>
+	
+	Setting the top/bottom widths helps when the box comes to be resized!
+	<div class="three">
+		Some Text<br />2<br />3
+	</div>
+	
+	See how if you leave the top/bottom at zero then the box stretches badly!
+	<div class="four">
+		Some Text<br />2<br />3
+	</div>
+
+</body>
+</html>

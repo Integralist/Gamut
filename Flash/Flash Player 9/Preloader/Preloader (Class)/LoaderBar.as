@@ -1,0 +1,1 @@
+﻿package{	import flash.display.MovieClip;	public class LoaderBar extends MovieClip	{		public function LoaderBar (xpos:int, ypos:int)		{			this.x = xpos;			this.y = ypos;		}	}}

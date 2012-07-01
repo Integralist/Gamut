@@ -1,0 +1,10 @@
+INSERT INTO testdb.testtable (firstname, lastname)
+VALUES ('Mark', 'McDonnell')
+
+INSERT INTO testdb.departments (department)
+VALUES ('Digital Media')
+
+// Use the WHERE clause
+INSERT INTO testdb.testtable (department_id)
+VALUES (1)
+WHERE (lastname = "McDonnell")

@@ -1,0 +1,11 @@
+#pietest {
+	border: 1px solid #999;
+	-webkit-border-radius:0 0 40px 0;
+    -moz-border-radius:0 0 40px 0;
+	border-radius:0 0 40px 0;
+	padding:10px;
+	behavior: url(PIE.php);
+	background-color:red;
+	position:relative;
+	z-index:1;
+}

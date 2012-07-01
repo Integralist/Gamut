@@ -1,0 +1,6 @@
+The Sexy Curls JQuery Plugin
+By Elliott Kember - http://twitter.com/elliottkember
+Released under the MIT license (MIT-LICENSE.txt)
+
+My only request is: please don't over-use this plugin.
+If this ends up being used all over the internets, and becomes "that annoying effect", I'll be upset.

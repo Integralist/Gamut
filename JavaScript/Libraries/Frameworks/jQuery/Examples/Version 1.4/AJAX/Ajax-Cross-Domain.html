@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AJAX: Cross-Domain with YQL</title>
+<style type="text/css">
+#container
+{ background-color:#C00; color:#FFF; max-width:500px; min-height:100px; padding:10px; }
+</style>
+</head>
+<body>
+
+	<div id="container">Content</div>
+
+	<script src="../../../Releases/jquery-1.4.js"></script>
+   <script src="Ajax.js"></script>
+   <script>
+   	$(document).ready(function() {
+			$('#container').load('http://www.storm-media.co.uk/'); // SERIOUSLY!
+ 
+			$.ajax({
+				url: 'http://news.bbc.co.uk',
+				type: 'GET',
+				success: function(res) {
+					var headline = $(res.responseText).find('a.tsh').text();
+					alert(headline);
+				}
+			});
+		});
+   </script>
+
+</body>
+</html>

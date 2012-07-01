@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>YQL</title>
+</head>
+<body>
+
+	<p><a href="http://james.padolsey.com/javascript/using-yql-with-jsonp/">http://james.padolsey.com/javascript/using-yql-with-jsonp/</a></p>
+	  
+	<script type="text/javascript">  
+		// YQL serves JSONP (with a callback) so all we have to do
+		// is create a script element with the right 'src':
+		function YQLQuery(query, callback) {
+			 this.query = query;
+			 this.callback = callback || function(){};
+			 this.fetch = function() {
+		 
+				  if (!this.query || !this.callback) {
+						throw new Error('YQLQuery.fetch(): Parameters may be undefined');
+				  }
+		 
+				  var scriptEl = document.createElement('script'),
+						uid = 'yql' + +new Date(),
+						encodedQuery = encodeURIComponent(this.query.toLowerCase()),
+						instance = this;
+		 
+				  YQLQuery[uid] = function(json) {
+						instance.callback(json);
+						delete YQLQuery[uid];
+						document.body.removeChild(scriptEl);
+				  };
+		 
+				  scriptEl.src = 'http://query.yahooapis.com/v1/public/yql?q='	+ encodedQuery + '&format=json&callback=YQLQuery.' + uid; 
+				  document.body.appendChild(scriptEl);
+		 
+			 };
+		}
+		
+		window.onload = function()
+		{
+			// Alert the latest post title from Ajaxian.com
+ 
+			// Construct your query:
+			var query = "select * from rss where url='feeds2.feedburner.com/ajaxian' limit 1";
+			 
+			// Define your callback:
+			var callback = function(data) {
+				 var post = data.query.results.item;
+				 alert(post.title);
+			};
+			 
+			// Instantiate with the query:
+			var ajaxianPosts = new YQLQuery(query, callback);
+			 
+			// If you're ready then go:
+			ajaxianPosts.fetch(); // Go!!
+			 
+			/* Callback & query can be defined as properties also:
+				ajaxianPosts.query = 'select * from...';
+				ajaxianPosts.callback = function(){}; */
+		}
+	</script>
+
+</body>
+</html>

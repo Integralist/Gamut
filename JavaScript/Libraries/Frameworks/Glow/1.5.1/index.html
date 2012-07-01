@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Glow: BBC JavaScript Library</title>
+</head>
+<body>
+
+	<p id="greeting"></p>
+    <p class="test">Hello,</p>
+	<p class="test">World</p>
+
+	<script type="text/javascript" src="core/core.debug.js"></script>
+    <script type="text/javascript">
+    	glow.ready(function(){
+			var p = glow.dom.get("#greeting");
+			p.html("hello, world");
+			p.css("border", "2px solid #F00");
+			
+			glow.dom.get(".test").css("cursor", "pointer");
+			
+			glow.events.addListener(".test", "click", function(){
+				alert(glow.dom.get(this).html());
+			});
+		});
+    </script>
+</body>
+</html>

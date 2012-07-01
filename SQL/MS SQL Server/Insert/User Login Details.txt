@@ -1,0 +1,10 @@
+INSERT INTO table_intra_users
+                      (LastName, FirstName, DepartmentID, AccountHandler, Username, Password, UserLevel, AuthorizedToSignOf, AuthorizedToOrderEC, Salary, Rate, 
+                      Address1, Address2, City, Postcode, Country, Phone, Mobile, Photo, Email, PassEnc, JobTitle, iSessionTimeout)
+VALUES     ('Bloggs', 'Joe', '1', '0', 'Joe', 'jpass', '2', '0', '1', '', '60', '', '', '', '', '', '', '', '', 'email1@domain.com', '', '', '15')
+
+
+INSERT INTO table_intra_users
+                      (LastName, FirstName, DepartmentID, AccountHandler, Username, Password, UserLevel, AuthorizedToSignOf, AuthorizedToOrderEC, Salary, Rate, 
+                      Address1, Address2, City, Postcode, Country, Phone, Mobile, Photo, Email, PassEnc, JobTitle, iSessionTimeout)
+VALUES     ('Smith', 'John', '0', '1', 'Jon', 'jpass', '2', '0', '1', '', '60', '', '', '', '', '', '', '', '', 'email2@domain.com', '', '', '15')

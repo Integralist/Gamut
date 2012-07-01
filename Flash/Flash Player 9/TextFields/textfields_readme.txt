@@ -1,0 +1,1 @@
+TextfieldsA.fla demonstrates how to create and position a text field, manipulate its text, and control text selections. TextfieldsB.fla demonstrates how to work with text fields and load and use CSS.

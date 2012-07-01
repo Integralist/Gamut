@@ -1,0 +1,119 @@
+#dummy-element{width:2px;} /* Necessary to check if StyleSheet has loaded */
+
+/* Quick Reset */
+body,ul,ol,li,img,form,p,h1,h2,h3,h4,h5,h6,blockquote {
+	margin: 0;
+	padding: 0;
+	border: none;
+	list-style: none;
+	font-weight: normal;
+}
+
+/* General / Header */
+body {background: #98beeb url(../img/day-body-bg.jpg) repeat-x; }
+#container {
+	width: 60%;
+	margin: 0 auto;
+	min-width: 400px;
+	max-width: 800px;
+	position: relative;
+}
+h1 {
+	text-align: left;
+	text-transform: uppercase;
+	color: white;
+	font-size: 1.4em;
+	padding: 45px 30px 10px 30px;
+}
+
+/* Navigation */
+#nav {
+	padding: 5px 5px 0 0;
+	overflow: hidden;
+}
+#nav li {display: inline;}
+#nav a {
+	float: left;
+	color: #6195ce;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 3px 6px;
+	margin-left: 5px;
+	background: white;
+}
+#nav a:hover {color: #2c5a8c;}
+
+/* Banner */
+#banner {
+	height: 125px;
+	background: url(../img/day-banner.jpg) center;
+	border: 5px solid white;
+	clear: both;
+}
+
+/* Content Area */
+#content {
+	border: 10px solid white;
+	background: white;
+	color: #2c5a8c;
+	margin: 5px 0;
+}
+#content a {font-weight: bold;}
+#content a:hover {text-decoration: underline;}
+h2 {
+	padding: 0.3em 0;
+	font-size: 1.4em;
+}
+p {padding: 0.3em 0;}
+
+/* Footer */
+#foot {
+	background: white;
+	color: #1f3a57;
+	text-align: center;
+	border: 10px solid white;
+	clear: both;
+}
+#foot a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #2c5a8c;
+}
+#foot a:hover {text-decoration: underline;}
+
+/* Style-Switcher */
+#style-switcher {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 34px;
+	background: #79a3cc url(../img/day-ss-bg.jpg);
+	border-bottom: 1px solid white;
+}
+#style-switcher ul {
+	border-right: 1px solid white;
+	float: right;
+}
+#style-switcher h4 {
+	display: inline;
+	color: #153c67;
+	font-weight: bold;
+	line-height: 34px;
+	padding: 0 10px;
+	float: left;
+	border-left: 1px solid white;
+}
+#style-switcher li {display: inline;}
+#style-switcher li a {
+	float: left;
+	line-height: 26px;
+	color: white;
+	background: #90a6bb;
+	text-decoration: none;
+	padding: 0 13px;
+	display: inline;
+	margin: 4px 4px 4px 0;
+}
+#style-switcher li a:hover {background: #3a5a7c;}

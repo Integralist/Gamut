@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>jParallax</title>
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery.jparallax.js"></script>
+<script type="text/javascript">
+	var corners = '<img src="images/corners/corner_white_tl.png" class="tl" />' +
+  				  '<img src="images/corners/corner_white_tr.png" class="tr" />' +
+  				  '<img src="images/corners/corner_white_bl.png" class="bl" />' +
+  				  '<img src="images/corners/corner_white_br.png" class="br" />';
+				  
+	$(document).ready(function()
+	{
+		$('#myParallax').jparallax({}).append(corners);
+	});
+</script>
+<style type="text/css">
+	#myParallax
+    { position: relative; overflow: hidden; width: 57em; height: 20em; background-color: #3399CC; }
+	
+	.clear
+	{ display: inline-block; }
+
+	.clear:after
+	{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+	* html .clear
+	{ height: 1%; }
+
+	.clear
+	{ display: block; }
+	
+	img.tl
+	{ position: absolute; top: 0; left: 0; }
+	
+	img.tr
+	{ position: absolute; top: 0; right: 0; }
+	
+	img.bl
+	{ position: absolute; bottom: 0; left: 0; }
+	
+	img.br
+	{ position: absolute; bottom: 0; right: 0; }
+</style>
+</head>
+<body>
+
+	<div id="myParallax" class="clear"> 
+        <div style="width: 860px; height: 273px;"> 
+        	<img src="images/0_sun.png" alt="" style="position:absolute;left:300px;top:-12px;"/> 
+        </div> 
+        <div style="width: 920px; height: 274px;"> 
+        	<img src="images/1_mountains.png" alt="" /> 
+        </div> 
+        <div style="width: 1100px; height: 284px;"> 
+    	    <img src="images/2_hill.png" alt="" style="position:absolute; top:40px; left:0;" /> 
+        </div> 
+        <div style="width: 1360px; height: 320px;"> 
+	        <img src="images/3_wood.png" alt="" style="position:absolute; top:96px; left:0;"/> 
+        </div> 
+    </div>
+
+</body>
+</html>

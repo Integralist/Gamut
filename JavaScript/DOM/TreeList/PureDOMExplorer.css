@@ -1,0 +1,61 @@
+/*
+ * PureDOMExplorer Demo styles 
+ * written by Chris Heilmann 
+ * More at http://onlinetools.org/tools/puredom/
+ */
+	
+	ul.pde a:link,
+	ul.pde a:visited,
+	ul.pde a:hover,
+	ul.pde a:active{
+		text-decoration:none;
+		color:#000;
+	}
+	ul.pde,ul.pde li{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	ul.pde{
+		text-align:left;
+		font-size:.8em;
+		margin:.5em auto;
+		background:#ccc;
+		width:80%;
+	}
+	ul.pde ul{
+		margin:0 0 0 1em;
+		padding:0;
+	}
+	ul.pde li{
+		line-height:1.3em;
+		padding:.2em 0;
+		margin:0;
+		padding-left:15px;
+	}
+/* dynamically added to LIs with nested ULs */
+	ul.pde li.parent{
+		padding-left:0;
+	}
+	ul.pde li.parent img{
+		border:none;
+		padding-right:5px;
+	}
+/* dynamically added to LIs with nested ULs and STRONG elements in them */
+	ul.pde li.current li{
+		padding-left:0;
+	}
+/* The class to hide nested ULs */
+       .hide{
+               position:absolute;
+               top:0;
+               left:-4000px;
+       }
+
+/* The class to show nested ULs */
+       .show{
+               position:static;
+               display: table;
+               top:0;
+               left:1em;
+       }

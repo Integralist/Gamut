@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Preload Images Demo</title>
+<link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery.preload.images.js"></script>
+<script type="text/javascript">
+		$(function(){
+			$('#loadInfo').hide();
+			$('a.button').click(function(){
+				$('#loadInfo').slideDown();
+				$(this).parent().after('<h2>Images loaded into DOM from CSS:</h2><ul id="loadedImgs"></ul>')
+				var loadedImgs = $.preloadCssImages({statusTextEl: '#textStatus', statusBarEl: '#status'});
+				for(var i = 0; i<loadedImgs.length; i++){
+					$('#loadedImgs').append('<li><img src=\"'+loadedImgs[i].src+'\" />: '+loadedImgs[i].src+'</li>');
+				}
+				//resize parent iframe to contain new images
+				$(window.parent.document).find('iframe:eq(0)').height('110em');
+
+			});
+
+		});
+	</script>
+<style type="text/css">
+/*DEMO PRESENTATION STYLES - NON-ESSENTIAL FOR SCRIPT */
+
+#content h2 {
+	clear:left;
+	color:#444444;
+	font-size:1.7em;
+	font-weight:bold;
+	line-height:1.2em;
+	margin:1.5em 0pt 0.5em;
+}
+#content h3 {
+	color:#444444;
+	font-size:1.6em;
+	font-weight:bold;
+	margin:1em 0pt 0.5em;
+}
+#content h4 {
+	color:#444444;
+	font-size:1.5em;
+	font-weight:bold;
+	margin:1em 0pt 0.2em;
+}
+a:link, a:visited {
+	color:#368512;
+	text-decoration:underline;
+}
+a:visited {
+	color:#8DC262;
+}
+a:hover {
+	color:#2A7801;
+}
+p, li {
+	color:#444444;
+	font-size:1.4em;
+	line-height:1.4em;
+	margin:0pt;
+	padding:0pt 0pt 1.5em;
+	width:60%;
+}
+li {
+	list-style-type:disc;
+	margin-left:2.5em;
+}
+dt {
+	clear:left;
+	float:left;
+	font-weight:bold;
+}
+dt, dd {
+	display:block;
+	font-size:1.3em;
+	line-height:1.6em;
+	padding-right:0.5em;
+}
+pre {
+	background:#444444 none repeat scroll 0%;
+	border:1px solid #111111;
+	color:#EEEEEE;
+	font-size:1.5em;
+	line-height:1.3em;
+	margin:0pt 0pt 2em;
+	overflow:auto;
+	padding:1em;
+	width:100%;
+}
+fieldset legend {
+	font-size: 1.4em;
+}
+table {
+	border:1px solid #EEEEEE;
+	border-collapse:collapse;
+	width:100%;
+}
+table tr, table td, table th {
+	border:1px solid #CCCCCC;
+	padding:0.3em;
+}
+input.text, textarea {
+	background:#FFFFFF none repeat scroll 0%;
+	border:1px solid #AAAAAA;
+	color:#222222;
+	display:block;
+	float:left;
+	font-size:1.3em;
+	height:1.2em;
+	padding:0.3em 0.5em;
+	width:8.5em;
+}
+input.text:focus, textarea:focus {
+	background:#EFEFE7 none repeat scroll 0%;
+}
+textarea {
+	display:block;
+	float:none;
+	font-family:"Segoe UI", "Lucida Grande", Verdana, sans-serif;
+	font-size:1.3em;
+	height:10em;
+	padding:1em 10px;
+	width:35.7em;
+}
+button, a.button {
+	background: #3d8717;
+	border:2px solid #2A7802;
+	color:#EEEEEE;
+	cursor:pointer;
+	font-size:1.1em;
+	font-weight:bold;
+	padding:0.5em 0.6em;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	width: 8em;
+}
+button:hover, a.button:hover {
+	color:#FFFFFF;
+}
+label {
+	color:#444444;
+	display:block;
+	font-size:1.4em;
+	font-weight:bold;
+	margin:0.7em 0pt;
+}
+span.required {
+	color:red;
+	font-size:0.8em;
+	font-weight:normal;
+	left:0.2em;
+	position:relative;
+	top:-0.3em;
+}
+table {
+	width: 400px !important;
+	height: 200px;
+	border-collapse: collapse;
+	color: #555;
+}
+td, th {
+	text-align: center;
+	border: 1px solid #ddd;
+	height: 1.5em;
+}
+th {
+	background: #999;
+	color: #fff;
+}
+thead th {
+	height: 2.5em;
+}
+caption {
+	margin: 0 0 .5em;
+	font-size: 1.3em;
+	text-align: left;
+	font-weight: bold;
+	width: 40em;
+	color: #555;
+}
+caption em {
+	font-size: .9em;
+	color: orange;
+	font-weight: normal;
+	padding-left: 1em;
+}
+/* ----- clear fix for floats ----- */
+/* these styles instruct non-IE browsers to render container elements so that they fully enclose floats */		
+/* without this class applied, a float might hang over the bottom border of it's container */
+.clearfix:after {
+	content: ".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix {
+	display:inline-block;
+}
+/* hides clearfix from IE-mac \*/
+* html .clearfix {
+	height:1%;
+}
+.clearfix {
+	display:block;
+}
+/* end hide from IE-mac */
+
+
+
+
+
+
+#statusBar {
+	border: 2px solid #aaa;
+	width: 300px;
+	background: #ddd url(http://www.filamentgroup.com/examples/preloadImages/images/dadada_40x100_textures_06_inset_hard_95.png) 50% repeat-x;
+}
+#status {
+	background: url(http://www.filamentgroup.com/examples/preloadImages/images/f58705_40x100_textures_08_diagonals_thick_85.png) 0 50% no-repeat;
+	height: 12px;
+}
+#textStatus {
+	font-weight: bold;
+}
+#textStatus .numLoaded {
+	font-weight: bold;
+}
+#textStatus .numTotal {
+	font-weight: bold;
+}
+#textStatus .percentLoaded {
+	font-weight: bold;
+}
+#textStatus .currentImg {
+	font-weight: bold;
+	display: block;
+	font-size: .8em;
+}
+#textStatus .currentImg span {
+	font-weight: normal;
+}
+</style>
+<script src="/mint/?js" type="text/javascript"></script>
+</head>
+<body>
+<div id="demoHeader"> <a href="/"><img src="/images/logo_examples.png" alt="Filament Group, Inc." width="141" height="26" id="logo" /></a>
+  <h1>This is an example from the Filament Group Lab Article: <a href="/lab/update_automatically_preload_images_from_css_with_jquery/">Update: Automatically preload images from CSS with jQuery</a></h1>
+  <p id="copyright">&copy;2008 Filament Group, Inc. All Rights Reserved.</p>
+</div>
+<!-- /demoHeader -->
+<div id="loadInfo">
+  <div id="statusBar">
+    <div id="status"></div>
+  </div>
+  <p id="textStatus"></p>
+</div>
+<p><a href="#" class="button">Run Script</a></p>
+</body>
+</html>

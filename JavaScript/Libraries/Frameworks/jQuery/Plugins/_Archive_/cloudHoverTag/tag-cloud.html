@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+      <title>Noupe - Hover Sub Tag Cloud</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<script type="text/javascript" src="jquery-1.js"></script>
+		<script type="text/javascript" src="hovertip.js"></script>
+		<script type="text/javascript">
+			// initialize tooltips in a seperate thread
+			$(document).ready(function() {
+			  window.setTimeout(hovertipInit, 1);
+		     });
+		</script>
+		<style type="text/css" media="all">@import "css.css";</style>
+</head>
+<body>
+		<div id="cloud">
+			<ul class="nav">
+				<li>
+				    <a class="size1" href="#" id="j1">adobe</a>
+					<ul style="display: block;" class="hovertip" target="j1">
+						<li><a class="size-sub1" href="#">Photoshop</a></li>
+						<li><a class="size-sub2" href="#">Illustrator</a></li>
+						<li><a class="size-sub3" href="#">Dreamweaver</a></li>
+						<li><a class="size-sub4" href="#">Fireworks</a></li>
+					</ul>
+				</li>
+				<li>
+				    <a class="size2" href="#" id="j2">Showcases</a></li>
+				<li>
+				    <a class="size3" href="#" id="j3">Arts</a>
+					<ul style="display: block;" class="hovertip" target="j3" >
+						<li><a class="size-sub1" href="#">Arts1</a></li>
+						<li><a class="size-sub2" href="#">Arts2</a></li>
+						<li><a class="size-sub3" href="#">Arts3</a></li>
+						<li><a class="size-sub4" href="#">Arts4</a></li>
+						<li><a class="size-sub2" href="#">Arts5</a></li>
+					</ul>
+			     </li>
+				<li>
+				    <a class="size4" href="#" id="j4">Better Design</a>
+					<ul style="display: block;" class="hovertip" target="j4" >
+						<li><a class="size-sub1" href="#">Design1</a></li>
+						<li><a class="size-sub2" href="#">Design2</a></li>
+						<li><a class="size-sub3" href="#">Design3</a></li>
+						<li><a class="size-sub4" href="#">Design4</a></li>
+					</ul>
+			    </li>
+				<li><a class="size5" href="#">Blogging</a></li>
+				<li><a class="size1" href="#" id="j5">Ajax</a>
+					<ul style="display: block;" class="hovertip" target="j5" >
+						<li><a class="size-sub1" href="#">Jquery</a></li>
+						<li><a class="size-sub2" href="#">Script.aculo.us</a></li>
+						<li><a class="size-sub3" href="#">Mootools</a></li>
+						<li><a class="size-sub4" href="#">Dojo</a></li>
+						<li><a class="size-sub2" href="#">Prototype</a></li>
+					</ul>
+				</li>
+				<li><a class="size6" href="#">Books</a></li>
+				<li>
+					<a class="size1" href="#" id="j6">Javascript</a>
+					<ul style="display: block;" class="hovertip" target="j6" >
+						<li><a class="size-sub1" href="#">Javascript1</a></li>
+						<li><a class="size-sub2" href="#">Javascript2</a></li>
+						<li><a class="size-sub3" href="#">Javascript3</a></li>
+						<li><a class="size-sub4" href="#">Javascript4</a></li>
+
+					</ul>
+				</li>
+				<li><a class="size2" href="#">Arts</a></li>
+				<li><a class="size4" href="#">Freelance</a></li>
+				<li>
+				    <a class="size3" href="#" id="j7">Animation</a>
+				    <ul style="display: block;" class="hovertip" target="j7" >
+						<li><a class="size-sub1" href="#">Animation1</a></li>
+						<li><a class="size-sub2" href="#">Animation2</a></li>
+						<li><a class="size-sub3" href="#">Animation3</a></li>
+						<li><a class="size-sub4" href="#">Animation4</a></li>
+					</ul>
+				</li>
+				<li><a class="size6" href="#">Tutorials</a></li>
+				<li><a class="size5" href="#">Cool Links</a></li>
+			</ul>
+		</div>
+</body>
+</html>

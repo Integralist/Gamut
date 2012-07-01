@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <style>
+            * {font-family: Helvetica, Verdana, Arial; font-size:0.95em}
+            .eventNotifier{width: 100px; float: left; color:navy; border: dotted 1px navy; padding: 4px; background-color:white; margin:3px}
+            .dirty{border: solid 1px #0ca2ff; color:white; background-color:#0ca2ff}
+            
+        </style>
+        <script src="jquery-1.1.4.js"></script>
+        <script src="jquery.shortcut.js"></script>
+        <script>
+            function newElem(elem){
+                if (elem.tagName){
+                var ret = document.createElement(elem.tagName);
+                if (elem.attr){
+                    attr = elem.attr;
+                    for (a in attr){
+                        if (a !== 'class'){ret.setAttribute(a, attr[a]);}
+                        else{ret.className = attr[a];}
+                    }
+                }
+                if (elem.child){
+                    if (typeof(elem.child) === "string"){ ret.innerHTML = elem.child; }
+                    else if (typeof(elem.child) === "object"){
+                        for (x=0; x < elem.child.length; x++){
+                            ret.appendChild(newElem(elem.child[x]));
+                        }
+                    }
+                }
+                return ret;
+                }
+            }
+            
+            var keys = jQuery.shortcut.special_keys;
+            var modifiers = ['Ctrl', 'Shift', 'Alt'];
+            var letters = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+            var callbacks = {};
+            
+            // generates the dom
+            function domo(){
+                jQuery('#platform-details').html('<code>' + navigator.userAgent + '</code>');
+                
+                var rootElem = jQuery("div#report-area")[0];
+                rootElem.appendChild(newElem({tagName: 'h2', child: 'Special Keys'}));
+                
+                // special keys such as esc, tab, pgUp, etc.
+                for (key in keys){
+                    var k = keys[key];
+                    rootElem.appendChild(newElem({tagName: 'div',  attr: {id: '_' + k, 'class': 'eventNotifier'}, child: k }));
+                    callbacks[k] = eval("function (){jQuery('#_" + k + "').addClass('dirty');}");
+                    jQuery.shortcut.add(k, callbacks[k]);                    
+                }
+                
+                rootElem.appendChild(newElem({tagName: 'div', attr: {style: 'clear:both'}}));
+                rootElem.appendChild(newElem({tagName: 'h2', child: 'A-Z Letters'}));
+                
+                for (ltr in letters){
+                    var l = letters[ltr];
+                    rootElem.appendChild(newElem({tagName: 'div',  attr: {id: '_' + l, 'class': 'eventNotifier'}, child:  l }));
+                    callbacks[l] = eval("function (){jQuery('#_" + l + "').addClass('dirty');}");
+                    jQuery.shortcut.add(l, callbacks[l]);                    
+                }
+                
+                rootElem.appendChild(newElem({tagName: 'div', attr: {style: 'clear:both'}}));
+                rootElem.appendChild(newElem({tagName: 'h2', child: 'Special Modifiers'}));
+                
+                for (m in modifiers){
+                    rootElem.appendChild(newElem({tagName: 'div', attr: {style: 'clear:both'}}));
+                    rootElem.appendChild(newElem({tagName: 'strong', child: modifiers[m]}));
+                    
+                    for (ltr in letters){
+                        var ml = modifiers[m]+ '+' + letters[ltr];
+                        rootElem.appendChild(newElem({tagName: 'div',  attr: {id: '_'+ ml.replace('+', '_'), 'class': 'eventNotifier'}, child:  ml}));
+                        callbacks[ml] = eval("function (){jQuery('#_" + ml.replace('+', '_') + "').addClass('dirty');}");
+                        jQuery.shortcut.add(ml, callbacks[ml]);
+                    }
+                }
+
+                rootElem.appendChild(newElem({tagName: 'div', attr: {style: 'clear:both'}}));                
+                rootElem.appendChild(newElem({tagName: 'h2', child: 'Special Modifiers + Special Keys'}));
+
+                for (m in modifiers){
+                    rootElem.appendChild(newElem({tagName: 'div', attr: {style: 'clear:both'}}));
+                    rootElem.appendChild(newElem({tagName: 'strong', child: modifiers[m]}));
+                    for (key in keys){
+                        var ml = modifiers[m]+ '+' + keys[key];
+                        rootElem.appendChild(newElem({tagName: 'div',  attr: {id: '_'+ ml.replace('+', '_'), 'class': 'eventNotifier'}, child: ml }));
+                        callbacks[ml] = eval("function (){jQuery('#_" + ml.replace('+', '_') + "').addClass('dirty');}");
+                        jQuery.shortcut.add(ml, callbacks[ml]);               
+                    }
+                }
+            }
+            
+            
+            jQuery(document).ready(domo);
+            
+        </script>
+    </head>
+    <body>
+        <h1>jQuery.Shortct.Testing.</h1>
+        <h2>Testing Platform:</h2>
+        <div id="platform-details"></div>
+        </div>
+        
+        <div id="report-area">
+        
+        </div>
+    </body>
+</html>

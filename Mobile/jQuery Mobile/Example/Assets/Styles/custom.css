@@ -1,0 +1,215 @@
+.align-center {
+	margin: auto;
+}
+
+.sprite {
+	background: url(../Images/sprite.png) 0 0 no-repeat;
+}
+
+.logo {
+	height: 166px;
+	margin-bottom: 1em;
+	width: 250px;
+}
+
+h1.logo {
+	background: url(../Images/header-logo.png) 0 0 no-repeat;
+	margin: .2em auto !important;
+	height: 45px;
+	width: 68px;
+}
+
+.logo span {
+	visibility: hidden;
+}
+
+.aligntext-center {
+	text-align: center;
+}
+
+.home-advert {
+	background-color: #000;
+	margin: -15px -15px 15px;
+}
+
+.home-advert img {
+	display: block;
+	margin: auto;
+}
+
+.home-grid a {
+	color: #666;
+	display: block;
+	font-size: 65%;
+	min-height: 120px;
+	text-decoration: none;
+}
+
+.home-grid img {
+	display: block;
+	margin: 1em auto auto;
+}
+
+.home-grid .ui-bar {
+	padding: .4em 5px;
+}
+
+.home-subsections {
+	margin-top: 1em;
+}
+
+.home-subsections div {
+	margin-bottom: -5px;
+}
+
+.profile-nav .ui-btn-inner {
+	padding: .6em 15px;
+}
+
+.profile-nav a {
+	font-size: 0.7em;
+}
+
+.profile-licks-comments {
+	font-size: .6em;
+	margin: -1em 0 0 1.6em;
+	padding: 0 0 1em 0;
+}
+
+.profile-licks-comments .ui-btn-inner {
+	padding-right: 12px;
+}
+
+.profile-comments p {
+	margin: .5em 0 1.3em;
+	white-space: normal;
+}
+
+.profile-comments .profile-licks-comments {
+	font-size: 1em;
+	margin: .5em 0 -.5em;
+}
+
+.short-list {
+	padding: 0 5px;
+}
+
+.short-list dt {
+	font-weight: bold;
+}
+
+.short-list dd {
+	margin: 0 0 1em;
+}
+
+.rating span {
+	background: url(../Images/sprite.png) 0px -166px no-repeat;
+	display: inline-block;
+	height: 17px;
+	margin-right: 2px;
+	width: 19px;
+}
+
+.none {
+	background-position: -36px -166px !important;
+}
+
+.profile-venue-review h4,
+.profile-venue-review .rating,
+.profile-user-review h4,
+.profile-user-review .rating,
+.short-list.venue-reviews dt,
+.short-list.user-reviews dt,
+.venue-review h4 {
+	margin-bottom: -0.7em;
+}
+
+.short-list.venue-reviews {
+	margin-bottom: 2em;
+}
+
+.short-list.user-reviews, 
+.short-list.venue-reviews {
+	margin-left: -5px;
+}
+
+.venue-review .date {
+	margin-top: -0.7em;
+}
+
+.short-list.user-reviews dd,
+.short-list.venue-reviews dd {
+	background-color: #666;
+	padding: 1px;
+	width: 54%;
+}
+
+.short-list.user-reviews dt, 
+.short-list.user-reviews dd,
+.short-list.venue-reviews dt, 
+.short-list.venue-reviews dd {
+	float: left;
+}
+
+.short-list.user-reviews dt,
+.short-list.venue-reviews dt {
+	width: 45%;
+}
+
+.short-list.user-reviews dt:first-child,
+.short-list.venue-reviews dt:first-child {
+	float: none;
+	width: auto;
+}
+
+.short-list.user-reviews dt:first-child + dd,
+.short-list.venue-reviews dt:first-child + dd {
+	background: none;
+	clear: both;
+	margin-bottom: -0.3em;
+	padding: 0;
+	width: 100%;
+}
+
+.short-list.user-reviews dd > span,
+.short-list.venue-reviews dd > span {
+	background-color: #EC008C;
+	display: inline-block;
+}
+
+.profile-galleries h3,
+.profile-galleries p {
+	margin: 0;
+}
+
+.profile-galleries h3 {
+	margin-bottom: .4em;
+	margin-top: .2em;
+}
+
+.gallery-grid > div {
+	margin-bottom: .7em;
+}
+
+.in-this-photo {
+	overflow: hidden;
+	
+}
+
+.in-this-photo dt,
+.in-this-photo dd {
+	float: left;
+	margin: 0 .5em 0 0;
+}
+
+.clearfloat {
+	clear: both !important;
+}
+
+.profile-nav.friends-listing {
+	margin-bottom: 1.5em;
+}
+
+.gallery h2 {
+	margin-bottom: -10px;
+}

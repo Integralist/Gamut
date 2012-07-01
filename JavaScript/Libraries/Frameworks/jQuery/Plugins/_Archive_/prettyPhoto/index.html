@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Pretty Photo</title>
+<link rel="stylesheet" type="text/css" href="css/prettyCheckboxes.css" />
+<script type="text/javascript" src="../../Examples/Version 1.2.6/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto();
+		
+		// To customize the settings, you need to pass the values to prettyPhoto, like so:
+		/*
+		$("a[rel^='prettyOverlay'], a[rel^='prettyPhoto']").prettyPhoto({
+			animationSpeed: 'normal', // fast/slow/normal
+			padding: 40, // padding for each side of the picture
+			opacity: 0.35, // Value betwee 0 and 1
+			showTitle: true, // true/false
+			allowresize: true // true/false
+		});
+		*/
+	});
+</script>
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+</head>
+<body>
+
+	<h4>Gallery (with titles)</h4> 
+    <ul> 
+        <li><a href="images/fullscreen/1.jpg" rel="prettyPhoto[gallery1]" title="You can add caption to pictures.">1</a></li> 
+        <li><a href="images/fullscreen/2.jpg" rel="prettyPhoto[gallery1]">2</a></li> 
+        <li><a href="images/fullscreen/3.jpg" rel="prettyPhoto[gallery1]">3</a></li> 
+        <li><a href="images/fullscreen/4.jpg" rel="prettyPhoto[gallery1]">4</a></li> 
+        <li><a href="images/fullscreen/5.jpg" rel="prettyPhoto[gallery1]">5</a></li> 
+    </ul> 
+    
+    <h4>Gallery 2 (without titles)</h4> 
+    <ul> 
+        <li><a href="images/fullscreen/3.jpg" rel="prettyPhoto[gallery2]">3</a></li> 
+        <li><a href="images/fullscreen/4.jpg" rel="prettyPhoto[gallery2]">4</a></li> 
+        <li><a href="images/fullscreen/5.jpg" rel="prettyPhoto[gallery2]">5</a></li> 
+        <li><a href="images/fullscreen/1.jpg" rel="prettyPhoto[gallery2]">1</a></li> 
+        <li><a href="images/fullscreen/2.jpg" rel="prettyPhoto[gallery2]">2</a></li> 
+    </ul> 
+    
+    <h4>Picture alone</h4> 
+    <ul> 
+        <li><a href="images/fullscreen/2.jpg" rel="prettyPhoto" title="&lt;a href=&#x27;http://www.google.ca&#x27; target=&#x27;_blank&#x27; &gt;This will open Google.com in a new window&lt;/a&gt;">2</a></li> 
+    </ul>
+    
+    <h4>Flash content</h4> 
+	<p><a href="http://vimeo.com/moogaloop_local.swf?ver=19223" rel="prettyPhoto;width=500;height=370;flashvars=clip_id=173714&server=vimeo.com&autoplay=0&fullscreen=1&md5=0&show_portrait=0&show_title=0&show_byline=0&context=&context_id=&force_embed=0&multimoog=&color=00ADEF">Load Flash Content</a></p> 
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book title="CSS Mastery" imageurl="images/css.jpg">
+        <description>
+            While CSS is a relatively simple technology to learn, it is a difficult one to master. When you first start developing sites using CSS, you will come across all kinds of infuriating browser bugs and inconsistencies. It sometimes feels like there are a million and one different techniques to master, spread across a bewildering array of websites. The range of possibilities seems endless and makes for a steep and daunting learning curve. By bringing all of the latest tips, tricks, and techniques together in one handy reference, this book demystifies the secrets of CSS and makes the journey to CSS mastery as simple and painless as possible.
+        </description>
+    </book>
+
+    <book title="Professional ASP.NET" imageurl="images/asp.jpg">
+        <description>
+            Building on the revolutionary ASP.NET 2.0 release, ASP.NET 3.5 adds several key new developer features including AJAX, LINQ, and a new CSS designer in Visual Web Developer 2008. The dramatic reduction in code that developers realized from the more than 50 new server controls in ASP.NET 2.0 now allows developers the time to make their applications more interactive with AJAX, to work with data in their preferred language with LINQ, and to build visually attractive and consistent standards-based sites with CSS.
+        </description>
+    </book>
+
+    <book title="Learning jQuery" imageurl="images/lj.jpg">
+        <description>
+            jQuery is a powerful JavaScript library that can enhance your websites regardless of your background. In this book, creators of the popular jQuery learning resource, learningquery.com, share their knowledge, experience, and enthusiasm about jQuery to help you get the most from the library and to make your web applications shine. For designers, jQuery leverages existing CSS and HTML skills, allowing you to dynamically find and change any aspect of a page. This book provides a gentle introduction to jQuery concepts, allowing you to add interactions and animations to your pages-even if previous attempts at writing JavaScript have left you baffled.
+        </description>
+    </book>
+    
+</books>

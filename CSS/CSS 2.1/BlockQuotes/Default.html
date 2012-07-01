@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Blockquotes</title>
+	<style type="text/css">
+
+html, body {
+	background-color: white;
+	color: black;
+	font-size: small;
+	font-family: Georgia, serif;
+}
+
+body {
+	text-align: center;
+}
+
+#explainLink {
+	width: 23.5em;
+	margin: 7em auto;
+	font-size: x-small;
+	text-align: left;
+	color: #666;
+}
+
+#explainLink a:link,
+#explainLink a:visited,
+#explainLink a:hover,
+#explainLink a:active {
+	color: #666;
+}
+
+blockquote {
+	width: 18em;
+	margin: 10em auto 2em auto;
+	text-align: left;
+
+	text-indent: 25px;
+	background: url("Assets/Images/quotes1.png");
+	background-position: 0 2px;
+	background-repeat: no-repeat;
+}
+
+blockquote p {
+	line-height: 1.8;
+	margin: 0;
+
+	display: inline;
+	padding-right: 24px;
+	background: url("Assets/Images/quotes2.png");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+	</style>
+</head>
+<body>
+	
+    <blockquote cite="Brian Littrell">
+		<p>
+			Shoot for the moon. Even if you miss, you'll land among the stars.
+		</p>
+	</blockquote>
+    
+    <br><br><br><br><br>
+    
+	<pre style="text-align: left;">
+		To be a valid blockquote there must be an inner block level containing element such as a paragraph or div.
+		You can use this to your advantage in order to apply the two background images.
+		The top one you can apply to the block quote itself using a text indent to make space for the image.
+		
+		blockquote {
+			text-indent: 25px;
+			background: url("Assets/Images/quotes1.png");
+			background-position: 0 2px;
+			background-repeat: no-repeat;
+		}
+		
+		For the second image on the bottom right, you are going to be doing something a bit clever with the containing paragraph.
+		Set it to be display inline, set padding on the right to be a bit more than the width of your image,
+		then put the background image of the end quote mark on the bottom right of the paragraph.
+		
+		blockquote p {
+			display: inline;
+			margin: 0;
+			padding-right: 24px;
+			background: url("Assets/Images/quotes2.png");
+			background-position: bottom right;
+			background-repeat: no-repeat;
+		}
+		
+		And there you have it, inline image quotes.
+	</pre>
+	
+	<p id="explainLink">
+		See <a href="http://notes.natbat.net/2006/11/21/inineimagequotes/">corresponding post</a>
+	</p>
+
+</body>
+</html>

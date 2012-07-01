@@ -1,0 +1,115 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title>Expanding TextArea</title>
+		<style type="text/css">
+			textarea, 
+			pre {
+				border: 0;
+				margin: 0;
+				outline: 0;
+				padding: 0;
+			}
+			
+			.expandingArea {
+				background: #fff;
+				border: 1px solid #888;
+				position: relative;
+			}
+			
+			.expandingArea > textarea,
+			.expandingArea > pre {
+				background: transparent;
+				font: 400 13px/16px helvetica, arial, sans-serif;
+				padding: 5px;
+				/* Make the text soft-wrap */
+				white-space: pre-wrap;
+				word-wrap: break-word;
+			}
+			
+			.expandingArea > textarea {
+				/* The border-box box model is used to allow
+				* padding whilst still keeping the overall width
+				* at exactly that of the containing element.
+				*/
+				-webkit-box-sizing: border-box;
+				 -moz-box-sizing: border-box;
+				  -ms-box-sizing: border-box;
+				      box-sizing: border-box;
+				
+				/* This height is used when JS is disabled */
+				height: 100px;
+				width: 100%;
+			}
+			
+			.expandingArea.active > textarea {
+				/* Hide any scrollbars */
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				/* Remove WebKit user-resize widget */
+				resize: none;
+			}
+			
+			.expandingArea > pre {
+				display: none;
+			}
+
+			.expandingArea.active > pre {
+				display: block;
+				/* Hide the text; just using it for sizing */
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		The pre is our mirror. 
+		We need a br at the end of it to ensure that any trailing whitespace copied from the textarea is rendered by the browser correctly and not chewed up. 
+		The span element is therefore the one we actually update with the contents of the textarea.
+		-->
+		<div class="expandingArea">
+			<pre><span></span><br></pre>
+			<textarea></textarea>
+		</div>
+		<script type="text/javascript">
+			/*
+				A note on delegation: you can easily set this up with a single event listener on the document node 
+				and use event delegation to handle multiple expanding text areas efficiently, 
+				but only if you’re not supporting IE8 or below, as Microsoft, in their infinite wisdom, 
+				did not make the onpropertychange event bubble.
+			*/
+			function makeExpandingArea(container) {
+				var area = container.querySelector('textarea'),
+					span = container.querySelector('span');
+					
+				if (area.addEventListener) {
+					area.addEventListener('input', function() {
+						span.textContent = area.value;
+					}, false);
+					span.textContent = area.value;
+				} 
+				
+				// IE8 compatibility
+				else if (area.attachEvent) {
+					area.attachEvent('onpropertychange', function() {
+						span.innerText = area.value;
+					});
+					span.innerText = area.value;
+				}
+				
+				// Enable extra CSS
+				container.className += ' active';
+			}
+				
+			var areas = document.querySelectorAll('.expandingArea'),
+				l = areas.length;
+				
+			while (l--) {
+				makeExpandingArea(areas[l]);
+			}
+		</script>
+	</body>
+</html>

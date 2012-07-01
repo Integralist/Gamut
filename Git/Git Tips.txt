@@ -1,0 +1,333 @@
+Git Tips:
+
+Change the default editor for things like 'commits':
+
+git config --global core.editor "vim"
+ 
+Any time you need to check the status of a .git file enter:
+
+git status
+
+Show all Git commands:
+
+git
+
+Show where Git was installed:
+
+which git
+
+Show which version of Git is installed:
+
+git version
+
+Show all remote tracking branches:
+
+git remote show
+git remote show <remote name>
+
+Remove a remote:
+
+git remote rm <remote name>
+
+Show all recent activity:
+
+git log
+
+Show all activity (all branches):
+
+git log --all
+
+Show all files associated with the changes:
+
+git log --stat
+
+Show all activity (current branch) with short one-line information + includes tags,heads,branches highlighted (i.e. decorated):
+
+git log --oneline --decorate
+
+Show all activity (all branches) in a tree view (slightly more readable):
+
+git log --graph --all
+
+Show all activity (all branches) in a tree view (slightly more readable) BUT only shows the bare minimum details (i.e. the first seven characters of the hash and the commit message):
+
+git log --graph --all --oneline
+
+Show all commits that include the phrase "CSS":
+git log --grep=CSS
+
+Shows all branches for this repository:
+NOTE: an asterisk (*) before a branch name indicates that branch is the currently active one
+
+git branch
+
+Delete Branch:
+
+git branch -D <branch name>
+
+Delete a remote branch
+
+git push origin --delete <remote-branch>
+
+Create a new branch called "my_new_branch" which is a complete copy of 'master' for you to mess around with and do upgrades to:
+
+git branch <branch name>
+
+Switch to a different branch:
+
+IMPORTANT! When you switch between branches, the .git file (that contains all information about your repository) will show you a different set of files in Finder! So if you add a new file to your project's directory (e.g. mynewfile.php), then it will be visible in Finder while you are still viewing the 'mynewbranch' branch. The moment you switch back to the 'master' branch the 'mynewfile.php' file will disappear from view. 
+
+Whatever changes were made on one branch will not be visible at all from the other branches. Since Git tracks contents, this works for files and whole directories down to lines and characters.
+
+git checkout <branch name>
+
+Create branch and switch to it:
+
+git checkout -b <branch name>
+
+Checkout a Remote Branch (useful for when you clone a repo and want to access it's other branches - which usually aren't accessible from the cloned repo - only the master branch is?)
+
+git checkout -b <local branch> origin/<remote branch>
+
+You can revert a single file to an earlier version by using:
+
+git checkout
+
+Show all branches (even hidden ones - e.g. when cloning a repo and initially all you can see is the master branch)
+
+git branch -a
+
+Add files to a 'staging area' + also means Git can track changes to those files: 
+
+git add
+
+Add the entire current directory
+
+git add .
+
+Add all untracked files
+
+git add *
+
+Add all updated files (this means modified/deleted files)
+
+git add -u
+
+Seeing what files have been commited
+
+git ls-files
+
+Check what files have been changed (default - no options - compares the current state of your project with the previous commit)
+
+git diff
+git diff <older commit> <newer commit>
+git diff tag --stat
+git diff master <other branch>
+git diff master-commit <other branch> (or git diff master?other-branch = Git works out the common commit also known as the "merge base")
+
+Check what has changed between branches:
+
+git diff master..<branch>
+
+Check what specific files have changed (and what their status is M = modified / D = deleted) between branches:
+
+git diff --name-status master..<branch>
+
+Take a 'snapshot' of the project (for version control purposes):
+
+WARNING! if you run git commit without a message (e.g. using the flag -m) it will ask you to enter your message via the Terminal's VIM software (which is the default text editor - if we change this to something like Coda or Nano then it'll be easier to use as the commands for 'saving' are easier!)
+
+In Vim you first need to change into INSERT mode by pressing i, then you can save your commit message by pressing ESC and then :wq (for write/quit)
+
+git commit
+
+Commit all changes in a repository:
+
+git commit -a
+
+Viewing the difference as you commit:
+
+git commit -v
+
+Modify the Previous Commit's Message
+
+git commit --amend
+git commit --amend -m "New commit message"
+
+To undo the previous commit
+
+git revert HEAD^
+
+To revert a file back to an older version (run git status to see that the file needs to be committed again):
+
+git checkout 110f797 myfiletorevert.txt
+
+To revert all files to a particular commit:
+
+git revert 110f797 (or use HEAD instead of commit hash if you want to revert the last commit you made - as HEAD is a shortcut reference to the last commit hash)
+
+To merge 2 commits into 1:
+
+git rebase i- HEAD~2
+(in VIM you'll need to execute :w to save the change and then :q - although :wq should work also)
+
+If you make changes to your branch and then want to quickly change branches without first having to commit your current 'dirty state' then run:
+
+git stash
+git status #this will show a clean directory so you are now able to switch branches
+
+To apply a stashed state use (git assumes the most recent stashed state if none specified):
+
+git stash apply
+
+To see which stashes you've stored (on any branch) use:
+
+git stash list
+
+If you have multiple stashes under a branch (e.g. stash@{1} stash@{2} stash@{3}) then you can reference a particular stash:
+
+git stash apply@{2}
+
+To view the contents of a stash use:
+
+git stash show -p stash@{n} where 'n' is the numeric index of the stash
+
+Applying the stash doesn't mean it's removed from your list of stashes though! so you need to run:
+
+git stash drop NAME 
+#e.g. git stash drop stash@{2}
+
+You can also apply and drop the stash at the same time
+
+git stash pop
+
+Add a sub module
+
+git submodule add {git-remote} {path-to-where-submodule-repo-will-be-added-to-main-repo}
+
+To remove a submodule you need to:
+
+    Delete the relevant line from the .gitmodules file.
+    Delete the relevant section from .git/config.
+    Run git rm --cached path_to_submodule (no trailing slash).
+    Commit and delete the now untracked submodule files.
+
+If you stash some work, leave it there for a while, and continue on the branch from which you stashed the work, you may have a problem reapplying the work. If the apply tries to modify a file that you?ve since modified, you?ll get a merge conflict and will have to try to resolve it. If you want an easier way to test the stashed changes again, you can run git stash branch which creates a new branch for you, checks out the commit you were on when you stashed your work, reapplies your work there, and then drops the stash if it applies successfully.
+
+Git has a GUI tool for visualisation of commits/changes (by default it shows only the branch you are currently viewing - if you want it to show both branches at once the use gitk --all):
+
+The bottom right area shows what files were adjusted or added, either in the form of what?s new (patch view) or what?s there at the time of a commit (tree view).
+
+The bottom left area shows the details of the commit. Things of reference are the 'Parent' which is actually the previous commit, and the 'Child' which is the following commit.
+
+gitk
+
+Visualising git changes
+
+gitk --all
+
+If I wanted to merge a new branch 'name_of_branch' with my master branch then I would call:
+
+NOTE: It's important to switch view back to the master branch and then run the merge command.
+
+git merge name_of_branch
+
+If you want to merge changes from a repo your repo was forked from:
+
+git remote add upstream {URL}
+git fetch upstream
+git merge upstream/master
+
+Show all commits to this file (and who made them):
+
+git blame file_name
+
+To 'tag' a particular commit in your projects history - this could be (as per the example) a version number for a script update.
+NOTE: tags must have no spaces (e.g. my_first_tag):
+
+git tag tag_name (e.g. git tag v0.5.6)
+
+An annotated tag (The -a means "make an annotated tag", which allows you to add a tag message to it, which is what you almost always want to do. Running this without the -a works too, but it doesn't record when it was tagged, who tagged it, or let you add a tag message. I would recommend always creating annotated tags.):
+
+git tag -a tag_name
+
+An annotated tag with a comment:
+
+git tag -a tag_name -m "my first release candidate"
+
+Show all tags in this project:
+
+git tag "v 1.3"
+git push --tags
+
+Show the last commit:
+
+git show
+
+Show the commit with the specified commit id:
+
+git show {id number}
+
+Show all commits for the current development branch (the --more option accepts a value of how many to show)
+
+git show-branch --more=10
+
+Show the last commit that had this tag assigned after it (acts like a bookmark):
+
+git show tag_name
+
+The following command only works after looking at a tag:
+
+Note: it shows the name of the tag followed by how many commits have happened since its inception (as well as the first seven characters from the hash that references the commit - NOTE: the -g is not part of the hash; it's a suffix that stands for "Git" - according to the Git documentation it "useful in an environment where people may use different SCMs").
+
+E.g. my_first_tag-1-gd8a7d27
+
+git describe
+
+Show the difference between two commits
+
+git diff {more recent commit id} {older commit id}
+
+Clone an existing repository
+
+git clone {specify path to a folder which you originally 'git init' or a remote git repo} {directory of where to clone to}
+
+Clone specific branch from external repository
+
+$ git clone http://www.example.com/~username/git/repo-name 
+$ cd repo-name 
+$ git fetch 
+$ git checkout --track -b mybranch origin/remote-branch-name
+
+Set-up 'Alias':
+
+git config --global alias.co checkout
+
+gb = git branch
+gba = git branch -a
+gc = git commit -v
+gd = git diff | mate
+gl = git pull
+gp = git push
+gst = git status
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Ignore Files: 
+
+There is a file that you can create to hold rules about what files Git should ignore called .gitignore
+
+A good example of using .gitignore is if you wanted a config script - e.g. Settings.php -  that held your database username/password ignored so it wasn't accidentally pushed to a public repository (such as Github):
+
+You can use a # as a comment line and then specify the types of files or specific files to be ignored, such as:
+
+#Mac OS X files
+.DS_Store
+
+# VIM leave-behinds
+*.swp
+
+You can also ignore all files of a certain type except one by using the bang (!) Such as:
+
+*.log
+!errors.log

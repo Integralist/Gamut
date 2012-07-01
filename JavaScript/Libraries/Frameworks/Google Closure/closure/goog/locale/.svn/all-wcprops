@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/137/trunk/closure/goog/locale
+END
+datetimeformat.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/137/trunk/closure/goog/locale/datetimeformat.js
+END
+formatting.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/137/trunk/closure/goog/locale/formatting.js
+END
+countries.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/137/trunk/closure/goog/locale/countries.js
+END
+timezonelist_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezonelist_test.html
+END
+datetimeparse_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/137/trunk/closure/goog/locale/datetimeparse_test.html
+END
+genericfontnames_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/137/trunk/closure/goog/locale/genericfontnames_test.html
+END
+timezonedetection_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezonedetection_test.html
+END
+timezone_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezone_test.html
+END
+genericfontnamesdata.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/137/trunk/closure/goog/locale/genericfontnamesdata.js
+END
+countrylanguagenames_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/137/trunk/closure/goog/locale/countrylanguagenames_test.html
+END
+currencycodemap.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/137/trunk/closure/goog/locale/currencycodemap.js
+END
+nativenameconstants.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/137/trunk/closure/goog/locale/nativenameconstants.js
+END
+timezonelist.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezonelist.js
+END
+datetimeparse.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/137/trunk/closure/goog/locale/datetimeparse.js
+END
+genericfontnames.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/137/trunk/closure/goog/locale/genericfontnames.js
+END
+numberformat_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/137/trunk/closure/goog/locale/numberformat_test.html
+END
+timezonedetection.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezonedetection.js
+END
+timezone.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezone.js
+END
+datetimeformat_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/137/trunk/closure/goog/locale/datetimeformat_test.html
+END
+scriptToLanguages.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/137/trunk/closure/goog/locale/scriptToLanguages.js
+END
+locale.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/137/trunk/closure/goog/locale/locale.js
+END
+numberformat.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/137/trunk/closure/goog/locale/numberformat.js
+END
+defaultlocalenameconstants.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/137/trunk/closure/goog/locale/defaultlocalenameconstants.js
+END
+timezonefingerprint.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/137/trunk/closure/goog/locale/timezonefingerprint.js
+END

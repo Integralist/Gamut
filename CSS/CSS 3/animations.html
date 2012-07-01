@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			@-webkit-keyframes test {
+				from {
+					/* no 'from' values necessary in this example (the 'from' can be omitted entirely) */
+				}
+				
+				to {
+					-webkit-transform: scale(5) rotate(90deg);
+				}
+			}
+			
+			@-moz-keyframes test {
+				from {
+					/* no 'from' values necessary in this example (the 'from' can be omitted entirely) */
+				}
+				
+				to {
+					-moz-transform: scale(5) rotate(90deg);
+				}
+			}
+			
+			@-ms-keyframes test {
+				from {
+					/* no 'from' values necessary in this example (the 'from' can be omitted entirely) */
+				}
+				
+				to {
+					-ms-transform: scale(5) rotate(90deg);
+				}
+			}
+			
+			@-o-keyframes test {
+				from {
+					/* no 'from' values necessary in this example (the 'from' can be omitted entirely) */
+				}
+				
+				to {
+					-o-transform: scale(5) rotate(90deg);
+				}
+			}
+			
+			@-keyframes test {
+				from {
+					/* no 'from' values necessary in this example (the 'from' can be omitted entirely) */
+				}
+				
+				to {
+					transform: scale(5) rotate(90deg);
+				}
+			}
+			
+			/*
+			
+			@keyframes identifier {
+				0% {
+					declarations
+				}
+				
+				50% {
+					declarations
+				}
+				
+				100% {
+					declarations
+				}
+			}
+			
+			animation-name: identifier;
+			animation-duration: 10s;
+			animation-direction: alternate; //=> 'direction' only has the one value 'alternative' which means to reverse the animation once completed
+			animation-timing-function: ease-in-out;
+			animation-iteration-count: infinite;
+			
+			 */
+			
+			.logo {
+				 display: block;
+				  margin: -73px 0 0 -64px;
+				    left: 50%;
+				position: absolute;
+					 top: 50%;
+					 
+				/*  CSS3 Animations */
+				-webkit-animation: test 3s 5s infinite alternate;
+				   -moz-animation: test 3s 5s infinite alternate;
+					-ms-animation: test 3s 5s infinite alternate;
+					 -o-animation: test 3s 5s infinite alternate;
+						animation: test 3s 5s infinite alternate;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Animation will start in 5 seconds and last for 3 seconds before reversing (i.e. alternating) the animation. This will continue infintely</p>
+		<img class="logo" src="https://developer.mozilla.org/media/img/mdn-logo.png">
+	</body>
+</html>

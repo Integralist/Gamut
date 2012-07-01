@@ -1,0 +1,69 @@
+/*
+	Author		: Mark McDonnell
+	Document		: Layout
+	Created on	: dd-mm-yyyy
+	Description	: Determines the design and layout of the website.
+	Swatches		:
+		#007AC2 = Blue
+		#009CD9 = Cyan
+*/
+
+/***********************************************************************/
+/***********************************************************************/
+
+html, body
+{ border:0; color:#000; font:normal small Arial, Verdana, sans-serif; margin:0; padding:0; vertical-align:baseline; }
+
+body
+{ background-color:#E7E8E9; }
+
+pre, code
+{ font-family:Consolas, "Courier New", Courier, monospace; color:#00C; }
+
+table
+{ background-color:#FFF; border-collapse:collapse; table-layout:fixed; }
+
+p, h1, h2, h3, h4, h5, h6
+{ margin:0 0 0.5em; }
+
+h1
+{ font-size:3em; }
+
+h2
+{ font-size:2.5em; }
+
+h3, h4, h5, h6
+{ font-size:2em; }
+
+img, embed, object
+{ border:none; display:block; }
+
+form
+{ margin:0; }
+
+hr
+{ background-color:#959AC3; border:0; color:#959AC3; height:1px; }
+
+/***********************************************************************/
+/***********************************************************************/
+
+.imageReplacement
+{ margin:0; position:relative; }
+
+.imageReplacement span
+{ background-repeat:no-repeat; height:100%; position:absolute; width:100%; }
+
+/***********************************************************************/
+/***********************************************************************/
+
+#container {
+	background-color:#FFF;
+	border:10px solid #F3F3F4;
+	border-width:0 10px;
+	margin:auto;
+	width:960px;
+}
+
+#strapline {
+	
+}

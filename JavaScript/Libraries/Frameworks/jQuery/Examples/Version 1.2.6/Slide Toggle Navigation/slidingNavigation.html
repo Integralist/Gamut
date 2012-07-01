@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>jQuery Slider</title>
+<script type="text/javascript" src="../jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{		
+		// Check if the element is visible or not
+		var isVisible = $('.hidden').is(':visible');
+		
+		// Add a Click event listener to the A element on this page
+		$('#myLink').click(function()
+		{
+			$('div.hidden').slideToggle();
+		});
+		
+		// Add style to the A element on this page so it displays a mouse cursor when active
+		$('a#myLink').css("cursor","pointer");
+		
+		/**************************************************************************************/
+		// NOW WRITE OUR NAVIGATION CODE
+		/**************************************************************************************/
+		
+		// Add a Click event listeners to the trigger links
+		$('a.trigger1').click(function()
+		{
+			$("a.trigger1").next().slideToggle();
+		});
+		
+		// Add a Click event listeners to the trigger links
+		$('a.trigger2').click(function()
+		{
+			$("a.trigger2").next().slideToggle();
+		});
+	});
+</script>
+<style type="text/css">
+	body
+	{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	#header
+	{
+		margin: 0px;
+	}
+	
+	.hidden
+	{
+		display: none;
+	}
+	
+	#menu
+	{
+		list-style: none;
+		margin: 0px;
+		margin-bottom: 10px;
+		padding: 0px;
+	}
+	
+	#menu ul
+	{
+		list-style: none;
+		margin: 0px;
+		margin-left: 10px;
+		padding: 0px;
+		padding-left: 10px;
+		background-color: #CCCCCC;
+		display: none;
+	}
+</style>
+</head>
+<body>
+
+	<h1>Slide Example</h1>
+	
+	<p>
+		<a id="myLink">click here to show DIV content</a>
+	</p>
+	
+	<ul id="menu">
+		<li><a href="#">my first link</a></li>
+		<li><a href="#" class="trigger1">my second link</a>
+			<ul>
+				<li><a href="#">my first sublink</a></li>
+				<li><a href="#">my second sublink</a></li>
+				<li><a href="#">my third sublink</a></li>
+			</ul>
+		</li>
+		<li><a href="#">my third link</a></li>
+		<li><a href="#" class="trigger2">my fourth link</a>
+			<ul>
+				<li><a href="#">my first sublink</a></li>
+				<li><a href="#">my second sublink</a></li>
+				<li><a href="#">my third sublink</a></li>
+			</ul>
+		</li>
+	</ul>
+	
+	<h2 id="header">my header</h2>
+	<div class="hidden">my hidden DIV content</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="Assets/Styles/LickList.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css" />
+		<!--
+		When using a custom Theme you have a smaller 'structure' jQuery Mobile CSS file, so the below file appears to be redundant?
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+		BUT on some pages it can stop existing styles working (I assume because the normal stylesheet has extra styles outside of the typical 'theme' styles)
+		This means those styles will have to be re-created in our custom.css (I haven't bothered doing this yet, but I should be able to set-up a test page using old CSS and grab styles from there?)
+		-->
+		<link href="Assets/Styles/custom.css" rel="stylesheet" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="Assets/Scripts/custom.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header">
+				<a href="profile-gallery.html" data-direction="reverse" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Back"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-back ui-icon-shadow"></span></span></a>
+				<h1 class="logo"><span>LickList</span></h1>
+				<a href="index.html" class="jqm-home ui-btn ui-btn-icon-notext ui-btn-corner-all" title="Logout"><span class="ui-btn-inner ui-btn-corner-all" aria-hidden="true"><span class="ui-btn-text">Logout</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>
+			</div>
+			<div data-role="content">
+				<div class="home-advert aligntext-center">
+					<img src="Assets/Images/advert.png">
+				</div>
+				<div class="aligntext-center">
+					<img src="Assets/Images/venue-large.jpg">
+				</div>
+				<dl class="in-this-photo">
+					<dt>In this photo:</dt>
+					<dd><a href="profile.html">User A</a></dd>
+					<dd><a href="profile.html">User B</a></dd>
+					<dd><a href="profile.html">User C</a></dd>
+					<dd><a href="profile.html">User D</a></dd>
+				</dl>
+				<p class="clearfloat"><a href="profile-comments.html" data-role="button">View Comments</a></p>
+			</div>
+		</div>
+	</body>
+</html>

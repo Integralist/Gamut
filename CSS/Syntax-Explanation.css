@@ -1,0 +1,13 @@
+/* Rule (the entire chunk of code below can just be referred to as a single 'rule') */
+
+/* Selectors */
+#myID, .myClass 
+
+/* Declaration Block */
+{
+	/* Declaration */
+	/* Property */border: /* Value */1px solid #DCDDDE;
+	
+	/* Declaration */
+	/* Property */width: /* Value */335px;
+}

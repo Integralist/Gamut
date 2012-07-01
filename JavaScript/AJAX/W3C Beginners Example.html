@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'doesnt-exist.php', true);
+	xhr.send(null);
+	xhr.onreadystatechange = function() {
+	   // In the event of a communication error (such as the webserver going down), 
+	   // an exception will be thrown in the onreadystatechange method when attempting to access the status field. 
+	   // Make sure that you wrap your if...then statement in a try...catch. 
+	   try {
+	   	if (xhr.readyState === 4) {
+		   	if (xhr.status === 200) {
+		   		console.log(xhr.responseText);
+		   	} else {
+		   		console.log(xhr.status);
+		   	}
+		   }
+	   } catch(e) {
+	   	console.log('Caught Exception: ' + e.description);
+	   }
+	};
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+This sample, strings.fla, shows how to build, compare, retrieve selections and dynamically retrieve substring selections. This sample also shows how to convert strings to arrays, and back.
+
+The strings.fla document contains several components, including the NumericStepper, TextArea, TextInput, and Label components.
+
+By changing the values in the various NumericStepper instances you can control how many words or characters appear in the TextArea instance. You can right-click (Windows) or Control-click (Macintosh) in the TextArea or TextInput instances and select several custom options from the context menu. 
+
+For example, right-clicking (Windows) or control-clicking (Macintosh)  lets you select 'Lorem ipsum...' context menu item which populates either the TextArea or TextInput component with some placeholder text. The main difference between the two component instances is that TextArea allows a very large amount of text to be entered, and the TextInput instance imposes a maximum length of 8 characters (as defined in the Component Inspector panel). Other custom options include the ability to select text with your mouse and convert the selected text to either uppercase or lowercase. Finally, the context menu for both text components lets you enter the current date and time in various formats.

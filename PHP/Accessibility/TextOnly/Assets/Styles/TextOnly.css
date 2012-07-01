@@ -1,0 +1,12 @@
+body
+{ font-family:Arial, Helvetica, sans-serif; }
+
+#textonly
+{ background-color:red; font-size:medium; font-weight:bold; margin:10px 0 1em; }
+
+#textonly a
+{ color:#FFF; display:block; padding:10px; text-align:center; text-decoration:none; }
+
+#textonly a:hover,
+#textonly a:focus
+{ background-color:#7AC142; }

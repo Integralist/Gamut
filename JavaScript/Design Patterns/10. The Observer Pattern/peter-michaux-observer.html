@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Observer Design Pattern</title>
+	</head>
+	<body>
+		<p>This script is modified from Peter Michaux's example code.</p>
+		<p><a href="http://michaux.ca/articles/mixins-and-constructor-functions">http://michaux.ca/articles/mixins-and-constructor-functions</a></p>
+		<script>
+			function mixin (destination, source, overwrite) {
+				var overwrite = overwrite || false;
+				
+				for (var prop in source) {
+	 				// Normally you would code defensively by using 'hasOwnProperty' 
+	 				// but with this example we're using a Constructor for the Observer pattern
+	 				// which means we do want to copy both properties found on the object and its prototype chain.
+	 				if (!overwrite) {
+	 					if (destination[prop] === undefined) {
+	 						destination[prop] = source[prop];
+	 					}
+	 				} else {
+	 					destination[prop] = source[prop];
+	 				}
+				}
+				
+				return destination;
+			}
+			
+			function Observable(){
+				this.subscribers = [];
+			}
+			
+			Observable.prototype.subscribe = function (subscriber) {
+				this.subscribers.push(subscriber);
+			}
+			
+			Observable.prototype.publish = function (data) {
+				var len = this.subscribers.length,
+					count = 0;
+					
+				while (count < len) {
+					this.subscribers[count](data);
+					count++;
+				}
+			}
+			
+			var person = {
+				name: 'Steve',
+				setName: function (name) {
+					var oldName = this.name;
+					this.name = name;
+					this.publish({ oldName: oldName, newName: this.name });
+				}
+			};
+			
+			mixin(person, new Observable());
+			
+			person.subscribe(function (data) {
+				console.log("data: ", data);
+			});
+			
+			console.dir(person);
+			
+			window.setTimeout(function(){
+				person.setName("Sarah");
+			}, 2000);
+			
+			var animal = {
+				type: 'Bear',
+				setType: function (type) {
+					var oldType = this.type;
+					this.type = type;
+					this.publish({ oldType: oldType, newType: this.type });
+				}
+			};
+			
+			mixin(animal, new Observable());
+			
+			animal.subscribe(function (data) {
+				console.log("data: ", data);
+			});
+			
+			console.dir(animal);
+			
+			window.setTimeout(function(){
+				animal.setType("Cow");
+			}, 3000);
+		</script>
+	</body>
+</html>

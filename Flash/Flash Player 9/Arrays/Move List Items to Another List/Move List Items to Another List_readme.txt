@@ -1,0 +1,1 @@
+This sample, array.fla, illustrates array manipulation using ActionScript. The code in the sample creates an array and sorts, adds, and removes items of two List components. Selecting an item from list A and pressing a button moves the selected item to list B. The same goes for list B to list A. The other two buttons sort the respective lists.

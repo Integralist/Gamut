@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>jQuery Slider</title>
+<script type="text/javascript" src="../jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{		
+		// Check if the element is visible or not
+		var isVisible = $('.hidden').is(':visible');
+		
+		// Add a Click event listener to the A element on this page
+		$('#myLink').click(function()
+		{
+			$('.hidden').slideToggle();
+		});
+		
+		// Add style to the A element on this page so it displays a mouse cursor when active
+		$('#myLink').css("cursor","pointer");
+	});
+</script>
+<style type="text/css">
+	body
+	{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	#header
+	{
+		margin: 0px;
+	}
+	
+	.hidden
+	{
+		display: none;
+	}
+</style>
+</head>
+<body>
+
+	<h1>Slide Example</h1>
+	
+	<p>
+		<a id="myLink">click here to show content</a>
+	</p>
+	
+	<h2 id="header">my header</h2>
+	<div class="hidden">my hidden content</div>
+
+</body>
+</html>

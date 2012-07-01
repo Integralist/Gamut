@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Creating our own STORM js library</title>
+<style type="text/css">
+body { margin: 1em; padding: 1em; }
+h1, h2, p { margin: 0; margin-bottom: 0.5em; color: #2b2720; font-family: Georgia, "Times New Roman", Times, serif; font-weight: normal; }
+</style>
+</head>
+<body>
+	
+	<h1>JavaScript Library</h1>
+
+	<script type="text/javascript" src="JSON.js"></script>
+	<script type="text/javascript" src="../Library.js"></script>
+	<script type="text/javascript">
+		// TEST THE 'REMOTE'/AJAX METHODS
+		
+			// Load the contents of the URL index.html from the root of the web server 
+			$.Remote.load({ 
+				url: "JSON.php", 
+				callback: function(response) 
+				{ 
+					/*
+					We want to get the response from the PHP file (which is a JSON text).
+					
+					To convert a JSON text into an object, you can use the eval() function. 
+					eval() invokes the JavaScript compiler. 
+					
+					Since JSON is a proper subset of JavaScript, 
+					the compiler will correctly parse the text and produce an object structure. 
+					
+					The text must be wrapped in parens to avoid tripping on an ambiguity in JavaScript's syntax.
+					*/
+					var myObject = eval('(' + response.text + ')');
+					alert(myObject[0].Name + "\n" + myObject[0].Age + "\n" + myObject[0].Address);
+					
+					var safeParse = JSON.parse(response.text);
+					alert(safeParse[1].Name + "\n" + safeParse[1].Age + "\n" + safeParse[1].Address);
+					alert(safeParse[2].Name + "\n" + safeParse[2].Age + "\n" + safeParse[2].Address);
+				} 
+			});
+    </script>
+</body>
+</html>
